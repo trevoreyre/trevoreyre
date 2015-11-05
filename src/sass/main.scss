@@ -1,0 +1,33 @@
+@import 'variables';
+@import 'normalize';
+
+.te-body {
+    background: $background-color;
+}
+
+.te-layout .te-content .te-section {
+    background: #fff;
+    max-width: $body-width;
+    margin-bottom: $padding;
+}
+
+.te-layout .te-content .te-section.te-section--first {
+    margin-top: $padding;
+}
+
+.te-layout .te-content .te-tabs .te-section.te-section--first {
+    margin-top: $padding + 49px;
+}
+
+.te-card__media img {
+    width: 100%;
+}
+
+.te-tabs__tab-bar {
+    background: #fff;
+    position: fixed;
+    z-index: 3;
+    top: 64px;
+    width: 100%;
+    float: left;
+}
