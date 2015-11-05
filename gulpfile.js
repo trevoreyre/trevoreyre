@@ -41,7 +41,10 @@ var deployIgnoreFiles = [
     '!./src/**',
     '!./bower.json',
     '!./package.json',
-    '!./gulpfile.js'
+    '!./gulpfile.js',
+    '!./config.json',
+    '!./.gitignore',
+    '!./README.md'
 ];
 
 // Deploy all files
