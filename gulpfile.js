@@ -43,7 +43,6 @@ var deployIgnoreFiles = [
     '!./package.json',
     '!./gulpfile.js',
     '!./config.json',
-    '!./.gitignore',
     '!./README.md'
 ];
 
@@ -74,7 +73,7 @@ gulp.task('deployLayout', ['layout'], function () {
 // Deploy changed javascript files
 gulp.task('deployScripts', ['scripts'], function () {
     var deployFiles = [
-        './**/*.js'
+        './scripts/**/*'
     ];
     var deployFiles = deployFiles.concat(deployIgnoreFiles);
 
@@ -86,8 +85,7 @@ gulp.task('deployScripts', ['scripts'], function () {
 // Deploy changed style files
 gulp.task('deployStyles', ['styles', 'polymerStyles'], function () {
     var deployFiles = [
-        './**/*.css',
-        './css/*.html'
+        './styles/**/*'
     ];
     var deployFiles = deployFiles.concat(deployIgnoreFiles);
 
@@ -98,42 +96,48 @@ gulp.task('deployStyles', ['styles', 'polymerStyles'], function () {
 
 // HTML layout task
 gulp.task('layout', function () {
-    return gulp.src(['./src/**/*.html', '!./src/layout.html', '!./src/layout-old.html', '!./src/sass/*.html'])
+    return gulp.src(['./src/**/*.html', '!./src/layout.html', '!./src/styles/**'])
         .pipe(wrap({src: './src/layout.html'}))
         .pipe(gulp.dest('./'));
 });
 
 // Scripts task
 gulp.task('scripts', function () {
-    return gulp.src('./src/js/*.js')
+    return gulp.src('./src/scripts/*.js')
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('./js/'));
+        .pipe(gulp.dest('./scripts/'));
 });
 
 // Styles task
 gulp.task('styles', function () {
-    return gulp.src('./src/sass/*.scss')
+    return gulp.src('./src/styles/*.scss')
         .pipe(sass())
         .pipe(cssmin())
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('./css/'));
+        .pipe(gulp.dest('./styles/'));
 });
 
-// Polymer styles task. Just grabs HTML files and pushes them to CSS folder
+// Polymer styles task. Compiles SASS and wraps in Polymer template
 gulp.task('polymerStyles', function () {
-    return gulp.src('./src/sass/*.html')
-        .pipe(gulp.dest('./css/'));
+    return gulp.src('./src/styles/polymer/*.scss')
+        .pipe(sass())
+        .pipe(cssmin())
+        .pipe(wrap({src: './src/styles/polymer/te-polymer-styles-wrap.html'}))
+        .pipe(rename(function (path) {
+            path.extname = '.html'
+        }))
+        .pipe(gulp.dest('./styles/'));
 });
 
 // Watch task
 gulp.task('watch', function () {
-    gulp.watch(['./src/**/*.html', '!./src/sass/*'], ['deployLayout']);
-    gulp.watch('./src/js/*.js', ['deployScripts']);
-    gulp.watch('./src/sass/*', ['deployStyles']);
+    gulp.watch(['./src/**/*.html', '!./src/styles/**'], ['deployLayout']);
+    gulp.watch('./src/scripts/*', ['deployScripts']);
+    gulp.watch('./src/styles/*', ['deployStyles']);
 });

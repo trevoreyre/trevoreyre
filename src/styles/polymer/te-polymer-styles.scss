@@ -1,0 +1,13 @@
+@import '../variables';
+@import '../mixins';
+
+paper-toolbar {
+    --paper-toolbar-background: $primary-color;
+}
+
+paper-item {
+    --paper-item-selected-weight: 400;
+    --paper-item: {
+        cursor: pointer;
+    };
+}
