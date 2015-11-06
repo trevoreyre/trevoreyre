@@ -48,7 +48,7 @@ var deployIgnoreFiles = [
 ];
 
 // Deploy all files
-gulp.task('deployAll', ['layout', 'scripts', 'styles'], function() {
+gulp.task('deployAll', ['layout', 'scripts', 'styles'], function () {
     var deployFiles = [
         './**'
     ];
@@ -60,7 +60,7 @@ gulp.task('deployAll', ['layout', 'scripts', 'styles'], function() {
 });
 
 // Deploy changed html files
-gulp.task('deployLayout', ['layout'], function() {
+gulp.task('deployLayout', ['layout'], function () {
     var deployFiles = [
         './**/*.html'
     ];
@@ -72,7 +72,7 @@ gulp.task('deployLayout', ['layout'], function() {
 });
 
 // Deploy changed javascript files
-gulp.task('deployScripts', ['scripts'], function() {
+gulp.task('deployScripts', ['scripts'], function () {
     var deployFiles = [
         './**/*.js'
     ];
@@ -84,9 +84,10 @@ gulp.task('deployScripts', ['scripts'], function() {
 });
 
 // Deploy changed style files
-gulp.task('deployStyles', ['styles'], function() {
+gulp.task('deployStyles', ['styles', 'polymerStyles'], function () {
     var deployFiles = [
-        './**/*.css'
+        './**/*.css',
+        './css/*.html'
     ];
     var deployFiles = deployFiles.concat(deployIgnoreFiles);
 
@@ -96,14 +97,14 @@ gulp.task('deployStyles', ['styles'], function() {
 });
 
 // HTML layout task
-gulp.task('layout', function() {
-    return gulp.src(['./src/**/*.html', '!./src/layout.html', '!./src/layout-old.html'])
+gulp.task('layout', function () {
+    return gulp.src(['./src/**/*.html', '!./src/layout.html', '!./src/layout-old.html', '!./src/sass/*.html'])
         .pipe(wrap({src: './src/layout.html'}))
         .pipe(gulp.dest('./'));
 });
 
 // Scripts task
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
     return gulp.src('./src/js/*.js')
         .pipe(concat('main.js'))
         .pipe(uglify())
@@ -114,7 +115,7 @@ gulp.task('scripts', function() {
 });
 
 // Styles task
-gulp.task('styles', function() {
+gulp.task('styles', function () {
     return gulp.src('./src/sass/*.scss')
         .pipe(sass())
         .pipe(cssmin())
@@ -124,9 +125,15 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('./css/'));
 });
 
+// Polymer styles task. Just grabs HTML files and pushes them to CSS folder
+gulp.task('polymerStyles', function () {
+    return gulp.src('./src/sass/*.html')
+        .pipe(gulp.dest('./css/'));
+});
+
 // Watch task
-gulp.task('watch', function() {
-    gulp.watch('./src/**/*.html', ['deployLayout']);
+gulp.task('watch', function () {
+    gulp.watch(['./src/**/*.html', '!./src/sass/*'], ['deployLayout']);
     gulp.watch('./src/js/*.js', ['deployScripts']);
-    gulp.watch('./src/sass/*.scss', ['deployStyles']);
+    gulp.watch('./src/sass/*', ['deployStyles']);
 });

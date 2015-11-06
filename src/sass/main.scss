@@ -1,33 +1,79 @@
 @import 'variables';
+@import 'mixins';
 @import 'normalize';
 
-.te-body {
-    background: $background-color;
+/**********************************
+ Typography
+ **********************************/
+
+a {
+    text-decoration: none;
 }
 
-.te-layout .te-content .te-section {
+
+/**********************************
+ Standalone modifiers
+ **********************************/
+
+.te-ripple-container {
+    position: relative;
+}
+
+
+/**********************************
+ Layout elements
+ **********************************/
+
+.te-body {
+    background: $background;
+}
+
+.te-content {
+    margin: $padding-large;
+}
+
+.te-section {
     background: #fff;
     max-width: $body-width;
-    margin-bottom: $padding;
+    margin: $padding-large auto;
 }
 
-.te-layout .te-content .te-section.te-section--first {
-    margin-top: $padding;
-}
-
-.te-layout .te-content .te-tabs .te-section.te-section--first {
-    margin-top: $padding + 49px;
+.te-section.te-section--first {
+    margin-top: $padding-large;
 }
 
 .te-card__media img {
     width: 100%;
 }
 
-.te-tabs__tab-bar {
-    background: #fff;
-    position: fixed;
-    z-index: 3;
-    top: 64px;
-    width: 100%;
-    float: left;
+.te-image--hero {
+    background: rgba(0, 0, 0, 0.33);
+    /*width: 800px;*/
+    max-width: 100%;
+    /*height: 450px;*/
+}
+
+.te-menu-item:hover {
+    background: darken($background--menu, 5);
+}
+
+/*
+paper-header-panel {
+  --paper-header-panel-shadow: {
+      height: 6px;
+      bottom: -6px;
+      box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.4);
+  };
+}
+*/
+
+/**********************************
+ Media queries
+ **********************************/
+
+@media screen and (min-width: 641px) {
+    paper-icon-button.te-drawer-toggle,
+    paper-toolbar.te-toolbar {
+        display: none;
+    }
 }
