@@ -47,7 +47,7 @@ var deployIgnoreFiles = [
 ];
 
 // Deploy all files
-gulp.task('deployAll', ['layout', 'scripts', 'styles'], function () {
+gulp.task('deployAll', ['layout', 'scripts', 'styles', 'polymerStyles'], function () {
     var deployFiles = [
         './**'
     ];
@@ -73,7 +73,7 @@ gulp.task('deployLayout', ['layout'], function () {
 // Deploy changed javascript files
 gulp.task('deployScripts', ['scripts'], function () {
     var deployFiles = [
-        './scripts/**/*'
+        './scripts/**'
     ];
     var deployFiles = deployFiles.concat(deployIgnoreFiles);
 
@@ -85,7 +85,7 @@ gulp.task('deployScripts', ['scripts'], function () {
 // Deploy changed style files
 gulp.task('deployStyles', ['styles', 'polymerStyles'], function () {
     var deployFiles = [
-        './styles/**/*'
+        './styles/**'
     ];
     var deployFiles = deployFiles.concat(deployIgnoreFiles);
 
@@ -126,8 +126,8 @@ gulp.task('styles', function () {
 // Polymer styles task. Compiles SASS and wraps in Polymer template
 gulp.task('polymerStyles', function () {
     return gulp.src('./src/styles/polymer/*.scss')
-        .pipe(sass())
-        .pipe(cssmin())
+        /*.pipe(sass())
+        .pipe(cssmin())*/
         .pipe(wrap({src: './src/styles/polymer/te-polymer-styles-wrap.html'}))
         .pipe(rename(function (path) {
             path.extname = '.html'
@@ -138,6 +138,6 @@ gulp.task('polymerStyles', function () {
 // Watch task
 gulp.task('watch', function () {
     gulp.watch(['./src/**/*.html', '!./src/styles/**'], ['deployLayout']);
-    gulp.watch('./src/scripts/*', ['deployScripts']);
-    gulp.watch('./src/styles/*', ['deployStyles']);
+    gulp.watch('./src/scripts/**', ['deployScripts']);
+    gulp.watch('./src/styles/**', ['deployStyles']);
 });

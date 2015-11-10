@@ -39,9 +39,10 @@
     <![endif]-->
 
     <paper-drawer-panel class='flex'>
-        <paper-header-panel drawer mode='seamed'>
-            <paper-toolbar class='te-toolbar'>
-                <paper-icon-button icon='menu' class='te-drawer-toggle' paper-drawer-toggle></paper-icon-button>
+        <paper-header-panel drawer>
+            <paper-toolbar>
+                <paper-icon-button icon='menu' class='te-toolbar--mobile' paper-drawer-toggle></paper-icon-button>
+                <div class='paper-header'>Trevor Eyre</div>
             </paper-toolbar>
             <paper-menu>
                 <paper-item role='menuitem' class='te-ripple-container'>
@@ -58,11 +59,10 @@
                 </paper-item>
             </paper-menu>
         </paper-header-panel>
-        <paper-header-panel main mode='seamed'>
-
-            <!--<div class='content fit'>-->
-            <paper-toolbar class='te-toolbar'>
-                <paper-icon-button icon='menu' paper-drawer-toggle></paper-icon-button>
+        <paper-header-panel main>
+            <paper-toolbar>
+                <paper-icon-button icon='menu' class='te-toolbar--mobile' paper-drawer-toggle></paper-icon-button>
+                <div class='paper-header te-toolbar--mobile'>Trevor Eyre</div>
             </paper-toolbar>
             <main flex>
                 <div class='te-content'>

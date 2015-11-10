@@ -19,6 +19,10 @@ a {
     position: relative;
 }
 
+.te-margin-bottom-0 {
+    margin-bottom: 0 !important;
+}
+
 
 /**********************************
  Layout elements
@@ -29,17 +33,16 @@ a {
 }
 
 .te-content {
-    margin: $padding-large;
+    margin: $padding-large $padding-large 0  $padding-large;
 }
 
 .te-section {
-    background: #fff;
-    max-width: $body-width;
     margin: $padding-large auto;
+    max-width: $body-width;
 }
 
-.te-section.te-section--first {
-    margin-top: $padding-large;
+.te-section.te-section--full {
+    max-width: 100%;
 }
 
 .te-card__media img {
@@ -47,33 +50,27 @@ a {
 }
 
 .te-image--hero {
-    background: rgba(0, 0, 0, 0.33);
-    /*width: 800px;*/
-    max-width: 100%;
-    /*height: 450px;*/
+    display: block;
+    background-image: url(/trevoreyre/img/teyre.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - #{$padding-large} - #{$menu-height});
 }
 
 .te-menu-item:hover {
     background: darken($background--menu, 5);
 }
 
-/*
-paper-header-panel {
-  --paper-header-panel-shadow: {
-      height: 6px;
-      bottom: -6px;
-      box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.4);
-  };
-}
-*/
 
 /**********************************
  Media queries
  **********************************/
 
-@media screen and (min-width: 641px) {
-    paper-icon-button.te-drawer-toggle,
-    paper-toolbar.te-toolbar {
+@media (min-width: 641px) {
+    .te-toolbar--mobile {
         display: none;
     }
 }

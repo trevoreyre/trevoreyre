@@ -1,7 +1,36 @@
 <dom-module id='te-polymer-styles'>
     <template>
         <style>
-paper-toolbar{--paper-toolbar-background:#607d8b}paper-item{--paper-item-selected-weight:400;--paper-item-cursor:pointer}
+/*
+@import '../variables';
+@import '../mixins';
+*/
+
+paper-toolbar {
+    --paper-toolbar-background: #607d8b;
+}
+
+paper-drawer-panel {
+    --paper-drawer-panel-left-drawer-container: {
+        background-color: #fafafa;
+    };
+}
+
+paper-menu {
+    --paper-menu-background-color: #fafafa;
+}
+
+paper-item {
+    --paper-item: {
+        cursor: pointer;
+        margin: 0 8px;
+    };
+}
+
+iron-image {
+    --iron-image-width: 100%;
+    --iron-image-height: auto;
+}
         </style> 
     </template>
 </dom-module>
