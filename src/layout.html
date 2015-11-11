@@ -38,6 +38,7 @@
         <p class='browserupgrade'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+<!--
     <paper-drawer-panel class='flex'>
         <paper-header-panel drawer>
             <paper-toolbar>
@@ -64,15 +65,42 @@
                 <paper-icon-button icon='menu' class='te-toolbar--mobile' paper-drawer-toggle></paper-icon-button>
                 <div class='paper-header te-toolbar--mobile'>Trevor Eyre</div>
             </paper-toolbar>
-            <main flex>
+-->
+
+    <paper-header-panel mode='waterfall'>
+        <paper-toolbar>
+            <paper-icon-button icon='menu' paper-drawer-toggle></paper-icon-button>
+            <div class='paper-header'>Trevor Eyre</div>
+            <div class='flex'></div>
+            <paper-icon-button icon='refresh'></paper-icon-button>
+            <paper-icon-button icon='add'>+</paper-icon-button>
+        </paper-toolbar>
+        <paper-drawer-panel class='flex'>
+            <div drawer>
+                <paper-menu>
+                    <paper-item role='menuitem' class='te-ripple-container'>
+                        <a href=''>Overview</a>
+                        <paper-ripple></paper-ripple>
+                    </paper-item>
+                    <paper-item role='menuitem' class='te-ripple-container'>
+                        <a href=''>Portfolio</a>
+                        <paper-ripple></paper-ripple>
+                    </paper-item>
+                    <paper-item role='menuitem' class='te-ripple-container'>
+                        <a href=''>Contact</a>
+                        <paper-ripple></paper-ripple>
+                    </paper-item>
+                </paper-menu>
+            </div>
+            <div main class='flex'>
                 <div class='te-content'>
 
 <%= contents %>
 
                 </div>
-            </main>
-        </paper-header-panel>
-    </paper-drawer-panel>
+            </div>    
+        </paper-drawer-panel>
+    </paper-header-panel>
 
 
     <!-- Scripts -->
