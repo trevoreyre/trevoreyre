@@ -23,6 +23,12 @@ a {
     margin-bottom: 0 !important;
 }
 
+.te-mobile-only {
+    @include breakpoint(641) {
+        display: none;
+    }
+}
+
 
 /**********************************
  Layout elements

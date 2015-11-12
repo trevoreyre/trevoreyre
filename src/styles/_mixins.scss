@@ -8,3 +8,8 @@
     background: linear-gradient(to bottom, $color1 0%, $color2 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); /* IE6-9 */
 }
+
+
+@mixin breakpoint($size) {
+    @media screen and (min-width: $size + px) { @content; }
+}
