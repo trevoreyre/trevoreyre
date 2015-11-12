@@ -27,6 +27,7 @@
     <link rel='import' href='/trevoreyre/bower_components/iron-icons/iron-icons.html'>
     <link rel='import' href='/trevoreyre/bower_components/iron-image/iron-image.html'>
     <link rel='import' href='/trevoreyre/bower_components/iron-flex-layout/iron-flex-layout.html'>
+    <link rel='import' href='/trevoreyre/bower_components/polymer/polymer.html'>
     <link rel='import' href='/trevoreyre/bower_components/font-roboto/roboto.html'>
 
     <!-- Custom Polymer styles -->
@@ -69,25 +70,25 @@
 
     <paper-header-panel>
         <paper-toolbar>
-            <paper-icon-button icon='menu' paper-drawer-toggle></paper-icon-button>
-            <div class='paper-header'>Trevor Eyre</div>
+            <paper-icon-button icon='menu' onclick='teToggleDrawer()'></paper-icon-button>
+            <div class='paper-header'>Title</div>
             <div class='flex'></div>
             <paper-icon-button icon='refresh'></paper-icon-button>
             <paper-icon-button icon='add'>+</paper-icon-button>
         </paper-toolbar>
-        <paper-drawer-panel class='flex'>
+        <paper-drawer-panel id='te-paper-drawer-panel' class='flex' force-narrow>
             <div drawer>
                 <paper-menu>
                     <paper-item role='menuitem' class='te-ripple-container'>
-                        <a href=''>Overview</a>
+                        <a href=''>Item 1</a>
                         <paper-ripple></paper-ripple>
                     </paper-item>
                     <paper-item role='menuitem' class='te-ripple-container'>
-                        <a href=''>Portfolio</a>
+                        <a href=''>Item 2</a>
                         <paper-ripple></paper-ripple>
                     </paper-item>
                     <paper-item role='menuitem' class='te-ripple-container'>
-                        <a href=''>Contact</a>
+                        <a href=''>Item 3</a>
                         <paper-ripple></paper-ripple>
                     </paper-item>
                 </paper-menu>
@@ -97,37 +98,39 @@
 
 <section class='te-section te-section--full te-margin-bottom-0 horizontal layout'>
     <div class='flex self-center'>
-        <h2>About me</h2>
-        <p>I have one semester left until I complete my BS in Computer Science at Portland State University. I am crazy about user interface and user experience design. I love diving into the tiny details, to make programs that are simple and enjoyable to use.</p>
-        <p>In addition to school, I work full time at a labor management company, where I do a little bit of everything, from writing an online employee scheduling and turnover database, to producing and filming employee training videos.</p>
-        <p>When I’m not at work or school, I’m usually at home relaxing, or running around the outdoors somewhere with my wife and dog.</p>
+        <h2>Header Level 2</h2>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
     </div>
     <div class='flex-2'>
         <!--<iron-image sizing='cover' width=500 height=500 preload fade placeholder='/trevoreyre/img/bg.png' src='/trevoreyre/img/teyre.png'></iron-image>-->
         <div class='te-image--hero'></div>
     </div>
 </section>
-<section class='te-section te-section--full te-margin-bottom-0 horizontal layout'>
+<!--
+<section class='te-section'>
     <h2>Header Level 2</h2>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
     <h2>Header Level 2</h2>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
 </section>
-<section class='te-section te-section--full te-margin-bottom-0 horizontal layout'>
+<section class='te-section'>
     <h2>Header Level 2</h2>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
     <h2>Header Level 2</h2>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
 </section>
-<section class='te-section te-section--full te-margin-bottom-0 horizontal layout'>
+<section class='te-section'>
     <h2>Header Level 2</h2>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
     <h2>Header Level 2</h2>
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
 </section>
+-->
+
 
                 </div>
             </div>    
