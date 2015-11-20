@@ -7,9 +7,31 @@ document.addEventListener('WebComponentsReady', function () {
         var drawerPanel = document.getElementById('te-drawer-panel');
         var menu = document.getElementById('te-menu');
 
+        // Highlight selected page in menu
+        switch (window.location.pathname) {
+            case '/trevoreyre/portfolio/':
+                menu.selected = 1;
+                break;
+            case '/trevoreyre/contact/':
+                menu.selected = 2;
+                break;
+            default:
+                menu.selected = 0;
+        }
+
         // Handle menu click event
         menu.addEventListener('iron-select', function () {
-            console.log(menu.selected);
+            switch (menu.selected) {
+                case 0:
+                    window.location.href = '/trevoreyre/';
+                    break;
+                case 1:
+                    window.location.href = '/trevoreyre/portfolio/';
+                    break;
+                case 2:
+                    window.location.href = '/trevoreyre/contact/';
+                    break;
+            }
         });
 
         // Change drawer panel breakpoint, and width
