@@ -39,56 +39,27 @@
         <p class='browserupgrade'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-<!--
-    <paper-drawer-panel class='flex'>
-        <paper-header-panel drawer>
-            <paper-toolbar>
-                <paper-icon-button icon='menu' class='te-toolbar--mobile' paper-drawer-toggle></paper-icon-button>
-                <div class='paper-header'>Trevor Eyre</div>
-            </paper-toolbar>
-            <paper-menu>
-                <paper-item role='menuitem' class='te-ripple-container'>
-                    <a href=''>Overview</a>
-                    <paper-ripple></paper-ripple>
-                </paper-item>
-                <paper-item role='menuitem' class='te-ripple-container'>
-                    <a href=''>Portfolio</a>
-                    <paper-ripple></paper-ripple>
-                </paper-item>
-                <paper-item role='menuitem' class='te-ripple-container'>
-                    <a href=''>Contact</a>
-                    <paper-ripple></paper-ripple>
-                </paper-item>
-            </paper-menu>
-        </paper-header-panel>
-        <paper-header-panel main>
-            <paper-toolbar>
-                <paper-icon-button icon='menu' class='te-toolbar--mobile' paper-drawer-toggle></paper-icon-button>
-                <div class='paper-header te-toolbar--mobile'>Trevor Eyre</div>
-            </paper-toolbar>
--->
-
     <paper-header-panel>
         <paper-toolbar>
             <paper-icon-button icon='menu' onclick='teToggleDrawer()'></paper-icon-button>
             <div class='paper-header'>Title</div>
             <div class='flex'></div>
             <paper-icon-button icon='refresh'></paper-icon-button>
-            <paper-icon-button icon='add'>+</paper-icon-button>
+            <paper-icon-button icon='add'></paper-icon-button>
         </paper-toolbar>
-        <paper-drawer-panel id='te-paper-drawer-panel' class='flex' force-narrow>
+        <paper-drawer-panel id='te-drawer-panel' class='flex'>
             <div drawer>
-                <paper-menu>
+                <paper-menu id='te-menu' selected='0'>
                     <paper-item role='menuitem' class='te-ripple-container' paper-drawer-toggle>
-                        <a href=''>Item 1</a>
+                        Item 1
                         <paper-ripple></paper-ripple>
                     </paper-item>
                     <paper-item role='menuitem' class='te-ripple-container' paper-drawer-toggle>
-                        <a href=''>Item 2</a>
+                        Item 2
                         <paper-ripple></paper-ripple>
                     </paper-item>
                     <paper-item role='menuitem' class='te-ripple-container' paper-drawer-toggle>
-                        <a href=''>Item 3</a>
+                        Item 3
                         <paper-ripple></paper-ripple>
                     </paper-item>
                 </paper-menu>
