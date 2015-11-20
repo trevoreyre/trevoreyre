@@ -61,7 +61,8 @@ gulp.task('deployAll', ['layout', 'scripts', 'styles', 'polymerStyles'], functio
 // Deploy changed html files
 gulp.task('deployLayout', ['layout'], function () {
     var deployFiles = [
-        './**/*.html'
+        './**/*.html',
+        '!./styles/**'
     ];
     var deployFiles = deployFiles.concat(deployIgnoreFiles);
 
@@ -125,13 +126,13 @@ gulp.task('styles', function () {
 
 // Polymer styles task. Compiles SASS and wraps in Polymer template
 gulp.task('polymerStyles', function () {
-    return gulp.src('./src/styles/polymer/*.scss')
+    return gulp.src('./src/styles/*.html')
         /*.pipe(sass())
-        .pipe(cssmin())*/
+        .pipe(cssmin())
         .pipe(wrap({src: './src/styles/polymer/te-polymer-styles-wrap.html'}))
         .pipe(rename(function (path) {
             path.extname = '.html'
-        }))
+        }))*/
         .pipe(gulp.dest('./styles/'));
 });
 

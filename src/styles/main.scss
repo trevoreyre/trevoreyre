@@ -1,6 +1,9 @@
 @import 'variables';
 @import 'mixins';
 @import 'normalize';
+@import 'grid/grid';
+
+
 
 /**********************************
  Typography
@@ -24,14 +27,35 @@ a {
 }
 
 .te-mobile-only {
-    @include breakpoint(641) {
-        display: none;
+    @include breakpoint-tablet() {
+        display: none !important;
+    }
+    @include breakpoint-desktop() {
+        display: none !important;
+    }
+}
+
+.te-tablet-only {
+    @include breakpoint-phone() {
+        display: none !important;
+    }
+    @include breakpoint-desktop() {
+        display: none !important;
+    }
+}
+
+.te-desktop-only {
+    @include breakpoint-phone() {
+        display: none !important;
+    }
+    @include breakpoint-tablet() {
+        display: none !important;
     }
 }
 
 
 /**********************************
- Layout elements
+ Layout
  **********************************/
 
 .te-body {
@@ -39,12 +63,21 @@ a {
 }
 
 .te-content {
-    margin: $padding-large $padding-large 0  $padding-large;
+    padding: $padding-large;
+    @include linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.05));
 }
 
 .te-section {
     margin: $padding-large auto;
     max-width: $body-width;
+}
+
+.te-section:first-child {
+    margin-top: 0;
+}
+
+.te-section:last-child {
+    margin-bottom: 0;
 }
 
 .te-section.te-section--full {
@@ -55,28 +88,107 @@ a {
     width: 100%;
 }
 
-.te-image--hero {
+.te-image--bio {
     display: block;
     background-image: url(/trevoreyre/img/bg.png);
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: bottom center;
+    position: relative;
+    width: 100%;
+    height: 512px;
+}
+
+paper-item:hover {
+    background: darken($background--menu, 7);
+}
+
+
+// HERO
+/* Hero image */
+.gbo-hero-image {
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
     position: relative;
     width: 100%;
-    height: calc(100vh - #{$padding-large} - #{$menu-height});
+    height: 100vh;
 }
 
-.te-menu-item:hover {
-    background: darken($background--menu, 5);
+.admin-bar .gbo-hero-image {
+    height: calc(100vh - 32px);
 }
 
+.gbo-hero-image_nav-gradient {
+    display: none;
+}
 
-/**********************************
- Media queries
- **********************************/
+.gbo-hero-image_cover {
+    background: rgba(0, 0, 0, 0.15);
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 49;
+}
 
-@media (min-width: 641px) {
-    .te-toolbar--mobile {
-        display: none;
+.admin-bar .gbo-hero-image_cover {
+    height: calc(100vh - 32px);
+}
+
+.gbo-hero-image_slogan {
+    position: relative;
+    top: 32px;
+    width: 100%;
+    z-index: 50;    
+    padding: 24px 16px;
+    text-align: center;
+}
+
+.gbo-hero-image_slogan img {
+    width: 127.11px;
+    margin: 0 auto 16px auto;
+}
+
+.gbo-hero-image_slogan h1 {
+    color: #fff;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 16px 0;
+    margin: 16px 0;
+    font-size: 20px;
+    text-transform: none;
+}
+
+.gbo-hero-image_slogan .button,
+.gbo-hero-image_slogan .button-call {
+    display: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .gbo-hero-image_slogan {
+        width: 50%;
+        left: 50%;
+    }
+}
+
+@media only screen and (min-width: 872px) {
+    .gbo-hero-image_cover {
+        background: transparent;
+    }
+
+    .gbo-hero-image_slogan {
+        width: 33.33333333333333%;
+        left: 58.66666666666667%;
+    }
+
+    .gbo-hero-image_slogan img {
+        width: auto;
+        margin-bottom: 24px;
+    }
+
+    .gbo-hero-image_slogan h1 {
+        font-size: 28px;
+        margin: 24px 0;
     }
 }

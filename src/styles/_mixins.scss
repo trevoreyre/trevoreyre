@@ -1,3 +1,5 @@
+@import 'variables';
+
 @mixin linear-gradient($color1, $color2) {
     background: $color1; /* Old browsers */
     background: -moz-linear-gradient(top, $color1 0%, $color2 100%); /* FF3.6+ */
@@ -9,7 +11,14 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); /* IE6-9 */
 }
 
+@mixin breakpoint-phone() {
+    @media screen and (max-width: ($tablet-breakpoint - 1)) { @content; }
+}
 
-@mixin breakpoint($size) {
-    @media screen and (min-width: $size + px) { @content; }
+@mixin breakpoint-tablet() {
+    @media screen and (min-width: $tablet-breakpoint) and (max-width: ($desktop-breakpoint - 1)) { @content; }
+}
+
+@mixin breakpoint-desktop() {
+    @media screen and (min-width: $desktop-breakpoint) { @content; }
 }
