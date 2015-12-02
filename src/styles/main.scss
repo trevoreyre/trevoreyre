@@ -4,7 +4,6 @@
 @import 'grid/grid';
 
 
-
 /**********************************
  Typography
  **********************************/
@@ -24,6 +23,10 @@ a {
 
 .te-margin-bottom-0 {
     margin-bottom: 0 !important;
+}
+
+.te-padding-bottom-0 {
+    padding-bottom: 0 !important;
 }
 
 .te-mobile-only {
@@ -62,133 +65,66 @@ a {
     background: $background;
 }
 
-.te-content {
-    padding: $padding-large;
-    @include linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.05));
+.te-section {
+    padding: $padding-ex-large 0;
 }
 
-.te-section {
-    margin: $padding-large auto;
+.te-section_content {
+    margin: $padding-ex-large auto;
     max-width: $body-width;
 }
 
-.te-section:first-child {
+.te-section_content:first-child {
     margin-top: 0;
 }
 
-.te-section:last-child {
+.te-section_content:last-child {
     margin-bottom: 0;
 }
 
-.te-section.te-section--full {
+.te-section_content.te-section_content--full {
     max-width: 100%;
 }
 
-.te-card__media img {
-    width: 100%;
+.te-section--gradient-back {
+    @include linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.05));
 }
 
-.te-image--bio {
-    display: block;
-    background-image: url(/trevoreyre/img/bg.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    position: relative;
+.te-overview {
+    @include breakpoint-tablet() {
+        width: 75%;
+    }
+}
+
+.te-overview_info {
+    padding: 0 $padding;
+    @include breakpoint-tablet() {
+        padding: 0;
+    }
+    @include breakpoint-desktop() {
+        padding: 0 0 $padding-medium $padding-medium;
+    }
+}
+
+.te-overview_img {
+    overflow-x: hidden;
+}
+
+.te-overview_img--mobile {
+    padding: 0 $padding;
+    @include breakpoint-tablet() {
+        padding: 0;
+    }
+}
+
+.te-overview_img--mobile img {
     width: 100%;
-    height: 512px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 50%;
+    @include shadow-4dp();
 }
 
 paper-item:hover {
     background: darken($background--menu, 7);
-}
-
-
-// HERO
-/* Hero image */
-.gbo-hero-image {
-    display: block;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
-
-.admin-bar .gbo-hero-image {
-    height: calc(100vh - 32px);
-}
-
-.gbo-hero-image_nav-gradient {
-    display: none;
-}
-
-.gbo-hero-image_cover {
-    background: rgba(0, 0, 0, 0.15);
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    z-index: 49;
-}
-
-.admin-bar .gbo-hero-image_cover {
-    height: calc(100vh - 32px);
-}
-
-.gbo-hero-image_slogan {
-    position: relative;
-    top: 32px;
-    width: 100%;
-    z-index: 50;    
-    padding: 24px 16px;
-    text-align: center;
-}
-
-.gbo-hero-image_slogan img {
-    width: 127.11px;
-    margin: 0 auto 16px auto;
-}
-
-.gbo-hero-image_slogan h1 {
-    color: #fff;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    padding: 16px 0;
-    margin: 16px 0;
-    font-size: 20px;
-    text-transform: none;
-}
-
-.gbo-hero-image_slogan .button,
-.gbo-hero-image_slogan .button-call {
-    display: none;
-}
-
-@media only screen and (min-width: 600px) {
-    .gbo-hero-image_slogan {
-        width: 50%;
-        left: 50%;
-    }
-}
-
-@media only screen and (min-width: 872px) {
-    .gbo-hero-image_cover {
-        background: transparent;
-    }
-
-    .gbo-hero-image_slogan {
-        width: 33.33333333333333%;
-        left: 58.66666666666667%;
-    }
-
-    .gbo-hero-image_slogan img {
-        width: auto;
-        margin-bottom: 24px;
-    }
-
-    .gbo-hero-image_slogan h1 {
-        font-size: 28px;
-        margin: 24px 0;
-    }
 }
