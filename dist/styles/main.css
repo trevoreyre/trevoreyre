@@ -2145,7 +2145,7 @@ ul, ol {
       padding: 0; } }
   @media screen and (min-width: 840px) {
     .te-overview_info {
-      padding: 0 0 32px 32px; } }
+      padding: 32px; } }
 
 .te-overview_img {
   overflow-x: hidden; }

@@ -21,6 +21,18 @@
     padding-bottom: 0 !important;
 }
 
+.te-hide-mobile {
+    @include breakpoint-phone() {
+        display: none !important;
+    }
+}
+
+.te-hide-tablet {
+    @include breakpoint-tablet() {
+        display: none !important;
+    }
+}
+
 .te-mobile-only {
     @include breakpoint-tablet() {
         display: none !important;
@@ -94,7 +106,7 @@
         padding: 0;
     }
     @include breakpoint-desktop() {
-        padding: 0 0 $padding-medium $padding-medium;
+        padding: $padding-medium;
     }
 }
 
