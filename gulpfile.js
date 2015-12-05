@@ -5,10 +5,10 @@ var gulp = require('gulp');
 
 // Require other packages
 var gutil = require('gulp-util');
+var changed = require('gulp-changed');
 var ftp = require('vinyl-ftp');
 var concat = require('gulp-concat');
 var cssmin = require('gulp-minify-css');
-var postcss = require('gulp-postcss');
 var autoprefixer = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
@@ -102,6 +102,7 @@ gulp.task('deployStyles', ['styles', 'polymerStyles'], function () {
 // HTML layout task
 gulp.task('layout', function () {
     return gulp.src(['./src/**/*.html', '!./src/layout.html', '!./src/styles/**/*'])
+        .pipe(changed('./dist/'))
         .pipe(wrap({src: './src/layout.html'}))
         .pipe(gulp.dest('./dist/'));
 });
@@ -109,6 +110,7 @@ gulp.task('layout', function () {
 // Scripts task
 gulp.task('scripts', function () {
     return gulp.src('./src/scripts/**/*.js')
+        .pipe(changed('./dist/scripts/'))
         .pipe(concat('main.js'))
         .pipe(gulp.dest('./dist/scripts/'))
         .pipe(uglify())
@@ -121,6 +123,7 @@ gulp.task('scripts', function () {
 // Styles task
 gulp.task('styles', function () {
     return gulp.src('./src/styles/*.scss')
+        .pipe(changed('./dist/styles/', {extension: '.css'}))
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['> 2%']
@@ -136,6 +139,7 @@ gulp.task('styles', function () {
 // Polymer styles task. Just pushes Polymer styles to dist folder
 gulp.task('polymerStyles', function () {
     return gulp.src('./src/styles/**/*.html')
+        .pipe(changed('./dist/styles/'))
         .pipe(gulp.dest('./dist/styles/'));
 });
 
