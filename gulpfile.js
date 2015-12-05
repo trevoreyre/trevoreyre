@@ -6,8 +6,6 @@ var gulp = require('gulp');
 // Require other packages
 var gutil = require('gulp-util');
 var changed = require('gulp-changed');
-var cached = require('gulp-cached');
-var remember = require('gulp-remember');
 var ftp = require('vinyl-ftp');
 var concat = require('gulp-concat');
 var cssmin = require('gulp-minify-css');
@@ -45,7 +43,7 @@ var conn = ftp.create({
 var deployDestination = config.deployDestination;
 
 // Deploy all files. Simply kicks off all other deploy tasks. Also uploads any new image files.
-gulp.task('deployAll', ['deployLayout', 'deployScripts', 'deployStyles'], function () {
+gulp.task('deployAll', ['deployLayout', 'deployScripts', 'deployStyles', 'deployPolymerStyles'], function () {
     var deployFiles = [
         './dist/img/*'
     ];
@@ -111,10 +109,25 @@ gulp.task('deployScripts', ['scripts'], function () {
 });
 
 // Deploy changed style files after running 'styles' task
-gulp.task('deployStyles', ['styles', 'polymerStyles'], function () {
+gulp.task('deployStyles', ['styles'], function () {
     var deployFiles = [
-        './dist/styles/**/*.min.css',
-        './dist/styles/**/*.html' // Polymer styles
+        './dist/styles/**/*.min.css'
+    ];
+
+    return gulp.src(deployFiles, {base: '.', buffer: false})
+        .pipe(rename(function (path) {
+            var parts = path.dirname.split('\\');
+            parts.splice(0, 1);
+            path.dirname = parts.join('\\');
+        }))
+        .pipe(conn.newer(deployDestination))
+        .pipe(conn.dest(deployDestination));
+});
+
+// Deploy changed Polymer style files after running 'polymerStyles' task
+gulp.task('deployPolymerStyles', ['polymerStyles'], function () {
+    var deployFiles = [
+        './dist/styles/**/*.html'
     ];
 
     return gulp.src(deployFiles, {base: '.', buffer: false})
@@ -145,7 +158,6 @@ gulp.task('layoutWrap', function () {
 // Scripts task
 gulp.task('scripts', function () {
     return gulp.src(srcScripts)
-        .pipe(changed(destScripts))
         .pipe(concat('main.js'))
         .pipe(gulp.dest(destScripts))
         .pipe(uglify())
@@ -158,7 +170,6 @@ gulp.task('scripts', function () {
 // Styles task
 gulp.task('styles', function () {
     return gulp.src(srcStyles)
-        .pipe(changed(destStyles, {extension: '.css'}))
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['> 2%']
@@ -183,5 +194,6 @@ gulp.task('watch', function () {
     gulp.watch(srcLayout, ['deployLayout']);
     gulp.watch('./src/layout.html', ['deployLayoutWrap']);
     gulp.watch(srcScripts, ['deployScripts']);
-    gulp.watch([srcStyles, srcStylesPolymer], ['deployStyles']);
+    gulp.watch(srcStyles, ['deployStyles']);
+    gulp.watch(srcStylesPolymer, ['deployPolymerStyles']);
 });
