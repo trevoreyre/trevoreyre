@@ -2084,6 +2084,18 @@ ul, ol {
 .te-padding-bottom-0 {
   padding-bottom: 0 !important; }
 
+@media screen and (max-width: 479px) {
+  .te-hide-mobile {
+    display: none !important; } }
+
+@media screen and (min-width: 480px) and (max-width: 839px) {
+  .te-hide-tablet {
+    display: none !important; } }
+
+@media screen and (min-width: 840px) {
+  .te-hide-desktop {
+    display: none !important; } }
+
 @media screen and (min-width: 480px) and (max-width: 839px) {
   .te-mobile-only {
     display: none !important; } }

@@ -33,6 +33,12 @@
     }
 }
 
+.te-hide-desktop {
+    @include breakpoint-desktop() {
+        display: none !important;
+    }
+}
+
 .te-mobile-only {
     @include breakpoint-tablet() {
         display: none !important;
