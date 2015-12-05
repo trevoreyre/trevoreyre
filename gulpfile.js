@@ -6,6 +6,8 @@ var gulp = require('gulp');
 // Require other packages
 var gutil = require('gulp-util');
 var changed = require('gulp-changed');
+var cached = require('gulp-cached');
+var remember = require('gulp-remember');
 var ftp = require('vinyl-ftp');
 var concat = require('gulp-concat');
 var cssmin = require('gulp-minify-css');
@@ -17,6 +19,15 @@ var wrap = require('gulp-wrap');
 
 // Require config file for FTP server info
 var config = require('./config.json');
+
+// Define build source and destination paths
+var srcLayout = ['./src/**/*.html', '!./src/layout.html', '!./src/styles/**/*'];
+var srcScripts = './src/scripts/**/*.js';
+var srcStyles = './src/styles/*.scss';
+var srcStylesPolymer = './src/styles/**/*.html';
+var destLayout = './dist/';
+var destScripts = './dist/scripts/';
+var destStyles = './dist/styles/';
 
 // Default task
 gulp.task('default', ['deployAll', 'watch']);
@@ -101,46 +112,46 @@ gulp.task('deployStyles', ['styles', 'polymerStyles'], function () {
 
 // HTML layout task
 gulp.task('layout', function () {
-    return gulp.src(['./src/**/*.html', '!./src/layout.html', '!./src/styles/**/*'])
-        .pipe(changed('./dist/'))
+    return gulp.src(srcLayout)
+        .pipe(changed(destLayout))
         .pipe(wrap({src: './src/layout.html'}))
-        .pipe(gulp.dest('./dist/'));
+        .pipe(gulp.dest(destLayout));
 });
 
 // Scripts task
 gulp.task('scripts', function () {
-    return gulp.src('./src/scripts/**/*.js')
-        .pipe(changed('./dist/scripts/'))
+    return gulp.src(srcScripts)
+        .pipe(changed(destScripts))
         .pipe(concat('main.js'))
-        .pipe(gulp.dest('./dist/scripts/'))
+        .pipe(gulp.dest(destScripts))
         .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('./dist/scripts/'));
+        .pipe(gulp.dest(destScripts));
 });
 
 // Styles task
 gulp.task('styles', function () {
-    return gulp.src('./src/styles/*.scss')
-        .pipe(changed('./dist/styles/', {extension: '.css'}))
+    return gulp.src(srcStyles)
+        .pipe(changed(destStyles, {extension: '.css'}))
         .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['> 2%']
         }))
-        .pipe(gulp.dest('./dist/styles/'))
+        .pipe(gulp.dest(destStyles))
         .pipe(cssmin())
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('./dist/styles/'));
+        .pipe(gulp.dest(destStyles));
 });
 
 // Polymer styles task. Just pushes Polymer styles to dist folder
 gulp.task('polymerStyles', function () {
-    return gulp.src('./src/styles/**/*.html')
-        .pipe(changed('./dist/styles/'))
-        .pipe(gulp.dest('./dist/styles/'));
+    return gulp.src(srcStylesPolymer)
+        .pipe(changed(destStyles))
+        .pipe(gulp.dest(destStyles));
 });
 
 // Watch task
