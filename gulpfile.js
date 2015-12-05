@@ -83,7 +83,7 @@ gulp.task('deployScripts', ['scripts'], function () {
 });
 
 // Deploy changed style files after running 'styles' task
-gulp.task('deployStyles', ['styles'], function () {
+gulp.task('deployStyles', ['styles', 'polymerStyles'], function () {
     var deployFiles = [
         './dist/styles/**/*.min.css',
         './dist/styles/**/*.html' // Polymer styles
