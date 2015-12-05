@@ -77,6 +77,23 @@ gulp.task('deployLayout', ['layout'], function () {
         .pipe(conn.dest(deployDestination));
 });
 
+// Deploy changed html files after running 'layoutWrap' task
+gulp.task('deployLayoutWrap', ['layoutWrap'], function () {
+    var deployFiles = [
+        './dist/**/*.html',
+        '!./dist/styles/**/*' // Ignore html files defining Polymer styles
+    ];
+
+    return gulp.src(deployFiles, {base: '.', buffer: false})
+        .pipe(rename(function (path) {
+            var parts = path.dirname.split('\\');
+            parts.splice(0, 1);
+            path.dirname = parts.join('\\');
+        }))
+        .pipe(conn.newer(deployDestination))
+        .pipe(conn.dest(deployDestination));
+});
+
 // Deploy changed javascript files after running 'scripts' task
 gulp.task('deployScripts', ['scripts'], function () {
     var deployFiles = [
@@ -114,6 +131,13 @@ gulp.task('deployStyles', ['styles', 'polymerStyles'], function () {
 gulp.task('layout', function () {
     return gulp.src(srcLayout)
         .pipe(changed(destLayout))
+        .pipe(wrap({src: './src/layout.html'}))
+        .pipe(gulp.dest(destLayout));
+});
+
+// HTML layout wrap task, for when the layout file is changed
+gulp.task('layoutWrap', function () {
+    return gulp.src(srcLayout)
         .pipe(wrap({src: './src/layout.html'}))
         .pipe(gulp.dest(destLayout));
 });
@@ -156,7 +180,8 @@ gulp.task('polymerStyles', function () {
 
 // Watch task
 gulp.task('watch', function () {
-    gulp.watch(['./src/**/*.html', '!./src/styles/**/*'], ['deployLayout']);
-    gulp.watch('./src/scripts/**/*', ['deployScripts']);
-    gulp.watch('./src/styles/**/*', ['deployStyles']);
+    gulp.watch(srcLayout, ['deployLayout']);
+    gulp.watch('./src/layout.html', ['deployLayoutWrap']);
+    gulp.watch(srcScripts, ['deployScripts']);
+    gulp.watch([srcStyles, srcStylesPolymer], ['deployStyles']);
 });
