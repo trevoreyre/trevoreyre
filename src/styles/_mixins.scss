@@ -1,5 +1,5 @@
 @import 'variables';
-@import 'mdl-mixins';
+@import 'mdl/mixins';
 
 @mixin linear-gradient($color1, $color2) {
     background: $color1; /* Old browsers */
