@@ -2142,9 +2142,19 @@ ul, ol {
 .te-section_content.te-section_content--full {
   max-width: 100%; }
 
+.te-section_content.te-section_content--small {
+  max-width: 682.66667px; }
+
 .te-section--gradient-back {
   background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.05) 100%);
   background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.05) 100%); }
+
+.te-section_title {
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+
+.te-section_title h1 {
+  color: #607d8b; }
 
 @media screen and (min-width: 480px) and (max-width: 839px) {
   .te-overview {

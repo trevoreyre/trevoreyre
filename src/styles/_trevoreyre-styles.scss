@@ -96,8 +96,21 @@
     max-width: 100%;
 }
 
+.te-section_content.te-section_content--small {
+    max-width: $body-width * (2/3);
+}
+
 .te-section--gradient-back {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 100%);
+}
+
+.te-section_title {
+    text-align: center;
+    border-bottom: 1px solid $divider-color;
+}
+
+.te-section_title h1 {
+    color: $primary-color;
 }
 
 .te-overview {
