@@ -1,3 +1,29 @@
-<section class='te-section te-section--full horizontal layout'>
-    <h2>Contact</h2>
+<section class='te-section'>
+    <div class='te-section_content te-section_content--medium mdl-grid'>
+        <div class='te-section_title mdl-cell mdl-cell--12-col'>
+            <h1 class='mdl-typography--font-light'>Contact</h1>
+        </div>
+        <div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet'>
+            <paper-input label='Name' required auto-validate error-message='Required'></paper-input>
+        </div>
+        <div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet'>
+            <paper-input id='te-contact-email' label='Email' required auto-validate pattern='.+@.+' error-message='Invalid email'></paper-input>
+        </div>
+        <div class='mdl-cell mdl-cell--12-col'>
+            <paper-input label='Subject'></paper-input>
+        </div>
+        <div class='mdl-cell mdl-cell--12-col'>
+            <paper-textarea label='Message' rows='6' required error-message='Required'></paper-textarea>
+        </div>
+        <div class='mdl-cell mdl-cell--12-col te-text-center'>
+            <paper-button class='te-button te-button--call'>
+                <iron-icon icon='send'></iron-icon>
+                Send
+            </paper-button>
+            <paper-button class='te-button'>
+                <iron-icon icon='clear'></iron-icon>
+                Clear
+            </paper-button>
+        </div>
+    </div>
 </section>

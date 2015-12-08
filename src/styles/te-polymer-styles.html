@@ -10,7 +10,7 @@
 
             paper-drawer-panel {
                 --paper-drawer-panel-left-drawer-container: {
-                    background-color: var(--background);
+                    background-color: #fff; /*var(--background);*/
                     @apply(--shadow-elevation-4dp);
                 };
                 --paper-drawer-panel-main-container: {
@@ -19,7 +19,7 @@
             }
 
             paper-menu {
-                --paper-menu-background-color: var(--background);
+                --paper-menu-background-color: #fff; /*var(--background);*/
             }
 
             paper-item {
@@ -32,6 +32,22 @@
             iron-image {
                 --iron-image-width: 100%;
                 --iron-image-height: auto;
+            }
+
+            paper-button.te-button {
+                --paper-button: {
+                    min-width: 120px;
+                    padding: 16px;
+                };
+            }
+
+            paper-button.te-button--call {
+                color: var(--primary-color);
+            }
+
+            paper-input,
+            paper-textarea {
+                --paper-input-container-focus-color: var(--primary-color);
             }
         </style> 
     </template>

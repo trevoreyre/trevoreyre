@@ -21,6 +21,10 @@
     padding-bottom: 0 !important;
 }
 
+.te-text-center {
+    text-align: center;
+}
+
 .te-hide-mobile {
     @include breakpoint-phone() {
         display: none !important;
@@ -98,6 +102,10 @@
 
 .te-section_content.te-section_content--small {
     max-width: $body-width * (2/3);
+}
+
+.te-section_content.te-section_content--medium {
+    max-width: $body-width * (3/4);
 }
 
 .te-section--gradient-back {

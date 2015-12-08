@@ -2084,6 +2084,9 @@ ul, ol {
 .te-padding-bottom-0 {
   padding-bottom: 0 !important; }
 
+.te-text-center {
+  text-align: center; }
+
 @media screen and (max-width: 479px) {
   .te-hide-mobile {
     display: none !important; } }
@@ -2144,6 +2147,9 @@ ul, ol {
 
 .te-section_content.te-section_content--small {
   max-width: 682.66667px; }
+
+.te-section_content.te-section_content--medium {
+  max-width: 768px; }
 
 .te-section--gradient-back {
   background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.05) 100%);
