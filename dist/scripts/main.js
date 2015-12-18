@@ -9,10 +9,10 @@ document.addEventListener('WebComponentsReady', function () {
 
         // Highlight selected page in menu
         switch (window.location.pathname) {
-            case '/trevoreyre/portfolio/':
+            case '/portfolio/':
                 menu.selected = 1;
                 break;
-            case '/trevoreyre/contact/':
+            case '/contact/':
                 menu.selected = 2;
                 break;
             default:
@@ -23,13 +23,13 @@ document.addEventListener('WebComponentsReady', function () {
         menu.addEventListener('iron-select', function () {
             switch (menu.selected) {
                 case 0:
-                    window.location.href = '/trevoreyre/';
+                    window.location.href = '/';
                     break;
                 case 1:
-                    window.location.href = '/trevoreyre/portfolio/';
+                    window.location.href = '/portfolio/';
                     break;
                 case 2:
-                    window.location.href = '/trevoreyre/contact/';
+                    window.location.href = '/contact/';
                     break;
             }
         });
