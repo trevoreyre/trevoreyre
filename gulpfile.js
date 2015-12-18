@@ -4,12 +4,12 @@
 var gulp = require('gulp');
 
 // Require other packages
-var gutil = require('gulp-util');
+var autoprefixer = require('gulp-autoprefixer');
 var changed = require('gulp-changed');
-var ftp = require('vinyl-ftp');
 var concat = require('gulp-concat');
 var cssmin = require('gulp-minify-css');
-var autoprefixer = require('gulp-autoprefixer');
+var ftp = require('vinyl-ftp');
+var gutil = require('gulp-util');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
@@ -18,17 +18,23 @@ var wrap = require('gulp-wrap');
 // Require config file for FTP server info
 var config = require('./config.json');
 
-// Define build source and destination paths
+// Define source/destination paths for build and deploy tasks
 var srcLayout = ['./src/**/*.html', '!./src/layout.html', '!./src/styles/**/*'];
+var srcLayoutWrap = './src/layout.html';
 var srcScripts = './src/scripts/**/*.js';
 var srcStyles = './src/styles/*.scss';
 var srcStylesPolymer = './src/styles/**/*.html';
 var destLayout = './dist/';
 var destScripts = './dist/scripts/';
 var destStyles = './dist/styles/';
-
-// Default task
-gulp.task('default', ['deployAll', 'watch']);
+var srcDeployLayout = ['./dist/**/*.html', '!./dist/styles/**/*'];
+var srcDeployScripts = './dist/scripts/**/*.min.js';
+var srcDeployStyles = './dist/styles/**/*.min.css';
+var srcDeployPolymerStyles = './dist/styles/**/*.html';
+var srcDeployExtras = [
+        './dist/img/*'
+    ];
+var deployDestination = config.deployDestination;
 
 // FTP connection
 var conn = ftp.create({
@@ -39,119 +45,53 @@ var conn = ftp.create({
     log: gutil.log
 });
 
-// Directory to deploy files
-var deployDestination = config.deployDestination;
+// Deploy function
+function deploy (inputStream) {
+    return inputStream
+        .pipe(rename(function (path) {
+            var parts = path.dirname.split('\\');
+            parts.splice(0, 1);
+            path.dirname = parts.join('\\');
+        }))
+        .pipe(conn.newer(deployDestination))
+        .pipe(conn.dest(deployDestination));
+}
 
-// Deploy all files. Simply kicks off all other deploy tasks. Also uploads any new image files.
+// Default task
+gulp.task('default', ['deployAll', 'watch']);
+
+// Various deploy tasks by file type to reduce FTP transfer to server
 gulp.task('deployAll', ['deployLayout', 'deployScripts', 'deployStyles', 'deployPolymerStyles'], function () {
-    var deployFiles = [
-        './dist/img/*'
-    ];
-
-    return gulp.src(deployFiles, {base: '.', buffer: false})
-        .pipe(rename(function (path) {
-            var parts = path.dirname.split('\\');
-            parts.splice(0, 1);
-            path.dirname = parts.join('\\');
-        }))
-        .pipe(conn.newer(deployDestination))
-        .pipe(conn.dest(deployDestination));
+    return deploy(gulp.src(srcDeployExtras, {base: '.', buffer: false}));
 });
-
-// Deploy changed html files after running 'layout' task
 gulp.task('deployLayout', ['layout'], function () {
-    var deployFiles = [
-        './dist/**/*.html',
-        '!./dist/styles/**/*' // Ignore html files defining Polymer styles
-    ];
-
-    return gulp.src(deployFiles, {base: '.', buffer: false})
-        .pipe(rename(function (path) {
-            var parts = path.dirname.split('\\');
-            parts.splice(0, 1);
-            path.dirname = parts.join('\\');
-        }))
-        .pipe(conn.newer(deployDestination))
-        .pipe(conn.dest(deployDestination));
+    return deploy(gulp.src(srcDeployLayout, {base: '.', buffer: false}));
 });
-
-// Deploy changed html files after running 'layoutWrap' task
 gulp.task('deployLayoutWrap', ['layoutWrap'], function () {
-    var deployFiles = [
-        './dist/**/*.html',
-        '!./dist/styles/**/*' // Ignore html files defining Polymer styles
-    ];
-
-    return gulp.src(deployFiles, {base: '.', buffer: false})
-        .pipe(rename(function (path) {
-            var parts = path.dirname.split('\\');
-            parts.splice(0, 1);
-            path.dirname = parts.join('\\');
-        }))
-        .pipe(conn.newer(deployDestination))
-        .pipe(conn.dest(deployDestination));
+    return deploy(gulp.src(srcDeployLayout, {base: '.', buffer: false}));
 });
-
-// Deploy changed javascript files after running 'scripts' task
 gulp.task('deployScripts', ['scripts'], function () {
-    var deployFiles = [
-        './dist/scripts/**/*.min.js'
-    ];
-
-    return gulp.src(deployFiles, {base: '.', buffer: false})
-        .pipe(rename(function (path) {
-            var parts = path.dirname.split('\\');
-            parts.splice(0, 1);
-            path.dirname = parts.join('\\');
-        }))
-        .pipe(conn.newer(deployDestination))
-        .pipe(conn.dest(deployDestination));
+    return deploy(gulp.src(srcDeployScripts, {base: '.', buffer: false}));
 });
-
-// Deploy changed style files after running 'styles' task
 gulp.task('deployStyles', ['styles'], function () {
-    var deployFiles = [
-        './dist/styles/**/*.min.css'
-    ];
-
-    return gulp.src(deployFiles, {base: '.', buffer: false})
-        .pipe(rename(function (path) {
-            var parts = path.dirname.split('\\');
-            parts.splice(0, 1);
-            path.dirname = parts.join('\\');
-        }))
-        .pipe(conn.newer(deployDestination))
-        .pipe(conn.dest(deployDestination));
+    return deploy(gulp.src(srcDeployStyles, {base: '.', buffer: false}));
 });
-
-// Deploy changed Polymer style files after running 'polymerStyles' task
 gulp.task('deployPolymerStyles', ['polymerStyles'], function () {
-    var deployFiles = [
-        './dist/styles/**/*.html'
-    ];
-
-    return gulp.src(deployFiles, {base: '.', buffer: false})
-        .pipe(rename(function (path) {
-            var parts = path.dirname.split('\\');
-            parts.splice(0, 1);
-            path.dirname = parts.join('\\');
-        }))
-        .pipe(conn.newer(deployDestination))
-        .pipe(conn.dest(deployDestination));
+    return deploy(gulp.src(srcDeployPolymerStyles, {base: '.', buffer: false}));
 });
 
 // HTML layout task
 gulp.task('layout', function () {
     return gulp.src(srcLayout)
         .pipe(changed(destLayout))
-        .pipe(wrap({src: './src/layout.html'}))
+        .pipe(wrap({src: srcLayoutWrap}))
         .pipe(gulp.dest(destLayout));
 });
 
 // HTML layout wrap task, for when the layout file is changed
 gulp.task('layoutWrap', function () {
     return gulp.src(srcLayout)
-        .pipe(wrap({src: './src/layout.html'}))
+        .pipe(wrap({src: srcLayoutWrap}))
         .pipe(gulp.dest(destLayout));
 });
 
@@ -192,7 +132,7 @@ gulp.task('polymerStyles', function () {
 // Watch task
 gulp.task('watch', function () {
     gulp.watch(srcLayout, ['deployLayout']);
-    gulp.watch('./src/layout.html', ['deployLayoutWrap']);
+    gulp.watch(srcLayoutWrap, ['deployLayoutWrap']);
     gulp.watch(srcScripts, ['deployScripts']);
     gulp.watch(srcStyles, ['deployStyles']);
     gulp.watch(srcStylesPolymer, ['deployPolymerStyles']);

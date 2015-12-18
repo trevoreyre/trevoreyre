@@ -6,6 +6,9 @@
         <style>
             paper-toolbar {
                 --paper-toolbar-background: var(--primary-color);
+                --paper-toolbar: {
+                    z-index: 10;
+                };
             }
 
             paper-drawer-panel {
@@ -15,6 +18,10 @@
                 };
                 --paper-drawer-panel-main-container: {
                     overflow-y: scroll;
+                };
+                --paper-drawer-panel-scrim: {
+                    position: fixed;
+                    top: 0;
                 };
             }
 

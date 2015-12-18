@@ -80,7 +80,9 @@
 }
 
 .te-section {
-    padding: $padding-ex-large 0;
+    padding: $padding-ex-large $padding
+
+    ;
 }
 
 .te-section_content {

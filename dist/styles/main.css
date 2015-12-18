@@ -2130,7 +2130,7 @@ ul, ol {
   background: #fafafa; }
 
 .te-section {
-  padding: 64px 0; }
+  padding: 64px 16px; }
 
 .te-section_content {
   margin: 64px auto;
