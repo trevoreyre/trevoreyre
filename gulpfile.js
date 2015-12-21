@@ -45,7 +45,8 @@ var conn = ftp.create({
     log: gutil.log
 });
 
-// Deploy function
+// Deploy function. Expects source files to be grouped in a distribution folder.
+// Strips this first folder, to place files in base directory of server
 function deploy (inputStream) {
     return inputStream
         .pipe(rename(function (path) {
@@ -61,7 +62,7 @@ function deploy (inputStream) {
 gulp.task('default', ['deployAll', 'watch']);
 
 // Various deploy tasks by file type to reduce FTP transfer to server
-gulp.task('deployAll', ['deployLayout', 'deployScripts', 'deployStyles', 'deployPolymerStyles'], function () {
+gulp.task('deployAll', ['deployLayoutWrap', 'deployScripts', 'deployStyles', 'deployPolymerStyles'], function () {
     return deploy(gulp.src(srcDeployExtras, {base: '.', buffer: false}));
 });
 gulp.task('deployLayout', ['layout'], function () {
@@ -122,7 +123,7 @@ gulp.task('styles', function () {
         .pipe(gulp.dest(destStyles));
 });
 
-// Polymer styles task. Just pushes Polymer styles to dist folder
+// Polymer styles task. Just pushes Polymer styles to distribution folder
 gulp.task('polymerStyles', function () {
     return gulp.src(srcStylesPolymer)
         .pipe(changed(destStyles))
