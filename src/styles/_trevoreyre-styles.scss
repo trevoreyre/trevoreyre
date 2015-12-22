@@ -83,6 +83,10 @@
     padding: $padding-ex-large $padding;
 }
 
+.te-section--no-padding {
+    padding: 0  0 $padding-ex-large 0;
+}
+
 .te-section_content {
     margin: $padding-ex-large auto;
     max-width: $body-width;
@@ -156,6 +160,60 @@
     @include shadow-4dp();
 }
 
+.te-portfolio_img {
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    height: 496px;
+    @include shadow-4dp();
+}
+
+.te-portfolio_inner {
+    background-color: rgba(0, 0, 0, 0); //rgba(96, 125, 139, 0);
+    height: 496px;
+    transition: background-color 0.3s;
+}
+
+.te-portfolio_inner:hover {
+    background-color: rgba(0, 0, 0, 0.25); //rgba(96, 125, 139, 0.65);
+}
+
+.te-portfolio_info--left {
+    padding-left: $padding-ex-large;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.te-portfolio_info--right {
+    padding-right: $padding-ex-large;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.te-portfolio_inner:hover > .te-portfolio_info--left,
+.te-portfolio_inner:hover > .te-portfolio_info--right {
+    opacity: 1;
+}
+
+.te-portfolio_img--gradient-left {
+    background: linear-gradient(to left, transparent, transparent, transparent, $background);
+}
+
+.te-portfolio_img--gradient-right {
+    background: linear-gradient(to right, transparent, transparent, transparent, $background);
+}
+
 paper-item:hover {
     background: darken($background--menu, 7);
+}
+
+
+/**********************************
+ Layout
+ **********************************/
+
+.te-menu-icon {
+    margin-right: $padding;
 }
