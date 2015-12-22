@@ -12,8 +12,11 @@ document.addEventListener('WebComponentsReady', function () {
             case '/portfolio/':
                 menu.selected = 1;
                 break;
-            case '/contact/':
+            case '/services/':
                 menu.selected = 2;
+                break;
+            case '/contact/':
+                menu.selected = 3;
                 break;
             default:
                 menu.selected = 0;
@@ -29,6 +32,9 @@ document.addEventListener('WebComponentsReady', function () {
                     window.location.href = '/portfolio/';
                     break;
                 case 2:
+                    window.location.href = '/services/';
+                    break;
+                case 3:
                     window.location.href = '/contact/';
                     break;
             }
