@@ -2165,6 +2165,9 @@ ul, ol {
 .te-section_title h1 {
   color: #607d8b; }
 
+/**********************************
+ About Me page
+ **********************************/
 @media screen and (min-width: 480px) and (max-width: 839px) {
   .te-overview {
     width: 75%; } }
@@ -2194,6 +2197,9 @@ ul, ol {
   border-radius: 50%;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
 
+/**********************************
+ Portfolio page
+ **********************************/
 .te-portfolio_img {
   display: block;
   background-size: cover;
@@ -2206,41 +2212,64 @@ ul, ol {
 .te-portfolio_inner {
   background-color: transparent;
   height: 496px;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s; }
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s; }
 
 .te-portfolio_inner:hover {
   background-color: rgba(0, 0, 0, 0.25); }
 
-.te-portfolio_info--left {
-  padding-left: 64px;
+.te-portfolio_info {
   opacity: 0;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s; }
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s; }
 
-.te-portfolio_info--right {
-  padding-right: 64px;
-  opacity: 0;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s; }
-
-.te-portfolio_inner:hover > .te-portfolio_info--left,
-.te-portfolio_inner:hover > .te-portfolio_info--right {
+.te-portfolio_inner:hover > .te-portfolio_info {
   opacity: 1; }
 
-.te-portfolio_img--gradient-left {
-  background: -webkit-linear-gradient(right, transparent, transparent, transparent, #fafafa);
-  background: linear-gradient(to left, transparent, transparent, transparent, #fafafa); }
+.te-portfolio_info--left {
+  padding-left: 64px; }
 
-.te-portfolio_img--gradient-right {
-  background: -webkit-linear-gradient(left, transparent, transparent, transparent, #fafafa);
-  background: linear-gradient(to right, transparent, transparent, transparent, #fafafa); }
+.te-portfolio_info--right {
+  padding-right: 64px; }
 
+.te-portfolio_info * {
+  opacity: 0; }
+
+.te-portfolio_info .card-content {
+  position: relative; }
+
+.te-portfolio_info.te-portfolio_info--left .card-content {
+  left: 32px; }
+
+.te-portfolio_info.te-portfolio_info--right .card-content {
+  right: 32px; }
+
+.te-portfolio_info .header {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+.te-portfolio_info .card-content {
+  -webkit-transition: all 0.5s ease 0.2s;
+  transition: all 0.5s ease 0.2s; }
+
+.te-portfolio_info .card-actions {
+  -webkit-transition: all 0.5s ease 0.4s;
+  transition: all 0.5s ease 0.4s; }
+
+.te-portfolio_inner:hover .te-portfolio_info * {
+  opacity: 1; }
+
+.te-portfolio_inner:hover .te-portfolio_info.te-portfolio_info--left .card-content {
+  left: 0; }
+
+.te-portfolio_inner:hover .te-portfolio_info.te-portfolio_info--right .card-content {
+  right: 0; }
+
+/**********************************
+ Navigation
+ **********************************/
 paper-item:hover {
   background: #ededed; }
 
-/**********************************
- Layout
- **********************************/
 .te-menu-icon {
   margin-right: 16px; }

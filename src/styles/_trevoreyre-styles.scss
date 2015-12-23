@@ -125,6 +125,11 @@
     color: $primary-color;
 }
 
+
+/**********************************
+ About Me page
+ **********************************/
+
 .te-overview {
     @include breakpoint-tablet() {
         width: 75%;
@@ -160,6 +165,11 @@
     @include shadow-4dp();
 }
 
+
+/**********************************
+ Portfolio page
+ **********************************/
+
 .te-portfolio_img {
     display: block;
     background-size: cover;
@@ -173,46 +183,78 @@
 .te-portfolio_inner {
     background-color: rgba(0, 0, 0, 0); //rgba(96, 125, 139, 0);
     height: 496px;
-    transition: background-color 0.3s;
+    transition: background-color 0.5s;
 }
 
 .te-portfolio_inner:hover {
     background-color: rgba(0, 0, 0, 0.25); //rgba(96, 125, 139, 0.65);
 }
 
-.te-portfolio_info--left {
-    padding-left: $padding-ex-large;
+.te-portfolio_info {
     opacity: 0;
-    transition: all 0.3s;
+    transition: opacity 0.5s;
+}
+
+.te-portfolio_inner:hover > .te-portfolio_info {
+    opacity: 1;
+}
+
+.te-portfolio_info--left {
+    padding-left: $padding-ex-large;    
 }
 
 .te-portfolio_info--right {
     padding-right: $padding-ex-large;
-    opacity: 0;
-    transition: all 0.3s;
 }
 
-.te-portfolio_inner:hover > .te-portfolio_info--left,
-.te-portfolio_inner:hover > .te-portfolio_info--right {
+.te-portfolio_info * {
+    opacity: 0;
+}
+
+.te-portfolio_info .card-content {
+    position: relative;
+}
+
+.te-portfolio_info.te-portfolio_info--left .card-content {
+    left: $padding-medium;
+}
+
+.te-portfolio_info.te-portfolio_info--right .card-content {
+    right: $padding-medium;
+}
+
+.te-portfolio_info .header {
+    transition: all 0.5s ease;
+}
+
+.te-portfolio_info .card-content {
+    transition: all 0.5s ease 0.2s;
+}
+
+.te-portfolio_info .card-actions {
+    transition: all 0.5s ease 0.4s;
+}
+
+.te-portfolio_inner:hover .te-portfolio_info * {
     opacity: 1;
 }
 
-.te-portfolio_img--gradient-left {
-    background: linear-gradient(to left, transparent, transparent, transparent, $background);
+.te-portfolio_inner:hover .te-portfolio_info.te-portfolio_info--left .card-content {
+    left: 0;
 }
 
-.te-portfolio_img--gradient-right {
-    background: linear-gradient(to right, transparent, transparent, transparent, $background);
-}
-
-paper-item:hover {
-    background: darken($background--menu, 7);
+.te-portfolio_inner:hover .te-portfolio_info.te-portfolio_info--right .card-content {
+    right: 0;
 }
 
 
 /**********************************
- Layout
+ Navigation
  **********************************/
+
+paper-item:hover {
+    background: darken($background--menu, 7);
+}
 
 .te-menu-icon {
     margin-right: $padding;
