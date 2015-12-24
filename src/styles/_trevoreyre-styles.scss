@@ -127,6 +127,39 @@
 
 
 /**********************************
+ Cards
+ **********************************/
+
+.te-card {
+    @include breakpoint-phone() {
+        padding: 0;
+    }
+    padding: $padding;
+}
+
+.te-card-title * {
+    font-weight: 600;
+    color: $primary-color;
+}
+
+.te-card-title,
+.te-card-content {
+    padding: $padding;
+}
+
+paper-card *,
+.te-card-title *,
+.te-card-content * {
+    margin: 0;
+}
+
+.te-card-actions {
+    border-top: 1px solid $divider-color;
+    padding: 5px $padding;
+}
+
+
+/**********************************
  About Me page
  **********************************/
 
@@ -170,45 +203,84 @@
  Portfolio page
  **********************************/
 
+.te-portfolio_container {
+    width: 100%;
+    @include shadow-4dp();
+}
+
 .te-portfolio_img {
     display: block;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
     width: 100%;
-    height: 496px;
-    @include shadow-4dp();
+    height: 368px;
+    @include breakpoint-tablet() {
+        height: 496px;
+    }
+    @include breakpoint-desktop() {
+        height: 560px;
+    }
 }
 
 .te-portfolio_inner {
-    background-color: rgba(0, 0, 0, 0); //rgba(96, 125, 139, 0);
-    height: 496px;
+    background-color: rgba(0, 0, 0, 0.1); //rgba(96, 125, 139, 0);
     transition: background-color 0.5s;
+    height: 368px;
+    @include breakpoint-tablet() {
+        background-color: rgba(0, 0, 0, 0.25);
+        height: 496px;
+    }
+    @include breakpoint-desktop() {
+        background-color: rgba(0, 0, 0, 0);
+        height: 560px;
+    }
 }
 
 .te-portfolio_inner:hover {
-    background-color: rgba(0, 0, 0, 0.25); //rgba(96, 125, 139, 0.65);
+    @include breakpoint-desktop() {
+        background-color: rgba(0, 0, 0, 0.25); //rgba(96, 125, 139, 0.65);
+    }
 }
 
 .te-portfolio_info {
-    opacity: 0;
-    transition: opacity 0.5s;
+    @include breakpoint-tablet() {
+        opacity: 1;
+    }
+    @include breakpoint-desktop() {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
 }
 
 .te-portfolio_inner:hover > .te-portfolio_info {
-    opacity: 1;
+    @include breakpoint-desktop() {
+        opacity: 1;
+    }
 }
 
 .te-portfolio_info--left {
-    padding-left: $padding-ex-large;    
+    @include breakpoint-tablet() {
+        padding-left: $padding;
+    }
+    @include breakpoint-desktop() {
+        padding-left: $padding-ex-large;
+    }
 }
 
 .te-portfolio_info--right {
-    padding-right: $padding-ex-large;
+     @include breakpoint-tablet() {
+        padding-right: $padding;
+    }
+    @include breakpoint-desktop() {
+        padding-right: $padding-ex-large;
+    }
 }
 
 .te-portfolio_info * {
-    opacity: 0;
+    @include breakpoint-desktop() {
+        opacity: 0;
+    }
 }
 
 .te-portfolio_info .card-content {
@@ -216,11 +288,15 @@
 }
 
 .te-portfolio_info.te-portfolio_info--left .card-content {
-    left: $padding-medium;
+    @include breakpoint-desktop() {
+        left: $padding-medium;
+    }
 }
 
 .te-portfolio_info.te-portfolio_info--right .card-content {
-    right: $padding-medium;
+    @include breakpoint-desktop() {
+        right: $padding-medium;
+    }
 }
 
 .te-portfolio_info .header {
@@ -236,15 +312,21 @@
 }
 
 .te-portfolio_inner:hover .te-portfolio_info * {
-    opacity: 1;
+    @include breakpoint-desktop() {
+        opacity: 1;
+    }
 }
 
 .te-portfolio_inner:hover .te-portfolio_info.te-portfolio_info--left .card-content {
-    left: 0;
+    @include breakpoint-desktop() {
+        left: 0;
+    }
 }
 
 .te-portfolio_inner:hover .te-portfolio_info.te-portfolio_info--right .card-content {
-    right: 0;
+    @include breakpoint-desktop() {
+        right: 0;
+    }
 }
 
 
