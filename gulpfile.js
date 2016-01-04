@@ -4,12 +4,13 @@
 var gulp = require('gulp');
 
 // Require other packages
-var autoprefixer = require('gulp-autoprefixer');
+var autoprefixer = require('autoprefixer');
 var changed = require('gulp-changed');
 var concat = require('gulp-concat');
 var cssmin = require('gulp-minify-css');
 var ftp = require('vinyl-ftp');
 var gutil = require('gulp-util');
+var postcss = require('gulp-postcss');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
@@ -112,9 +113,11 @@ gulp.task('scripts', function () {
 gulp.task('styles', function () {
     return gulp.src(srcStyles)
         .pipe(sass())
-        .pipe(autoprefixer({
-            browsers: ['> 2%']
-        }))
+        .pipe(postcss([
+            autoprefixer({
+                browsers: ['> 2%']
+            })
+        ]))
         .pipe(gulp.dest(destStyles))
         .pipe(cssmin())
         .pipe(rename({
