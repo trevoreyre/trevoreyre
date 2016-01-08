@@ -11,9 +11,13 @@ document.addEventListener('WebComponentsReady', function () {
         **********************************/
         var drawerPanel = document.getElementById('te-drawer-panel');
         var menu = document.getElementById('te-menu');
+        var enableMenu = true;
 
-        // Highlight selected page in menu
-        switch (window.location.pathname) {
+        // Set up page on initial page load
+        drawerPanel.drawerWidth = '208px';      // Change width of drawer
+        drawerPanel.responsiveWidth = '840px';  // Change responsive break point of drawer
+        pageScripts();                          // Load page-specfic JavaScript
+        switch (window.location.pathname) {     // Set selected menu item
             case '/portfolio/':
                 menu.selected = 1;
                 break;
@@ -27,28 +31,6 @@ document.addEventListener('WebComponentsReady', function () {
                 menu.selected = 0;
         }
 
-        // Menu click event
-        menu.addEventListener('iron-select', function () {
-            switch (menu.selected) {
-                case 0:
-                    window.location.href = '/';
-                    break;
-                case 1:
-                    window.location.href = '/portfolio/';
-                    break;
-                case 2:
-                    window.location.href = '/services/';
-                    break;
-                case 3:
-                    window.location.href = '/contact/';
-                    break;
-            }
-        });
-
-        // Change drawer panel breakpoint, and width
-        drawerPanel.drawerWidth = '208px';
-        drawerPanel.responsiveWidth = '840px';
-
         // Drawer panel toggle
         global.teToggleDrawer = function () {
             if (drawerPanel.narrow && drawerPanel.offsetWidth < parseInt(drawerPanel.responsiveWidth)) {
@@ -58,92 +40,143 @@ document.addEventListener('WebComponentsReady', function () {
             }
         }
 
-
-        /*********************************
-         Contact form
-        **********************************/
-        var contactForm = document.getElementById('te-contact');
-        var name = document.getElementById('te-contact_name');
-        var subject = document.getElementById('te-contact_subject');
-        var email = document.getElementById('te-contact_email');
-        var emailConfirm = document.getElementById('te-contact_email-confirm');
-        var message = document.getElementById('te-contact_message');
-        var buttonSubmit = document.getElementById('te-contact_submit');
-        var buttonClear = document.getElementById('te-contact_clear');
-
-        // Contact form submit
-        buttonSubmit.addEventListener('click', function () {
-            if (validateContactForm()) {
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if (xhttp.readyState == 4 && xhttp.status == 200) {
-                        document.getElementById('test').innerHTML = xhttp.responseText;
-                    }
-                };
-                xhttp.open('POST', '/php/contact.php', true);
-                xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                xhttp.send('name=' + name.value + '&subject=' + subject.value + '&email=' + email.value
-                           + '&emailConfirm=' + emailConfirm.value + '&message=' + message.value);
-            } else {
-                console.log('there was an error you piece of shit!'); 
+        // Menu click event
+        menu.addEventListener('iron-select', function () {
+            // Prevents event from firing when programmatically changing selection
+            if (!enableMenu) {
+                return;
             }
-        });
-        function validateContactForm () {
-            var valid = true;
-            valid = (name.validate() && valid);
-            valid = (email.validate() && valid);
-            valid = (validateEmailConfirm() && valid);
-            valid = (message.validate() && valid);
-            return valid;
-        }
 
-        // Contact form clear
-        buttonClear.addEventListener('click', clearContactForm);
-        function clearContactForm () {
-            name.value = '';
-            subject.value = '';
-            email.value = '';
-            emailConfirm.value = '';
-            message.value = '';
-
-            name.invalid = false;
-            email.invalid = false;
-            emailConfirm.invalid = false;
-            message.invalid = false;
-        }
-
-        // Contact form confirmation email change event
-        emailConfirm.addEventListener('change', validateEmailConfirm);
-        function validateEmailConfirm () {
-            emailConfirm.invalid = (emailConfirm.value.toLowerCase() !== email.value.toLowerCase());
-            return !emailConfirm.invalid;
-        }
-
-        message.addEventListener('change', function () {
-            this.validate();
+            switch (menu.selected) {
+                case 0:
+                    var url = '/';
+                    break;
+                case 1:
+                    var url = '/portfolio/';
+                    break;
+                case 2:
+                    var url = '/services/';
+                    break;
+                case 3:
+                    var url = '/contact/';
+                    break;
+            }
+            // Update browser history and load content
+            history.pushState(null, null, url);
+            loadContent(url);
         });
 
-        // contactForm.addEventListener('iron-form-invalid', function () {
-        //     alert('invalid');
-        // });
+        // Fetches main page content via AJAX, and replaces current content
+        function loadContent (source) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4) {
+                    if (xhttp.status == 200) {
+                        // Replace main content with new page, and load JavaScript
+                        var newContent = xhttp.responseXML.getElementById('te-main-content');
+                        document.getElementById('te-main-content').innerHTML = newContent.innerHTML;
+                        pageScripts();
+                    } else {
+                        console.log('loadContent error');
+                    }
+                }
+            };
+            xhttp.open('GET', source, true);
+            xhttp.responseType = 'document';
+            xhttp.send();
 
-        // contactForm.addEventListener('iron-form-reset', function () {
-        //     name.invalid = false;
-        //     email.invalid = false;
-        //     emailConfirm.invalid = false;
-        //     message.invalid = false;
-        // });
+            // Update selected menu item
+            switch (source) {
+            case '/portfolio/':
+                menu.selected = 1;
+                break;
+            case '/services/':
+                menu.selected = 2;
+                break;
+            case '/contact/':
+                menu.selected = 3;
+                break;
+            default:
+                menu.selected = 0;
+            }
+        }
 
-        // contactForm.addEventListener('iron-form-response', function (event) {
-        //     alert('success');
-        //     console.log(event.detail.response['test']);
-        //     document.getElementById('test').innerHTML = event.detail.response['test'];
-        //     // console.log(event);
-        // });
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function () {
+            enableMenu = false;
+            loadContent(window.location.pathname);
+            enableMenu = true;
+        });
 
-        // contactForm.addEventListener('iron-form-error', function (event) {
-        //     alert('error');
-        // });
+        // Load page-specific JavaScript
+        function pageScripts () {
+            
+            /*********************************
+             Contact form
+            **********************************/    
+            var contactForm = document.getElementById('te-contact');
+            if (contactForm !== null) {
+                var name = document.getElementById('te-contact_name');
+                var subject = document.getElementById('te-contact_subject');
+                var email = document.getElementById('te-contact_email');
+                var emailConfirm = document.getElementById('te-contact_email-confirm');
+                var message = document.getElementById('te-contact_message');
+                var buttonSubmit = document.getElementById('te-contact_submit');
+                var buttonClear = document.getElementById('te-contact_clear');
+
+                // Contact form submit
+                buttonSubmit.addEventListener('click', function () {
+                    if (validateContactForm()) {
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                                document.getElementById('test').innerHTML = xhttp.responseText;
+                            }
+                        };
+                        xhttp.open('POST', '/php/contact.php', true);
+                        xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                        xhttp.send('name=' + name.value + '&subject=' + subject.value + '&email=' + email.value
+                                   + '&emailConfirm=' + emailConfirm.value + '&message=' + message.value);
+                    } else {
+                        console.log('there was an error you piece of shit!'); 
+                    }
+                });
+                function validateContactForm () {
+                    var valid = true;
+                    valid = (name.validate() && valid);
+                    valid = (email.validate() && valid);
+                    valid = (validateEmailConfirm() && valid);
+                    valid = (message.validate() && valid);
+                    return valid;
+                }
+
+                // Contact form clear
+                buttonClear.addEventListener('click', clearContactForm);
+                function clearContactForm () {
+                    name.value = '';
+                    subject.value = '';
+                    email.value = '';
+                    emailConfirm.value = '';
+                    message.value = '';
+
+                    name.invalid = false;
+                    email.invalid = false;
+                    emailConfirm.invalid = false;
+                    message.invalid = false;
+                }
+
+                // Contact form confirmation email change event
+                emailConfirm.addEventListener('change', validateEmailConfirm);
+                function validateEmailConfirm () {
+                    emailConfirm.invalid = (emailConfirm.value.toLowerCase() !== email.value.toLowerCase());
+                    return !emailConfirm.invalid;
+                }
+
+                message.addEventListener('change', function () {
+                    this.validate();
+                });
+            }
+        }
 
     }(this));
 });
