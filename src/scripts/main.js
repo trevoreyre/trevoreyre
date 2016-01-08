@@ -12,6 +12,7 @@ document.addEventListener('WebComponentsReady', function () {
         var drawerPanel = document.getElementById('te-drawer-panel');
         var menu = document.getElementById('te-menu');
         var enableMenu = true;
+        var loadingScreen = document.getElementById('te-loading');
 
         // Set up page on initial page load
         drawerPanel.drawerWidth = '208px';      // Change width of drawer
@@ -30,6 +31,7 @@ document.addEventListener('WebComponentsReady', function () {
             default:
                 menu.selected = 0;
         }
+        loadingScreen.classList.add('loaded');  // Remove load screen
 
         // Drawer panel toggle
         global.teToggleDrawer = function () {
