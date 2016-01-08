@@ -25,13 +25,16 @@ var srcLayoutWrap = './src/layout.html';
 var srcScripts = './src/scripts/**/*.js';
 var srcStyles = './src/styles/*.scss';
 var srcStylesPolymer = './src/styles/**/*.html';
+var srcPHP = './src/php/*.php';
 var destLayout = './dist/';
 var destScripts = './dist/scripts/';
 var destStyles = './dist/styles/';
+var destPHP = './dist/php/';
 var srcDeployLayout = ['./dist/**/*.html', '!./dist/styles/**/*'];
 var srcDeployScripts = './dist/scripts/**/*.min.js';
 var srcDeployStyles = './dist/styles/**/*.min.css';
 var srcDeployPolymerStyles = './dist/styles/**/*.html';
+var srcDeployPHP = './dist/php/*.php';
 var srcDeployExtras = [
         './dist/img/*'
     ];
@@ -63,7 +66,7 @@ function deploy (inputStream) {
 gulp.task('default', ['deployAll', 'watch']);
 
 // Various deploy tasks by file type to reduce FTP transfer to server
-gulp.task('deployAll', ['deployLayoutWrap', 'deployScripts', 'deployStyles', 'deployPolymerStyles'], function () {
+gulp.task('deployAll', ['deployLayoutWrap', 'deployScripts', 'deployStyles', 'deployPolymerStyles', 'deployPHP'], function () {
     return deploy(gulp.src(srcDeployExtras, {base: '.', buffer: false}));
 });
 gulp.task('deployLayout', ['layout'], function () {
@@ -80,6 +83,9 @@ gulp.task('deployStyles', ['styles'], function () {
 });
 gulp.task('deployPolymerStyles', ['polymerStyles'], function () {
     return deploy(gulp.src(srcDeployPolymerStyles, {base: '.', buffer: false}));
+});
+gulp.task('deployPHP', ['php'], function () {
+    return deploy(gulp.src(srcDeployPHP, {base: '.', buffer: false}));
 });
 
 // HTML layout task
@@ -133,6 +139,13 @@ gulp.task('polymerStyles', function () {
         .pipe(gulp.dest(destStyles));
 });
 
+// PHP task. Just pushes changed PHP files to dist folder
+gulp.task('php', function () {
+    return gulp.src(srcPHP)
+        .pipe(changed(destPHP))
+        .pipe(gulp.dest(destPHP));
+});
+
 // Watch task
 gulp.task('watch', function () {
     gulp.watch(srcLayout, ['deployLayout']);
@@ -140,4 +153,5 @@ gulp.task('watch', function () {
     gulp.watch(srcScripts, ['deployScripts']);
     gulp.watch(srcStyles, ['deployStyles']);
     gulp.watch(srcStylesPolymer, ['deployPolymerStyles']);
+    gulp.watch(srcPHP, ['deployPHP']);
 });

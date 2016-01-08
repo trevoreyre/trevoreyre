@@ -32,6 +32,7 @@
     <link rel='import' href='/bower_components/iron-icons/social-icons.html'>
     <link rel='import' href='/bower_components/iron-image/iron-image.html'>
     <link rel='import' href='/bower_components/iron-flex-layout/iron-flex-layout.html'>
+    <link rel='import' href='/bower_components/iron-flex-layout/classes/iron-flex-layout.html'>
     <link rel='import' href='/bower_components/polymer/polymer.html'>
     <link rel='import' href='/bower_components/font-roboto/roboto.html'>
 
@@ -57,7 +58,7 @@
                 <paper-menu id='te-menu'>
                     <paper-item role='menuitem' class='te-ripple-container' paper-drawer-toggle>
                         <iron-icon icon='account-circle' class='te-menu-icon'></iron-icon>
-                        About Me
+                        About me
                         <paper-ripple></paper-ripple>
                     </paper-item>
                     <paper-item role='menuitem' class='te-ripple-container' paper-drawer-toggle>
@@ -71,7 +72,7 @@
                         <paper-ripple></paper-ripple>
                     </paper-item>
                     <paper-item role='menuitem' class='te-ripple-container' paper-drawer-toggle>
-                        <iron-icon icon='drafts' class='te-menu-icon'></iron-icon>
+                        <iron-icon icon='mail' class='te-menu-icon'></iron-icon>
                         Contact
                         <paper-ripple></paper-ripple>
                     </paper-item>
@@ -81,31 +82,43 @@
 
 <section class='te-section'>
     <div class='te-section_content te-section_content--medium mdl-grid'>
+
         <div class='te-section_title mdl-cell mdl-cell--12-col'>
             <h1 class='mdl-typography--font-light'>Contact</h1>
         </div>
-        <div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet'>
-            <paper-input label='Name' required auto-validate error-message='Required'></paper-input>
+
+        <div id='test' class='mdl-cell mdl-cell--12-col'>
         </div>
-        <div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet'>
-            <paper-input id='te-contact-email' label='Email' required auto-validate pattern='.+@.+' error-message='Invalid email'></paper-input>
-        </div>
-        <div class='mdl-cell mdl-cell--12-col'>
-            <paper-input label='Subject'></paper-input>
-        </div>
-        <div class='mdl-cell mdl-cell--12-col'>
-            <paper-textarea label='Message' rows='6' required error-message='Required'></paper-textarea>
-        </div>
-        <div class='mdl-cell mdl-cell--12-col te-text-center'>
-            <paper-button class='te-button te-button--call'>
-                <iron-icon icon='send'></iron-icon>
-                Send
-            </paper-button>
-            <paper-button class='te-button'>
-                <iron-icon icon='clear'></iron-icon>
-                Clear
-            </paper-button>
-        </div>
+        
+        <!-- <form is='iron-form' class='mdl-cell mdl-cell--12-col' id='te-contact' disableNativeValidationUi method='post' action='/php/contact.php'>
+            <div class='mdl-grid'> -->
+                <div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet'>
+                    <paper-input id='te-contact_name' name='name' label='Name' required auto-validate error-message='Required'></paper-input>
+                </div>
+                <div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet'>
+                    <paper-input id='te-contact_subject' name='subject' label='Subject'></paper-input>
+                </div>
+                <div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet'>
+                    <paper-input id='te-contact_email' name='email' label='Email' required auto-validate pattern='.+@.+' error-message='Invalid email'></paper-input>
+                </div>
+                <div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet'>
+                    <paper-input id='te-contact_email-confirm' name='emailConfirm' label='Confirm email' required error-message='Email does not match'></paper-input>
+                </div>
+                <div class='mdl-cell mdl-cell--12-col'>
+                    <paper-textarea id='te-contact_message' name='message' label='Message' rows='6' required error-message='Required'></paper-textarea>
+                </div>
+                <div class='mdl-cell mdl-cell--12-col te-text-center'>
+                    <paper-button class='te-button te-button--call' id='te-contact_submit'>
+                        <iron-icon icon='send'></iron-icon>
+                        Send
+                    </paper-button>
+                    <paper-button class='te-button' id='te-contact_clear'>
+                        <iron-icon icon='clear'></iron-icon>
+                        Clear
+                    </paper-button>
+                </div>
+            <!-- </div>
+        </form> -->
     </div>
 </section>
 
