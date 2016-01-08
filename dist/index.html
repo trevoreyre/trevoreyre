@@ -47,7 +47,7 @@
 
     <paper-header-panel>
         <paper-toolbar>
-            <paper-icon-button icon='menu' onclick='teToggleDrawer()'></paper-icon-button>
+            <paper-icon-button id='te-drawer-toggle' icon='menu'></paper-icon-button>
             <div class='paper-header'>Trevor Eyre</div>
             <div class='flex'></div>
             <paper-icon-button icon='refresh'></paper-icon-button>
@@ -56,22 +56,22 @@
         <paper-drawer-panel id='te-drawer-panel' class='flex'>
             <div drawer>
                 <paper-menu id='te-menu'>
-                    <paper-item role='menuitem' class='te-ripple-container' paper-drawer-toggle>
+                    <paper-item role='menuitem' class='te-ripple-container'>
                         <iron-icon icon='account-circle' class='te-menu-icon'></iron-icon>
                         About me
                         <paper-ripple></paper-ripple>
                     </paper-item>
-                    <paper-item role='menuitem' class='te-ripple-container' paper-drawer-toggle>
+                    <paper-item role='menuitem' class='te-ripple-container'>
                         <iron-icon icon='image:photo' class='te-menu-icon'></iron-icon>
                         Portfolio
                         <paper-ripple></paper-ripple>
                     </paper-item>
-                    <paper-item role='menuitem' class='te-ripple-container' paper-drawer-toggle>
+                    <paper-item role='menuitem' class='te-ripple-container'>
                         <iron-icon icon='work' class='te-menu-icon'></iron-icon>
                         Services
                         <paper-ripple></paper-ripple>
                     </paper-item>
-                    <paper-item role='menuitem' class='te-ripple-container' paper-drawer-toggle>
+                    <paper-item role='menuitem' class='te-ripple-container'>
                         <iron-icon icon='mail' class='te-menu-icon'></iron-icon>
                         Contact
                         <paper-ripple></paper-ripple>

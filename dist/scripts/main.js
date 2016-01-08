@@ -10,6 +10,7 @@ document.addEventListener('WebComponentsReady', function () {
          Main menu
         **********************************/
         var drawerPanel = document.getElementById('te-drawer-panel');
+        var drawerToggle = document.getElementById('te-drawer-toggle');
         var menu = document.getElementById('te-menu');
         var enableMenu = true;
         var loadingScreen = document.getElementById('te-loading');
@@ -32,9 +33,12 @@ document.addEventListener('WebComponentsReady', function () {
                 menu.selected = 0;
         }
         loadingScreen.classList.add('loaded');  // Remove load screen
+        drawerToggle.addEventListener('click', function () {
+            toggleDrawer();
+        });
 
-        // Drawer panel toggle
-        global.teToggleDrawer = function () {
+        // Force toggle of drawer panel regardless of viewport width
+        function toggleDrawer () {
             if (drawerPanel.narrow && drawerPanel.offsetWidth < parseInt(drawerPanel.responsiveWidth)) {
                 drawerPanel.togglePanel();
             } else {
@@ -66,6 +70,7 @@ document.addEventListener('WebComponentsReady', function () {
             // Update browser history and load content
             history.pushState(null, null, url);
             loadContent(url);
+            drawerPanel.togglePanel();
         });
 
         // Fetches main page content via AJAX, and replaces current content
