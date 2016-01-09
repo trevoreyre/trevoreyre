@@ -2168,29 +2168,6 @@ ul, ol {
 /**********************************
  Cards
  **********************************/
-.te-card {
-  padding: 16px; }
-  @media screen and (max-width: 479px) {
-    .te-card {
-      padding: 0; } }
-
-.te-card-title * {
-  font-weight: 600;
-  color: #607d8b; }
-
-.te-card-title,
-.te-card-content {
-  padding: 16px; }
-
-paper-card *,
-.te-card-title *,
-.te-card-content * {
-  margin: 0; }
-
-.te-card-actions {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  padding: 5px 16px; }
-
 /**********************************
  About me page
  **********************************/
@@ -2331,14 +2308,26 @@ paper-card *,
   .te-portfolio_inner:hover .te-portfolio_info.te-portfolio_info--right .card-content {
     right: 0; } }
 
+a.te-button {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none; }
+
+a.te-button--call {
+  color: #607d8b;
+  text-decoration: none; }
+
+.te-button:hover,
+.te-button--call:hover {
+  background: #e8e8e8; }
+
 /**********************************
  Navigation
  **********************************/
 paper-item:hover {
   background: #ededed; }
 
-.te-menu-icon {
-  margin-right: 16px; }
+.te-icon {
+  margin-right: 8px; }
 
 /**********************************
  Loading screen

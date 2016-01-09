@@ -130,33 +130,31 @@
  Cards
  **********************************/
 
-.te-card {
-    @include breakpoint-phone() {
-        padding: 0;
-    }
-    padding: $padding;
-}
+// .te-card {
+//     @include breakpoint-phone() {
+//         padding: 0;
+//     }
+//     padding: $padding;
+// }
 
-.te-card-title * {
-    font-weight: 600;
-    color: $primary-color;
-}
+// .te-card-title {
+//     padding: $padding;
+// }
 
-.te-card-title,
-.te-card-content {
-    padding: $padding;
-}
+// .te-card-title * {
+//     font-weight: 400;
+//     color: $primary-color;
+//     margin: 0;
+// }
 
-paper-card *,
-.te-card-title *,
-.te-card-content * {
-    margin: 0;
-}
+// .te-card-content {
+//     padding: $padding $padding 0 $padding;
+// }
 
-.te-card-actions {
-    border-top: 1px solid $divider-color;
-    padding: 5px $padding;
-}
+// .te-card-actions {
+//     border-top: 1px solid $divider-color;
+//     padding: $padding-small;
+// }
 
 
 /**********************************
@@ -329,6 +327,21 @@ paper-card *,
     }
 }
 
+a.te-button {
+    color: $text-color;
+    text-decoration: none;
+}
+
+a.te-button--call {
+    color: $primary-color;
+    text-decoration: none;   
+}
+
+.te-button:hover,
+.te-button--call:hover {
+    background: darken($background, 7);
+}
+
 
 /**********************************
  Navigation
@@ -338,8 +351,8 @@ paper-item:hover {
     background: darken($background--menu, 7);
 }
 
-.te-menu-icon {
-    margin-right: $padding;
+.te-icon {
+    margin-right: $padding-small;
 }
 
 

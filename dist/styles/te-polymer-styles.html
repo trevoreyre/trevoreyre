@@ -45,14 +45,29 @@
             paper-card {
                 --paper-card-header-color: var(--primary-color);
                 --paper-card: {
-                    padding: var(--padding);
+                    padding: var(--padding) var(--padding) 0 var(--padding);
+                };
+                --paper-card-content: {
+                    padding-bottom: 0;
+                };
+                --paper-card-actions: {
+                    padding: var(--padding-small);
+                };
+            }
+
+            paper-card.te-mobile-only {
+                --paper-card: {
+                    padding: 0;
                 };
             }
 
             paper-button.te-button {
                 --paper-button: {
                     min-width: 120px;
-                    padding: 16px;
+                    padding: var(--padding-small);
+                };
+                --paper-button-disabled: {
+                    background-color: #fff;
                 };
             }
 
@@ -63,12 +78,6 @@
             paper-input,
             paper-textarea {
                 --paper-input-container-focus-color: var(--primary-color);
-            }
-
-            paper-icon-button.te-icon {
-                --paper-icon-button: {
-                    color: #fff;
-                };
             }
         </style>
     </template>
