@@ -221,6 +221,10 @@
     }
 }
 
+.te-portfolio_img.te-portfolio_img--top-left {
+    background-position: left top;
+}
+
 .te-portfolio_inner {
     background-color: rgba(0, 0, 0, 0.1); //rgba(96, 125, 139, 0);
     transition: background-color 0.5s;
