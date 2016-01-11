@@ -18,7 +18,6 @@ document.addEventListener('WebComponentsReady', function () {
         // Set up page on initial page load
         drawerPanel.drawerWidth = '208px';      // Change width of drawer
         drawerPanel.responsiveWidth = '840px';  // Change responsive break point of drawer
-        pageScripts();                          // Load page-specfic JavaScript
         switch (window.location.pathname) {     // Set selected menu item
             case '/portfolio/':
                 menu.selected = 1;
@@ -33,18 +32,16 @@ document.addEventListener('WebComponentsReady', function () {
                 menu.selected = 0;
         }
         loadingScreen.classList.add('loaded');  // Remove load screen
-        drawerToggle.addEventListener('click', function () {
-            toggleDrawer();
-        });
+        pageScripts();                          // Load page-specfic JavaScript
 
-        // Force toggle of drawer panel regardless of viewport width
-        function toggleDrawer () {
+        // Drawer toggle button
+        drawerToggle.addEventListener('click', function () {
             if (drawerPanel.narrow && drawerPanel.offsetWidth < parseInt(drawerPanel.responsiveWidth)) {
                 drawerPanel.togglePanel();
             } else {
                 drawerPanel.forceNarrow = !drawerPanel.forceNarrow;
             }
-        }
+        });
 
         // Menu click event
         menu.addEventListener('iron-select', function () {
@@ -120,7 +117,7 @@ document.addEventListener('WebComponentsReady', function () {
             
             /*********************************
              Contact form
-            **********************************/    
+            **********************************/   
             var contactForm = document.getElementById('te-contact');
             if (contactForm !== null) {
                 var name = document.getElementById('te-contact_name');
@@ -182,6 +179,26 @@ document.addEventListener('WebComponentsReady', function () {
                 message.addEventListener('change', function () {
                     this.validate();
                 });
+            }
+
+
+            /*********************************
+             Portfolio page links
+            **********************************/
+            var portfolio = document.querySelector('.te-portfolio_container');
+            if (portfolio !== null) {
+                document.getElementById('te-gbo-source-1').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/gbo', '_blank');});
+                document.getElementById('te-gbo-source-2').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/gbo', '_blank');});
+                document.getElementById('te-gbo-website-1').addEventListener('click', function () {window.open('http://gbofashion.com', '_blank');});
+                document.getElementById('te-gbo-website-2').addEventListener('click', function () {window.open('http://gbofashion.com', '_blank');});
+                document.getElementById('te-datepicker-website-1').addEventListener('click', function () {window.open('http://bit.ly/1ossyMA', '_blank');});
+                document.getElementById('te-datepicker-website-2').addEventListener('click', function () {window.open('http://bit.ly/1ossyMA', '_blank');});
+                document.getElementById('te-trevoreyre-source-1').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/trevoreyre', '_blank');});
+                document.getElementById('te-trevoreyre-source-2').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/trevoreyre', '_blank');});
+                document.getElementById('te-company-source-1').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/company-template', '_blank');});
+                document.getElementById('te-company-source-2').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/company-template', '_blank');});
+                document.getElementById('te-company-website-1').addEventListener('click', function () {window.open('http://company-template.trevoreyre.com', '_blank');});
+                document.getElementById('te-company-website-2').addEventListener('click', function () {window.open('http://company-template.trevoreyre.com', '_blank');});
             }
         }
 
