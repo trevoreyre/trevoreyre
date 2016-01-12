@@ -11,26 +11,15 @@ document.addEventListener('WebComponentsReady', function () {
         **********************************/
         var drawerPanel = document.getElementById('te-drawer-panel');
         var menu = document.getElementById('te-menu');
-        var enableMenu = true;
+        var menuOptions = ['/', '/portfolio/', '/services/', '/contact/'];
+        var updateHistory = true;
 
         // Set up page on initial page load
-        drawerPanel.drawerWidth = '208px';      // Change width of drawer
-        drawerPanel.responsiveWidth = '840px';  // Change responsive break point of drawer
-        switch (window.location.pathname) {     // Set selected menu item
-            case '/portfolio/':
-                menu.selected = 1;
-                break;
-            case '/services/':
-                menu.selected = 2;
-                break;
-            case '/contact/':
-                menu.selected = 3;
-                break;
-            default:
-                menu.selected = 0;
-        }
+        drawerPanel.drawerWidth = '208px';                              // Change width of drawer
+        drawerPanel.responsiveWidth = '840px';                          // Change responsive break point of drawer
+        menu.selected = menuOptions.indexOf(window.location.pathname);  // Set selected menu item
         document.getElementById('te-loading').classList.add('loaded');  // Remove load screen
-        pageScripts();                          // Load page-specfic JavaScript
+        pageScripts();                                                  // Run page-specfic JavaScript
 
         // Drawer toggle button
         document.getElementById('te-drawer-toggle').addEventListener('click', function () {
@@ -41,29 +30,10 @@ document.addEventListener('WebComponentsReady', function () {
             }
         });
 
-        // Menu click event
+        // Menu click event. Updates browser history, and loads page content.
         menu.addEventListener('iron-select', function () {
-            // Prevents event from firing when programmatically changing selection
-            if (!enableMenu) {
-                return;
-            }
-
-            switch (menu.selected) {
-                case 0:
-                    var url = '/';
-                    break;
-                case 1:
-                    var url = '/portfolio/';
-                    break;
-                case 2:
-                    var url = '/services/';
-                    break;
-                case 3:
-                    var url = '/contact/';
-                    break;
-            }
-            // Update browser history and load content
-            history.pushState(null, null, url);
+            var url = menuOptions[menu.selected];
+            if (updateHistory) {history.pushState(null, null, url);}
             loadContent(url);
             drawerPanel.togglePanel();
         });
@@ -86,31 +56,17 @@ document.addEventListener('WebComponentsReady', function () {
             xhttp.open('GET', source, true);
             xhttp.responseType = 'document';
             xhttp.send();
-
-            // Update selected menu item
-            switch (source) {
-            case '/portfolio/':
-                menu.selected = 1;
-                break;
-            case '/services/':
-                menu.selected = 2;
-                break;
-            case '/contact/':
-                menu.selected = 3;
-                break;
-            default:
-                menu.selected = 0;
-            }
         }
 
         // Handle browser back/forward buttons
         window.addEventListener('popstate', function () {
-            enableMenu = false;
-            loadContent(window.location.pathname);
-            enableMenu = true;
+            updateHistory = false;
+            menu.selected = menuOptions.indexOf(window.location.pathname);
+            updateHistory = true;
         });
 
-        // Load page-specific JavaScript
+        // All JavaScript functions that only run on specific pages are contained here.
+        // A check is done first for a page-specific element, before running the scripts.
         function pageScripts () {
 
             /*********************************
