@@ -125,6 +125,10 @@
     color: $primary-color;
 }
 
+.te-section_info {
+    margin: $padding-large 0;
+}
+
 
 /**********************************
  Cards
@@ -161,6 +165,12 @@
  About me page
  **********************************/
 
+#te-section_overview {
+    @include breakpoint-desktop() {
+        padding-bottom: 0;
+    }
+}
+
 .te-overview {
     @include breakpoint-tablet() {
         width: 75%;
@@ -168,10 +178,7 @@
 }
 
 .te-overview_info {
-    padding: 0 $padding;
-    @include breakpoint-tablet() {
-        padding: 0;
-    }
+    padding: 0;
     @include breakpoint-desktop() {
         padding: $padding-medium;
     }
@@ -181,18 +188,12 @@
     overflow-x: hidden;
 }
 
-.te-overview_img--mobile {
-    padding: 0 $padding;
-    @include breakpoint-tablet() {
-        padding: 0;
-    }
-}
-
 .te-overview_img--mobile img {
     width: 100%;
     height: auto;
     background: rgba(255, 255, 255, 0.75);
     border-radius: 50%;
+    margin: $padding 0;
     @include shadow-4dp();
 }
 
@@ -344,6 +345,21 @@ a.te-button--call {
 .te-button:hover,
 .te-button--call:hover {
     background: darken($background, 7);
+}
+
+
+/**********************************
+ Portfolio page
+ **********************************/
+
+a.te-contact-link {
+    font-size: 14px;
+    color: $text-color;
+    text-decoration: none;
+}
+
+a.te-contact-link:hover {
+    color: $primary-color;
 }
 
 

@@ -10,10 +10,8 @@ document.addEventListener('WebComponentsReady', function () {
          Main menu
         **********************************/
         var drawerPanel = document.getElementById('te-drawer-panel');
-        var drawerToggle = document.getElementById('te-drawer-toggle');
         var menu = document.getElementById('te-menu');
         var enableMenu = true;
-        var loadingScreen = document.getElementById('te-loading');
 
         // Set up page on initial page load
         drawerPanel.drawerWidth = '208px';      // Change width of drawer
@@ -31,11 +29,11 @@ document.addEventListener('WebComponentsReady', function () {
             default:
                 menu.selected = 0;
         }
-        loadingScreen.classList.add('loaded');  // Remove load screen
+        document.getElementById('te-loading').classList.add('loaded');  // Remove load screen
         pageScripts();                          // Load page-specfic JavaScript
 
         // Drawer toggle button
-        drawerToggle.addEventListener('click', function () {
+        document.getElementById('te-drawer-toggle').addEventListener('click', function () {
             if (drawerPanel.narrow && drawerPanel.offsetWidth < parseInt(drawerPanel.responsiveWidth)) {
                 drawerPanel.togglePanel();
             } else {
@@ -73,10 +71,10 @@ document.addEventListener('WebComponentsReady', function () {
         // Fetches main page content via AJAX, and replaces current content
         function loadContent (source) {
             var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
+            xhttp.onreadystatechange = function () {
                 if (xhttp.readyState == 4) {
                     if (xhttp.status == 200) {
-                        // Replace main content with new page, and load JavaScript
+                        // Replace main content with new page, and run page-specific JavaScript
                         var newContent = xhttp.responseXML.getElementById('te-main-content');
                         document.getElementById('te-main-content').innerHTML = newContent.innerHTML;
                         pageScripts();
@@ -114,7 +112,7 @@ document.addEventListener('WebComponentsReady', function () {
 
         // Load page-specific JavaScript
         function pageScripts () {
-            
+
             /*********************************
              Contact form
             **********************************/   
@@ -179,6 +177,11 @@ document.addEventListener('WebComponentsReady', function () {
                 message.addEventListener('change', function () {
                     this.validate();
                 });
+
+                // Contact button links
+                document.getElementById('te-contact-link_email').addEventListener('click', function () {window.open('mailto:trevoreyre@gmail.com', '_blank');});
+                document.getElementById('te-contact-link_github').addEventListener('click', function () {window.open('https://github.com/TrevorEyre', '_blank');});
+                document.getElementById('te-contact-link_linkedin').addEventListener('click', function () {window.open('https://www.linkedin.com/in/trevor-eyre-958976108', '_blank');});
             }
 
 
@@ -199,6 +202,15 @@ document.addEventListener('WebComponentsReady', function () {
                 document.getElementById('te-company-source-2').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/company-template', '_blank');});
                 document.getElementById('te-company-website-1').addEventListener('click', function () {window.open('http://company-template.trevoreyre.com', '_blank');});
                 document.getElementById('te-company-website-2').addEventListener('click', function () {window.open('http://company-template.trevoreyre.com', '_blank');});
+            }
+
+
+            /*********************************
+             Overview page links
+            **********************************/
+            var overview = document.querySelector('.te-overview_info');
+            if (overview !== null) {
+                document.getElementById('te-overview-link_portfolio').addEventListener('click', function () {menu.selected = 1;});
             }
         }
 

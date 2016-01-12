@@ -2165,21 +2165,25 @@ ul, ol {
 .te-section_title h1 {
   color: #607d8b; }
 
+.te-section_info {
+  margin: 48px 0; }
+
 /**********************************
  Cards
  **********************************/
 /**********************************
  About me page
  **********************************/
+@media screen and (min-width: 840px) {
+  #te-section_overview {
+    padding-bottom: 0; } }
+
 @media screen and (min-width: 480px) and (max-width: 839px) {
   .te-overview {
     width: 75%; } }
 
 .te-overview_info {
-  padding: 0 16px; }
-  @media screen and (min-width: 480px) and (max-width: 839px) {
-    .te-overview_info {
-      padding: 0; } }
+  padding: 0; }
   @media screen and (min-width: 840px) {
     .te-overview_info {
       padding: 32px; } }
@@ -2187,17 +2191,12 @@ ul, ol {
 .te-overview_img {
   overflow-x: hidden; }
 
-.te-overview_img--mobile {
-  padding: 0 16px; }
-  @media screen and (min-width: 480px) and (max-width: 839px) {
-    .te-overview_img--mobile {
-      padding: 0; } }
-
 .te-overview_img--mobile img {
   width: 100%;
   height: auto;
   background: rgba(255, 255, 255, 0.75);
   border-radius: 50%;
+  margin: 16px 0;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
 
 /**********************************
@@ -2322,6 +2321,17 @@ a.te-button--call {
 .te-button:hover,
 .te-button--call:hover {
   background: #e8e8e8; }
+
+/**********************************
+ Portfolio page
+ **********************************/
+a.te-contact-link {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none; }
+
+a.te-contact-link:hover {
+  color: #607d8b; }
 
 /**********************************
  Navigation

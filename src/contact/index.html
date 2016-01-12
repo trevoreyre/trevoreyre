@@ -5,6 +5,29 @@
             <h1 class='mdl-typography--font-light'>Contact</h1>
         </div>
 
+        <div class='te-hide-mobile mdl-cell mdl-cell--2-col mdl-cell--1-col-tablet'></div>
+        <div class='mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet'>
+            <div class='te-section_info'>
+                <p>Have a question? Interested in working on a project with me? Feel free to reach out and connect with me at one of the services below.</p>
+            </div>
+        </div>
+        <div class='te-hide-mobile mdl-cell mdl-cell--2-col mdl-cell--1-col-tablet'></div>
+
+        <div class='mdl-cell mdl-cell--12-col te-text-center'>
+            <paper-button id='te-contact-link_email' class='te-button te-button--large te-contact-link'>
+                <iron-icon icon='mail'></iron-icon>
+                Email
+            </paper-button>
+            <paper-button id='te-contact-link_github' class='te-button te-button--large te-contact-link'>
+                <iron-icon src='/img/github.svg'></iron-icon>
+                GitHub
+            </paper-button>
+            <paper-button id='te-contact-link_linkedin' class='te-button te-button--large te-contact-link'>
+                <iron-icon src='/img/linkedin.svg'></iron-icon>
+                LinkedIn
+            </paper-button>
+        </div>
+
         <div id='test' class='mdl-cell mdl-cell--12-col'>
         </div>
         
@@ -25,11 +48,11 @@
                 <paper-textarea id='te-contact_message' name='message' label='Message' rows='6' required error-message='Required'></paper-textarea>
             </div>
             <div class='mdl-cell mdl-cell--12-col te-text-center'>
-                <paper-button class='te-button te-button--call' id='te-contact_submit'>
+                <paper-button id='te-contact_submit' class='te-button te-button--large te-button--call'>
                     <iron-icon icon='send'></iron-icon>
                     Send
                 </paper-button>
-                <paper-button class='te-button' id='te-contact_clear'>
+                <paper-button id='te-contact_clear' class='te-button te-button--large'>
                     <iron-icon icon='clear'></iron-icon>
                     Clear
                 </paper-button>

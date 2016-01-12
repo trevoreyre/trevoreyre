@@ -63,7 +63,7 @@
                 <paper-menu id='te-menu'>
                     <paper-item role='menuitem' class='te-ripple-container'>
                         <iron-icon icon='account-circle' class='te-icon'></iron-icon>
-                        About me
+                        About Me
                         <paper-ripple></paper-ripple>
                     </paper-item>
                     <paper-item role='menuitem' class='te-ripple-container'>
@@ -85,7 +85,7 @@
             </div>
             <div main id='te-main-content' class='flex'>
 
-<section class='te-section te-section--gradient-back te-padding-bottom-0'>
+<section id='te-section_overview' class='te-section te-section--gradient-back'>
     <div class='te-section_content te-overview mdl-grid mdl-grid--no-spacing'>
         <div class='te-section_title mdl-cell mdl-cell--12-col'>
             <h1 class='mdl-typography--font-light'>About Me</h1>
@@ -97,98 +97,123 @@
             <p>I have one semester left until I complete my BS in Computer Science at Portland State University. I am crazy about user interface and user experience design. I love diving into the tiny details, to make programs that are simple and enjoyable to use.</p>
             <p>In addition to school, I work full time at a labor management company, where I do a little bit of everything, from writing an online employee scheduling and turnover database, to producing and filming employee training videos.</p>
             <p>When I’m not at work or school, I’m usually at home relaxing, or running around the outdoors somewhere with my wife and dog.</p>
+            <paper-button id='te-overview-link_portfolio' class='te-button te-button--large te-button--call' raised>
+                <iron-icon icon='image:photo'></iron-icon>
+                View my Portfolio
+            </paper-button>
         </div>
-        <div class='te-overview_img mdl-cel mdl-cell--bottom mdl-cell--hide-tablet mdl-cell--hide-phone mdl-cell--6-col mdl-cell--4-col-tablet'>
+        <div class='te-overview_img te-desktop-only mdl-cel mdl-cell--bottom mdl-cell--6-col mdl-cell--4-col-tablet'>
             <img src='/img/teyre.png'>
         </div>
     </div>
 </section>
+
 <section class='te-section'>
     <div class='te-section_content te-section_content--small mdl-grid mdl-grid--no-spacing'>
         <div class='te-section_title mdl-cell mdl-cell--12-col'>
             <h1 class='mdl-typography--font-light'>Skills</h1>
         </div>
-        <div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet'>
-            <ul>
-                <li>JavaScript</li>
-                <li>Python</li>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>PHP</li>
-                <li>SQL</li>
-            </ul>
-        </div>
-        <div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet'>
-            <ul>
-                <li>Sass/SCSS</li>
-                <li>Polymer</li>
-                <li>Java</li>
-                <li>C++</li>
-                <li>Git</li>
-                <li>Gulp</li>
-            </ul>
+        <div class='mdl-grid' style='width:100%;'>
+            <div class='mdl-cell mdl-cell--4-col'>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                </ul>
+            </div>
+            <div class='mdl-cell mdl-cell--4-col'>
+                <ul>
+                    <li>PHP</li>
+                    <li>SQL</li>
+                    <li>Sass/SCSS</li>
+                    <li>Polymer</li>
+                </ul>
+            </div>
+            <div class='mdl-cell mdl-cell--4-col'>
+                <ul>
+                    <li>Java</li>
+                    <li>C++</li>
+                    <li>Git</li>
+                    <li>Gulp</li>
+                </ul>
+            </div>
+            <div class='mdl-cell mdl-cell--12-col'>
+                <ul>
+                    <li>Full stack web development</li>
+                    <li>Database design and management</li>
+                    <li>Photoshop, GIMP, Inkscape, Sony Movie Studio Platinum</li>
+                </ul>
+            </div>
         </div>
     </div>
+
     <div class='te-section_content te-section_content--small mdl-grid mdl-grid--no-spacing'>
         <div class='te-section_title mdl-cell mdl-cell--12-col'>
             <h1 class='mdl-typography--font-light'>Education</h1>
         </div>
-        <div class='mdl-cell mdl-cell--4-col'>
-            <h5>Portland State University</h5>
-            <p>Jan 2012 - Present</p>
-        </div>
-        <div class='mdl-cell mdl-cell--8-col'>
-            <h5>Bachelor of Science - Computer Science</h5>
-            <ul>
-                <li>Expected graduation March 2016</li>
-                <li>3.71 GPA</li>
-                <li>Dean’s List for 6 semesters</li>
-            </ul>
+        <div class='mdl-grid'>
+            <div class='mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--4-col-phone'>
+                <h5>Portland State University</h5>
+                <p>Jan 2012 - Present</p>
+            </div>
+            <div class='mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet'>
+                <h5>Bachelor of Science - Computer Science</h5>
+                <ul>
+                    <li>Expected graduation March 2016</li>
+                    <li>3.71 GPA</li>
+                    <li>Dean’s List for 6 semesters</li>
+                </ul>
+            </div>
         </div>
     </div>
+
     <div class='te-section_content te-section_content--small mdl-grid mdl-grid--no-spacing'>
         <div class='te-section_title mdl-cell mdl-cell--12-col'>
             <h1 class='mdl-typography--font-light'>Experience</h1>
         </div>
-        <div class='mdl-cell mdl-cell--4-col'>
-            <h5>SIMOS Insourcing Solutions</h5>
-            <p>June 2013 - Present<br>
-            Mar 2011 - Jan 2012</p>
-        </div>
-        <div class='mdl-cell mdl-cell--8-col'>
-            <h5>Onsite Rep / Recruiter</h5>
-            <ul>
-                <li>Designed and implemented employee turnover database using MySQL, PHP, with front end using jQuery UI</li>
-                <li>Created multiple operations dashboards and reports in Excel using a heavy amount of VBA, used daily in company sites across the nation</li>
-                <li>Produced, filmed, and edited new video training series for the site in Sony Movie Studio Platinum</li>
-                <li>Promoted from hourly to salaried employee in less than one year</li>
-                <li>Day to day duties include processing payroll and handling administrative duties for staff of over 160 employees</li>
-            </ul>
-        </div>
-        <div class='mdl-cell mdl-cell--4-col'>
-            <h5>Direct Placement</h5>
-            <p>July 2012 - June 2013</p>
-        </div>
-        <div class='mdl-cell mdl-cell--8-col'>
-            <h5>Billing Assistant</h5>
-            <ul>
-                <li>Processed over $50,000 in sales quarterly</li>
-                <li>Designed new customer invoices</li>
-                <li>Wrote training manual for the billing department</li>
-            </ul>
-        </div>
-        <div class='mdl-cell mdl-cell--4-col'>
-            <h5>Farmers Insurance</h5>
-            <p>Oct 2009 - Dec 2010</p>
-        </div>
-        <div class='mdl-cell mdl-cell--8-col'>
-            <h5>Administrative Assistant</h5>
-            <ul>
-                <li>Door-to-door marketing and lead generation</li>
-                <li>Managed administrative duties for an agent with over 150 clients</li>
-            </ul>
+        <div class='mdl-grid'>
+            <div class='mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--4-col-phone'>
+                <h5>SIMOS Insourcing Solutions</h5>
+                <p>June 2013 - Present<br>
+                Mar 2011 - Jan 2012</p>
+            </div>
+            <div class='mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet'>
+                <h5>Onsite Rep / Recruiter</h5>
+                <ul>
+                    <li>Designed and implemented employee turnover database using MySQL, PHP, with front end using jQuery UI</li>
+                    <li>Created multiple operations dashboards and reports in Excel using a heavy amount of VBA, used daily in company sites across the nation</li>
+                    <li>Produced, filmed, and edited new video training series for the site in Sony Movie Studio Platinum</li>
+                    <li>Promoted from hourly to salaried employee in less than one year</li>
+                    <li>Day to day duties include processing payroll and handling administrative duties for staff of over 160 employees</li>
+                </ul>
+            </div>
+            <div class='mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--4-col-phone'>
+                <h5>Direct Placement</h5>
+                <p>July 2012 - June 2013</p>
+            </div>
+            <div class='mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet'>
+                <h5>Billing Assistant</h5>
+                <ul>
+                    <li>Processed over $50,000 in sales quarterly</li>
+                    <li>Designed new customer invoices</li>
+                    <li>Wrote training manual for the billing department</li>
+                </ul>
+            </div>
+            <div class='mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--4-col-phone'>
+                <h5>Farmers Insurance</h5>
+                <p>Oct 2009 - Dec 2010</p>
+            </div>
+            <div class='mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet'>
+                <h5>Administrative Assistant</h5>
+                <ul>
+                    <li>Door-to-door marketing and lead generation</li>
+                    <li>Managed administrative duties for an agent with over 150 clients</li>
+                </ul>
+            </div>
         </div>
     </div>
+
 </section>
 
 
