@@ -51,12 +51,14 @@
             <paper-icon-button id='te-drawer-toggle' icon='menu'></paper-icon-button>
             <div class='paper-header'>Trevor Eyre</div>
             <div class='flex'></div>
-            <a href='https://github.com/TrevorEyre' target='_blank'>
-                <paper-icon-button src='/img/github-white.svg' alt='GitHub' title='GitHub'></paper-icon-button>
+            <a id='te-nav-link_github' href='https://github.com/TrevorEyre' target='_blank'>
+                <paper-icon-button src='/img/github-white.svg' alt='GitHub'></paper-icon-button>
             </a>
-            <a href='https://www.linkedin.com/in/trevor-eyre-958976108' target='_blank'>
-                <paper-icon-button src='/img/linkedin-white.svg' alt='LinkedIn' title='LinkedIn'></paper-icon-button>
+            <paper-tooltip for='te-nav-link_github'>GitHub</paper-tooltip>
+            <a id='te-nav-link_linkedin' href='https://www.linkedin.com/in/trevor-eyre-958976108' target='_blank'>
+                <paper-icon-button src='/img/linkedin-white.svg' alt='LinkedIn'></paper-icon-button>
             </a>
+            <paper-tooltip for='te-nav-link_linkedin'>LinkedIn</paper-tooltip>
         </paper-toolbar>
         <paper-drawer-panel id='te-drawer-panel' class='flex'>
             <div drawer>
