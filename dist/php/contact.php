@@ -5,37 +5,32 @@ $subject = $_POST['subject'];
 $email = $_POST['email'];
 $emailConfirm = $_POST['emailConfirm'];
 $message = $_POST['message'];
-$to = 'trevoreyre@gmail.com'; 
+$to = 'trevoreyre@gmail.com';
+$error = false;
 
-// Check if name has been entered
-if (!$name) {
-    $errName = 'Please enter your name';
+// Validate various inputs
+if (!$name || !preg_match('/[a-zA-z ]*/', $name)) {
+    $error = true;
+} else if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $error = true;
+} else if (strtolower($email) != strtolower($emailConfirm)) {
+    $error = true;
+} else if (!$message) {
+    $error = true;
 }
 
-// Check if email has been entered and is valid
-if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errEmail = 'Please enter a valid email address';
-}
-
-// Check if email matches confirmation email
-if ($email != $emailConfirm) {
-    $errEmail = 'Emails do not match';
-}
-
-//Check if message has been entered
-if (!$message) {
-    $errMessage = 'Please enter your message';
-}
-
-// If there are no errors, send the email
-if (!$errName && !$errEmail && !$errMessage) {
+// If there are no errors, send the email. Return 1 on success, 0 if
+// unable to send emails, or -1 if there are input errors.
+if ($error) {
+    echo "-1";
+} else {
     $subject = "From trevoreyre.com: $subject";
     $message = str_replace('\n.', '\n..', $message);
     $headers = "From: $name <$email>" . "\r\n" . "Reply-To: $email";
 
     if (mail($to, $subject, $message, $headers)) {
-        echo "Thank You! I will be in touch";
+        echo "1";
     } else {
-        echo "Sorry there was an error sending your message. Please try again later";
+        echo "0";
     }
 }

@@ -2323,8 +2323,11 @@ a.te-button--call {
   background: #e8e8e8; }
 
 /**********************************
- Portfolio page
+ Contact page
  **********************************/
+#te-contact {
+  position: relative; }
+
 a.te-contact-link {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.87);
@@ -2345,7 +2348,7 @@ paper-item:hover {
 /**********************************
  Loading screen
  **********************************/
-#te-loading {
+.te-loading {
   position: fixed;
   top: 0;
   left: 0;
@@ -2359,11 +2362,18 @@ paper-item:hover {
   -webkit-transition: opacity 0.75s ease-in-out 1s, visibility 0s linear 1.75s;
   transition: opacity 0.75s ease-in-out 1s, visibility 0s linear 1.75s; }
 
-#te-loading.loaded {
+#te-loading-contact {
+  position: absolute;
+  opacity: 0.75;
+  -webkit-transition: opacity 0.3s ease-in-out 0s;
+  transition: opacity 0.3s ease-in-out 0s; }
+
+.te-loading.loaded,
+#te-loading-contact.loaded {
   opacity: 0;
   visibility: hidden; }
 
-#te-loading #te-loading_inner {
+.te-loading .te-loading_inner {
   position: absolute;
   top: 0;
   left: 0;
@@ -2372,11 +2382,14 @@ paper-item:hover {
   margin: auto;
   height: 256px; }
 
-#te-loading #te-loading_inner h1 {
+#te-loading-contact .te-loading_inner {
+  height: 128px; }
+
+.te-loading .te-loading_inner h1 {
   color: #607d8b;
   font-weight: 300; }
 
-#te-loading #te-loading_inner h4 {
+.te-loading .te-loading_inner h4 {
   color: rgba(0, 0, 0, 0.54);
   margin-bottom: 0; }
 

@@ -18,7 +18,7 @@ document.addEventListener('WebComponentsReady', function () {
         drawerPanel.drawerWidth = '208px';                              // Change width of drawer
         drawerPanel.responsiveWidth = '840px';                          // Change responsive break point of drawer
         menu.selected = menuOptions.indexOf(window.location.pathname);  // Set selected menu item
-        document.getElementById('te-loading').classList.add('loaded');  // Remove load screen
+        document.getElementById('te-loading-site').classList.add('loaded');  // Remove load screen
         pageScripts();                                                  // Run page-specfic JavaScript
 
         // Drawer toggle button
@@ -35,7 +35,7 @@ document.addEventListener('WebComponentsReady', function () {
             var url = menuOptions[menu.selected];
             if (updateHistory) {history.pushState(null, null, url);}
             loadContent(url);
-            drawerPanel.togglePanel();
+            drawerPanel.closeDrawer();
         });
 
         // Fetches main page content via AJAX, and replaces current content
@@ -79,26 +79,54 @@ document.addEventListener('WebComponentsReady', function () {
                 var email = document.getElementById('te-contact_email');
                 var emailConfirm = document.getElementById('te-contact_email-confirm');
                 var message = document.getElementById('te-contact_message');
-                var buttonSubmit = document.getElementById('te-contact_submit');
-                var buttonClear = document.getElementById('te-contact_clear');
+                var dialogError = document.getElementById('te-dialog_form-error');
+                var dialogErrorMessage = document.querySelector('#te-dialog_form-error .te-dialog_body');
+                var loadingScreen = document.getElementById('te-loading-contact');
+                var formErrorMessage = 'There are errors on your form. Please correct these errors and try again.';
+                var sendErrorMessage = 'There was an error sending your message. Please try again later.';
 
                 // Contact form submit
-                buttonSubmit.addEventListener('click', function () {
-                    if (validateContactForm()) {
+                document.getElementById('te-contact_submit').addEventListener('click', function () {
+                    if (!validateContactForm()) { // Invalid form
+                        dialogErrorMessage.innerHTML = formErrorMessage;
+                        dialogError.open();
+                    } else { // Show loading screen, attempt to send message via AJAX
+                        loadingScreen.classList.remove('loaded');
                         var xhttp = new XMLHttpRequest();
                         xhttp.onreadystatechange = function() {
-                            if (xhttp.readyState == 4 && xhttp.status == 200) {
-                                document.getElementById('test').innerHTML = xhttp.responseText;
+                            if (xhttp.readyState == 4) {
+                                if (xhttp.status != 200) { // Error receiving AJAX response
+                                    dialogErrorMessage.innerHTML = sendErrorMessage;
+                                    dialogError.open();
+                                } else { // Successful response
+                                    var response = xhttp.responseText;
+                                    console.log(response);
+                                    if (response === "1") { // Email sent successfully
+                                        clearContactForm();
+                                        setTimeout(function () {
+                                            document.getElementById('te-toast_form-sent').open();
+                                            loadingScreen.classList.add('loaded');
+                                        }, 1000);
+                                    } else if (response === "0") { // Unable to send email
+                                        dialogErrorMessage.innerHTML = sendErrorMessage;
+                                        loadingScreen.classList.add('loaded');
+                                        dialogError.open();
+                                    } else { // Invalid form
+                                        dialogErrorMessage.innerHTML = formErrorMessage;
+                                        loadingScreen.classList.add('loaded');
+                                        dialogError.open();
+                                    }
+                                }
                             }
                         };
                         xhttp.open('POST', '/php/contact.php', true);
                         xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                         xhttp.send('name=' + name.value + '&subject=' + subject.value + '&email=' + email.value
                                    + '&emailConfirm=' + emailConfirm.value + '&message=' + message.value);
-                    } else {
-                        console.log('there was an error you piece of shit!'); 
                     }
                 });
+                
+                // Contact form validation
                 function validateContactForm () {
                     var valid = true;
                     valid = (name.validate() && valid);
@@ -109,7 +137,7 @@ document.addEventListener('WebComponentsReady', function () {
                 }
 
                 // Contact form clear
-                buttonClear.addEventListener('click', clearContactForm);
+                document.getElementById('te-contact_clear').addEventListener('click', clearContactForm);
                 function clearContactForm () {
                     name.value = '';
                     subject.value = '';
@@ -123,7 +151,7 @@ document.addEventListener('WebComponentsReady', function () {
                     message.invalid = false;
                 }
 
-                // Contact form confirmation email change event
+                // Custom validation function for confirmation email
                 emailConfirm.addEventListener('change', validateEmailConfirm);
                 function validateEmailConfirm () {
                     emailConfirm.invalid = (emailConfirm.value.toLowerCase() !== email.value.toLowerCase());
