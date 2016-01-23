@@ -47,6 +47,7 @@ document.addEventListener('WebComponentsReady', function () {
                         // Replace main content with new page, and run page-specific JavaScript
                         var newContent = xhttp.responseXML.getElementById('te-main-content');
                         document.getElementById('te-main-content').innerHTML = newContent.innerHTML;
+                        document.getElementById('main').scrollTop = 0;
                         pageScripts();
                     } else {
                         console.log('loadContent error');
@@ -168,6 +169,15 @@ document.addEventListener('WebComponentsReady', function () {
                 document.getElementById('te-contact-link_linkedin').addEventListener('click', function () {window.open('https://www.linkedin.com/in/trevor-eyre-958976108', '_blank');});
             }
 
+            
+            /*********************************
+             Overview page links
+            **********************************/
+            var overview = document.querySelector('.te-overview_info');
+            if (overview !== null) {
+                document.getElementById('te-overview-link_portfolio').addEventListener('click', function () {menu.selected = 1;});
+            }
+
 
             /*********************************
              Portfolio page links
@@ -190,11 +200,11 @@ document.addEventListener('WebComponentsReady', function () {
 
 
             /*********************************
-             Overview page links
+             Services page links
             **********************************/
-            var overview = document.querySelector('.te-overview_info');
-            if (overview !== null) {
-                document.getElementById('te-overview-link_portfolio').addEventListener('click', function () {menu.selected = 1;});
+            var services = document.getElementById('te-services-link_contact');
+            if (services !== null) {
+                services.addEventListener('click', function () {menu.selected = 3;});
             }
         }
 

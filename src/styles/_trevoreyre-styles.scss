@@ -4,6 +4,10 @@
  trevoreyre-styles
  **********************************/
 
+h4, h5 {
+    font-weight: 300;
+}
+
 
 /**********************************
  Standalone modifiers
@@ -227,7 +231,7 @@
 }
 
 .te-portfolio_inner {
-    background-color: rgba(0, 0, 0, 0.1); //rgba(96, 125, 139, 0);
+    background-color: rgba(0, 0, 0, 0.1);
     transition: background-color 0.5s;
     height: 368px;
     @include breakpoint-tablet() {
@@ -242,7 +246,7 @@
 
 .te-portfolio_inner:hover {
     @include breakpoint-desktop() {
-        background-color: rgba(0, 0, 0, 0.25); //rgba(96, 125, 139, 0.65);
+        background-color: rgba(0, 0, 0, 0.25);
     }
 }
 
@@ -345,6 +349,59 @@ a.te-button--call {
 .te-button:hover,
 .te-button--call:hover {
     background: darken($background, 7);
+}
+
+
+/**********************************
+ Services page
+ **********************************/
+
+#te-section_services {
+    display: block;
+    background-image: url(/img/services-banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    width: 100%;
+    height: 432px;
+    @include breakpoint-tablet() {
+        height: 560px;
+    }
+    @include breakpoint-desktop() {
+        height: 624px;
+    }
+}
+
+#te-section_services--inner {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 432px;
+    @include breakpoint-tablet() {
+        height: 560px;
+    }
+    @include breakpoint-desktop() {
+        height: 624px;
+    }
+}
+
+.te-services_title {
+    margin: 0 auto;
+    padding: 0 $padding;
+}
+
+.te-services_title:first-child {
+    border-top: 2px solid #fff;
+}
+
+.te-services_title:last-child {
+    border-bottom: 2px solid #fff;
+}
+
+.te-services_title h1 {
+    color: #fff;
+    margin: 0;
+    font-weight: 300;
+    text-align: center;
 }
 
 
