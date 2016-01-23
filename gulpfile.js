@@ -39,6 +39,8 @@ var srcDeployExtras = [
         './dist/img/*'
     ];
 var deployDestination = config.deployDestination;
+var srcDeployProduction = './dist/**/*';
+var deployProductionDestination = config.deployProductionDestination;
 
 // FTP connection
 var conn = ftp.create({
@@ -51,41 +53,46 @@ var conn = ftp.create({
 
 // Deploy function. Expects source files to be grouped in a distribution folder.
 // Strips this first folder, to place files in base directory of server
-function deploy (inputStream) {
+function deploy (destination, inputStream) {
     return inputStream
         .pipe(rename(function (path) {
             var parts = path.dirname.split('\\');
             parts.splice(0, 1);
             path.dirname = parts.join('\\');
         }))
-        .pipe(conn.newer(deployDestination))
-        .pipe(conn.dest(deployDestination));
+        .pipe(conn.newer(destination))
+        .pipe(conn.dest(destination));
 }
 
 // Default task
 gulp.task('default', ['deployAll', 'watch']);
 
+// Deploy all files to production server
+gulp.task('deployProduction', function () {
+    return deploy(deployProductionDestination, gulp.src(srcDeployProduction, {base: '.', buffer: false}));
+});
+
 // Various deploy tasks by file type to reduce FTP transfer to server
 gulp.task('deployAll', ['deployLayoutWrap', 'deployScripts', 'deployStyles', 'deployPolymerStyles', 'deployPHP'], function () {
-    return deploy(gulp.src(srcDeployExtras, {base: '.', buffer: false}));
+    return deploy(deployDestination, gulp.src(srcDeployExtras, {base: '.', buffer: false}));
 });
 gulp.task('deployLayout', ['layout'], function () {
-    return deploy(gulp.src(srcDeployLayout, {base: '.', buffer: false}));
+    return deploy(deployDestination, gulp.src(srcDeployLayout, {base: '.', buffer: false}));
 });
 gulp.task('deployLayoutWrap', ['layoutWrap'], function () {
-    return deploy(gulp.src(srcDeployLayout, {base: '.', buffer: false}));
+    return deploy(deployDestination, gulp.src(srcDeployLayout, {base: '.', buffer: false}));
 });
 gulp.task('deployScripts', ['scripts'], function () {
-    return deploy(gulp.src(srcDeployScripts, {base: '.', buffer: false}));
+    return deploy(deployDestination, gulp.src(srcDeployScripts, {base: '.', buffer: false}));
 });
 gulp.task('deployStyles', ['styles'], function () {
-    return deploy(gulp.src(srcDeployStyles, {base: '.', buffer: false}));
+    return deploy(deployDestination, gulp.src(srcDeployStyles, {base: '.', buffer: false}));
 });
 gulp.task('deployPolymerStyles', ['polymerStyles'], function () {
-    return deploy(gulp.src(srcDeployPolymerStyles, {base: '.', buffer: false}));
+    return deploy(deployDestination, gulp.src(srcDeployPolymerStyles, {base: '.', buffer: false}));
 });
 gulp.task('deployPHP', ['php'], function () {
-    return deploy(gulp.src(srcDeployPHP, {base: '.', buffer: false}));
+    return deploy(deployDestination, gulp.src(srcDeployPHP, {base: '.', buffer: false}));
 });
 
 // HTML layout task
