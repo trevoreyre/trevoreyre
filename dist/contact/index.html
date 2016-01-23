@@ -28,6 +28,8 @@
     <link rel='import' href='/bower_components/paper-input/paper-input.html'>
     <link rel='import' href='/bower_components/paper-input/paper-textarea.html'>
     <link rel='import' href='/bower_components/paper-tooltip/paper-tooltip.html'>
+    <link rel='import' href='/bower_components/paper-dialog/paper-dialog.html'>
+    <link rel='import' href='/bower_components/paper-toast/paper-toast.html'>
     <link rel='import' href='/bower_components/iron-icons/iron-icons.html'>
     <link rel='import' href='/bower_components/iron-icons/image-icons.html'>
     <link rel='import' href='/bower_components/iron-icons/social-icons.html'>
@@ -97,7 +99,7 @@
         <div class='te-hide-mobile mdl-cell mdl-cell--2-col mdl-cell--1-col-tablet'></div>
         <div class='mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet'>
             <div class='te-section_info'>
-                <p>Have a question? Interested in working on a project with me? Feel free to reach out and connect with me at one of the services below.</p>
+                <p>Have a question? Interested in working on a project with me? Feel free to reach out and connect with me at one of the services below, or fill out the form to send me a message.</p>
             </div>
         </div>
         <div class='te-hide-mobile mdl-cell mdl-cell--2-col mdl-cell--1-col-tablet'></div>
@@ -116,13 +118,10 @@
                 LinkedIn
             </paper-button>
         </div>
-
-        <div id='test' class='mdl-cell mdl-cell--12-col'>
-        </div>
         
         <div id='te-contact' class='mdl-cell mdl-cell--12-col mdl-grid'>
             <div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet'>
-                <paper-input id='te-contact_name' name='name' label='Name' required auto-validate error-message='Required'></paper-input>
+                <paper-input id='te-contact_name' name='name' label='Name' required auto-validate pattern='[a-zA-Z ]*' error-message='Letters only (A-Z)'></paper-input>
             </div>
             <div class='mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet'>
                 <paper-input id='te-contact_subject' name='subject' label='Subject'></paper-input>
@@ -146,15 +145,32 @@
                     Clear
                 </paper-button>
             </div>
+
+            <div id='te-loading-contact' class='te-loading loaded'>
+                <div class='te-loading_inner'>
+                    <h4>Sending</h4>
+                    <div class='loader'>Sending...</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-            </div>    
+<paper-dialog id='te-dialog_form-error' modal>
+    <div class='te-dialog_header'><h2>Error</h2></div>
+    <div class='te-dialog_body'></div>
+    <div class='buttons'>
+        <paper-button class='te-button' dialog-confirm autofocus>Okay</paper-button>
+    </div>
+</paper-dialog>
+<paper-toast id='te-toast_form-sent' text='Message sent. Thank you!'></paper-toast>
+
+
+            </div>
         </paper-drawer-panel>
     </paper-header-panel>
-    <div id='te-loading'>
-        <div id='te-loading_inner'>
+    <div id='te-loading-site' class='te-loading'>
+        <div class='te-loading_inner'>
             <h1>Trevor Eyre</h1>
             <h4>Loading</h4>
             <div class='loader'>Loading...</div>
