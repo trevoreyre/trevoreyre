@@ -192,10 +192,6 @@ document.addEventListener('WebComponentsReady', function () {
                 document.getElementById('te-datepicker-website-2').addEventListener('click', function () {window.open('http://bit.ly/1ossyMA', '_blank');});
                 document.getElementById('te-trevoreyre-source-1').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/trevoreyre', '_blank');});
                 document.getElementById('te-trevoreyre-source-2').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/trevoreyre', '_blank');});
-                document.getElementById('te-company-source-1').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/company-template', '_blank');});
-                document.getElementById('te-company-source-2').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/company-template', '_blank');});
-                document.getElementById('te-company-website-1').addEventListener('click', function () {window.open('http://company-template.trevoreyre.com', '_blank');});
-                document.getElementById('te-company-website-2').addEventListener('click', function () {window.open('http://company-template.trevoreyre.com', '_blank');});
             }
 
 

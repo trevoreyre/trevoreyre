@@ -230,6 +230,18 @@ h4, h5 {
     background-position: left top;
 }
 
+.te-portfolio_img--new {
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+
+.te-portfolio_info--new {
+    
+}
+
 .te-portfolio_inner {
     background-color: rgba(0, 0, 0, 0.1);
     transition: background-color 0.5s;
