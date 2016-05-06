@@ -17,7 +17,7 @@ var uglify = require('gulp-uglify');
 var wrap = require('gulp-wrap');
 
 // Require config file for FTP server info
-var config = require('./config.json');
+var config = require('../config/config');
 
 // Define source/destination paths for build and deploy tasks
 var srcLayout = ['./src/**/*.html', '!./src/layout.html', '!./src/styles/**/*'];
