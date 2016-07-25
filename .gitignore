@@ -1,11 +1,4 @@
-# Node Dependency directory
 node_modules
-
-# Bower components
 bower_components
-
-# Image folder
-img
-
-# Gulp config file
-config.json
+dist
+res/img
