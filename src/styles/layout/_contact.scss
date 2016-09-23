@@ -1,0 +1,13 @@
+#te-contact {
+    position: relative;
+}
+
+a.te-contact-link {
+    font-size: 14px;
+    color: $primary-text-color;
+    text-decoration: none;
+}
+
+a.te-contact-link:hover {
+    color: $primary-color;
+}

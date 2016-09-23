@@ -1,9 +1,9 @@
-@import 'mdl/variables';
+@import '../mdl/variables';
 
-/**********************************
- Layout
- **********************************/
+/* Typography */
+$font-stack: 'Roboto', sans-serif;
 
+/* Layout */
 $desktop-breakpoint: $grid-desktop-breakpoint;
 $tablet-breakpoint: $grid-tablet-breakpoint;
 $body-width: 1024px;
@@ -16,23 +16,17 @@ $padding-large: 3 * $padding;
 $padding-ex-large: 4 * $padding;
 
 
-/**********************************
- Colors
- **********************************/
-
+/* Colors */
 $background: #fafafa;
 $background--menu: #fff;
 $primary-color: #607d8b;
-$accent-color: #ff3d00;
+$secondary-color: #ff3d00;
 $divider-color: rgba(0, 0, 0, 0.12);
-$text-color: rgba(0, 0, 0, 0.87);
+$primary-text-color: rgba(0, 0, 0, 0.87);
 $secondary-text-color: rgba(0, 0, 0, 0.54);
 
 
-/**********************************
- Grid
- **********************************/
-
+/* Grid */
 $grid-desktop-gutter: 32px;
 $grid-desktop-margin: 0;
 $grid-tablet-gutter: 16px;

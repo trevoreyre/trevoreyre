@@ -1,0 +1,156 @@
+.te-portfolio_container {
+    width: 100%;
+    @include shadow-4dp();
+}
+
+.te-portfolio_img {
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 100%;
+    height: 368px;
+    @include breakpoint-tablet() {
+        height: 496px;
+    }
+    @include breakpoint-desktop() {
+        height: 560px;
+    }
+}
+
+.te-portfolio_img.te-portfolio_img--top-left {
+    background-position: left top;
+}
+
+.te-portfolio_img--new {
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+
+.te-portfolio_info--new {
+
+}
+
+.te-portfolio_inner {
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s;
+    height: 368px;
+    @include breakpoint-tablet() {
+        background-color: rgba(0, 0, 0, 0.25);
+        height: 496px;
+    }
+    @include breakpoint-desktop() {
+        background-color: rgba(0, 0, 0, 0);
+        height: 560px;
+    }
+}
+
+.te-portfolio_inner:hover {
+    @include breakpoint-desktop() {
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+}
+
+.te-portfolio_info {
+    @include breakpoint-tablet() {
+        opacity: 1;
+    }
+    @include breakpoint-desktop() {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+}
+
+.te-portfolio_inner:hover > .te-portfolio_info {
+    @include breakpoint-desktop() {
+        opacity: 1;
+    }
+}
+
+.te-portfolio_info--left {
+    @include breakpoint-tablet() {
+        padding-left: $padding;
+    }
+    @include breakpoint-desktop() {
+        padding-left: $padding-ex-large;
+    }
+}
+
+.te-portfolio_info--right {
+     @include breakpoint-tablet() {
+        padding-right: $padding;
+    }
+    @include breakpoint-desktop() {
+        padding-right: $padding-ex-large;
+    }
+}
+
+.te-portfolio_info * {
+    @include breakpoint-desktop() {
+        opacity: 0;
+    }
+}
+
+.te-portfolio_info .card-content {
+    position: relative;
+}
+
+.te-portfolio_info.te-portfolio_info--left .card-content {
+    @include breakpoint-desktop() {
+        left: $padding-medium;
+    }
+}
+
+.te-portfolio_info.te-portfolio_info--right .card-content {
+    @include breakpoint-desktop() {
+        right: $padding-medium;
+    }
+}
+
+.te-portfolio_info .header {
+    transition: all 0.5s ease;
+}
+
+.te-portfolio_info .card-content {
+    transition: all 0.5s ease 0.2s;
+}
+
+.te-portfolio_info .card-actions {
+    transition: all 0.5s ease 0.4s;
+}
+
+.te-portfolio_inner:hover .te-portfolio_info * {
+    @include breakpoint-desktop() {
+        opacity: 1;
+    }
+}
+
+.te-portfolio_inner:hover .te-portfolio_info.te-portfolio_info--left .card-content {
+    @include breakpoint-desktop() {
+        left: 0;
+    }
+}
+
+.te-portfolio_inner:hover .te-portfolio_info.te-portfolio_info--right .card-content {
+    @include breakpoint-desktop() {
+        right: 0;
+    }
+}
+
+a.te-button {
+    color: $primary-text-color;
+    text-decoration: none;
+}
+
+a.te-button--call {
+    color: $primary-color;
+    text-decoration: none;
+}
+
+.te-button:hover,
+.te-button--call:hover {
+    background: darken($background, 7);
+}

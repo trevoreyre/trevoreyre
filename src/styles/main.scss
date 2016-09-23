@@ -1,8 +1,5 @@
-// Test comment
-@import 'variables';
-@import 'mixins';
-@import 'mdl/mdl-copyright';
-@import "mdl/resets/resets";
-@import "mdl/typography/typography";
+@import 'base/module';
+@import 'mdl/mixins';
+@import 'layout/module';
+@import 'components/module';
 @import 'mdl/grid/grid';
-@import 'trevoreyre-styles';
