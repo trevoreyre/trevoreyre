@@ -39,7 +39,7 @@ var srcDeployExtras = [
         './res/**/*'
     ];
 var deployDestination = config.deployDestination;
-var srcDeployProduction = './dist/**/*';
+var srcDeployProduction = ['./dist/**/*'].concat(srcDeployExtras);
 var deployProductionDestination = config.deployProductionDestination;
 
 // FTP connection
