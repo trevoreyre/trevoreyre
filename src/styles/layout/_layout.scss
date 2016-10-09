@@ -1,8 +1,13 @@
+img {
+    max-width: 100%;
+}
+
 .te-body {
     background: $background;
 }
 
-#te-main-content {
+article {
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;

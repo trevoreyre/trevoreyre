@@ -1,0 +1,41 @@
+<article class='te-project'>
+    <header id='te-header-excel-datepicker'>
+        <div class='te-header-image'>
+            <img src='/img/excel-datepicker.png'>
+        </div>
+        <div class='te-header-summary'>
+            <h1>Excel VBA Date Picker</h1>
+            <p>A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.</p>
+            <div class='te-actions'>
+                <a href='/downloads/CalendarForm v1.5.2.xlsm'>
+                    <paper-button id='te-overview-link_portfolio' class='te-button te-button--large te-button--call' raised>
+                        <iron-icon icon='icons:file-download'></iron-icon>
+                        Download
+                    </paper-button>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <header>
+            <h2>Overview</h2>
+        </header>
+        <p>The goal in creating this form was first and foremost to overcome the monstrosity that is the Microsoft MonthView control. If you're reading this, you probably already know what I'm talking about. Many others have been in my place and have come up with their own date pickers to solve this problem. So why yet another custom date picker?</p>
+        <p>I was most interested in the following features:
+        <ul>
+            <li>Ease of use. I wanted a completely self-contained form that could be imported into any VBA project and used without any additional coding.</li>
+            <li>Simple, attractive design. While a lot of custom date pickers on the internet look good and work well, none of them quite nailed it for me in terms of style and UI design.</li>
+            <li>Fully customizable functionality and look. I tried to include as many of the options from the MonthView control as I could, without getting too messy.</li>
+        </ul>
+        <p>Since none of the date pickers I have been able to find in all my searching have quite completed my checklist, here we are! Now my hope is that some other tired soul may also benefit from my labors.</p>
+        <p>If you encounter any bugs, or have any great ideas or feature requests that could improve this bad boy, please send me a message.</p>
+    </section>
+    <section>
+        <header>
+            <h2>Using the Date Picker</h2>
+        </header>
+        <p>The date picker can be used by importing the CalendarForm.frm file into your VBA project. It is called exclusively through the GetDate function, which is the point of entry into the CalendarForm. The GetDate function controls EVERYTHING. Every argument is optional, meaning your function call can be as simple as dateVariable = CalendarForm.GetDate.</p>
+        <p>That's all there is to it. The calendar initializes, pops up, the user selects a date, the selection is received by your variable, and the calendar unloads.</p>
+        <p>From there, you can use as many or as few arguments as you want in order to get the desired calendar that suits your needs. All default values are also set in the GetDate function, so if you want to change default colors or behavior without having to explicitly do so in every function call, you can set those values in the argument list for the function. By setting the various arguments, you can obtain vastly different calendars, all with the same function.</p>
+    </section>
+</article>

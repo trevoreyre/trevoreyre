@@ -23,7 +23,7 @@ var config = require('../config/trevoreyreConfig');
 var srcLayout = ['./src/**/*.html', '!./src/layout.html', '!./src/styles/**/*'];
 var srcLayoutWrap = './src/layout.html';
 var srcScripts = './src/scripts/**/*.js';
-var srcStyles = './src/styles/*.scss';
+var srcStyles = './src/styles/**/*.scss';
 var srcStylesPolymer = './src/styles/**/*.html';
 var srcPHP = './src/php/*.php';
 var destLayout = './dist/';
@@ -36,7 +36,7 @@ var srcDeployStyles = './dist/styles/**/*.min.css';
 var srcDeployPolymerStyles = './dist/styles/**/*.html';
 var srcDeployPHP = './dist/php/*.php';
 var srcDeployExtras = [
-        './dist/img/*'
+        './res/**/*'
     ];
 var deployDestination = config.deployDestination;
 var srcDeployProduction = './dist/**/*';
@@ -57,7 +57,9 @@ function deploy (destination, inputStream) {
     return inputStream
         .pipe(rename(function (path) {
             var parts = path.dirname.split('\\');
-            parts.splice(0, 1);
+            if (parts[0] == 'dist' || parts[0] == 'res') {
+                parts.splice(0, 1);
+            }
             path.dirname = parts.join('\\');
         }))
         .pipe(conn.newer(destination))

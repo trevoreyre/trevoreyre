@@ -72,7 +72,7 @@ document.addEventListener('WebComponentsReady', function () {
 
             /*********************************
              Contact form
-            **********************************/   
+            **********************************/
             var contactForm = document.getElementById('te-contact');
             if (contactForm !== null) {
                 var name = document.getElementById('te-contact_name');
@@ -126,7 +126,7 @@ document.addEventListener('WebComponentsReady', function () {
                                    + '&emailConfirm=' + emailConfirm.value + '&message=' + message.value);
                     }
                 });
-                
+
                 // Contact form validation
                 function validateContactForm () {
                     var valid = true;
@@ -169,7 +169,7 @@ document.addEventListener('WebComponentsReady', function () {
                 document.getElementById('te-contact-link_linkedin').addEventListener('click', function () {window.open('https://www.linkedin.com/in/trevor-eyre-958976108', '_blank');});
             }
 
-            
+
             /*********************************
              Overview page links
             **********************************/
@@ -188,8 +188,6 @@ document.addEventListener('WebComponentsReady', function () {
                 document.getElementById('te-gbo-source-2').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/gbo', '_blank');});
                 document.getElementById('te-gbo-website-1').addEventListener('click', function () {window.open('http://gbofashion.com', '_blank');});
                 document.getElementById('te-gbo-website-2').addEventListener('click', function () {window.open('http://gbofashion.com', '_blank');});
-                document.getElementById('te-datepicker-website-1').addEventListener('click', function () {window.open('http://bit.ly/1ossyMA', '_blank');});
-                document.getElementById('te-datepicker-website-2').addEventListener('click', function () {window.open('http://bit.ly/1ossyMA', '_blank');});
                 document.getElementById('te-trevoreyre-source-1').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/trevoreyre', '_blank');});
                 document.getElementById('te-trevoreyre-source-2').addEventListener('click', function () {window.open('https://github.com/TrevorEyre/trevoreyre', '_blank');});
             }

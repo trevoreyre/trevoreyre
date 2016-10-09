@@ -140,17 +140,45 @@
     }
 }
 
-a.te-button {
-    color: $primary-text-color;
-    text-decoration: none;
+.te-project > header {
+    padding: $padding $padding 0 $padding;
+    margin: 0 auto $padding-large auto;
+    width: 100%;
+    @include breakpoint-desktop() {
+        margin-bottom: $padding-ex-large;
+        padding: $padding-large $padding-large 0 $padding-large;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: top;
+    }
 }
 
-a.te-button--call {
-    color: $primary-color;
-    text-decoration: none;
+.te-project > header > .te-header-image {
+    @include breakpoint-desktop() {
+        flex: 2;
+    }
 }
 
-.te-button:hover,
-.te-button--call:hover {
-    background: darken($background, 7);
+.te-project > header > .te-header-summary {
+    width: 100%;
+    margin: 0 auto;
+    @include breakpoint-tablet() {
+        width: 75%;
+    }
+    @include breakpoint-desktop() {
+        flex: 1;
+    }
+}
+
+.te-project section {
+    padding: $padding $padding 0 $padding;
+    margin: 0 auto $padding-large auto;
+    @include breakpoint-tablet() {
+        width: 75%;
+    }
+    @include breakpoint-desktop() {
+        margin-bottom: $padding-ex-large;
+        width: 100%;
+        max-width: $body-width * (2/3);
+    }
 }
