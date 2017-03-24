@@ -1,0 +1,25 @@
+.project-summary {
+    @include breakpoint-tablet() {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.project-summary .project-summary-image {
+    flex: 2;
+}
+
+.project-summary .project-summary-description {
+    flex: 1;
+}
+
+.project-summary > *:first-child {
+    @include breakpoint-tablet() {
+        margin-right: $padding-medium;
+    }
+}
+
+.project-logo {
+    width: auto;
+    max-width: 100%;
+}

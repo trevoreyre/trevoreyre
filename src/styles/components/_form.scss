@@ -1,0 +1,32 @@
+form {
+    width: 100%;
+}
+
+form > div {
+    display: flex;
+}
+
+form > div > * {
+    flex: 1;
+}
+
+form input,
+form textarea {
+    margin: 0 $padding $padding-medium $padding;
+}
+
+form > div *:first-of-type {
+    margin-left: 0;
+}
+
+form > div *:last-of-type {
+    margin-right: 0;
+}
+
+input,
+textarea,
+select {
+    border: solid 1px $divider-color;
+    border-radius: $border-radius;
+    padding: $padding-small;
+}

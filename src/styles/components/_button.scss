@@ -1,44 +1,23 @@
-a.te-button {
-    color: $primary-text-color;
+.button {
+    display: inline-block;
+    border: none;
+    border-radius: $border-radius;
+    padding: $padding;
+    background: $primary-color;
+    color: $contrast-text-color;
     text-decoration: none;
 }
 
-a.te-button--call {
+.button.flat {
+    background: transparent;
     color: $primary-color;
+}
+
+.button:hover {
+    background: darken($primary-color, 7);
     text-decoration: none;
 }
 
-.te-button:hover,
-.te-button--call:hover {
+.button.flat:hover {
     background: darken($background, 7);
 }
-
-a.te-button:hover {
-    background: transparent;
-}
-
-// .te-button {
-//     border-radius: 2px;
-//     padding: $padding;
-//     color: #fff;
-//     background: $primary-color;
-// }
-
-// .te-button:hover {
-
-// }
-
-// .te-button-flat {
-//     color: $primary-text-color;
-//     text-decoration: none;
-// }
-
-// a.te-button--call {
-//     color: $primary-color;
-//     text-decoration: none;
-// }
-
-// .te-button:hover,
-// .te-button--call:hover {
-//     background: darken($background, 7);
-// }

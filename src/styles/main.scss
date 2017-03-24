@@ -1,5 +1,16 @@
-@import 'base/module';
-@import 'mdl/mixins';
-@import 'mdl/grid/grid';
-@import 'layout/module';
-@import 'components/module';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/normalize';
+@import 'base/base';
+@import 'base/typography';
+
+@import 'layout/layout';
+
+@import 'components/actions';
+@import 'components/button';
+@import 'components/copyright';
+@import 'components/devices';
+@import 'components/form';
+@import 'components/header';
+@import 'components/nav';
+@import 'components/project';

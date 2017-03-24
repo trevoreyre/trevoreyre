@@ -1,0 +1,14 @@
+.actions > *:first-child {
+    margin: 0 $padding 0 0;
+}
+
+footer .actions {
+    text-align: center;
+}
+
+#services-actions {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: $padding-large;
+}

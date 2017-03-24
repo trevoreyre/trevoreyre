@@ -1,11 +1,10 @@
-@import '../mdl/variables';
 
 /* Typography */
-$font-stack: 'Roboto', sans-serif;
+$font-stack: 'Roboto', Verdana, sans-serif;
 
 /* Layout */
-$desktop-breakpoint: $grid-desktop-breakpoint;
-$tablet-breakpoint: $grid-tablet-breakpoint;
+$desktop-breakpoint: 1200px;
+$tablet-breakpoint: 800px;
 $body-width: 1024px;
 $menu-height: 64px;
 $padding: 16px;
@@ -15,21 +14,23 @@ $padding-medium: 2 * $padding;
 $padding-large: 3 * $padding;
 $padding-ex-large: 4 * $padding;
 
+$border-radius: 3px;
 
 /* Colors */
 $background: #fafafa;
 $background--menu: #fff;
-$primary-color: #607d8b;
+// $primary-color: #607d8b;
+$primary-color: #009688;
 $secondary-color: #ff3d00;
 $divider-color: rgba(0, 0, 0, 0.12);
 $primary-text-color: rgba(0, 0, 0, 0.87);
 $secondary-text-color: rgba(0, 0, 0, 0.54);
+$contrast-text-color: #fff;
 
-
-/* Grid */
-$grid-desktop-gutter: 32px;
-$grid-desktop-margin: 0;
-$grid-tablet-gutter: 16px;
-$grid-tablet-margin: 0;
-$grid-phone-gutter: 16px;
-$grid-phone-margin: 0;
+/* Nav button */
+$button-width: 56px;
+$button-height: 56px;
+$bar-thickness: 2px;
+$button-pad: 18px;
+$button-bar-space: 4px;
+$button-transistion-duration: 0.3s;
