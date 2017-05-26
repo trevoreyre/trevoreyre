@@ -1,5 +1,9 @@
-.actions > *:first-child {
+.actions > * {
     margin: 0 $padding 0 0;
+}
+
+.actions > *:last-child {
+    margin-right: 0;
 }
 
 footer .actions {

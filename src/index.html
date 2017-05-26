@@ -1,27 +1,49 @@
 <article id='about'>
-    <header>
-        <h1>We are the Eyres. We build things for the web.</h1>
-        <div class='actions'>
-            <a href='#projects-summary'>View our work</a>
-            <a href='#contact'>Ask about your project</a>
+    <header class='site-header'>
+        <div class='site-header-title-container'>
+            <div class='site-header-title'>
+                <h1>Trevor Eyre</h1>
+                <h2>Web developer. Software Engineer.</h2>
+            </div>
         </div>
-        <div class='cover'></div>
+        <div class='site-header-actions-container'>
+            <div class='site-header-actions'>
+                <a class='button secondary flat' href='#projects'>
+                    View my work
+                </a>
+                <a class='button secondary flat' href='#contact'>
+                    Ask about your project
+                </a>
+            </div>
+        </div>
+        <div class='site-header-logo'>
+            <img src='/img/trevoreyre-logo.png'>
+        </div>
+        <div class='site-header-clip'></div>
+        <div class='site-header-background'></div>
     </header>
     <section id='about-summary'>
         <div class='container small'>
-            <p>My name is Trevor Eyre. My wife, Lia, and I have been developing
-            websites since 2012. We are passionate about user experience and
-            design, and love diving into the tiny details to make websites and
-            applications that are simple and enjoyable to use.</p>
+            <p>Hi, I'm Trevor. I love creating websites with my wife, Lia,
+            and building cool things on the web. We are especially passionate
+            about user experience and believe that every website should be
+            simple and enjoyable to use.</p>
             <p>Take a look at some of our work below.</p>
         </div>
     </section>
-    <section id='projects-summary'>
+    <section id='projects'>
         <header>
-            <h2>Projects</h1>
+            <h1>Projects</h1>
         </header>
         <div class='container'>
             <section id='projects-gbo' class='project-summary'>
+                <div class='container small project-summary-description'>
+                    <h2>GBO Fashion</h2>
+                    <p>Full site redesign and custom WordPress template for a fashion blog in San Francisco, California.</p>
+                    <div class='actions'>
+                        <a class='button secondary' href='http://gbofashion.com/' target='_blank'>Check it out</a>
+                    </div>
+                </div>
                 <div class='project-summary-image'>
                     <div class='device-collection'>
                         <div class='device phone'>
@@ -35,24 +57,13 @@
                         </div>
                     </div>
                 </div>
-                <div class='project-summary-description'>
-                    <!-- <h3>GBO Fashion</h3> -->
-                    <img class='project-logo' src='/img/gbo-logo.png' alt='GBO'>
-                    <p>Full site redesign and custom WordPress template for a fashion blog in San Francisco, California.</p>
-                    <div class='actions'>
-                        <a class='button' href='/portfolio/gbo/'>Project details</a>
-                        <a class='button flat' href='http://gbofashion.com/' target='_blank'>Check it out</a>
-                    </div>
-                </div>
             </section>
             <section id='projects-oldscpa' class='project-summary'>
                 <div class='project-summary-description'>
-                    <!-- <h3>Jack W Olds &amp; Company, LLP</h3> -->
-                    <img class='project-logo' src='/img/oldscpa-logo.png'>
+                    <h2>Jack W Olds &amp; Company, LLP</h2>
                     <p>Logo design and site customization for a CPA firm in Portland, Oregon.</p>
                     <div class='actions'>
-                        <a class='button' href='/portfolio/oldscpa/'>Project details</a>
-                        <a class='button flat' href='http://www.oldscpa.com/' target='_blank'>Check it out</a>
+                        <a class='button secondary' href='http://www.oldscpa.com/' target='_blank'>Check it out</a>
                     </div>
                 </div>
                 <div class='project-summary-image'>
@@ -70,6 +81,13 @@
                 </div>
             </section>
             <section id='projects-aikidonw' class='project-summary'>
+                <div class='project-summary-description'>
+                    <h2>Aikido Northwest</h2>
+                    <p>WordPress installation and customization for an Aikido Dojo in Portland, Oregon.</p>
+                    <div class='actions'>
+                        <a class='button secondary' href='http://aikidonw.com/' target='_blank'>Check it out</a>
+                    </div>
+                </div>
                 <div class='project-summary-image'>
                     <div class='device-collection'>
                         <div class='device phone'>
@@ -83,23 +101,14 @@
                         </div>
                     </div>
                 </div>
-                <div class='project-summary-description'>
-                    <!-- <h3>Aikido Northwest</h3> -->
-                    <img class='project-logo' src='/img/aikidonw-logo.png'>
-                    <p>WordPress installation and customization for an Aikido Dojo in Portland, Oregon.</p>
-                    <div class='actions'>
-                        <a class='button' href='/portfolio/aikidonw/'>Project details</a>
-                        <a class='button flat' href='http://aikidonw.com/' target='_blank'>Check it out</a>
-                    </div>
-                </div>
             </section>
             <section id='projects-excel' class='project-summary'>
                 <div class='project-summary-description'>
-                    <h3>Excel VBA Date Picker</h3>
+                    <h2>Excel VBA Date Picker</h2>
                     <p>A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.</p>
                     <div class='actions'>
-                        <a class='button' href='/portfolio/excel-datepicker/'>Project details</a>
-                        <a class='button flat' href='/downloads/CalendarForm v1.5.2.xlsm'>Download</a>
+                        <a class='button secondary' href='/portfolio/excel-datepicker/'>Project details</a>
+                        <a class='button neutral flat' href='/downloads/CalendarForm v1.5.2.xlsm'>Download</a>
                     </div>
                 </div>
                 <div class='project-summary-image'>
@@ -108,14 +117,14 @@
             </section>
         </div>
     </section>
-    <section id='services-summary'>
+    <section id='contact'>
         <header>
-            <h2>How can we help?</h1>
+            <h1>How can we help?</h1>
         </header>
         <div class='container small'>
-            <p>Whether you need a brand new website, or need help updating an
-            existing one, We've got you covered. Below is a sample of services
-            we offer.</p>
+            <p>Whether you need a brand new website, or help updating an
+            existing one, we've got you covered. Below is a sample of available
+            services.</p>
             <div class='services-list'>
                 <ul>
                     <li>Website design</li>
@@ -133,22 +142,13 @@
             <p>Drop us a line with a few details of your project, and we can
             start putting together a plan.</p>
             <div id='services-actions' class='actions'>
-                <div>
-                    <h3>Email</h3>
-                    <a class='button flat' href='mailto:trevoreyre@gmail.com' target='_blank'>trevoreyre@gmail.com</a>
-                </div>
-                <div>
-                    <h3>Social media</h3>
-                    <div>
-                        <a class='button flat' href='https://github.com/TrevorEyre' target='_blank'>GitHub</a>
-                        <a class='button flat' href='https://www.linkedin.com/in/trevor-eyre-958976108' target='_blank'>LinkedIn</a>
-                    </div>
-                </div>
+                <a class='button neutral flat' href='mailto:trevoreyre@gmail.com' target='_blank'>trevoreyre@gmail.com</a>
+                <a class='button neutral flat' href='https://github.com/TrevorEyre' target='_blank'>GitHub</a>
+                <a class='button neutral flat' href='https://www.linkedin.com/in/trevor-eyre-958976108' target='_blank'>LinkedIn</a>
             </div>
         </div>
         <div id='contact' class='container small'>
-            <!-- <form method="post" action="https://formspree.io/trevoreyre@gmail.com"> -->
-            <form method="post" action="#">
+            <form method="post" action="https://formspree.io/trevoreyre@gmail.com">
                 <div>
                     <input type="text" name="name" id="contact-name" placeholder="Name" />
                     <input type="email" name="_replyto" id="contact-email" placeholder="Email" />
@@ -157,9 +157,9 @@
                     <textarea name="message" id="contact-message" placeholder="Message" rows="6"></textarea>
                 </div>
                 <div id='contact-actions' class='actions'>
-                    <input class='button flat' type="submit" value="Send Message" class="special" />
+                    <input class='button secondary' type="submit" value="Send Message" class="special" />
                 </div>
-            <input type="text" name="_gotcha" style="display:none" />
+                <input type="text" name="_gotcha" style="display:none" />
             </form>
         </div>
     </section>

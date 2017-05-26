@@ -1,21 +1,26 @@
 .project-summary {
+    display: flex;
+    flex-direction: column;
     @include breakpoint-tablet() {
-        display: flex;
+        flex-direction: row;
         align-items: center;
     }
 }
 
-.project-summary .project-summary-image {
+.project-summary-image {
+    min-height: 250px;
     flex: 2;
 }
 
-.project-summary .project-summary-description {
+.project-summary-description {
     flex: 1;
 }
 
 .project-summary > *:first-child {
+    margin-bottom: $padding-medium;
     @include breakpoint-tablet() {
-        margin-right: $padding-medium;
+        margin-bottom: 0;
+        margin-right: $padding-ex-large;
     }
 }
 

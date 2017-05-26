@@ -1,5 +1,5 @@
 html {
-    font-size: 16px;
+    font-size: $base-font-size;
 }
 
 body {
@@ -17,100 +17,38 @@ h1, h2, h3, h4 {
 
 h1 {
     margin-top: 0;
-    font-size: 6.854em;
     color: $primary-color;
+    font-size: 2.618em;
+    @include breakpoint-tablet() {
+        font-size: 4.236em;
+        font-weight: 300;
+    }
 }
 
 h2 {
-    font-size: 4.236em;
     color: $primary-color;
+    font-size: 1.618em;
+    @incude breakpoint-tablet() {
+        font-size: 2.618em;
+    }
 }
 
 h3 {
-    font-size: 2.618em;
-}
-
-h4 {
-    font-size: 1.618em;
+    font-size: 1.3em;
+    @include breakpoint-tablet() {
+        font-size: 1.618em;
+    }
 }
 
 p {
     margin-bottom: 1.3em;
+    line-height: 1.618;
+    @include breakpoint-tablet() {
+        font-size: 1.3em;
+    }
 }
 
 small,
 .font_small {
     font-size: 0.618em;
 }
-
-/*
-body {
-    font-family: $font-stack;
-    color: $primary-text-color;
-    font-weight: 400;
-    line-height: 1.5;
-    font-size: 16px;
-}
-
-a {
-    color: $primary-color;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-p {
-    margin-bottom: 24px;
-    padding: 0;
-}
-
-b,
-strong {
-    font-weight: 700;
-}
-
-em,
-i {
-    font-style: italic;
-}
-
-span {
-    text-decoration: none !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: 400;
-    margin-top: 0;
-}
-
-h1,
-h2 {
-    color: $primary-color;
-}
-
-h1 {
-    font-size: 40px;
-}
-
-h2 {
-    font-size: 32px;
-}
-
-h3 {
-    font-size: 24px;
-}
-
-h4,
-h5,
-h6 {
-    font-size: 16px;
-}
-*/

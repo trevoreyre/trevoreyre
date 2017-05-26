@@ -1,6 +1,7 @@
 
 /* Typography */
-$font-stack: 'Roboto', Verdana, sans-serif;
+$font-stack: 'Open Sans', Verdana, sans-serif;
+$base-font-size: 16px;
 
 /* Layout */
 $desktop-breakpoint: 1200px;
@@ -20,12 +21,15 @@ $border-radius: 3px;
 $background: #fafafa;
 $background--menu: #fff;
 // $primary-color: #607d8b;
-$primary-color: #009688;
-$secondary-color: #ff3d00;
+// $primary-color: #009688;
+$primary-color: #1c5b72;
+// $secondary-color: #ff3d00;
+$secondary-color: #e03616;
 $divider-color: rgba(0, 0, 0, 0.12);
 $primary-text-color: rgba(0, 0, 0, 0.87);
 $secondary-text-color: rgba(0, 0, 0, 0.54);
-$contrast-text-color: #fff;
+$contrast-text-color: rgba(255, 255, 255, 1);
+$contrast-secondary-text-color: rgba(255, 255, 255, 0.6);
 
 /* Nav button */
 $button-width: 56px;

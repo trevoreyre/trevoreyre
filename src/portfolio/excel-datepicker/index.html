@@ -2,12 +2,18 @@
     <button id='nav-button' class='open'><span>Back</span></button>
 </a>
 <article id='project-excel' class='project'>
-    <header>
-        <h1>Excel VBA Date Picker</h1>
-        <div class='actions'>
-            <a href='/downloads/CalendarForm v1.5.2.xlsm'>Download</a>
+    <div class='project-summary container'>
+        <div class='project-summary-description'>
+            <h2>Excel VBA Date Picker</h2>
+            <p>A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.</p>
+            <div class='actions'>
+                <a class='button secondary' href='/downloads/CalendarForm v1.5.2.xlsm'>Download</a>
+            </div>
         </div>
-    </header>
+        <div class='project-summary-image'>
+            <img src='/img/excel-datepicker.png'>
+        </div>
+    </div>
     <section>
         <header>
             <h2>Overview</h2>
@@ -30,7 +36,7 @@
         </header>
         <div class='container small'>
             <p>To use the Excel VBA date picker, you must first import the userform into your project. Start by clicking the link above to download <code>CalendarForm v1.5.2.zip</code>. Extract the files in the zip archive, and save the <code>CalendarForm.frm</code> and <code>CalendarForm.frx</code> files on your computer.</p>
-            <p><img class='left' src='http://placehold.it/300x400'>Open a new Excel workbook, and press <code>alt-F11</code> to open the VBA project window. Right-click on the left hand side of the project window, and select <code>Import File...</code> from the menu. Find the <code>CalendarForm.frm</code> file you saved on your computer, and click <code>Open</code>. This will import the date picker into your workbook, so it is ready to use.</p>
+            <p>Open a new Excel workbook, and press <code>alt-F11</code> to open the VBA project window. Right-click on the left hand side of the project window, and select <code>Import File...</code> from the menu. Find the <code>CalendarForm.frm</code> file you saved on your computer, and click <code>Open</code>. This will import the date picker into your workbook, so it is ready to use.</p>
         </div>
     </section>
     <section>
@@ -40,7 +46,6 @@
         <div class='container small'>
             <p>Once the <code>CalendarForm</code> date picker has been imported into your workbook, it can be used by calling the <code>CalendarForm.GetDate</code> function. The <code>GetDate</code> function is the single point of entry into the date picker. It controls everything. Every argument in the function is optional, meaning your function call an be as simple as <code>dateVariable = CalendarForm.GetDate</code>. That's all there is to it. The date picker initializes and pops up, the user selects a date, and the selection is returned to your variable.</p>
             <p>
-                <img class='left' src='http://placehold.it/300x400'>
 <pre><code>Dim dateVariable as Date
 dateVariable = CalendarForm.GetDate</code></pre>
             </p>
