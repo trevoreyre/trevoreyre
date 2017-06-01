@@ -5,23 +5,19 @@ form {
 
 form > div {
     display: flex;
+    flex-flow: row wrap;
 }
 
 form > div > * {
     flex: 1;
+    @include breakpoint('', '600px') {
+        flex: 1 1 100%;
+    }
 }
 
 form input,
 form textarea {
     margin: 0 $padding $padding-medium $padding;
-}
-
-form > div *:first-of-type {
-    margin-left: 0;
-}
-
-form > div *:last-of-type {
-    margin-right: 0;
 }
 
 input,

@@ -3,10 +3,13 @@
     border: none;
     border-radius: $border-radius;
     border: 1px solid $primary-color;
+    max-width: 100%;
     padding: $padding;
     background: $primary-color;
     color: $contrast-text-color;
     text-decoration: none;
+    text-align: center;
+    line-height: 1;
 }
 
 .button.secondary {

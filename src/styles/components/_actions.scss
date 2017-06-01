@@ -1,5 +1,5 @@
 .actions > * {
-    margin: 0 $padding 0 0;
+    margin: 0 $padding $padding 0;
 }
 
 .actions > *:last-child {
@@ -12,6 +12,7 @@ footer .actions {
 
 #services-actions {
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     text-align: center;
     margin-bottom: $padding-large;
