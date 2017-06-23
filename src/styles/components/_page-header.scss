@@ -23,15 +23,15 @@
 
 .small {
   padding: $spacing-xl;
-  height: 200px;
+  min-height: 200px;
 }
 
 .medium {
   padding: $spacing-xxl;
-  height: 400px;
+  min-height: 400px;
 }
 
 .large {
   padding: $spacing-xxl;
-  height: 95vh;
+  min-height: 95vh;
 }
