@@ -1,0 +1,37 @@
+@import '../base/variables';
+
+.page-header {
+  text-align: center;
+  background: $color-background;
+  color: $text-color-primary;
+}
+
+.neutral {
+  background: $color-background;
+  color: $text-color-primary;
+}
+
+.primary {
+  background: $color-primary;
+  color: $text-color-primary-on-primary;
+}
+
+.secondary {
+  background: $color-secondary;
+  color: $text-color-primary-on-secondary;
+}
+
+.small {
+  padding: $spacing-xl;
+  height: 200px;
+}
+
+.medium {
+  padding: $spacing-xxl;
+  height: 400px;
+}
+
+.large {
+  padding: $spacing-xxl;
+  height: 95vh;
+}

@@ -38,3 +38,26 @@ $bar-thickness: 2px;
 $button-pad: 18px;
 $button-bar-space: 4px;
 $button-transistion-duration: 0.3s;
+
+
+/* Layout */
+$spacing-xs: 4px;
+$spacing-s: 8px;
+$spacing-m: 16px;
+$spacing-l: 24px;
+$spacing-xl: 40px;
+$spacing-xxl: 64px;
+
+/* Theme colors and text colors */
+$color-primary: #1c5b72;
+$color-secondary: #e03616;
+$color-background: #fafafa;
+$text-color-primary: rgba(black, 0.87);
+$text-color-secondary: rgba(black, 0.54);
+$text-color-disabled: rgba(black, 0.38);
+$text-color-primary-on-primary: white;
+$text-color-secondary-on-primary: rgba(white, 0.7);
+$text-color-disabled-on-primary: rgba(white, 0.5);
+$text-color-primary-on-secondary: white;
+$text-color-secondary-on-secondary: rgba(white, 0.7);
+$text-color-disabled-on-secondary: rgba(white, 0.5);
