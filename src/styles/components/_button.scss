@@ -18,9 +18,9 @@
 }
 
 .button.flat {
-    border: 1px solid $contrast-text-color;
+    border: 1px solid $primary-text-color;
     background: transparent;
-    color: $primary-color;
+    color: $primary-text-color;
 }
 
 .button.secondary.flat {
@@ -39,20 +39,9 @@
 }
 
 .button.flat:hover {
-    background: $contrast-text-color;
+    background: darken($background, 7);
 }
 
 .button.secondary.flat:hover {
     color: $secondary-color;
 }
-
-
-.button.neutral.flat {
-    border: 1px solid $primary-text-color;
-    color: $primary-text-color;
-}
-
-.button.neutral.flat:hover {
-    background: darken($background, 7);
-}
-
