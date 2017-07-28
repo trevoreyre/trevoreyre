@@ -59,22 +59,30 @@
   padding: 0 $spacing-l;
   max-width: $breakpoint-tablet;
   display: flex;
+  flex-flow: column nowrap;
+  @include breakpoint-tablet() {
+    flex-flow: row nowrap;
+  }
 }
 
 .resume section header {
-  margin: 0 $spacing-m 0 0;
-  width: 160px;
+  margin: 0 0 $spacing-xl;
+  width: 100%;
+  @include breakpoint-tablet() {
+    margin: 0 $spacing-m 0 0;
+    width: 160px;
+  }
 }
 
 .resume section h3 {
   text-align: left;
   margin: 0;
-  font-size: 1em;
   font-weight: bold;
   line-height: 1.35;
 }
 
-.resume section p {
+.resume section p,
+.resume section .content h3 {
   font-size: 1em;
   line-height: 1.35;
 }
@@ -106,7 +114,9 @@
 }
 
 .resume .row {
-  display: flex;
+  @include breakpoint-tablet() {
+    display: flex;
+  }
 }
 
 .resume .entry {
@@ -123,12 +133,17 @@
 }
 
 .resume .date-range {
-  margin: 0;
+  margin: $spacing-xs 0;
+  color: $text-color-secondary;
+  @include breakpoint-tablet() {
+    margin: 0;
+    color: $text-color-primary;
+  }
 }
 
 .resume .location {
-  margin: $spacing-xxs 0;
-  font-style: italic;
+  margin: 0;
+  color: $text-color-secondary;
 }
 
 .resume .entry-description {
@@ -178,6 +193,25 @@
   .resume section:last-of-type,
   .resume .entry {
     margin-bottom: $spacing-l;
+  }
+
+  .resume section,
+  .resume section:last-of-type {
+    flex-flow: row nowrap;
+  }
+
+  .resume section header {
+    margin: 0 $spacing-m 0 0;
+    width: 140px;
+  }
+
+  .resume .row {
+    display: flex;
+  }
+
+  .resume .date-range {
+    margin: 0;
+    color: $text-color-primary;
   }
 
   .resume footer {
