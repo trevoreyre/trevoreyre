@@ -8,12 +8,19 @@
 }
 
 .resume .header-container {
-  max-width: $breakpoint-tablet;
+  width: 100%;
   margin: 0 auto;
-  padding: $spacing-l;
+  padding: $spacing-xxl $spacing-l $spacing-l;
   display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-end;
+  flex-flow: column nowrap;
+  @include breakpoint-tablet() {
+    max-width: $breakpoint-tablet;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+  }
+  @include breakpoint-desktop() {
+    padding: $spacing-l;
+  }
 }
 
 .resume .header-container h1,
@@ -41,7 +48,14 @@
 }
 
 .resume .details {
-  text-align: right;
+  margin-top: $spacing-l;
+  color: $text-color-secondary-on-primary;
+  text-align: left;
+  @include breakpoint-tablet() {
+    margin-top: 0;
+    color: $text-color-primary-on-primary;
+    text-align: right;
+  }
 }
 
 .resume .details p {
@@ -77,12 +91,10 @@
 .resume section h3 {
   text-align: left;
   margin: 0;
-  font-weight: bold;
   line-height: 1.35;
 }
 
-.resume section p,
-.resume section .content h3 {
+.resume section p {
   font-size: 1em;
   line-height: 1.35;
 }
@@ -116,6 +128,7 @@
 .resume .row {
   @include breakpoint-tablet() {
     display: flex;
+    align-items: flex-end;
   }
 }
 
@@ -205,8 +218,22 @@
     width: 140px;
   }
 
+  .resume .header-container {
+    max-width: $breakpoint-tablet;
+    padding: $spacing-l;
+    flex-flow: row nowrap;
+    align-items: flex-end;
+  }
+
+  .resume .details {
+    margin-top: 0;
+    color: $text-color-primary-on-primary;
+    text-align: right;
+  }
+
   .resume .row {
     display: flex;
+    align-items: flex-end;
   }
 
   .resume .date-range {
