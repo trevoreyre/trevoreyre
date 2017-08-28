@@ -12,7 +12,8 @@ module.exports = {
       {hid: 'description', name: 'description', content: 'Web Developer'}
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400'},
     ]
   },
   modules: [
