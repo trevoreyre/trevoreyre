@@ -1,5 +1,5 @@
 <template>
-  <div id='contact' class='container small'>
+  <container size='small' id='contact'>
     <form method='post' action='https://formspree.io/trevoreyre@gmail.com'>
       <div>
         <input type='text' name='name' id='contact-name' placeholder='Name' />
@@ -15,16 +15,18 @@
       </div>
       <input type='text' name='_gotcha' style='display:none' />
     </form>
-  </div>
+  </container>
 </template>
 
 <script>
   import Button from '~/components/Button'
+  import Container from '~/components/Container'
 
   export default {
     name: 'contact-form',
     components: {
-      'te-button': Button
+      'te-button': Button,
+      Container
     }
   }
 </script>

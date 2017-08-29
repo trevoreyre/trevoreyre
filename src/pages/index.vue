@@ -2,119 +2,111 @@
   <article id='about'>
     <site-header></site-header>
     <section id='about-summary'>
-      <div class='container small'>
+      <container size='small'>
         <p>Hi, I'm Trevor. I love creating websites with my wife, Lia Eyre, and building cool things on the web. We are especially passionate about user experience and believe that every website should be simple and enjoyable to use.</p>
         <p>Take a look at some of our work below.</p>
-      </div>
+      </container>
     </section>
     <section id='projects'>
       <header>
         <h1>Projects</h1>
       </header>
-      <div class='container'>
-        <section id='projects-gbo' class='project-summary'>
-          <div class='container small project-summary-description'>
-            <h2>For the Love</h2>
-            <p>Full site redesign and custom WordPress template for a fashion blog in San Francisco, California.</p>
-            <div class='actions'>
-              <te-button theme='secondary'
-                href='http://forthelove.blog'>
-                Check it out
-              </te-button>
-            </div>
-          </div>
-          <div class='project-summary-image'>
-            <div class='device-collection'>
-              <div class='device phone'>
+      <container size='large'>
+        <project-summary id='projects-forthelove'
+          title='For the Love'>
+          <p>Full site redesign and custom WordPress template for a fashion blog in San Francisco, California.</p>
+          <button-group slot='actions'>
+            <te-button theme='secondary'
+              href='http://forthelove.blog'>
+              Check it out
+            </te-button>
+          </button-group>
+          <div slot='image'>
+            <device-group>
+              <device type='phone'>
                 <img src='/img/gbo-phone.jpg'>
-              </div>
-              <div class='device tablet'>
+              </device>
+              <device type='tablet'>
                 <img src='/img/gbo-tablet.jpg'>
-              </div>
-              <div class='device desktop'>
+              </device>
+              <device type='desktop'>
                 <img src='/img/gbo-desktop.jpg'>
-              </div>
-            </div>
+              </device>
+            </device-group>
           </div>
-        </section>
-        <section id='projects-oldscpa' class='project-summary'>
-          <div class='project-summary-description'>
-            <h2>Jack W Olds &amp; Company, LLP</h2>
-            <p>Logo design and site customization for a CPA firm in Portland, Oregon.</p>
-            <div class='actions'>
-              <te-button theme='secondary'
-                href='http://www.oldscpa.com'>
-                Check it out
-              </te-button>
-            </div>
-          </div>
-          <div class='project-summary-image'>
-            <div class='device-collection'>
-              <div class='device phone'>
+        </project-summary>
+        <project-summary id='projects-oldscpa'
+          title='Jack W Olds &amp; Company, LLP'>
+          <p>Logo design and site customization for a CPA firm in Portland, Oregon.</p>
+          <button-group slot='actions'>
+            <te-button theme='secondary'
+              href='http://www.oldscpa.com'>
+              Check it out
+            </te-button>
+          </button-group>
+          <div slot='image'>
+            <device-group>
+              <device type='phone'>
                 <img src='/img/oldscpa-phone.jpg'>
-              </div>
-              <div class='device tablet'>
+              </device>
+              <device type='tablet'>
                 <img src='/img/oldscpa-tablet.jpg'>
-              </div>
-              <div class='device desktop'>
+              </device>
+              <device type='desktop'>
                 <img src='/img/oldscpa-desktop.jpg'>
-              </div>
-            </div>
+              </device>
+            </device-group>
           </div>
-        </section>
-        <section id='projects-aikidonw' class='project-summary'>
-          <div class='project-summary-description'>
-            <h2>Aikido Northwest</h2>
-            <p>WordPress installation and customization for an Aikido Dojo in Portland, Oregon.</p>
-            <div class='actions'>
-              <te-button theme='secondary'
-                href='http://aikidonw.com'>
-                Check it out
-              </te-button>
-            </div>
-          </div>
-          <div class='project-summary-image'>
-            <div class='device-collection'>
-              <div class='device phone'>
+        </project-summary>
+        <project-summary id='projects-aikidonw'
+          title='Aikido Northwest'>
+          <p>WordPress installation and customization for an Aikido Dojo in Portland, Oregon.</p>
+          <button-group slot='actions'>
+            <te-button theme='secondary'
+              href='http://aikidonw.com'>
+              Check it out
+            </te-button>
+          </button-group>
+          <div slot='image'>
+            <device-group>
+              <device type='phone'>
                 <img src='/img/aikidonw-phone.jpg'>
-              </div>
-              <div class='device tablet'>
+              </device>
+              <device type='tablet'>
                 <img src='/img/aikidonw-tablet.jpg'>
-              </div>
-              <div class='device desktop'>
+              </device>
+              <device type='desktop'>
                 <img src='/img/aikidonw-desktop.jpg'>
-              </div>
-            </div>
+              </device>
+            </device-group>
           </div>
-        </section>
-        <section id='projects-excel' class='project-summary'>
-          <div class='project-summary-description'>
-            <h2>Excel VBA Date Picker</h2>
-            <p>A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.</p>
-            <div class='actions'>
-              <te-button theme='secondary'
-                href='/portfolio/excel-datepicker'
-                internal>
-                Project details
-              </te-button>
-              <te-button type='flat'
-                href='/downloads/CalendarForm v1.5.2.zip'
-                @click.native="track('Excel', 'download', 'Date Picker')">
-                Download
-              </te-button>
-            </div>
-          </div>
-          <div class='project-summary-image'>
+        </project-summary>
+        <project-summary id='projects-excel'
+          title='Excel VBA Date Picker'>
+          <p>A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.</p>
+          <button-group slot='actions'>
+            <te-button theme='secondary'
+              href='/portfolio/excel-datepicker'
+              internal>
+              Project details
+            </te-button>
+            <te-button type='flat'
+              href='/downloads/CalendarForm v1.5.2.zip'
+              @click.native="track('Excel', 'download', 'Date Picker')">
+              Download
+            </te-button>
+          </button-group>
+          <div slot='image'>
             <img src='/img/excel-datepicker.png'>
           </div>
-        </section>
-      </div>
+        </project-summary>
+      </container>
     </section>
     <section id='contact'>
       <header>
         <h1>How can we help?</h1>
       </header>
-      <div class='container small'>
+      <container size='small'>
         <p>Whether you need a brand new website, or help updating an existing one, we've got you covered. Below is a sample of available services.</p>
         <div class='services-list'>
           <ul>
@@ -131,7 +123,7 @@
           </ul>
         </div>
         <p>Drop us a line with a few details of your project, and we can start putting together a plan.</p>
-        <div id='services-actions' class='actions'>
+        <button-group :class="'services-actions'">
           <te-button type='flat'
             href='mailto:trevoreyre@gmail.com'>
             trevoreyre@gmail.com
@@ -144,8 +136,8 @@
             href='https://www.linkedin.com/in/trevor-eyre-958976108'>
             LinkedIn
           </te-button>
-        </div>
-      </div>
+        </button-group>
+      </container>
       <contact-form></contact-form>
     </section>
   </article>
@@ -154,13 +146,23 @@
 <script>
   import analytics from '~/common/analytics'
   import Button from '~/components/Button'
+  import ButtonGroup from '~/components/ButtonGroup'
   import ContactForm from '~/components/ContactForm'
+  import Container from '~/components/Container'
+  import Device from '~/components/Device'
+  import DeviceGroup from '~/components/DeviceGroup'
+  import ProjectSummary from '~/components/ProjectSummary'
   import SiteHeader from '~/components/SiteHeader'
 
   export default {
     components: {
       'te-button': Button,
+      ButtonGroup,
       ContactForm,
+      Container,
+      Device,
+      DeviceGroup,
+      ProjectSummary,
       SiteHeader
     },
     methods: {
@@ -169,5 +171,10 @@
   }
 </script>
 
-<style lang='scss'>
+<style lang='scss' scoped>
+  @import '~common/variables';
+
+  .services-actions {
+    margin-bottom: $spacing-l;
+  }
 </style>
