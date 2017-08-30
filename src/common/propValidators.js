@@ -1,10 +1,17 @@
-const themeValidator = value => (
-  ['neutral', 'primary', 'secondary'].includes(value)
-)
+const alignValidator = value => {
+  return ['left', 'center', 'right'].includes(value)
+}
 
-const sizeValidator = value => (
-  ['small', 'medium', 'large'].includes(value)
-)
+const sizeValidator = value => {
+  return ['small', 'medium', 'large'].includes(value)
+}
 
-export { themeValidator }
-export { sizeValidator }
+const themeValidator = value => {
+  return ['neutral', 'primary', 'secondary'].includes(value)
+}
+
+export {
+  alignValidator,
+  sizeValidator,
+  themeValidator
+}

@@ -8,7 +8,7 @@
     </div>
     <div class='site-header-actions-container'>
       <div class='site-header-actions'>
-        <button-group>
+        <button-group align='center'>
           <te-button href='#projects'
             type='flat-inverse'
             theme='secondary'
@@ -121,10 +121,6 @@
       width: 50%;
       align-items: center;
     }
-  }
-
-  .site-header-actions .button {
-    margin: 0 16px 16px 0;
   }
 
   .site-header-logo {

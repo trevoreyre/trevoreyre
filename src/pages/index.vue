@@ -23,15 +23,9 @@
           </button-group>
           <div slot='image'>
             <device-group>
-              <device type='phone'>
-                <img src='/img/gbo-phone.jpg'>
-              </device>
-              <device type='tablet'>
-                <img src='/img/gbo-tablet.jpg'>
-              </device>
-              <device type='desktop'>
-                <img src='/img/gbo-desktop.jpg'>
-              </device>
+              <img slot='phone-content' src='/img/gbo-phone.jpg'>
+              <img slot='tablet-content' src='/img/gbo-tablet.jpg'>
+              <img slot='desktop-content' src='/img/gbo-desktop.jpg'>
             </device-group>
           </div>
         </project-summary>
@@ -46,15 +40,9 @@
           </button-group>
           <div slot='image'>
             <device-group>
-              <device type='phone'>
-                <img src='/img/oldscpa-phone.jpg'>
-              </device>
-              <device type='tablet'>
-                <img src='/img/oldscpa-tablet.jpg'>
-              </device>
-              <device type='desktop'>
-                <img src='/img/oldscpa-desktop.jpg'>
-              </device>
+              <img slot='phone-content' src='/img/oldscpa-phone.jpg'>
+              <img slot='tablet-content' src='/img/oldscpa-tablet.jpg'>
+              <img slot='desktop-content' src='/img/oldscpa-desktop.jpg'>
             </device-group>
           </div>
         </project-summary>
@@ -69,15 +57,9 @@
           </button-group>
           <div slot='image'>
             <device-group>
-              <device type='phone'>
-                <img src='/img/aikidonw-phone.jpg'>
-              </device>
-              <device type='tablet'>
-                <img src='/img/aikidonw-tablet.jpg'>
-              </device>
-              <device type='desktop'>
-                <img src='/img/aikidonw-desktop.jpg'>
-              </device>
+              <img slot='phone-content' src='/img/aikidonw-phone.jpg'>
+              <img slot='tablet-content' src='/img/aikidonw-tablet.jpg'>
+              <img slot='desktop-content' src='/img/aikidonw-desktop.jpg'>
             </device-group>
           </div>
         </project-summary>
@@ -123,20 +105,22 @@
           </ul>
         </div>
         <p>Drop us a line with a few details of your project, and we can start putting together a plan.</p>
-        <button-group :class="'services-actions'">
-          <te-button type='flat'
-            href='mailto:trevoreyre@gmail.com'>
-            trevoreyre@gmail.com
-          </te-button>
-          <te-button type='flat'
-            href='https://github.com/TrevorEyre'>
-            GitHub
-          </te-button>
-          <te-button type='flat'
-            href='https://www.linkedin.com/in/trevor-eyre-958976108'>
-            LinkedIn
-          </te-button>
-        </button-group>
+        <div class='services-actions'>
+          <button-group align='center'>
+            <te-button type='flat'
+              href='mailto:trevoreyre@gmail.com'>
+              trevoreyre@gmail.com
+            </te-button>
+            <te-button type='flat'
+              href='https://github.com/TrevorEyre'>
+              GitHub
+            </te-button>
+            <te-button type='flat'
+              href='https://www.linkedin.com/in/trevor-eyre-958976108'>
+              LinkedIn
+            </te-button>
+          </button-group>
+        </div>
       </container>
       <contact-form></contact-form>
     </section>

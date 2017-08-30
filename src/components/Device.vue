@@ -29,7 +29,7 @@
   @import '~common/mixins';
 
   .device {
-    border-radius: 2vw;
+    border-radius: 20px;
     position: relative;
     box-sizing: border-box;
     background: #fff;
@@ -40,6 +40,7 @@
   }
 
   .device img {
+    width: 100%;
     border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, .24);
   }
@@ -56,18 +57,20 @@
       0 10px 20px rgba(0, 21, 64, .05);
   }
 
-  .phone,
-  .tablet {
-    padding: 2.6vw .75vw;
-    @include breakpoint-tablet() {
-      padding: 20px 5.9px;
-      border-radius: 13px;
-    }
+  .phone {
+    padding: 12% 3%;
   }
 
-  .phone.landscape,
+  .phone.landscape {
+    padding: 1.75% 8%;
+  }
+
+  .tablet {
+    padding: 8% 2%;
+  }
+
   .tablet.landscape {
-    padding: .75vw 3vw;
+    padding: 1.12% 6%;
   }
 
   .laptop {
@@ -79,91 +82,98 @@
   }
 
   .desktop {
-    margin-bottom: 11%;
+    margin-bottom: 12%;
     border-radius: 1vw;
     padding: 1.5%;
   }
 
+  /* Phone button */
+  .phone::after {
+    border-radius: 50%;
+    margin: 0 auto 2%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 10%;
+    height: 0;
+    padding-top: 10%;
+    box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, .12);
+  }
+
+  .phone.landscape::after {
+    margin: auto 0;
+    left: calc(100% - 7%);
+    top: 0;
+    bottom: 0;
+    width: 6%;
+    padding-top: 6%;
+  }
 
   /* Phone speaker */
   .phone::before {
     border-radius: 50px;
-    margin: 0 auto;
+    margin: 5.5% auto 0;
     left: 0;
     right: 0;
-    top: 1.15vw;
+    top: 0;
     width: 20%;
-    height: 0.3vw;
+    height: 1%;
     box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, .12);
-    @include breakpoint-tablet() {
-      top: 8.85px;
-      width: 22px;
-      height: 2.3px;
-    }
   }
 
   .phone.landscape::before {
-    margin: auto 0;
-    left: 1.3vw;
+    margin: auto 0 auto 4.5%;
+    left: 0;
     top: 0;
     bottom: 0;
-    width: 0.3vw;
+    width: 1%;
     height: 20%;
   }
 
-
-  /* Phone and tablet buttons */
-  .phone::after,
+  /* Tablet button */
   .tablet::after {
-    border-radius: 100%;
-    margin: 0 auto;
+    border-radius: 50%;
+    margin: 0 auto 2%;
     left: 0;
     right: 0;
-    bottom: .4vw;
-    width: 2.2vw;
-    height: 2.2vw;
+    bottom: 0;
+    width: 6%;
+    height: 0;
+    padding-top: 6%;
     box-shadow: inset 0 0 5px 1px rgba(0, 0, 0, .12);
-    @include breakpoint-tablet() {
-      width: 17.5px;
-      height: 17.5px;
-      bottom: 4px;
-    }
   }
 
-  .phone.landscape::after,
-  .tablet.landscape::after{
+  .tablet.landscape::after {
     margin: auto 0;
-    left: calc(100% - 2.5vw);
+    left: calc(100% - 5.25%);
     top: 0;
     bottom: 0;
+    width: 4.5%;
+    padding-top: 4.5%;
   }
-
 
   /* Tablet camera */
   .tablet::before {
-    border-radius: 100%;
-    margin: 0 auto;
+    border-radius: 50%;
+    margin: 3.5% auto 0;
     left: 0;
     right: 0;
-    top: .925vw;
-    width: .75vw;
-    height: .75vw;
+    top: 0;
+    width: 2.25%;
+    height: 0;
+    padding-top: 2.25%;
     background: #eee;
     box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, .12);
-    @include breakpoint-tablet() {
-      width: 5px;
-      height: 5px;
-      top: 7.5px;
-    }
   }
 
   .tablet.landscape::before {
-    margin: auto 0;
-    left: .925vw;
+    margin: auto 0 auto 2.5%;
+    left: 0;
     top: 0;
     bottom: 0;
+    width: 1.75%;
+    padding-top: 1.75%
   }
-
 
   /* Bottom of laptop */
   .laptop::after {
@@ -173,7 +183,6 @@
     width: 130%;
     height: 7%;
   }
-
 
   /* Desktop arm */
   .desktop::before {
@@ -186,7 +195,6 @@
     background: #fafafa;
     z-index: -1;
   }
-
 
   /* Bottom of desktop stand */
   .desktop::after {
