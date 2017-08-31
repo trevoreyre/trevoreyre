@@ -7,11 +7,6 @@
           title='Excel VBA Date Picker'>
           <p>A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.</p>
           <button-group slot='actions'>
-            <te-button theme='secondary'
-              href='/portfolio/excel-datepicker'
-              internal>
-              Project details
-            </te-button>
             <te-button type='flat'
               href='/downloads/CalendarForm v1.5.2.zip'
               @click.native="track('Excel', 'download', 'Date Picker')">
