@@ -109,7 +109,7 @@
           <button-group align='center'>
             <te-button type='flat'
               href='mailto:trevoreyre@gmail.com'>
-              trevoreyre@gmail.com
+              trevoreyre&commat;gmail.com
             </te-button>
             <te-button type='flat'
               href='https://github.com/TrevorEyre'>
