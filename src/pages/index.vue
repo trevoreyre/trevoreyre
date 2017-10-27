@@ -108,7 +108,7 @@
         <div class='services-actions'>
           <button-group align='center'>
             <te-button type='flat'
-              href='mailto:trevoreyre@gmail.com'>
+              :href="'mailto:trevoreyre@gmail.com'">
               trevoreyre&commat;gmail.com
             </te-button>
             <te-button type='flat'
