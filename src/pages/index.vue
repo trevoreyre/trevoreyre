@@ -107,8 +107,7 @@
         <p>Drop us a line with a few details of your project, and we can start putting together a plan.</p>
         <div class='services-actions'>
           <button-group align='center'>
-            <te-button type='flat'
-              :href="'mailto:trevoreyre@gmail.com'">
+            <te-button type='flat'>
               trevoreyre&commat;gmail.com
             </te-button>
             <te-button type='flat'
