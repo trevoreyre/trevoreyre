@@ -153,10 +153,8 @@
   import DeviceGroup from '~/components/DeviceGroup'
   import IconCodepen from '~/components/icons/IconCodepen'
   import IconEmail from '~/components/icons/IconEmail'
-  import IconFacebook from '~/components/icons/IconFacebook'
   import IconGithub from '~/components/icons/IconGithub'
   import IconLinkedin from '~/components/icons/IconLinkedin'
-  import IconTwitter from '~/components/icons/IconTwitter'
   import ProjectSummary from '~/components/ProjectSummary'
   import SiteHeader from '~/components/SiteHeader'
 
@@ -170,10 +168,8 @@
       DeviceGroup,
       IconCodepen,
       IconEmail,
-      IconFacebook,
       IconGithub,
       IconLinkedin,
-      IconTwitter,
       ProjectSummary,
       SiteHeader
     },
@@ -185,17 +181,6 @@
 
 <style lang='scss' scoped>
   @import '~common/variables';
-
-  /*
-  .services-actions {
-    margin-bottom: $spacing-l;
-    display: flex;
-  }
-
-  .services-actions > div {
-    flex: 1;
-  }
-  */
 
   #contact h2 {
     text-align: center;
