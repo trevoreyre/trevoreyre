@@ -3,8 +3,8 @@
     <site-header></site-header>
     <section id='about-summary'>
       <container size='small'>
-        <p>Hi, I'm Trevor. I love creating websites with my wife, Lia Eyre, and building cool things on the web. We are especially passionate about user experience and believe that every website should be simple and enjoyable to use.</p>
-        <p>Take a look at some of our work below.</p>
+        <p>Hi, I'm Trevor. I love creating websites with my wife, Lia Eyre, and building cool things on the web. I'm especially passionate about user experience and believe that every website should be simple and enjoyable to use.</p>
+        <p>Take a look at some of my work below.</p>
       </container>
     </section>
     <section id='projects'>
@@ -86,10 +86,10 @@
     </section>
     <section id='contact'>
       <header>
-        <h1>How can we help?</h1>
+        <h1>How can I help?</h1>
       </header>
       <container size='small'>
-        <p>Whether you need a brand new website, or help updating an existing one, we've got you covered. Below is a sample of available services.</p>
+        <p>Whether you need a brand new website, or help updating an existing one, I've got you covered. Below are some services I can provide.</p>
         <div class='services-list'>
           <ul>
             <li>Website design</li>
@@ -104,24 +104,41 @@
             <li>Database design</li>
           </ul>
         </div>
-        <p>Drop us a line with a few details of your project, and we can start putting together a plan.</p>
-        <div class='services-actions'>
-          <button-group align='center'>
-            <te-button type='flat'>
-              trevoreyre&commat;gmail.com
-            </te-button>
-            <te-button type='flat'
-              href='https://github.com/TrevorEyre'>
-              GitHub
-            </te-button>
-            <te-button type='flat'
-              href='https://www.linkedin.com/in/trevor-eyre-958976108'>
-              LinkedIn
-            </te-button>
-          </button-group>
-        </div>
+        <p>Drop me a line with a few details of your project, and we can start putting together a plan.</p>
+        <h2>Email</h2>
+        <p class='services-actions'>
+          <span class='services-action'>
+            <icon-email></icon-email>
+            <span>trevoreyre&commat;gmail.com</span>
+          </span>
+        </p>
+        <h2>Social</h2>
+        <p class='services-actions'>
+          <a class='services-action'
+            href='https://github.com/TrevorEyre'
+            target='_blank'
+          >
+            <icon-github></icon-github>
+            <span>GitHub</span>
+          </a>
+          <a class='services-action'
+            href='https://codepen.io/TrevorEyre'
+            target='_blank'
+          >
+            <icon-codepen></icon-codepen>
+            <span>Codepen</span>
+          </a>
+          <a class='services-action'
+            href='https://www.linkedin.com/in/trevoreyre'
+            target='_blank'
+          >
+            <icon-linkedin></icon-linkedin>
+            <span>LinkedIn</span>
+          </a>
+        </p>
+        <h2>Send a message</h2>
+        <contact-form></contact-form>
       </container>
-      <contact-form></contact-form>
     </section>
   </article>
 </template>
@@ -134,6 +151,12 @@
   import Container from '~/components/Container'
   import Device from '~/components/Device'
   import DeviceGroup from '~/components/DeviceGroup'
+  import IconCodepen from '~/components/icons/IconCodepen'
+  import IconEmail from '~/components/icons/IconEmail'
+  import IconFacebook from '~/components/icons/IconFacebook'
+  import IconGithub from '~/components/icons/IconGithub'
+  import IconLinkedin from '~/components/icons/IconLinkedin'
+  import IconTwitter from '~/components/icons/IconTwitter'
   import ProjectSummary from '~/components/ProjectSummary'
   import SiteHeader from '~/components/SiteHeader'
 
@@ -145,6 +168,12 @@
       Container,
       Device,
       DeviceGroup,
+      IconCodepen,
+      IconEmail,
+      IconFacebook,
+      IconGithub,
+      IconLinkedin,
+      IconTwitter,
       ProjectSummary,
       SiteHeader
     },
@@ -157,7 +186,40 @@
 <style lang='scss' scoped>
   @import '~common/variables';
 
+  /*
   .services-actions {
     margin-bottom: $spacing-l;
+    display: flex;
+  }
+
+  .services-actions > div {
+    flex: 1;
+  }
+  */
+
+  #contact h2 {
+    text-align: center;
+  }
+
+  .services-actions {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .services-action {
+    margin: 0 $spacing-m 0 0;
+    display: inline-flex;
+    align-items: center;
+    color: $text-color-primary;
+    text-decoration: none;
+  }
+
+  .services-action > *:not(:last-child) {
+    margin-right: $spacing-s;
+  }
+
+  a.services-action:hover {
+    text-decoration: underline;
   }
 </style>
