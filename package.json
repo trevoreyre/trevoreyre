@@ -1,35 +1,36 @@
 {
   "name": "trevoreyre",
-  "version": "1.0.0",
+  "version": "3.1.0",
   "description": "Personal website for Trevor Eyre",
-  "main": "gulpfile.js",
-  "dependencies": {},
-  "devDependencies": {
-    "autoprefixer": "^6.5.3",
-    "browser-sync": "^2.18.1",
-    "cssnano": "^3.8.0",
-    "gulp": "^3.9.1",
-    "gulp-postcss": "^6.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.2.0",
-    "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.7",
-    "gulp-wrap": "^0.13.0",
-    "vinyl-ftp": "^0.5.0"
-  },
-  "scripts": {
-    "start": "gulp start",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "Trevor Eyre <trevoreyre@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TrevorEyre/trevoreyre.git"
   },
-  "keywords": [],
-  "author": "Trevor Eyre",
-  "bugs": {
-    "url": "https://github.com/TrevorEyre/trevoreyre/issues"
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue .",
+    "precommit": "npm run lint"
   },
-  "homepage": "https://github.com/TrevorEyre/trevoreyre#readme"
+  "dependencies": {
+    "@nuxtjs/google-analytics": "^1.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "nuxt": "^1.0.0-rc3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6"
+  }
 }
