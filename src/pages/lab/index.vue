@@ -30,10 +30,18 @@
       PageHeader
     },
     async fetch ({ store }) {
-      const url = 'https://cpv2api.com/pens/public/trevoreyre?tag=featured'
-      const res = await fetch(url)
-      const json = await res.json()
-      const experiments = json.data.map(mapPenToExperiment)
+      let page = 1
+      let json = '{}'
+      let experiments = []
+      while (json.error === undefined) {
+        const url = `http://cpv2api.com/collection/XjyazW?page=${page}`
+        const res = await fetch(url)
+        json = await res.json()
+        if (!json.error && json.data) {
+          experiments = experiments.concat(json.data.map(mapPenToExperiment))
+          page += 1
+        }
+      }
       store.commit('setExperiments', experiments)
     }
   }

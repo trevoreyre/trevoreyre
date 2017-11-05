@@ -19,12 +19,12 @@
     props: {
       experiment: {
         type: Object,
-        default: {
+        default: () => ({
           title: '',
           details: '<p></p>',
           link: '#',
           image: ''
-        },
+        }),
         require: true
       }
     }

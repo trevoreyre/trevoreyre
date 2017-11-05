@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import pens from '~/common/pens'
+  import orderedPens from '~/common/pens'
   import Grid from '~/components/Grid'
   import Experiment from '~/components/Experiment'
 
@@ -24,9 +24,19 @@
     computed: {
       experiments () {
         const experiments = this.$store.state.experiments
-        return pens.map(id => {
-          return experiments.filter(experiment => experiment.id === id)[0]
+        let orderedExperiments = []
+        orderedPens.forEach(id => {
+          let foundPen = experiments.filter(experiment => experiment.id === id)
+          if (foundPen.length === 1) {
+            orderedExperiments.push(foundPen[0])
+          }
         })
+        experiments.forEach(experiment => {
+          if (!orderedPens.includes(experiment.id)) {
+            orderedExperiments.push(experiment)
+          }
+        })
+        return orderedExperiments
       }
     }
   }
