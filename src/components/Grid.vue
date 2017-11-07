@@ -10,10 +10,18 @@
   }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
+  @import '~common/variables';
+
   .grid {
+    margin: (-$spacing-m);
     display: flex;
     flex-flow: row wrap;
+    align-items: stretch;
     justify-content: center;
+  }
+
+  .grid > * {
+    margin: $spacing-m;
   }
 </style>

@@ -1,30 +1,39 @@
 <template>
-  <card class='experiment'
-    :style='{backgroundImage: `url(${experiment.image})`}'>
-    <div class='info'>
-      <h2 class='title'>{{ experiment.title }}</h2>
-      <p class='description' v-html='experiment.details'></p>
-    </div>
+  <card class='experiment' :title='experiment.title'>
+    <img slot='image' :src='experiment.image'>
+    <p v-if='experiment.details' v-html='experiment.details'></p>
+    <button-group slot='actions'>
+      <te-button
+        :href='experiment.link'
+        theme='primary'
+      >
+        Check it out
+      </te-button>
+    </button-group>
   </card>
 </template>
 
 <script>
+  import Button from '~/components/Button'
+  import ButtonGroup from '~/components/ButtonGroup'
   import Card from '~/components/Card'
 
   export default {
     name: 'experiment',
     components: {
+      'te-button': Button,
+      ButtonGroup,
       Card
     },
     props: {
       experiment: {
         type: Object,
-        default: {
+        default: () => ({
           title: '',
           details: '<p></p>',
           link: '#',
           image: ''
-        },
+        }),
         require: true
       }
     }
@@ -36,35 +45,8 @@
   @import '~common/mixins';
 
   .experiment {
-    margin: $spacing-m;
-    width: 750px;
-    overflow: hidden;
-    background-position: top center;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-
-  .experiment:hover .info,
-  .experiment:hover .info:before {
-    transform: translateY(0) translateZ(0);
-  }
-
-  .info {
-    margin-top: 56.2%;
-    border-top: 1px solid $border-color;
-    background-color: #fff;
-  }
-
-  .title {
-    margin: 0;
-    padding: $spacing-l;
-    line-height: 1;
-    color: $text-color-primary;
-  }
-
-  .description {
-    margin: 0;
-    padding: 0 24px 24px;
-    color: $text-color-primary;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
   }
 </style>
