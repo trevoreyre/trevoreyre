@@ -1,9 +1,9 @@
 <template>
   <div id='app'>
-    <page-header title='Lab' theme='secondary' size='medium'>
+    <page-header title='Lab' theme='primary' size='medium'>
       <p>A collection of code snippets and experiments.</p>
       <button-group align='center'>
-        <te-button type='flat-inverse' theme='secondary'>
+        <te-button type='flat-inverse' theme='primary'>
           See it on Codepen
         </te-button>
       </button-group>
