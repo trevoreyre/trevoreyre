@@ -1,6 +1,10 @@
 <template>
   <card class='experiment' :title='experiment.title'>
-    <img slot='image' :src='experiment.image'>
+    <img slot='image'
+      :src='experiment.image'
+      width='400'
+      height='225'
+    >
     <p v-if='experiment.details' v-html='experiment.details'></p>
     <button-group slot='actions'>
       <te-button
