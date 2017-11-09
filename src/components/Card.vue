@@ -39,22 +39,8 @@
 
   .image img {
     display: block;
-  }
-
-  .image::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.15);
-    transition: background 0.3s ease;
-  }
-
-  .card:hover .image::after {
-    background: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: auto;
   }
 
   .info {
