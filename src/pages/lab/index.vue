@@ -1,5 +1,6 @@
 <template>
   <div id='app'>
+    <nav-button href='/' open></nav-button>
     <page-header title='Lab' theme='primary' size='medium'>
       <p>A collection of code snippets and experiments.</p>
       <button-group align='center'>
@@ -19,6 +20,7 @@
   import Button from '~/components/Button'
   import ButtonGroup from '~/components/ButtonGroup'
   import ExperimentGroup from '~/components/ExperimentGroup'
+  import NavButton from '~/components/NavButton'
   import PageHeader from '~/components/PageHeader'
 
   export default {
@@ -27,6 +29,7 @@
       'te-button': Button,
       ButtonGroup,
       ExperimentGroup,
+      NavButton,
       PageHeader
     },
     async fetch ({ store }) {
