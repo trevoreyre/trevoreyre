@@ -196,11 +196,19 @@
   }
 
   .services-action {
-    margin: 0 $spacing-m 0 0;
+    margin: 0 $spacing-l 0 0;
     display: inline-flex;
     align-items: center;
     color: $text-color-primary;
     text-decoration: none;
+  }
+
+  .services-action:last-child {
+    margin-right: 0;
+  }
+
+  .services-action svg {
+    fill: $text-color-disabled;
   }
 
   .services-action > *:not(:last-child) {
