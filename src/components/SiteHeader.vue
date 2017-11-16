@@ -114,6 +114,7 @@
   }
 
   .site-header-logo img {
+    display: block;
     width: $logo-width;
     height: $logo-width;
     left: (-0.5 * $logo-width);
