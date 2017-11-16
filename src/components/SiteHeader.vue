@@ -87,8 +87,8 @@
     padding: $spacing-xl ($spacing-xl + (0.5 * $logo-width)) $spacing-xl $spacing-xl;
     min-width: 50%;
     height: 100%;
-    background: radial-gradient(circle at center right, transparent, transparent ((0.5 * $logo-width) + $spacing-m), rgba($color-primary, 0.9) 96px, rgba($color-primary, 0.9));
-    color: white;
+    background: radial-gradient(circle at center right, transparent, transparent ((0.5 * $logo-width) + $spacing-m), rgba($color-primary, 0.9) ((0.5 * $logo-width) + $spacing-m), rgba($color-primary, 0.9));
+    color: $text-color-primary-on-primary;
     display: flex;
     flex-flow: column nowrap;
   }
@@ -103,6 +103,7 @@
     line-height: 1;
     margin: 0 0 $spacing-m 0;
     color: $text-color-primary-on-primary;
+    text-shadow: 0 1px 2px rgba(black, 0.2);
   }
 
   .site-header-title h2 {
@@ -111,6 +112,7 @@
     line-height: 1;
     margin: 0;
     color: $text-color-secondary-on-primary;
+    text-shadow: 0 1px 2px rgba(black, 0.2);
   }
 
   .site-header-logo img {
@@ -135,16 +137,17 @@
   /* Navigation */
   nav a {
     display: inline-block;
-    color: white;
+    color: $text-color-primary-on-primary;
     font-size: 1em;
-    text-transform: uppercase;
     letter-spacing: 2px;
     line-height: 1;
+    text-transform: uppercase;
     text-decoration: none;
+    text-shadow: 0 1px 2px rgba(black, 0.2);
   }
 
   nav svg {
-    fill: white;
+    fill: $text-color-primary-on-primary;
   }
 
   .menu-primary {
@@ -174,7 +177,7 @@
   .social a {
     padding: $spacing-xs;
     margin: $spacing-xs;
-    width: 32px;
-    height: 32px;
+    width: $spacing-l;
+    height: $spacing-l;
   }
 </style>
