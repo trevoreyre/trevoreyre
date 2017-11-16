@@ -107,10 +107,13 @@
         <p>Drop me a line with a few details of your project, and we can start putting together a plan.</p>
         <h2>Email</h2>
         <p class='services-actions'>
-          <span class='services-action'>
+          <a class='services-action'
+            href='mailto:trevoreyre@gmail.com'
+            target='_blank'
+          >
             <icon-email></icon-email>
             <span>trevoreyre&commat;gmail.com</span>
-          </span>
+          </a>
         </p>
         <h2>Social</h2>
         <p class='services-actions'>
