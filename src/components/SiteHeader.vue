@@ -84,13 +84,20 @@
   }
 
   .site-header-inner {
-    padding: $spacing-xl ($spacing-xl + (0.5 * $logo-width)) $spacing-xl $spacing-xl;
+    padding: $spacing-l;
     min-width: 50%;
     height: 100%;
-    background: radial-gradient(circle at center right, transparent, transparent ((0.5 * $logo-width) + $spacing-m), rgba($color-primary, 0.9) ((0.5 * $logo-width) + $spacing-m), rgba($color-primary, 0.9));
+    background: rgba($color-primary, 0.9);
     color: $text-color-primary-on-primary;
     display: flex;
     flex-flow: column nowrap;
+    @include breakpoint(550px) {
+      padding: $spacing-l ($spacing-l + (0.5 * $logo-width)) $spacing-l $spacing-l;
+      background: radial-gradient(circle at center right, transparent, transparent ((0.5 * $logo-width) + $spacing-m), rgba($color-primary, 0.9) ((0.5 * $logo-width) + $spacing-m), rgba($color-primary, 0.9));
+    }
+    @include breakpoint-tablet() {
+      padding: $spacing-xl ($spacing-xl + (0.5 * $logo-width)) $spacing-xl $spacing-xl;
+    }
   }
 
   .site-header-title {
@@ -98,12 +105,15 @@
   }
 
   .site-header-title h1 {
-    font-size: 72px;
+    font-size: 64px;
     font-weight: 300;
     line-height: 1;
     margin: 0 0 $spacing-m 0;
     color: $text-color-primary-on-primary;
     text-shadow: 0 1px 2px rgba(black, 0.2);
+    @include breakpoint-tablet() {
+      font-size: 72px;
+    }
   }
 
   .site-header-title h2 {
@@ -116,10 +126,13 @@
   }
 
   .site-header-logo img {
-    display: block;
-    width: $logo-width;
-    height: $logo-width;
-    left: (-0.5 * $logo-width);
+    display: none;
+    @include breakpoint(550px) {
+      display: block;
+      width: $logo-width;
+      height: $logo-width;
+      left: (-0.5 * $logo-width);
+    }
   }
 
   .site-header-background {
@@ -154,12 +167,14 @@
     margin: 0 (-$spacing-m) 0;
     padding: 0;
     list-style: none;
-    display: flex;
-    align-items: center;
+  }
+
+  .menu-primary li {
+    display: inline-block;
   }
 
   .menu-primary a {
-    display: block;
+    display: inline-block;
     margin: 0;
     padding: $spacing-m;
   }
