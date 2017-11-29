@@ -1,32 +1,54 @@
 <template>
   <container size='small' id='contact'>
-    <form method='post' action='https://formspree.io/trevoreyre@gmail.com'>
-      <div>
-        <input type='text' name='name' id='contact-name' placeholder='Name' />
-        <input type='email' name='_replyto' id='contact-email' placeholder='Email' />
-      </div>
-      <div>
-        <textarea name='message' id='contact-message' placeholder='Message' rows='6'></textarea>
-      </div>
-      <div id='contact-actions' class='actions'>
+    <form class='contact-form'
+      method='post'
+      action='https://formspree.io/trevoreyre@gmail.com'
+    >
+      <form-element-group>
+        <form-element>
+          <base-label for='contact-name'>Name</base-label>
+          <base-input type='text' name='name' id='contact-name' />
+        </form-element>
+        <form-element>
+          <base-label for='contact-email'>Email</base-label>
+          <base-input type='email' name='_replyto' id='contact-email' />
+        </form-element>
+      </form-element-group>
+      <form-element>
+        <base-label for='contact-message'>Message</base-label>
+        <base-textarea name='message' id='contact-message' rows='6'></base-textarea>
+      </form-element>
+      <button-group align='center'>
         <te-button theme='secondary'>
           Send Message
         </te-button>
-      </div>
+      </button-group>
       <input type='text' name='_gotcha' style='display:none' />
     </form>
   </container>
 </template>
 
 <script>
+  import BaseInput from '~/components/BaseInput'
+  import BaseLabel from '~/components/BaseLabel'
+  import BaseTextarea from '~/components/BaseTextarea'
   import Button from '~/components/Button'
+  import ButtonGroup from '~/components/ButtonGroup'
   import Container from '~/components/Container'
+  import FormElement from '~/components/FormElement'
+  import FormElementGroup from '~/components/FormElementGroup'
 
   export default {
     name: 'contact-form',
     components: {
+      BaseInput,
+      BaseLabel,
+      BaseTextarea,
       'te-button': Button,
-      Container
+      ButtonGroup,
+      Container,
+      FormElement,
+      FormElementGroup
     }
   }
 </script>
@@ -35,26 +57,9 @@
   @import '~common/variables';
   @import '~common/mixins';
 
-  form {
+  .contact-form {
     width: 100%;
-    margin-bottom: $spacing-xl;
-  }
-
-  form > div {
-    display: flex;
-    flex-flow: row wrap;
-  }
-
-  form > div > * {
-    flex: 1;
-    @include breakpoint('', '600px') {
-      flex: 1 1 100%;
-    }
-  }
-
-  form input,
-  form textarea {
-    margin: 0 $spacing-m $spacing-l $spacing-m;
+    margin: 0 (-$spacing-m) $spacing-xl;
   }
 
   input,

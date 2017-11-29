@@ -105,7 +105,6 @@
           </ul>
         </div>
         <p>Drop me a line with a few details of your project, and we can start putting together a plan.</p>
-        <h2>Email</h2>
         <p class='services-actions'>
           <a class='services-action'
             href='mailto:trevoreyre@gmail.com'
@@ -115,7 +114,6 @@
             <span>trevoreyre&commat;gmail.com</span>
           </a>
         </p>
-        <h2>Social</h2>
         <p class='services-actions'>
           <a class='services-action'
             href='https://github.com/TrevorEyre'
@@ -139,7 +137,6 @@
             <span>LinkedIn</span>
           </a>
         </p>
-        <h2>Send a message</h2>
         <contact-form></contact-form>
       </container>
     </section>
