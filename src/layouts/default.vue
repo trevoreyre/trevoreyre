@@ -76,6 +76,7 @@
 
   p,
   pre {
+    font-size: 1em;
     margin-bottom: 1.3em;
     line-height: 1.618;
     @include breakpoint-tablet() {
@@ -99,34 +100,6 @@
   small,
   .font_small {
     font-size: 0.618em;
-  }
-
-  /* Nav */
-  #nav-main {
-      width: 200px;
-      height: 100%;
-      position: fixed;
-      left: -200px;
-      z-index: 2;
-      background: $color-primary;
-      transition: all 0.3s;
-  }
-
-  #nav-main.open {
-      left: 0;
-  }
-
-  #nav-main ul {
-      padding: 40px 0 0 0;
-      list-style: none;
-  }
-
-  #nav-main li {
-      margin: 16px 24px;
-  }
-
-  #nav-main a {
-      color: $text-color-primary-on-contrast;
   }
 
   section {
