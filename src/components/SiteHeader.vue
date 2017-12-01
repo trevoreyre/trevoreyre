@@ -8,7 +8,7 @@
       <nav class='header-menu'>
         <ul class='menu-primary'>
           <li class='menu-item'>
-            <a href='/'>Home</a>
+            <a href='#projects'>Projects</a>
           </li>
           <li class='menu-item'>
             <a href='/lab'>Lab</a>

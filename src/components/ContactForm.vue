@@ -59,7 +59,7 @@
 
   .contact-form {
     width: 100%;
-    margin: 0 (-$spacing-m) $spacing-xl;
+    margin: 0 0 $spacing-xl;
   }
 
   input,
