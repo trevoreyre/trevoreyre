@@ -1,26 +1,27 @@
 <template>
   <div class='experiment-group'>
-    <grid>
+    <masonry-grid>
       <div
         class='experiment-container'
         v-for='experiment in experiments'
+        :key='experiment.id'
       >
         <experiment :experiment='experiment'></experiment>
       </div>
-    </grid>
+    </masonry-grid>
   </div>
 </template>
 
 <script>
   import orderedPens from '~/common/pens'
   import Experiment from '~/components/Experiment'
-  import Grid from '~/components/Grid'
+  import MasonryGrid from '~/components/MasonryGrid'
 
   export default {
     name: 'experiment-group',
     components: {
       Experiment,
-      Grid
+      MasonryGrid
     },
     computed: {
       experiments () {
