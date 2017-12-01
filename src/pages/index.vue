@@ -84,7 +84,7 @@
         </project-summary>
       </container>
     </section>
-    <section id='contact'>
+    <section id='services'>
       <header>
         <h1>How can I help?</h1>
       </header>
@@ -105,6 +105,13 @@
           </ul>
         </div>
         <p>Drop me a line with a few details of your project, and we can start putting together a plan.</p>
+      </container>
+    </section>
+    <section id='contact'>
+      <header>
+        <h1>Contact</h1>
+      </header>
+      <container size='small'>
         <p class='services-actions'>
           <a class='services-action'
             href='mailto:trevoreyre@gmail.com'
