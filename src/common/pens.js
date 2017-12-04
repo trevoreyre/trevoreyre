@@ -1,4 +1,5 @@
 export default [
+  'eegqXP', // CSS masonry layout
   'OONEKM', // Site header halves
   'bRrrEx', // Frosted glass card overlay
   'pPpQbG', // Site header quadrants concept

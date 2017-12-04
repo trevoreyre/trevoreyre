@@ -9,17 +9,29 @@
         </te-button>
       </button-group>
     </page-header>
-    <experiment-group></experiment-group>
+    <section>
+      <container size='large'>
+        <experiment-group>
+          <grid-cell
+            v-for='experiment in experiments'
+            :key='experiment.id'
+          >
+            <experiment :experiment='experiment'></experiment>
+          </grid-cell>
+        </experiment-group>
+      </container>
+    </section>
   </div>
 </template>
 
 <script>
-  import fetch from 'isomorphic-fetch'
-
-  import { mapPenToExperiment } from '~/common/maps'
+  import sortObjectByArray from '~/common/sortObjectByArray'
+  import sortedPens from '~/common/pens'
   import Button from '~/components/Button'
   import ButtonGroup from '~/components/ButtonGroup'
+  import Experiment from '~/components/Experiment'
   import ExperimentGroup from '~/components/ExperimentGroup'
+  import GridCell from '~/components/GridCell'
   import NavButton from '~/components/NavButton'
   import PageHeader from '~/components/PageHeader'
 
@@ -28,24 +40,20 @@
     components: {
       'te-button': Button,
       ButtonGroup,
+      Experiment,
       ExperimentGroup,
+      GridCell,
       NavButton,
       PageHeader
     },
-    async fetch ({ store }) {
-      let page = 1
-      let json = '{}'
-      let experiments = []
-      while (json.error === undefined) {
-        const url = `http://cpv2api.com/collection/XjyazW?page=${page}`
-        const res = await fetch(url)
-        json = await res.json()
-        if (!json.error && json.data) {
-          experiments = experiments.concat(json.data.map(mapPenToExperiment))
-          page += 1
-        }
+    computed: {
+      experiments () {
+        return sortObjectByArray(
+          this.$store.state.experiments,
+          'id',
+          sortedPens
+        )
       }
-      store.commit('setExperiments', experiments)
     }
   }
 </script>

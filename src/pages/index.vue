@@ -64,17 +64,20 @@
           </div>
         </project-summary>
         <project-summary id='projects-excel'
-          title='Excel VBA Date Picker'>
+          title='Excel VBA Date Picker'
+        >
           <p>A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.</p>
           <button-group slot='actions'>
             <te-button theme='secondary'
               href='/portfolio/excel-datepicker'
-              internal>
+              internal
+            >
               Project details
             </te-button>
             <te-button type='flat'
               href='/downloads/CalendarForm v1.5.2.zip'
-              @click.native="track('Excel', 'download', 'Date Picker')">
+              @click.native="track('Excel', 'download', 'Date Picker')"
+            >
               Download
             </te-button>
           </button-group>
@@ -82,6 +85,23 @@
             <img src='/img/excel-datepicker.png'>
           </div>
         </project-summary>
+      </container>
+    </section>
+    <section id='lab'>
+      <header>
+        <h1>Code experiments</h1>
+      </header>
+      <container size='large'>
+        <experiment-group>
+        <!-- <div class='lab-container'> -->
+          <grid-cell class='experiment-container'
+            v-for='experiment in experiments'
+            :key='experiment.id'
+          >
+            <experiment :experiment='experiment'></experiment>
+          </grid-cell>
+        <!-- </div> -->
+        </experiment-group>
       </container>
     </section>
     <section id='services'>
@@ -152,12 +172,17 @@
 
 <script>
   import analytics from '~/common/analytics'
+  import sortObjectByArray from '~/common/sortObjectByArray'
+  import sortedPens from '~/common/pens'
   import Button from '~/components/Button'
   import ButtonGroup from '~/components/ButtonGroup'
   import ContactForm from '~/components/ContactForm'
   import Container from '~/components/Container'
   import Device from '~/components/Device'
   import DeviceGroup from '~/components/DeviceGroup'
+  import Experiment from '~/components/Experiment'
+  import ExperimentGroup from '~/components/ExperimentGroup'
+  import GridCell from '~/components/GridCell'
   import IconCodepen from '~/components/icons/IconCodepen'
   import IconEmail from '~/components/icons/IconEmail'
   import IconGithub from '~/components/icons/IconGithub'
@@ -173,6 +198,9 @@
       Container,
       Device,
       DeviceGroup,
+      Experiment,
+      ExperimentGroup,
+      GridCell,
       IconCodepen,
       IconEmail,
       IconGithub,
@@ -182,6 +210,15 @@
     },
     methods: {
       track: analytics.track
+    },
+    computed: {
+      experiments () {
+        return sortObjectByArray(
+          this.$store.state.experiments,
+          'id',
+          sortedPens
+        ).slice(0, 3)
+      }
     }
   }
 </script>
@@ -192,6 +229,19 @@
   #contact h2 {
     text-align: center;
   }
+
+  // .lab-container {
+  //   margin: -($spacing-m);
+  //   display: flex;
+  //   flex-flow: row wrap;
+  //   justify-content: center;
+  // }
+
+  // .experiment-container {
+  //   margin: $spacing-m;
+  //   flex: 1 1 auto;
+  //   max-width: 368px;
+  // }
 
   .services-actions {
     margin-left: auto;
