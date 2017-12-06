@@ -93,14 +93,12 @@
       </header>
       <container size='large'>
         <experiment-group>
-        <!-- <div class='lab-container'> -->
           <grid-cell class='experiment-container'
             v-for='experiment in experiments'
             :key='experiment.id'
           >
             <experiment :experiment='experiment'></experiment>
           </grid-cell>
-        <!-- </div> -->
         </experiment-group>
       </container>
     </section>
@@ -226,22 +224,9 @@
 <style lang='scss' scoped>
   @import '~common/variables';
 
-  #contact h2 {
-    text-align: center;
+  .experiment-container {
+    max-width: $experiment-width;
   }
-
-  // .lab-container {
-  //   margin: -($spacing-m);
-  //   display: flex;
-  //   flex-flow: row wrap;
-  //   justify-content: center;
-  // }
-
-  // .experiment-container {
-  //   margin: $spacing-m;
-  //   flex: 1 1 auto;
-  //   max-width: 368px;
-  // }
 
   .services-actions {
     margin-left: auto;

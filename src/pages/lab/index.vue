@@ -12,7 +12,7 @@
     <section>
       <container size='large'>
         <experiment-group>
-          <grid-cell
+          <grid-cell class='experiment-container'
             v-for='experiment in experiments'
             :key='experiment.id'
           >
@@ -59,4 +59,9 @@
 </script>
 
 <style lang='scss' scoped>
+  @import '~common/variables';
+
+  .experiment-container {
+    max-width: $experiment-width;
+  }
 </style>

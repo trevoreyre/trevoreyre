@@ -47,9 +47,11 @@
 </script>
 
 <style lang='scss' scoped>
+  @import '~common/variables';
+
   .experiment {
     width: 100%;
-    max-width: 368px;
+    max-width: $experiment-width;
     height: 100%;
   }
 

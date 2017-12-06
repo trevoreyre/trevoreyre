@@ -11,7 +11,10 @@
 </script>
 
 <style lang='scss' scoped>
+  @import '~common/variables';
+
   .grid-cell {
-    flex: 1 1 auto;
+    margin: $spacing-m;
+    flex: 1 0 auto;
   }
 </style>

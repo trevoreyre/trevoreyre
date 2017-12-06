@@ -47,3 +47,6 @@ $button-transistion-duration: 0.3s;
 
 /* Logo */
 $logo-width: 160px;
+
+/* Lab */
+$experiment-width: ($breakpoint-desktop / 3) - ($spacing-m * 2);

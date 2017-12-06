@@ -20,14 +20,12 @@ const createStore = () => {
         let experiments = []
         while (json.error === undefined) {
           const url = `http://cpv2api.com/collection/XjyazW?page=${page}`
-          // const url = `http://localhost:3000/pens.json`
           const res = await fetch(url)
           json = await res.json()
           if (!json.error && json.data) {
             experiments = experiments.concat(json.data.map(mapPenToExperiment))
             page += 1
           }
-          // json.error = true
         }
         await commit('setExperiments', experiments)
       }

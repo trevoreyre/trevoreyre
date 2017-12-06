@@ -9,11 +9,13 @@
 <script>
   import {sizeValidator} from '~/common/propValidators'
   import Container from '~/components/Container'
+  import GridCell from '~/components/GridCell'
 
   export default {
     name: 'grid',
     components: {
-      Container
+      Container,
+      GridCell
     },
     props: {
       size: {
@@ -38,10 +40,5 @@
     flex-flow: row wrap;
     align-items: stretch;
     justify-content: center;
-  }
-
-  .grid > * {
-    margin: $spacing-m;
-    flex: 1 1 auto;
   }
 </style>
