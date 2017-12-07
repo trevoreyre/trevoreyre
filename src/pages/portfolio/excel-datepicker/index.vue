@@ -1,6 +1,6 @@
 <template>
   <article id='project-excel' class='project'>
-    <nav-button href='/#projects-excel' open></nav-button>
+    <nav-button href='/portfolio#projects-excel' open></nav-button>
     <section>
       <container size='large' class='project-summary'>
         <project-summary id='projects-excel'

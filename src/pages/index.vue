@@ -13,11 +13,13 @@
       </header>
       <container size='large'>
         <project-summary id='projects-forthelove'
-          title='For the Love'>
+          title='For the Love'
+        >
           <p>Full site redesign and custom WordPress template for a fashion blog in San Francisco, California.</p>
           <button-group slot='actions'>
             <te-button theme='secondary'
-              href='http://forthelove.blog'>
+              href='http://forthelove.blog'
+            >
               Check it out
             </te-button>
           </button-group>
@@ -30,11 +32,13 @@
           </div>
         </project-summary>
         <project-summary id='projects-oldscpa'
-          title='Jack W Olds &amp; Company, LLP'>
+          title='Jack W Olds &amp; Company, LLP'
+        >
           <p>Logo design and site customization for a CPA firm in Portland, Oregon.</p>
           <button-group slot='actions'>
             <te-button theme='secondary'
-              href='http://www.oldscpa.com'>
+              href='http://www.oldscpa.com'
+            >
               Check it out
             </te-button>
           </button-group>
@@ -46,45 +50,14 @@
             </device-group>
           </div>
         </project-summary>
-        <project-summary id='projects-aikidonw'
-          title='Aikido Northwest'>
-          <p>WordPress installation and customization for an Aikido Dojo in Portland, Oregon.</p>
-          <button-group slot='actions'>
-            <te-button theme='secondary'
-              href='http://aikidonw.com'>
-              Check it out
-            </te-button>
-          </button-group>
-          <div slot='image'>
-            <device-group>
-              <img slot='phone-content' src='/img/aikidonw-phone.jpg'>
-              <img slot='tablet-content' src='/img/aikidonw-tablet.jpg'>
-              <img slot='desktop-content' src='/img/aikidonw-desktop.jpg'>
-            </device-group>
-          </div>
-        </project-summary>
-        <project-summary id='projects-excel'
-          title='Excel VBA Date Picker'
-        >
-          <p>A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.</p>
-          <button-group slot='actions'>
-            <te-button theme='secondary'
-              href='/portfolio/excel-datepicker'
-              internal
-            >
-              Project details
-            </te-button>
-            <te-button type='flat'
-              href='/downloads/CalendarForm v1.5.2.zip'
-              @click.native="track('Excel', 'download', 'Date Picker')"
-            >
-              Download
-            </te-button>
-          </button-group>
-          <div slot='image'>
-            <img src='/img/excel-datepicker.png'>
-          </div>
-        </project-summary>
+        <button-group align='center'>
+          <te-button theme='primary'
+            href='/portfolio'
+            internal
+          >
+            View more projects
+          </te-button>
+        </button-group>
       </container>
     </section>
     <section id='lab'>
@@ -100,6 +73,14 @@
             <experiment :experiment='experiment'></experiment>
           </grid-cell>
         </experiment-group>
+        <button-group align='center'>
+          <te-button theme='primary'z
+            href='/lab'
+            internal
+          >
+            View more experiments
+          </te-button>
+        </button-group>
       </container>
     </section>
     <section id='services'>

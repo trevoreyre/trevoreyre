@@ -47,9 +47,14 @@
   }
 
   .page-header.primary {
-    background: linear-gradient($color-primary, rgba($color-primary, 0.85)),
-      url(https://source.unsplash.com/collection/905011/1600x900) center center / cover;
-    color: $text-color-primary-on-primary;
+    // background: linear-gradient($color-primary, rgba($color-primary, 0.85)),
+    //   url(https://source.unsplash.com/collection/905011/1600x900) center center / cover;
+    // color: $text-color-primary-on-primary;
+    background-image: url(https://source.unsplash.com/collection/905011/1600x900);
+    background-size: cover;
+    background-position: center center;
+    background-color: $color-primary;
+    background-blend-mode: multiply;
     text-shadow: 0 1px 2px rgba(black, 0.2);
   }
 
@@ -59,9 +64,14 @@
   }
 
   .page-header.secondary {
-    background: linear-gradient($color-secondary, rgba($color-secondary, 0.85)),
-      url(https://source.unsplash.com/collection/905011/1600x900) center center / cover;
-    color: $text-color-primary-on-secondary;
+    // background: linear-gradient($color-secondary, rgba($color-secondary, 0.85)),
+    //   url(https://source.unsplash.com/collection/905011/1600x900) center center / cover;
+    // color: $text-color-primary-on-secondary;
+    background-image: url(https://source.unsplash.com/collection/905011/1600x900);
+    background-size: cover;
+    background-position: center center;
+    background-color: $color-secondary;
+    background-blend-mode: multiply;
     text-shadow: 0 1px 2px rgba(black, 0.2);
   }
 
