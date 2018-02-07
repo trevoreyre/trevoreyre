@@ -1,12 +1,13 @@
 <template>
-  <article id='project-excel' class='project'>
-    <nav-button href='/portfolio#projects-excel' open></nav-button>
+  <article id='project-excel-datepicker' class='project'>
+    <nav-button href='/portfolio#projects-excel-datepicker' open></nav-button>
     <section>
       <container size='large' class='project-summary'>
         <project-summary id='projects-excel'
-          title='Excel VBA Date Picker'>
+          title='Excel VBA Date Picker'
+        >
           <p>A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.</p>
-          <button-group slot='actions'>
+          <button-group>
             <te-button type='flat'
               href='/downloads/CalendarForm v1.5.2.zip'
               @click.native="track('Excel', 'download', 'Date Picker')">

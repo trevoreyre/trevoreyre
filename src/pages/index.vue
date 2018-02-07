@@ -14,15 +14,9 @@
       <container size='large'>
         <project-summary id='projects-forthelove'
           title='For the Love'
+          :actions="[{href: 'http://forthelove.blog', text: 'Check it out'}]"
         >
           <p>Full site redesign and custom WordPress template for a fashion blog in San Francisco, California.</p>
-          <button-group slot='actions'>
-            <te-button theme='secondary'
-              href='http://forthelove.blog'
-            >
-              Check it out
-            </te-button>
-          </button-group>
           <div slot='image'>
             <device-group>
               <img slot='phone-content' src='/img/gbo-phone.jpg'>
@@ -33,15 +27,9 @@
         </project-summary>
         <project-summary id='projects-oldscpa'
           title='Jack W Olds &amp; Company, LLP'
+          :actions="[{href: 'http://www.oldscpa.com', text: 'Check it out'}]"
         >
           <p>Logo design and site customization for a CPA firm in Portland, Oregon.</p>
-          <button-group slot='actions'>
-            <te-button theme='secondary'
-              href='http://www.oldscpa.com'
-            >
-              Check it out
-            </te-button>
-          </button-group>
           <div slot='image'>
             <device-group>
               <img slot='phone-content' src='/img/oldscpa-phone.jpg'>

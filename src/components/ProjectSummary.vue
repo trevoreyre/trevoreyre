@@ -3,7 +3,16 @@
     <container size='small' class='description'>
       <h2 class='title'>{{ title }}</h2>
       <slot></slot>
-      <slot name='actions'></slot>
+      <div class='actions'>
+        <a class='action'
+          v-for='action in actions'
+          :key='action.href'
+          :href='action.href'
+          :target="action.href.startsWith('/') ? null : '_blank'"
+        >
+          {{ action.text }}
+        </a>
+      </div>
     </container>
     <div class='image'>
       <slot name='image'></slot>
@@ -28,6 +37,11 @@
         type: String,
         default: '',
         required: true
+      },
+      actions: {
+        type: Array,
+        default: [],
+        required: false
       }
     }
   }

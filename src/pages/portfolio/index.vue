@@ -1,19 +1,15 @@
 <template>
   <div id='app'>
     <nav-button href='/' open></nav-button>
-    <page-header title='Projects' theme='primary' size='small'>
+    <page-header title='Projects' theme='primary' size='medium'>
     </page-header>
     <section>
       <container size='large'>
         <project-summary id='projects-forthelove'
-          title='For the Love'>
+          title='For the Love'
+          :actions="[{href: 'http://forthelove.blog', text: 'Check it out'}]"
+        >
           <p>Full site redesign and custom WordPress template for a fashion blog in San Francisco, California.</p>
-          <button-group slot='actions'>
-            <te-button theme='secondary'
-              href='http://forthelove.blog'>
-              Check it out
-            </te-button>
-          </button-group>
           <div slot='image'>
             <device-group>
               <img slot='phone-content' src='/img/gbo-phone.jpg'>
@@ -23,14 +19,10 @@
           </div>
         </project-summary>
         <project-summary id='projects-oldscpa'
-          title='Jack W Olds &amp; Company, LLP'>
+          title='Jack W Olds &amp; Company, LLP'
+          :actions="[{href: 'http://www.oldscpa.com', text: 'Check it out'}]"
+        >
           <p>Logo design and site customization for a CPA firm in Portland, Oregon.</p>
-          <button-group slot='actions'>
-            <te-button theme='secondary'
-              href='http://www.oldscpa.com'>
-              Check it out
-            </te-button>
-          </button-group>
           <div slot='image'>
             <device-group>
               <img slot='phone-content' src='/img/oldscpa-phone.jpg'>
@@ -40,14 +32,10 @@
           </div>
         </project-summary>
         <project-summary id='projects-aikidonw'
-          title='Aikido Northwest'>
+          title='Aikido Northwest'
+          :actions="[{href: 'http://aikidonw.com', text: 'Check it out'}]"
+        >
           <p>WordPress installation and customization for an Aikido Dojo in Portland, Oregon.</p>
-          <button-group slot='actions'>
-            <te-button theme='secondary'
-              href='http://aikidonw.com'>
-              Check it out
-            </te-button>
-          </button-group>
           <div slot='image'>
             <device-group>
               <img slot='phone-content' src='/img/aikidonw-phone.jpg'>
@@ -56,24 +44,11 @@
             </device-group>
           </div>
         </project-summary>
-        <project-summary id='projects-excel'
+        <project-summary id='projects-excel-datepicker'
           title='Excel VBA Date Picker'
+          :actions="[{href: '/portfolio/excel-datepicker', text: 'Project details'}]"
         >
           <p>A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.</p>
-          <button-group slot='actions'>
-            <te-button theme='secondary'
-              href='/portfolio/excel-datepicker'
-              internal
-            >
-              Project details
-            </te-button>
-            <te-button type='flat'
-              href='/downloads/CalendarForm v1.5.2.zip'
-              @click.native="track('Excel', 'download', 'Date Picker')"
-            >
-              Download
-            </te-button>
-          </button-group>
           <div slot='image'>
             <img src='/img/excel-datepicker.png'>
           </div>

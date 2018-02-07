@@ -1,5 +1,9 @@
 <template>
-  <card class='experiment' :title='experiment.title'>
+  <card class='experiment'
+    :href='experiment.link'
+    :title='experiment.title'
+    :actions="[{href: experiment.link, text: 'Check it out'}]"
+  >
     <div slot='image' class='image-container'>
       <img slot='image'
         :src='experiment.image'
@@ -8,14 +12,6 @@
       >
     </div>
     <p v-if='experiment.details' v-html='experiment.details'></p>
-    <button-group slot='actions'>
-      <te-button
-        :href='experiment.link'
-        theme='primary'
-      >
-        Check it out
-      </te-button>
-    </button-group>
   </card>
 </template>
 
