@@ -4,7 +4,10 @@
     <page-header title='Lab' theme='primary' size='medium'>
       <p>A collection of code snippets and experiments.</p>
       <button-group align='center'>
-        <te-button type='flat-inverse' theme='primary'>
+        <te-button type='flat-inverse'
+          theme='primary'
+          href='https://codepen.io/TrevorEyre'
+        >
           See it on Codepen
         </te-button>
       </button-group>
@@ -29,6 +32,7 @@
   import sortedPens from '~/common/pens'
   import Button from '~/components/Button'
   import ButtonGroup from '~/components/ButtonGroup'
+  import Container from '~/components/Container'
   import Experiment from '~/components/Experiment'
   import ExperimentGroup from '~/components/ExperimentGroup'
   import GridCell from '~/components/GridCell'
@@ -40,6 +44,7 @@
     components: {
       'te-button': Button,
       ButtonGroup,
+      Container,
       Experiment,
       ExperimentGroup,
       GridCell,

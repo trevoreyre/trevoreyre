@@ -75,7 +75,7 @@
   }
 
   a {
-    color: $color-secondary;
+    color: $color-primary;
   }
 
   p,

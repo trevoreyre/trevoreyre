@@ -19,7 +19,7 @@
         <base-textarea name='message' id='contact-message' rows='6'></base-textarea>
       </form-element>
       <button-group align='center'>
-        <te-button theme='secondary'>
+        <te-button theme='primary'>
           Send Message
         </te-button>
       </button-group>

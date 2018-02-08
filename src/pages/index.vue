@@ -14,6 +14,7 @@
       <container size='large'>
         <project-summary id='projects-forthelove'
           title='For the Love'
+          href='http://forthelove.blog'
           :actions="[{href: 'http://forthelove.blog', text: 'Check it out'}]"
         >
           <p>Full site redesign and custom WordPress template for a fashion blog in San Francisco, California.</p>
@@ -27,6 +28,7 @@
         </project-summary>
         <project-summary id='projects-oldscpa'
           title='Jack W Olds &amp; Company, LLP'
+          href='http://www.oldscpa.com'
           :actions="[{href: 'http://www.oldscpa.com', text: 'Check it out'}]"
         >
           <p>Logo design and site customization for a CPA firm in Portland, Oregon.</p>
@@ -61,8 +63,8 @@
             <experiment :experiment='experiment'></experiment>
           </grid-cell>
         </experiment-group>
-        <button-group align='center'>
-          <te-button theme='primary'z
+        <button-group class='experiment-actions' align='center'>
+          <te-button theme='primary'
             href='/lab'
             internal
           >
@@ -192,9 +194,17 @@
 
 <style lang='scss' scoped>
   @import '~common/variables';
+  @import '~common/mixins';
 
   .experiment-container {
     max-width: $experiment-width;
+  }
+
+  .experiment-actions {
+    margin-top: $spacing-m !important;
+    @include breakpoint-desktop() {
+      margin-top: $spacing-l !important;
+    }
   }
 
   .services-actions {

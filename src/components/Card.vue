@@ -1,20 +1,25 @@
 <template>
   <div class='card'>
-    <div class='image'>
+    <div v-if='href' class='image'>
+      <a :href='href'
+        :target="href.startsWith('/') ? null : '_blank'"
+      >
+        <slot name='image'></slot>
+      </a>
+    </div>
+    <div v-else class='image'>
       <slot name='image'></slot>
     </div>
     <div class='info-container'>
-      <h2 class='title'>
-        <span v-if='href'>
-          <a :href='href'
-            :target="href.startsWith('/') ? null : '_blank'"
-          >
-            {{ title }}
-          </a>
-        </span>
-        <span v-else>
+      <h2 v-if='href' class='title'>
+        <a :href='href'
+          :target="href.startsWith('/') ? null : '_blank'"
+        >
           {{ title }}
-        </span>
+        </a>
+      </h2>
+      <h2 v-else class='title'>
+        {{ title }}
       </h2>
       <div class='info'>
         <slot></slot>
@@ -62,6 +67,8 @@
   .card {
     position: relative;
     border-radius: $border-radius-s;
+    display: flex;
+    flex-flow: column nowrap;
     overflow: hidden;
     background-color: $color-background-light;
     border: 1px solid $border-color;
@@ -71,12 +78,14 @@
     display: block;
     width: 100%;
     height: auto;
+    flex: 0 0 auto;
   }
 
   .info-container {
     border-top: 1px solid $border-color;
     padding: $spacing-m;
     min-height: 196px;
+    flex: 1 0 auto;
     display: flex;
     flex-flow: column nowrap;
   }
@@ -96,7 +105,7 @@
   }
 
   .info {
-    flex: 1;
+    flex: 1 0 auto;
   }
 
   .info p {
@@ -105,11 +114,15 @@
     line-height: 1.5;
   }
 
+  .info p:first-child {
+    margin-top: 0;
+  }
+
   .info p:last-child {
     margin-bottom: 0;
   }
 
   .actions {
-    justify-self: flex-end;
+    margin: $spacing-m 0 0;
   }
 </style>

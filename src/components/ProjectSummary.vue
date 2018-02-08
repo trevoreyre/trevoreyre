@@ -1,7 +1,18 @@
 <template>
   <section class='project-summary'>
     <container size='small' class='description'>
-      <h2 class='title'>{{ title }}</h2>
+      <h2 class='title'>
+        <span v-if='href'>
+          <a :href='href'
+            :target="href.startsWith('/') ? null : '_blank'"
+          >
+            {{ title }}
+          </a>
+        </span>
+        <span v-else>
+          {{ title }}
+        </span>
+      </h2>
       <slot></slot>
       <div class='actions'>
         <a class='action'
@@ -38,6 +49,11 @@
         default: '',
         required: true
       },
+      href: {
+        type: String,
+        default: '',
+        required: false
+      },
       actions: {
         type: Array,
         default: [],
@@ -58,6 +74,15 @@
       flex-direction: row;
       align-items: center;
     }
+  }
+
+  .title,
+  .title a {
+    text-decoration: none;
+  }
+
+  .title a:hover {
+    text-decoration: underline;
   }
 
   .description {

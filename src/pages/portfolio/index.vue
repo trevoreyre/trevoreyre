@@ -7,6 +7,7 @@
       <container size='large'>
         <project-summary id='projects-forthelove'
           title='For the Love'
+          href='http://forthelove.blog'
           :actions="[{href: 'http://forthelove.blog', text: 'Check it out'}]"
         >
           <p>Full site redesign and custom WordPress template for a fashion blog in San Francisco, California.</p>
@@ -20,6 +21,7 @@
         </project-summary>
         <project-summary id='projects-oldscpa'
           title='Jack W Olds &amp; Company, LLP'
+          href='http://www.oldscpa.com'
           :actions="[{href: 'http://www.oldscpa.com', text: 'Check it out'}]"
         >
           <p>Logo design and site customization for a CPA firm in Portland, Oregon.</p>
@@ -33,6 +35,7 @@
         </project-summary>
         <project-summary id='projects-aikidonw'
           title='Aikido Northwest'
+          href='http://aikidonw.com'
           :actions="[{href: 'http://aikidonw.com', text: 'Check it out'}]"
         >
           <p>WordPress installation and customization for an Aikido Dojo in Portland, Oregon.</p>
@@ -46,6 +49,7 @@
         </project-summary>
         <project-summary id='projects-excel-datepicker'
           title='Excel VBA Date Picker'
+          href='/portfolio/excel-datepicker'
           :actions="[{href: '/portfolio/excel-datepicker', text: 'Project details'}]"
         >
           <p>A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.</p>
