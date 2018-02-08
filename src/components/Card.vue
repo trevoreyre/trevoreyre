@@ -1,12 +1,39 @@
 <template>
   <div class='card'>
-    <div class='image'>
+    <div v-if='href' class='image'>
+      <a :href='href'
+        :target="href.startsWith('/') ? null : '_blank'"
+      >
+        <slot name='image'></slot>
+      </a>
+    </div>
+    <div v-else class='image'>
       <slot name='image'></slot>
     </div>
-    <div class='info'>
-      <h2 class='title'>{{ title }}</h2>
-      <slot></slot>
-      <slot name='actions'></slot>
+    <div class='info-container'>
+      <h2 v-if='href' class='title'>
+        <a :href='href'
+          :target="href.startsWith('/') ? null : '_blank'"
+        >
+          {{ title }}
+        </a>
+      </h2>
+      <h2 v-else class='title'>
+        {{ title }}
+      </h2>
+      <div class='info'>
+        <slot></slot>
+      </div>
+      <div class='actions'>
+        <a class='action'
+          v-for='action in actions'
+          :key='action.href'
+          :href='action.href'
+          :target="action.href.startsWith('/') ? null : '_blank'"
+        >
+          {{ action.text }}
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -19,6 +46,16 @@
         type: String,
         default: '',
         required: true
+      },
+      href: {
+        type: String,
+        default: '',
+        required: false
+      },
+      actions: {
+        type: Array,
+        default: [],
+        required: false
       }
     }
   }
@@ -30,30 +67,45 @@
   .card {
     position: relative;
     border-radius: $border-radius-s;
+    display: flex;
+    flex-flow: column nowrap;
     overflow: hidden;
     background-color: $color-background-light;
-    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-      0px 5px 8px 0px rgba(0, 0, 0, 0.14),
-      0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+    border: 1px solid $border-color;
   }
 
   .image img {
     display: block;
     width: 100%;
     height: auto;
+    flex: 0 0 auto;
   }
 
-  .info {
+  .info-container {
     border-top: 1px solid $border-color;
     padding: $spacing-m;
+    min-height: 196px;
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
   }
 
-  .title {
+  .title,
+  .title a {
     margin: 0 0 $spacing-m;
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 2rem;
     color: $text-color-primary;
+    text-decoration: none;
+  }
+
+  .title a:hover {
+    text-decoration: underline;
+  }
+
+  .info {
+    flex: 1 0 auto;
   }
 
   .info p {
@@ -62,7 +114,15 @@
     line-height: 1.5;
   }
 
+  .info p:first-child {
+    margin-top: 0;
+  }
+
   .info p:last-child {
     margin-bottom: 0;
+  }
+
+  .actions {
+    margin: $spacing-m 0 0;
   }
 </style>

@@ -8,16 +8,16 @@
       <nav class='header-menu'>
         <ul class='menu-primary'>
           <li class='menu-item'>
-            <a href='#projects'>Projects</a>
+            <nuxt-link to='/portfolio'>Projects</nuxt-link>
           </li>
           <li class='menu-item'>
-            <a href='/lab'>Lab</a>
+            <nuxt-link to='/lab'>Lab</nuxt-link>
           </li>
           <li class='menu-item'>
-            <a href='/about/resume'>Resume</a>
+            <nuxt-link to='/about/resume'>Resume</nuxt-link>
           </li>
           <li class='menu-item'>
-            <a href='#contact'>Contact</a>
+            <nuxt-link to='#contact'>Contact</nuxt-link>
           </li>
         </ul>
         <ul class='social'>

@@ -1,9 +1,29 @@
 <template>
   <section class='project-summary'>
     <container size='small' class='description'>
-      <h2 class='title'>{{ title }}</h2>
+      <h2 class='title'>
+        <span v-if='href'>
+          <a :href='href'
+            :target="href.startsWith('/') ? null : '_blank'"
+          >
+            {{ title }}
+          </a>
+        </span>
+        <span v-else>
+          {{ title }}
+        </span>
+      </h2>
       <slot></slot>
-      <slot name='actions'></slot>
+      <div class='actions'>
+        <a class='action'
+          v-for='action in actions'
+          :key='action.href'
+          :href='action.href'
+          :target="action.href.startsWith('/') ? null : '_blank'"
+        >
+          {{ action.text }}
+        </a>
+      </div>
     </container>
     <div class='image'>
       <slot name='image'></slot>
@@ -28,6 +48,16 @@
         type: String,
         default: '',
         required: true
+      },
+      href: {
+        type: String,
+        default: '',
+        required: false
+      },
+      actions: {
+        type: Array,
+        default: [],
+        required: false
       }
     }
   }
@@ -44,6 +74,15 @@
       flex-direction: row;
       align-items: center;
     }
+  }
+
+  .title,
+  .title a {
+    text-decoration: none;
+  }
+
+  .title a:hover {
+    text-decoration: underline;
   }
 
   .description {

@@ -13,14 +13,11 @@
       </header>
       <container size='large'>
         <project-summary id='projects-forthelove'
-          title='For the Love'>
+          title='For the Love'
+          href='http://forthelove.blog'
+          :actions="[{href: 'http://forthelove.blog', text: 'Check it out'}]"
+        >
           <p>Full site redesign and custom WordPress template for a fashion blog in San Francisco, California.</p>
-          <button-group slot='actions'>
-            <te-button theme='secondary'
-              href='http://forthelove.blog'>
-              Check it out
-            </te-button>
-          </button-group>
           <div slot='image'>
             <device-group>
               <img slot='phone-content' src='/img/gbo-phone.jpg'>
@@ -30,14 +27,11 @@
           </div>
         </project-summary>
         <project-summary id='projects-oldscpa'
-          title='Jack W Olds &amp; Company, LLP'>
+          title='Jack W Olds &amp; Company, LLP'
+          href='http://www.oldscpa.com'
+          :actions="[{href: 'http://www.oldscpa.com', text: 'Check it out'}]"
+        >
           <p>Logo design and site customization for a CPA firm in Portland, Oregon.</p>
-          <button-group slot='actions'>
-            <te-button theme='secondary'
-              href='http://www.oldscpa.com'>
-              Check it out
-            </te-button>
-          </button-group>
           <div slot='image'>
             <device-group>
               <img slot='phone-content' src='/img/oldscpa-phone.jpg'>
@@ -46,42 +40,37 @@
             </device-group>
           </div>
         </project-summary>
-        <project-summary id='projects-aikidonw'
-          title='Aikido Northwest'>
-          <p>WordPress installation and customization for an Aikido Dojo in Portland, Oregon.</p>
-          <button-group slot='actions'>
-            <te-button theme='secondary'
-              href='http://aikidonw.com'>
-              Check it out
-            </te-button>
-          </button-group>
-          <div slot='image'>
-            <device-group>
-              <img slot='phone-content' src='/img/aikidonw-phone.jpg'>
-              <img slot='tablet-content' src='/img/aikidonw-tablet.jpg'>
-              <img slot='desktop-content' src='/img/aikidonw-desktop.jpg'>
-            </device-group>
-          </div>
-        </project-summary>
-        <project-summary id='projects-excel'
-          title='Excel VBA Date Picker'>
-          <p>A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.</p>
-          <button-group slot='actions'>
-            <te-button theme='secondary'
-              href='/portfolio/excel-datepicker'
-              internal>
-              Project details
-            </te-button>
-            <te-button type='flat'
-              href='/downloads/CalendarForm v1.5.2.zip'
-              @click.native="track('Excel', 'download', 'Date Picker')">
-              Download
-            </te-button>
-          </button-group>
-          <div slot='image'>
-            <img src='/img/excel-datepicker.png'>
-          </div>
-        </project-summary>
+        <button-group align='center'>
+          <te-button theme='primary'
+            href='/portfolio'
+            internal
+          >
+            View more projects
+          </te-button>
+        </button-group>
+      </container>
+    </section>
+    <section id='lab'>
+      <header>
+        <h1>Code experiments</h1>
+      </header>
+      <container size='large'>
+        <experiment-group>
+          <grid-cell class='experiment-container'
+            v-for='experiment in experiments'
+            :key='experiment.id'
+          >
+            <experiment :experiment='experiment'></experiment>
+          </grid-cell>
+        </experiment-group>
+        <button-group class='experiment-actions' align='center'>
+          <te-button theme='primary'
+            href='/lab'
+            internal
+          >
+            View more experiments
+          </te-button>
+        </button-group>
       </container>
     </section>
     <section id='services'>
@@ -152,12 +141,17 @@
 
 <script>
   import analytics from '~/common/analytics'
+  import sortObjectByArray from '~/common/sortObjectByArray'
+  import sortedPens from '~/common/pens'
   import Button from '~/components/Button'
   import ButtonGroup from '~/components/ButtonGroup'
   import ContactForm from '~/components/ContactForm'
   import Container from '~/components/Container'
   import Device from '~/components/Device'
   import DeviceGroup from '~/components/DeviceGroup'
+  import Experiment from '~/components/Experiment'
+  import ExperimentGroup from '~/components/ExperimentGroup'
+  import GridCell from '~/components/GridCell'
   import IconCodepen from '~/components/icons/IconCodepen'
   import IconEmail from '~/components/icons/IconEmail'
   import IconGithub from '~/components/icons/IconGithub'
@@ -173,6 +167,9 @@
       Container,
       Device,
       DeviceGroup,
+      Experiment,
+      ExperimentGroup,
+      GridCell,
       IconCodepen,
       IconEmail,
       IconGithub,
@@ -182,15 +179,32 @@
     },
     methods: {
       track: analytics.track
+    },
+    computed: {
+      experiments () {
+        return sortObjectByArray(
+          this.$store.state.experiments,
+          'id',
+          sortedPens
+        ).slice(0, 3)
+      }
     }
   }
 </script>
 
 <style lang='scss' scoped>
   @import '~common/variables';
+  @import '~common/mixins';
 
-  #contact h2 {
-    text-align: center;
+  .experiment-container {
+    max-width: $experiment-width;
+  }
+
+  .experiment-actions {
+    margin-top: $spacing-m !important;
+    @include breakpoint-desktop() {
+      margin-top: $spacing-l !important;
+    }
   }
 
   .services-actions {

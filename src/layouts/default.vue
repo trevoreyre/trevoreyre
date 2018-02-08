@@ -74,6 +74,10 @@
     }
   }
 
+  a {
+    color: $color-primary;
+  }
+
   p,
   pre {
     font-size: 1em;

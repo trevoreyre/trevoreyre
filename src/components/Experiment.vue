@@ -1,19 +1,17 @@
 <template>
-  <card class='experiment' :title='experiment.title'>
-    <img slot='image'
-      :src='experiment.image'
-      width='400'
-      height='225'
-    >
-    <p v-if='experiment.details' v-html='experiment.details'></p>
-    <button-group slot='actions'>
-      <te-button
-        :href='experiment.link'
-        theme='primary'
+  <card class='experiment'
+    :href='experiment.link'
+    :title='experiment.title'
+    :actions="[{href: experiment.link, text: 'Check it out'}]"
+  >
+    <div slot='image' class='image-container'>
+      <img slot='image'
+        :src='experiment.image'
+        width='400'
+        height='225'
       >
-        Check it out
-      </te-button>
-    </button-group>
+    </div>
+    <p v-if='experiment.details' v-html='experiment.details'></p>
   </card>
 </template>
 
@@ -46,11 +44,23 @@
 
 <style lang='scss' scoped>
   @import '~common/variables';
-  @import '~common/mixins';
 
   .experiment {
     width: 100%;
-    max-width: 400px;
+    max-width: $experiment-width;
     height: 100%;
+  }
+
+  .image-container {
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background: #eee;
+  }
+
+  .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 </style>
