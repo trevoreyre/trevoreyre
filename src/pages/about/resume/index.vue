@@ -1,6 +1,6 @@
 <template>
   <article class='resume'>
-    <nav-button href='/' open></nav-button>
+    <nav-button class='resume-nav-button' href='/' open></nav-button>
     <header>
       <div class='header-container'>
         <div class='summary'>
@@ -22,9 +22,9 @@
           <li>JavaScript</li>
           <li>React</li>
           <li>Vue</li>
-          <li>Python</li>
           <li>C#</li>
-          <li>PHP</li>
+          <li>Node</li>
+          <li>Python</li>
           <li>Webpack</li>
           <li>SQL</li>
           <li>WordPress</li>
@@ -34,7 +34,7 @@
         </ul>
         <ul>
           <li>Database design and management</li>
-          <li>Photoshop, GIMP, Inkscape, Sony Movie Studio, REAPER</li>
+          <li>Figma, Photoshop, Illustrator, Sony Movie Studio, REAPER</li>
           <li>Fluent in Romanian</li>
         </ul>
       </div>
@@ -86,7 +86,7 @@
                 Redesigned UI for internal tools
               </li>
               <li>
-                Worked on cross-functional team to establish company-wide UI design guidelines, and promote adoption of React
+                Work on cross-functional team to establish company-wide UI design guidelines, and promote adoption of React
               </li>
             </ul>
           </div>
@@ -105,13 +105,10 @@
             </p>
             <ul class='entry-details'>
               <li>
-                Redesigned website for For the Love, a fashion blog based in San Francisco, CA (forthelove.com)
+                Redesigned For the Love website, a fashion blog based in San Francisco, CA (forthelove.blog)
               </li>
               <li>
-                Designed new logo and enhanced website for Jack W. Olds and Company, a CPA firm in Portland, OR (www.oldscpa.com)
-              </li>
-              <li>
-                Designed new logo for Luxe Beauté Salon in Portland, OR
+                Redesigned logo and website for Jack W. Olds and Company, a CPA firm in Portland, OR (www.oldscpa.com)
               </li>
               <li>
                 WordPress installation and customization for various clients
@@ -163,7 +160,7 @@
   }
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss'>
   @import '~common/variables';
   @import '~common/mixins';
 
@@ -172,7 +169,7 @@
   }
 
   .resume > header {
-    background: $color-primary;
+    // background: $color-primary;
     margin: 0 0 $spacing-xxl 0;
   }
 
@@ -182,6 +179,7 @@
     padding: $spacing-xxl $spacing-l $spacing-l;
     display: flex;
     flex-flow: column nowrap;
+    border-bottom: 2px solid $color-secondary;
     @include breakpoint-tablet() {
       max-width: $breakpoint-tablet;
       flex-flow: row nowrap;
@@ -192,10 +190,13 @@
     }
   }
 
-  .resume .header-container h1,
+  .resume .header-container h1 {
+    color: $color-primary;
+  }
+
   .resume .header-container h2,
   .resume .header-container p {
-    color: $text-color-primary-on-primary;
+    color: $text-color-primary;
   }
 
   .resume .header-container > div {
@@ -337,12 +338,10 @@
   }
 
   .resume footer {
-    padding: $spacing-m;
-    background: $color-secondary;
-    color: $text-color-primary-on-secondary;
+    margin-bottom: $spacing-l;
+    color: $color-secondary;
     text-align: center;
     display: none;
-    position: fixed;
     width: 100%;
     bottom: 0;
   }
@@ -357,17 +356,18 @@
       background: #fff;
     }
 
-    #nav-button {
+    .resume-nav-button {
       display: none;
     }
 
-    #copyright {
+    .site-footer {
       display: none;
     }
 
     .resume {
       background: #fff;
       font-size: 0.875rem;
+      // margin-bottom: 50px + $spacing-l;
     }
 
     .resume > header,
