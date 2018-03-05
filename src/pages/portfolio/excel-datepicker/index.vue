@@ -9,7 +9,7 @@
           <p>A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.</p>
           <button-group>
             <te-button type='flat'
-              href='/downloads/CalendarForm v1.5.2.zip'
+              href='https://f000.backblazeb2.com/file/trevoreyre/CalendarForm+v1.5.2.zip'
               @click.native="track('Excel', 'download', 'Date Picker')">
               Download
             </te-button>
