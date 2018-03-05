@@ -56,7 +56,7 @@
       },
       actions: {
         type: Array,
-        default: [],
+        default: () => [],
         required: false
       }
     }
