@@ -5,17 +5,31 @@
     </page-header>
     <section>
       <container size='large'>
+        <project-summary id='projects-43re'
+          title='Better Homes and Gardens Real Estate 43 Degrees North'
+          href='https://www.43re.com'
+          :actions="[{href: 'https://www.43re.com', text: 'Check it out'}]"
+        >
+          <p>Full site redesign and custom SquareSpace template for a real estate brokerage in Boise, Idaho.</p>
+          <div slot='image'>
+            <device-group>
+              <img slot='phone-content' src='/img/43re-phone.png'>
+              <img slot='tablet-content' src='/img/43re-tablet.png'>
+              <img slot='desktop-content' src='/img/43re-desktop.png'>
+            </device-group>
+          </div>
+        </project-summary>
         <project-summary id='projects-forthelove'
           title='For the Love'
-          href='http://forthelove.blog'
-          :actions="[{href: 'http://forthelove.blog', text: 'Check it out'}]"
+          href='http://fortheloveblog.com'
+          :actions="[{href: 'http://fortheloveblog.com', text: 'Check it out'}]"
         >
           <p>Full site redesign and custom WordPress template for a fashion blog in San Francisco, California.</p>
           <div slot='image'>
             <device-group>
-              <img slot='phone-content' src='/img/gbo-phone.jpg'>
-              <img slot='tablet-content' src='/img/gbo-tablet.jpg'>
-              <img slot='desktop-content' src='/img/gbo-desktop.jpg'>
+              <img slot='phone-content' src='/img/forthelove-phone.png'>
+              <img slot='tablet-content' src='/img/forthelove-tablet.png'>
+              <img slot='desktop-content' src='/img/forthelove-desktop.png'>
             </device-group>
           </div>
         </project-summary>
