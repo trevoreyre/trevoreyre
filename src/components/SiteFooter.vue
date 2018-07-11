@@ -1,6 +1,6 @@
 <template>
   <footer class='site-footer'>
-    <p class='copyright'>&copy; 2015 - 2017 Trevor Eyre</p>
+    <p class='copyright'>&copy; 2015 - 2018 Trevor Eyre</p>
   </footer>
 </template>
 
