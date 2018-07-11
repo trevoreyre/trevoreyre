@@ -6,3 +6,9 @@ npm-debug.log
 
 # Nuxt build
 .nuxt
+
+# Nuxt generate
+dist
+
+# macOS
+.DS_Store
