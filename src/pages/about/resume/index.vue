@@ -16,7 +16,7 @@
     </header>
     <section class='skills'>
       <header>
-        <h3>Skills</h3>
+        <h3>Proficiencies and Skills</h3>
       </header>
       <div class='content'>
         <ul class='skill-list'>
