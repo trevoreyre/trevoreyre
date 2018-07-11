@@ -10,33 +10,115 @@
         <div class='details'>
           <p>208.631.6741</p>
           <p>trevoreyre@gmail.com</p>
+          <p>https://trevoreyre.com</p>
         </div>
       </div>
     </header>
     <section class='skills'>
       <header>
-        <h3>Proficiencies and Skills</h3>
+        <h3>Skills</h3>
       </header>
       <div class='content'>
         <ul class='skill-list'>
           <li>JavaScript</li>
+          <li>Node.js</li>
+          <li>C#</li>
+          <li>Python</li>
           <li>React</li>
           <li>Vue</li>
-          <li>C#</li>
-          <li>Node</li>
-          <li>Python</li>
           <li>Webpack</li>
-          <li>SQL</li>
+          <li>Docker</li>
           <li>WordPress</li>
+          <li>SQL</li>
           <li>Java</li>
           <li>Android</li>
-          <li>C++</li>
         </ul>
         <ul>
-          <li>Database design and management</li>
-          <li>Figma, Photoshop, Illustrator, Sony Movie Studio, REAPER</li>
+          <li>Figma, Photoshop, Illustrator</li>
           <li>Fluent in Romanian</li>
         </ul>
+      </div>
+    </section>
+    <section class='experience'>
+      <header>
+        <h3>Experience</h3>
+      </header>
+      <div class='content'>
+        <div class='entry'>
+          <div class='entry-header'>
+            <div class='row'>
+              <h3>Software Engineer III</h3>
+              <p class='date-range'>Oct 2016 - Present</p>
+            </div>
+            <p class='location'>Healthwise - Boise, ID</p>
+          </div>
+          <div class='entry-body'>
+            <p class='entry-description'>
+              Full stack software development for client-facing content management system and administrative tools. Skills used: React, JavaScript, Node.js, C#, HTML, CSS.
+            </p>
+            <ul class='entry-details'>
+              <li>
+                Architect organization-wide UI component library and development guidelines, as member of Front End Core Team
+              </li>
+              <li>
+                Built centralized React build scripts and configuration tools to maintain consistent development workflows across teams
+              </li>
+              <li>
+                Built new administration and analytics app for clients of existing products
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class='entry'>
+          <div class='entry-header'>
+            <div class='row'>
+              <h3>Freelance Web Developer</h3>
+              <p class='date-range'>Jan 2015 - Present</p>
+            </div>
+            <p class='location'>Self</p>
+          </div>
+          <div class='entry-body'>
+            <p class='entry-description'>
+              Freelance services such as web design, WordPress development, and branding. Skills used: Vue, JavaScript, HTML, CSS, Docker, PHP.
+            </p>
+            <ul class='entry-details'>
+              <li>
+                Designed new website for Better Homes and Gardens Real Estate 43 Degrees North in Boise, ID (www.43re.com)
+              </li>
+              <li>
+                Redesigned For the Love website, a fashion blog based in San Francisco, CA (forthelove.blog)
+              </li>
+              <li>
+                Designed new website and logo for Jack W. Olds and Company, a CPA firm in Portland, OR (www.oldscpa.com)
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class='entry'>
+          <div class='entry-header'>
+            <div class='row'>
+              <h3>Platform Engineering Intern</h3>
+              <p class='date-range'>Apr 2016 - Sep 2016</p>
+            </div>
+            <p class='location'>Intel Corporation - Portland, OR</p>
+          </div>
+          <div class='entry-body'>
+            <p class='entry-description'>
+              Software development for electrical testing framework and platform validation. Skills used: Python, JavaScript, HTML, CSS.
+            </p>
+            <ul class='entry-details'>
+              <li>
+                Developed new user interface features, using web technologies and deployed cross-platform on Chromium Embedded Framework
+              </li>
+              <li>
+                Assisted in testing and debugging command line interface, written in Python
+              </li>
+              <li>
+                Created continuous integration builds and workflows
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
     <section class='education'>
@@ -61,91 +143,6 @@
         </div>
       </div>
     </section>
-    <section class='experience'>
-      <header>
-        <h3>Experience</h3>
-      </header>
-      <div class='content'>
-        <div class='entry'>
-          <div class='entry-header'>
-            <div class='row'>
-              <h3>Software Engineer</h3>
-              <p class='date-range'>Oct 2016 - Present</p>
-            </div>
-            <p class='location'>Healthwise - Boise, ID</p>
-          </div>
-          <div class='entry-body'>
-            <p class='entry-description'>
-              Software development for content management system and administrative tools
-            </p>
-            <ul class='entry-details'>
-              <li>
-                Created new administrative site for clients of existing products
-              </li>
-              <li>
-                Redesigned UI for internal tools
-              </li>
-              <li>
-                Work on cross-functional team to establish company-wide UI design guidelines, and promote adoption of React
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class='entry'>
-          <div class='entry-header'>
-            <div class='row'>
-              <h3>Freelance Web Developer</h3>
-              <p class='date-range'>Jan 2015 - Present</p>
-            </div>
-            <p class='location'>Self</p>
-          </div>
-          <div class='entry-body'>
-            <p class='entry-description'>
-              Freelance services such as website design, WordPress development, and branding
-            </p>
-            <ul class='entry-details'>
-              <li>
-                Redesigned For the Love website, a fashion blog based in San Francisco, CA (forthelove.blog)
-              </li>
-              <li>
-                Redesigned logo and website for Jack W. Olds and Company, a CPA firm in Portland, OR (www.oldscpa.com)
-              </li>
-              <li>
-                WordPress installation and customization for various clients
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class='entry'>
-          <div class='entry-header'>
-            <div class='row'>
-              <h3>Platform Engineering Intern</h3>
-              <p class='date-range'>Apr 2016 - Sep 2016</p>
-            </div>
-            <p class='location'>Intel Corporation - Portland, OR</p>
-          </div>
-          <div class='entry-body'>
-            <p class='entry-description'>
-              Software development for electrical testing framework and platform validation
-            </p>
-            <ul class='entry-details'>
-              <li>
-                Developed new user interface features, using web technologies and deployed cross-platform on Chromium Embedded Framework
-              </li>
-              <li>
-                Assisted in testing and debugging command line interface, written in Python
-              </li>
-              <li>
-                Created continuous integration builds and workflows
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <p>View my portfolio at trevoreyre.com</p>
-    </footer>
   </article>
 </template>
 
@@ -179,7 +176,7 @@
     padding: $spacing-xxl $spacing-l $spacing-l;
     display: flex;
     flex-flow: column nowrap;
-    border-bottom: 2px solid $color-secondary;
+    border-bottom: 2px solid $color-primary;
     @include breakpoint-tablet() {
       max-width: $breakpoint-tablet;
       flex-flow: row nowrap;
@@ -288,6 +285,7 @@
   }
 
   .resume .skill-list li {
+    margin-right: $spacing-m;
     line-height: 1.35;
   }
 
@@ -337,20 +335,6 @@
     margin: $spacing-s 0 0 0;
   }
 
-  .resume footer {
-    margin-bottom: $spacing-l;
-    color: $color-secondary;
-    text-align: center;
-    display: none;
-    width: 100%;
-    bottom: 0;
-  }
-
-  .resume footer p {
-    margin: 0;
-    line-height: 1;
-  }
-
   @media print {
     body {
       background: #fff;
@@ -367,14 +351,13 @@
     .resume {
       background: #fff;
       font-size: 0.875rem;
-      // margin-bottom: 50px + $spacing-l;
     }
 
     .resume > header,
     .resume section,
     .resume section:last-of-type,
     .resume .entry {
-      margin-bottom: $spacing-l;
+      margin-bottom: $spacing-m + $spacing-s;
     }
 
     .resume section,
@@ -408,10 +391,6 @@
     .resume .date-range {
       margin: 0;
       color: $text-color-primary;
-    }
-
-    .resume footer {
-      display: block;
     }
   }
 </style>
