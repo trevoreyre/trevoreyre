@@ -9,8 +9,8 @@
         </div>
         <div class='details'>
           <p>208.631.6741</p>
+          <p class='website-link'>https://trevoreyre.com</p>
           <p>trevoreyre@gmail.com</p>
-          <p>https://trevoreyre.com</p>
         </div>
       </div>
     </header>
@@ -83,13 +83,13 @@
             </p>
             <ul class='entry-details'>
               <li>
-                Designed new website for Better Homes and Gardens Real Estate 43 Degrees North in Boise, ID (www.43re.com)
+                Designed and built website for Better Homes and Gardens Real Estate 43 Degrees North in Boise, ID (www.43re.com)
               </li>
               <li>
-                Redesigned For the Love website, a fashion blog based in San Francisco, CA (forthelove.blog)
+                Designed and built For the Love website, a fashion blog based in San Francisco, CA (fortheloveblog.com)
               </li>
               <li>
-                Designed new website and logo for Jack W. Olds and Company, a CPA firm in Portland, OR (www.oldscpa.com)
+                Designed logo and built custom website functionality for Jack W. Olds and Company, a CPA firm in Portland, OR (www.oldscpa.com)
               </li>
             </ul>
           </div>
@@ -232,6 +232,10 @@
 
   .resume .details p:last-child {
     margin-bottom: 0;
+  }
+
+  .resume .details .website-link {
+    display: none;
   }
 
   .resume section,
@@ -381,6 +385,10 @@
       margin-top: 0;
       color: $text-color-primary-on-primary;
       text-align: right;
+    }
+
+    .resume .details .website-link {
+      display: block;
     }
 
     .resume .row {
