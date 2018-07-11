@@ -12,7 +12,7 @@
         <h1>Projects</h1>
       </header>
       <container size='large'>
-        <project-summary id='projects-forthelove'
+        <project-summary id='projects-43re'
           title='Better Homes and Gardens Real Estate 43 Degrees North'
           href='https://www.43re.com'
           :actions="[{href: 'https://www.43re.com', text: 'Check it out'}]"
