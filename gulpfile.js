@@ -8,16 +8,11 @@ var autoprefixer = require('autoprefixer');
 var changed = require('gulp-changed');
 var concat = require('gulp-concat');
 var cssmin = require('gulp-minify-css');
-var ftp = require('vinyl-ftp');
-var gutil = require('gulp-util');
 var postcss = require('gulp-postcss');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var wrap = require('gulp-wrap');
-
-// Require config file for FTP server info
-var config = require('../config/trevoreyreConfig');
 
 // Define source/destination paths for build and deploy tasks
 var srcLayout = ['./src/**/*.html', '!./src/layout.html', '!./src/styles/**/*'];
@@ -30,72 +25,14 @@ var destLayout = './dist/';
 var destScripts = './dist/scripts/';
 var destStyles = './dist/styles/';
 var destPHP = './dist/php/';
-var srcDeployLayout = ['./dist/**/*.html', '!./dist/styles/**/*'];
-var srcDeployScripts = './dist/scripts/**/*.min.js';
-var srcDeployStyles = './dist/styles/**/*.min.css';
-var srcDeployPolymerStyles = './dist/styles/**/*.html';
-var srcDeployPHP = './dist/php/*.php';
 var srcDeployExtras = [
-        './res/**/*'
-    ];
-var deployDestination = config.deployDestination;
-var srcDeployProduction = ['./dist/**/*'].concat(srcDeployExtras);
-var deployProductionDestination = config.deployProductionDestination;
+    './res/**/*'
+];
 
-// FTP connection
-var conn = ftp.create({
-    host: config.serverHost,
-    user: config.serverUser,
-    password: config.serverPassword,
-    parallel: 5,
-    log: gutil.log
-});
-
-// Deploy function. Expects source files to be grouped in a distribution folder.
-// Strips this first folder, to place files in base directory of server
-function deploy (destination, inputStream) {
-    return inputStream
-        .pipe(rename(function (path) {
-            var parts = path.dirname.split('\\');
-            if (parts[0] == 'dist' || parts[0] == 'res') {
-                parts.splice(0, 1);
-            }
-            path.dirname = parts.join('\\');
-        }))
-        .pipe(conn.newer(destination))
-        .pipe(conn.dest(destination));
-}
-
-// Default task
-gulp.task('default', ['deployAll', 'watch']);
-
-// Deploy all files to production server
-gulp.task('deployProduction', function () {
-    return deploy(deployProductionDestination, gulp.src(srcDeployProduction, {base: '.', buffer: false}));
-});
-
-// Various deploy tasks by file type to reduce FTP transfer to server
-gulp.task('deployAll', ['deployLayoutWrap', 'deployScripts', 'deployStyles', 'deployPolymerStyles', 'deployPHP'], function () {
-    return deploy(deployDestination, gulp.src(srcDeployExtras, {base: '.', buffer: false}));
-});
-gulp.task('deployLayout', ['layout'], function () {
-    return deploy(deployDestination, gulp.src(srcDeployLayout, {base: '.', buffer: false}));
-});
-gulp.task('deployLayoutWrap', ['layoutWrap'], function () {
-    return deploy(deployDestination, gulp.src(srcDeployLayout, {base: '.', buffer: false}));
-});
-gulp.task('deployScripts', ['scripts'], function () {
-    return deploy(deployDestination, gulp.src(srcDeployScripts, {base: '.', buffer: false}));
-});
-gulp.task('deployStyles', ['styles'], function () {
-    return deploy(deployDestination, gulp.src(srcDeployStyles, {base: '.', buffer: false}));
-});
-gulp.task('deployPolymerStyles', ['polymerStyles'], function () {
-    return deploy(deployDestination, gulp.src(srcDeployPolymerStyles, {base: '.', buffer: false}));
-});
-gulp.task('deployPHP', ['php'], function () {
-    return deploy(deployDestination, gulp.src(srcDeployPHP, {base: '.', buffer: false}));
-});
+gulp.task('build', ['layoutWrap', 'scripts', 'styles', 'polymerStyles', 'php'], function () {
+    return gulp.src(srcDeployExtras)
+        .pipe(gulp.dest('./dist/'))
+})
 
 // HTML layout task
 gulp.task('layout', function () {
