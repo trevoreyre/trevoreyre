@@ -14,9 +14,6 @@ var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var wrap = require('gulp-wrap');
 
-// Require config file for FTP server info
-var config = require('../config/trevoreyreConfig');
-
 // Define source/destination paths for build and deploy tasks
 var buildSrc = {
     'html': ['./src/**/*.html', '!./src/layout.html'],
@@ -29,22 +26,19 @@ var buildSrc = {
 var buildDest = './dist/';
 var deploySrc = './dist/**/*';
 
-// Set up FTP connection
-var deployDestination = config.deployDestination;
-var deployDestinationProd = config.deployProductionDestination;
-var conn = ftp.create({
-    host: config.serverHost,
-    user: config.serverUser,
-    password: config.serverPassword,
-    parallel: 5,
-    log: gutil.log
-});
-
 // Deploy function. If source files are located in 'dist' or 'res' folders,
 // function strips first folder, to put files in base directory. If source
 // files are in a different base folder, the original file structure is
 // preserved.
-var deploy = function (destination, inputStream) {
+var deploy = function (config, destination, inputStream) {
+    // Set up FTP connection
+    var conn = ftp.create({
+        host: config.serverHost,
+        user: config.serverUser,
+        password: config.serverPassword,
+        parallel: 5,
+        log: gutil.log
+    });
     return inputStream
         .pipe(rename(function (path) {
             var parts = path.dirname.split('\\');
@@ -75,8 +69,10 @@ gulp.task('start', ['build', 'watch'], function () {
 
 // Deploy to development server
 gulp.task('deploy', ['build'], function () {
+    var config = require('../config/trevoreyreConfig');
     return deploy(
-        deployDestination,
+        config,
+        config.deployDestination,
         gulp.src(
             deploySrc,
             {base: '.', buffer: false}
@@ -86,8 +82,10 @@ gulp.task('deploy', ['build'], function () {
 
 // Deploy to production server
 gulp.task('deployProduction', ['build'], function () {
+    var config = require('../config/trevoreyreConfig');
     return deploy(
-        deployDestinationProd,
+        config,
+        config.deployProductionDestination,
         gulp.src(
             deploySrc,
             {base: '.', buffer: false}
