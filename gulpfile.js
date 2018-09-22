@@ -26,7 +26,8 @@ var destScripts = './dist/scripts/';
 var destStyles = './dist/styles/';
 var destPHP = './dist/php/';
 var srcDeployExtras = [
-    './res/**/*'
+    './res/**/*',
+    './bower_components/**/*'
 ];
 
 gulp.task('build', ['layoutWrap', 'scripts', 'styles', 'polymerStyles', 'php'], function () {
