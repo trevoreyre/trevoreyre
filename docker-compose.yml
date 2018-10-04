@@ -1,10 +1,13 @@
 version: '3'
+
 services:
-  web:
+  app:
+    container_name: 'trevoreyre.com'
     build: .
-    command: npm run dev
+    volumes:
+      - .:/home/node/app
+      - /home/node/app/node_modules
     ports:
       - '3000:3000'
-    volumes:
-      - .:/app
-      - /app/node_modules
+    stdin_open: true
+    tty: true
