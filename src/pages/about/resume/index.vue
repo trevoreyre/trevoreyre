@@ -24,8 +24,8 @@
           <li>Node.js</li>
           <li>C#</li>
           <li>Python</li>
-          <li>React</li>
-          <li>Vue</li>
+          <li>React.js</li>
+          <li>Vue.js</li>
           <li>Webpack</li>
           <li>Docker</li>
           <li>WordPress</li>
@@ -47,14 +47,14 @@
         <div class='entry'>
           <div class='entry-header'>
             <div class='row'>
-              <h3>Software Engineer III</h3>
+              <h3>Software Engineer</h3>
               <p class='date-range'>Oct 2016 - Present</p>
             </div>
             <p class='location'>Healthwise - Boise, ID</p>
           </div>
           <div class='entry-body'>
             <p class='entry-description'>
-              Full stack software development for client-facing content management system and administrative tools. Skills used: React, JavaScript, Node.js, C#, HTML, CSS.
+              Full stack software development for client-facing content management system and administrative tools. Skills used: React.js, JavaScript, Node.js, C#, HTML, CSS.
             </p>
             <ul class='entry-details'>
               <li>
@@ -79,7 +79,7 @@
           </div>
           <div class='entry-body'>
             <p class='entry-description'>
-              Freelance services such as web design, WordPress development, and branding. Skills used: Vue, JavaScript, HTML, CSS, Docker, PHP.
+              Freelance services such as web design, WordPress development, and branding. Skills used: Vue.js, JavaScript, HTML, CSS, Docker, PHP.
             </p>
             <ul class='entry-details'>
               <li>
@@ -147,258 +147,258 @@
 </template>
 
 <script>
-  import NavButton from '~/components/NavButton'
+import NavButton from '~/components/NavButton'
 
-  export default {
-    name: 'resume',
-    components: {
-      NavButton
-    }
+export default {
+  name: 'resume',
+  components: {
+    NavButton
   }
+}
 </script>
 
 <style lang='scss'>
-  @import '~common/variables';
-  @import '~common/mixins';
+@import "~common/variables";
+@import "~common/mixins";
 
-  .resume {
-    margin: 0;
+.resume {
+  margin: 0;
+}
+
+.resume > header {
+  // background: $color-primary;
+  margin: 0 0 $spacing-xxl 0;
+}
+
+.resume .header-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: $spacing-xxl $spacing-l $spacing-l;
+  display: flex;
+  flex-flow: column nowrap;
+  border-bottom: 2px solid $color-primary;
+  @include breakpoint-tablet() {
+    max-width: $breakpoint-tablet;
+    flex-flow: row nowrap;
+    align-items: flex-end;
   }
-
-  .resume > header {
-    // background: $color-primary;
-    margin: 0 0 $spacing-xxl 0;
+  @include breakpoint-desktop() {
+    padding: $spacing-l;
   }
+}
 
-  .resume .header-container {
-    width: 100%;
-    margin: 0 auto;
-    padding: $spacing-xxl $spacing-l $spacing-l;
+.resume .header-container h1 {
+  color: $color-primary;
+}
+
+.resume .header-container h2,
+.resume .header-container p {
+  color: $text-color-primary;
+}
+
+.resume .header-container > div {
+  flex: 1;
+}
+
+.resume .summary {
+  text-align: left;
+}
+
+.resume .summary h1 {
+  line-height: 1;
+  margin: 0 0 $spacing-m 0;
+}
+
+.resume .summary h2 {
+  line-height: 1;
+  margin: 0;
+}
+
+.resume .details {
+  margin-top: $spacing-l;
+  color: $text-color-secondary-on-primary;
+  text-align: left;
+  @include breakpoint-tablet() {
+    margin-top: 0;
+    color: $text-color-primary-on-primary;
+    text-align: right;
+  }
+}
+
+.resume .details p {
+  margin: 0 0 $spacing-s 0;
+  line-height: 1;
+}
+
+.resume .details p:last-child {
+  margin-bottom: 0;
+}
+
+.resume .details .website-link {
+  display: none;
+}
+
+.resume section,
+.resume section:last-of-type {
+  margin: 0 auto $spacing-xxl auto;
+  padding: 0 $spacing-l;
+  max-width: $breakpoint-tablet;
+  display: flex;
+  flex-flow: column nowrap;
+  @include breakpoint-tablet() {
+    flex-flow: row nowrap;
+  }
+}
+
+.resume section header {
+  margin: 0 0 $spacing-xl;
+  width: 100%;
+  @include breakpoint-tablet() {
+    margin: 0 $spacing-m 0 0;
+    width: 160px;
+  }
+}
+
+.resume section h3 {
+  text-align: left;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.resume section p {
+  font-size: 1em;
+  line-height: 1.35;
+}
+
+.resume .content {
+  flex: 1;
+}
+
+.resume ul {
+  margin: 0;
+  padding: 0 0 0 1.1em;
+}
+
+.resume .skill-list {
+  margin: 0 0 $spacing-s;
+  padding: 0;
+  height: 4.05em;
+  display: flex;
+  flex-flow: column wrap;
+  list-style: none;
+}
+
+.resume .skill-list li {
+  margin-right: $spacing-m;
+  line-height: 1.35;
+}
+
+.resume section header h3 {
+  color: $color-primary;
+}
+
+.resume .row {
+  @include breakpoint-tablet() {
     display: flex;
-    flex-flow: column nowrap;
-    border-bottom: 2px solid $color-primary;
-    @include breakpoint-tablet() {
-      max-width: $breakpoint-tablet;
-      flex-flow: row nowrap;
-      align-items: flex-end;
-    }
-    @include breakpoint-desktop() {
-      padding: $spacing-l;
-    }
+    align-items: flex-end;
   }
+}
 
-  .resume .header-container h1 {
-    color: $color-primary;
-  }
+.resume .entry {
+  margin: 0 0 $spacing-xl;
+}
 
-  .resume .header-container h2,
-  .resume .header-container p {
+.resume .entry:last-child {
+  margin-bottom: 0;
+}
+
+.resume .entry-header h3 {
+  margin-right: $spacing-m;
+  flex: 1;
+}
+
+.resume .date-range {
+  margin: $spacing-xs 0;
+  color: $text-color-secondary;
+  @include breakpoint-tablet() {
+    margin: 0;
     color: $text-color-primary;
   }
+}
 
-  .resume .header-container > div {
-    flex: 1;
+.resume .location {
+  margin: 0;
+  color: $text-color-secondary;
+}
+
+.resume .entry-description {
+  margin: $spacing-s 0;
+}
+
+.resume .entry-details {
+  margin: $spacing-s 0 0 0;
+}
+
+@media print {
+  body {
+    background: #fff;
   }
 
-  .resume .summary {
-    text-align: left;
-  }
-
-  .resume .summary h1 {
-    line-height: 1;
-    margin: 0 0 $spacing-m 0;
-  }
-
-  .resume .summary h2 {
-    line-height: 1;
-    margin: 0;
-  }
-
-  .resume .details {
-    margin-top: $spacing-l;
-    color: $text-color-secondary-on-primary;
-    text-align: left;
-    @include breakpoint-tablet() {
-      margin-top: 0;
-      color: $text-color-primary-on-primary;
-      text-align: right;
-    }
-  }
-
-  .resume .details p {
-    margin: 0 0 $spacing-s 0;
-    line-height: 1;
-  }
-
-  .resume .details p:last-child {
-    margin-bottom: 0;
-  }
-
-  .resume .details .website-link {
+  .resume-nav-button {
     display: none;
+  }
+
+  .site-footer {
+    display: none;
+  }
+
+  .resume {
+    background: #fff;
+    font-size: 0.875rem;
+  }
+
+  .resume > header,
+  .resume section,
+  .resume section:last-of-type,
+  .resume .entry {
+    margin-bottom: $spacing-m + $spacing-s;
   }
 
   .resume section,
   .resume section:last-of-type {
-    margin: 0 auto $spacing-xxl auto;
-    padding: 0 $spacing-l;
-    max-width: $breakpoint-tablet;
-    display: flex;
-    flex-flow: column nowrap;
-    @include breakpoint-tablet() {
-      flex-flow: row nowrap;
-    }
+    flex-flow: row nowrap;
   }
 
   .resume section header {
-    margin: 0 0 $spacing-xl;
-    width: 100%;
-    @include breakpoint-tablet() {
-      margin: 0 $spacing-m 0 0;
-      width: 160px;
-    }
+    margin: 0 $spacing-m 0 0;
+    width: 140px;
   }
 
-  .resume section h3 {
-    text-align: left;
-    margin: 0;
-    line-height: 1.35;
+  .resume .header-container {
+    max-width: $breakpoint-tablet;
+    padding: $spacing-l;
+    flex-flow: row nowrap;
+    align-items: flex-end;
   }
 
-  .resume section p {
-    font-size: 1em;
-    line-height: 1.35;
+  .resume .details {
+    margin-top: 0;
+    color: $text-color-primary-on-primary;
+    text-align: right;
   }
 
-  .resume .content {
-    flex: 1;
-  }
-
-  .resume ul {
-    margin: 0;
-    padding: 0 0 0 1.1em;
-  }
-
-  .resume .skill-list {
-    margin: 0 0 $spacing-s;
-    padding: 0;
-    height: 4.05em;
-    display: flex;
-    flex-flow: column wrap;
-    list-style: none;
-  }
-
-  .resume .skill-list li {
-    margin-right: $spacing-m;
-    line-height: 1.35;
-  }
-
-  .resume section header h3 {
-    color: $color-primary;
+  .resume .details .website-link {
+    display: block;
   }
 
   .resume .row {
-    @include breakpoint-tablet() {
-      display: flex;
-      align-items: flex-end;
-    }
-  }
-
-  .resume .entry {
-    margin: 0 0 $spacing-xl;
-  }
-
-  .resume .entry:last-child {
-    margin-bottom: 0;
-  }
-
-  .resume .entry-header h3 {
-    margin-right: $spacing-m;
-    flex: 1;
+    display: flex;
+    align-items: flex-end;
   }
 
   .resume .date-range {
-    margin: $spacing-xs 0;
-    color: $text-color-secondary;
-    @include breakpoint-tablet() {
-      margin: 0;
-      color: $text-color-primary;
-    }
-  }
-
-  .resume .location {
     margin: 0;
-    color: $text-color-secondary;
+    color: $text-color-primary;
   }
-
-  .resume .entry-description {
-    margin: $spacing-s 0;
-  }
-
-  .resume .entry-details {
-    margin: $spacing-s 0 0 0;
-  }
-
-  @media print {
-    body {
-      background: #fff;
-    }
-
-    .resume-nav-button {
-      display: none;
-    }
-
-    .site-footer {
-      display: none;
-    }
-
-    .resume {
-      background: #fff;
-      font-size: 0.875rem;
-    }
-
-    .resume > header,
-    .resume section,
-    .resume section:last-of-type,
-    .resume .entry {
-      margin-bottom: $spacing-m + $spacing-s;
-    }
-
-    .resume section,
-    .resume section:last-of-type {
-      flex-flow: row nowrap;
-    }
-
-    .resume section header {
-      margin: 0 $spacing-m 0 0;
-      width: 140px;
-    }
-
-    .resume .header-container {
-      max-width: $breakpoint-tablet;
-      padding: $spacing-l;
-      flex-flow: row nowrap;
-      align-items: flex-end;
-    }
-
-    .resume .details {
-      margin-top: 0;
-      color: $text-color-primary-on-primary;
-      text-align: right;
-    }
-
-    .resume .details .website-link {
-      display: block;
-    }
-
-    .resume .row {
-      display: flex;
-      align-items: flex-end;
-    }
-
-    .resume .date-range {
-      margin: 0;
-      color: $text-color-primary;
-    }
-  }
+}
 </style>
