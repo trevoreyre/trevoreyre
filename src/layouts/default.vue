@@ -23,7 +23,6 @@
   * {
     box-sizing: border-box;
     position: relative;
-    transition: all .3s ease;
   }
 
   html {

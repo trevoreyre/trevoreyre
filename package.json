@@ -18,7 +18,8 @@
   "dependencies": {
     "@nuxtjs/google-analytics": "^1.0.0",
     "isomorphic-fetch": "^2.2.1",
-    "nuxt": "^1.0.0-rc3"
+    "nuxt": "^1.0.0-rc3",
+    "rellax": "^1.7.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

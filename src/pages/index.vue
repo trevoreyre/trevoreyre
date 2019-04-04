@@ -210,6 +210,12 @@
   @import '~common/variables';
   @import '~common/mixins';
 
+  #about-summary {
+    margin-top: 0;
+    padding-top: 2 * $spacing-xxl;
+    background: linear-gradient(to bottom, #011D37 0%, $color-background 35%);
+  }
+
   .experiment-container {
     max-width: $experiment-width;
   }
