@@ -29,7 +29,7 @@
 
 <script>
   import sortObjectByArray from '~/common/sortObjectByArray'
-  import sortedPens from '~/common/pens'
+  import { sortedPens } from '~/common/pens'
   import Button from '~/components/Button'
   import ButtonGroup from '~/components/ButtonGroup'
   import Container from '~/components/Container'
