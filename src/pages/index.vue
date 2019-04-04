@@ -156,7 +156,7 @@
 <script>
   import analytics from '~/common/analytics'
   import sortObjectByArray from '~/common/sortObjectByArray'
-  import sortedPens from '~/common/pens'
+  import { sortedPens } from '~/common/pens'
   import Button from '~/components/Button'
   import ButtonGroup from '~/components/ButtonGroup'
   import ContactForm from '~/components/ContactForm'
