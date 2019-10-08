@@ -28,8 +28,7 @@
 </template>
 
 <script>
-  import sortObjectByArray from '~/common/sortObjectByArray'
-  import { sortedPens } from '~/common/pens'
+  import pens from '~/common/pens'
   import Button from '~/components/Button'
   import ButtonGroup from '~/components/ButtonGroup'
   import Container from '~/components/Container'
@@ -53,11 +52,7 @@
     },
     computed: {
       experiments () {
-        return sortObjectByArray(
-          this.$store.state.experiments,
-          'id',
-          sortedPens
-        )
+        return pens
       }
     }
   }
