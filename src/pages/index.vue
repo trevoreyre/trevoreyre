@@ -155,8 +155,7 @@
 
 <script>
   import analytics from '~/common/analytics'
-  import sortObjectByArray from '~/common/sortObjectByArray'
-  import { sortedPens } from '~/common/pens'
+  import pens from '~/common/pens'
   import Button from '~/components/Button'
   import ButtonGroup from '~/components/ButtonGroup'
   import ContactForm from '~/components/ContactForm'
@@ -196,11 +195,7 @@
     },
     computed: {
       experiments () {
-        return sortObjectByArray(
-          this.$store.state.experiments,
-          'id',
-          sortedPens
-        ).slice(0, 3)
+        return pens.slice(0, 3)
       }
     }
   }

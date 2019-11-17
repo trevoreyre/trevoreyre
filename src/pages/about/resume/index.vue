@@ -5,7 +5,7 @@
       <div class='header-container'>
         <div class='summary'>
           <h1>Trevor Eyre</h1>
-          <h2>Full stack web developer</h2>
+          <h2>Front-end Engineer</h2>
         </div>
         <div class='details'>
           <p>208.631.6741</p>
@@ -21,21 +21,14 @@
       <div class='content'>
         <ul class='skill-list'>
           <li>JavaScript</li>
-          <li>Node.js</li>
+          <li>React</li>
+          <li>Vue</li>
+          <li>Webpack</li>
+          <li>Node</li>
+          <li>Docker</li>
           <li>C#</li>
           <li>Python</li>
-          <li>React.js</li>
-          <li>Vue.js</li>
-          <li>Webpack</li>
-          <li>Docker</li>
-          <li>WordPress</li>
-          <li>SQL</li>
-          <li>Java</li>
-          <li>Android</li>
-        </ul>
-        <ul>
-          <li>Figma, Photoshop, Illustrator</li>
-          <li>Fluent in Romanian</li>
+          <li>Figma</li>
         </ul>
       </div>
     </section>
@@ -47,21 +40,43 @@
         <div class='entry'>
           <div class='entry-header'>
             <div class='row'>
+              <h3>Senior Front-end Engineer</h3>
+              <p class='date-range'>Mar 2019 - Present</p>
+            </div>
+            <p class='location'>Vynyl, LLC - Boise, ID</p>
+          </div>
+          <div class='entry-body'>
+            <p class='entry-description'>
+              Front-end software engineer for client product development. Skills used: React, JavaScript, HTML, CSS, Craft CMS, Node, C#.
+            </p>
+            <ul class='entry-details'>
+              <li>
+                Built new UI component library in React for major client in the healthcare industry
+              </li>
+              <li>
+                Lead front-end development for multiple client projects simultaneously under tight deadlines
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class='entry'>
+          <div class='entry-header'>
+            <div class='row'>
               <h3>Software Engineer</h3>
-              <p class='date-range'>Oct 2016 - Present</p>
+              <p class='date-range'>Oct 2016 - Mar 2019</p>
             </div>
             <p class='location'>Healthwise - Boise, ID</p>
           </div>
           <div class='entry-body'>
             <p class='entry-description'>
-              Full stack software development for client-facing content management system and administrative tools. Skills used: React.js, JavaScript, Node.js, C#, HTML, CSS.
+              Full stack software development for client-facing content management system and administrative tools. Skills used: React, JavaScript, Node, C#, HTML, CSS.
             </p>
             <ul class='entry-details'>
               <li>
-                Architect organization-wide UI component library and development guidelines, as member of Front End Core Team
+                Built and open sourced React component library used in multiple client-facing and internal applications
               </li>
               <li>
-                Built centralized React build scripts and configuration tools to maintain consistent development workflows across teams
+                Helped standardize front-end development tools and guidelines as member of Front-end Core Team
               </li>
               <li>
                 Built new administration and analytics app for clients of existing products
@@ -72,49 +87,27 @@
         <div class='entry'>
           <div class='entry-header'>
             <div class='row'>
-              <h3>Freelance Web Developer</h3>
+              <h3>Freelance and open source</h3>
               <p class='date-range'>Jan 2015 - Present</p>
             </div>
             <p class='location'>Self</p>
           </div>
           <div class='entry-body'>
             <p class='entry-description'>
-              Freelance services such as web design, WordPress development, and branding. Skills used: Vue.js, JavaScript, HTML, CSS, Docker, PHP.
+              Freelance services such as web development, design, and branding. Skills used: Vue, JavaScript, HTML, CSS, Docker, Figma, Node, PHP.
             </p>
             <ul class='entry-details'>
               <li>
                 Designed and built website for Better Homes and Gardens Real Estate 43 Degrees North in Boise, ID (www.43re.com)
               </li>
               <li>
-                Designed and built For the Love website, a fashion blog based in San Francisco, CA (fortheloveblog.com)
+                Designing and building website for Touché Photography, an underwater photographer in Portland, OR (touchephotography.com - Currently in development)
               </li>
               <li>
-                Designed logo and built custom website functionality for Jack W. Olds and Company, a CPA firm in Portland, OR (www.oldscpa.com)
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class='entry'>
-          <div class='entry-header'>
-            <div class='row'>
-              <h3>Platform Engineering Intern</h3>
-              <p class='date-range'>Apr 2016 - Sep 2016</p>
-            </div>
-            <p class='location'>Intel Corporation - Portland, OR</p>
-          </div>
-          <div class='entry-body'>
-            <p class='entry-description'>
-              Software development for electrical testing framework and platform validation. Skills used: Python, JavaScript, HTML, CSS.
-            </p>
-            <ul class='entry-details'>
-              <li>
-                Developed new user interface features, using web technologies and deployed cross-platform on Chromium Embedded Framework
+                Built open source autocomplete component for vanilla JavaScript and Vue (autocomplete.trevoreyre.com)
               </li>
               <li>
-                Assisted in testing and debugging command line interface, written in Python
-              </li>
-              <li>
-                Created continuous integration builds and workflows
+                Built several other open source libraries and projects (github.com/trevoreyre)
               </li>
             </ul>
           </div>
@@ -282,7 +275,7 @@ export default {
 .resume .skill-list {
   margin: 0 0 $spacing-s;
   padding: 0;
-  height: 4.05em;
+  height: 8em;
   display: flex;
   flex-flow: column wrap;
   list-style: none;
@@ -290,7 +283,7 @@ export default {
 
 .resume .skill-list li {
   margin-right: $spacing-m;
-  line-height: 1.35;
+  line-height: 2;
 }
 
 .resume section header h3 {
@@ -385,6 +378,10 @@ export default {
     margin-top: 0;
     color: $text-color-primary-on-primary;
     text-align: right;
+  }
+
+  .resume .skill-list {
+    height: 6em;
   }
 
   .resume .details .website-link {

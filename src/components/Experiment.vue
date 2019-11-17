@@ -11,7 +11,7 @@
         height='225'
       >
     </div>
-    <p v-if='experiment.details' v-html='experiment.details'></p>
+    <p v-if='experiment.details'>{{ experiment.details }}</p>
   </card>
 </template>
 
