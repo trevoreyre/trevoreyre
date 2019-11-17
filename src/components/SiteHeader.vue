@@ -3,7 +3,7 @@
     <div class='site-header-inner'>
       <div class='site-header-title'>
         <h1>Trevor Eyre</h1>
-        <h2>Web developer. Software Engineer.</h2>
+        <h2>Front-end Engineer</h2>
       </div>
       <nav class='header-menu'>
         <ul class='menu-primary'>
