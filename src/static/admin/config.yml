@@ -11,11 +11,17 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish date", name: "publishDate", widget: "datetime" }
       - {
-          label: "Featured Image",
-          name: "featuredImage",
-          widget: "image",
-          required: false,
+          label: "Last updated",
+          name: "updatedDate",
+          widget: "datetime",
+          default: "",
         }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          field: { label: "Tag", name: "tag", widget: "string" },
+        }
       - { label: "Body", name: "body", widget: "markdown" }
