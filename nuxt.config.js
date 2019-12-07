@@ -1,18 +1,29 @@
 const path = require('path')
-const appSrc = path.join(__dirname, 'src')
+const glob = require('glob')
+
+const paths = {
+  src: path.resolve(__dirname, 'src'),
+  common: path.resolve(__dirname, 'src', 'common'),
+  content: path.resolve(__dirname, 'src', 'content')
+}
+
+const notesRoutes = glob
+  .sync('notes/*.md', { cwd: 'src/content' })
+  .map(filepath => `/notes/${path.basename(filepath, '.md')}`)
+console.log('routes', notesRoutes)
 
 module.exports = {
-  srcDir: appSrc,
+  srcDir: paths.src,
   // Headers of the page
   head: {
     title: 'Trevor Eyre',
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: 'Web Developer'},
-      {name: 'apple-mobile-web-app-title', content: 'Trevor Eyre'},
-      {name: 'application-name', content: 'Trevor Eyre'},
-      {name: 'theme-color', content: '#1c5b72'}
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'Web Developer' },
+      { name: 'apple-mobile-web-app-title', content: 'Trevor Eyre' },
+      { name: 'application-name', content: 'Trevor Eyre' },
+      { name: 'theme-color', content: '#1c5b72' }
     ],
     link: [{
       rel: 'apple-touch-icon',
@@ -46,14 +57,21 @@ module.exports = {
     }]
   },
   modules: [
-    ['@nuxtjs/google-analytics', {ua: 'UA-72430951-1'}]
+    ['@nuxtjs/google-analytics', { ua: 'UA-72430951-1' }]
   ],
   // Customize the progress-bar color (color-secondary)
-  loading: {color: '#e03616'},
+  loading: { color: '#e03616' },
   // Build configuration. Run eslint on save
   build: {
     extend (config, ctx) {
-      config.resolve.alias['common'] = path.join(appSrc, 'common')
+      config.resolve.alias.common = paths.common
+
+      config.module.rules.push({
+        test: /\.md$/,
+        include: paths.content,
+        loader: 'frontmatter-markdown-loader'
+      })
+
       if (ctx.dev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -63,5 +81,8 @@ module.exports = {
         })
       }
     }
+  },
+  generate: {
+    routes: notesRoutes
   }
 }
