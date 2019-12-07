@@ -1,6 +1,9 @@
 ---
 title: Test Post
 featuredImage: /images/trevoreyre-lowres-cropped.jpg
+tags:
+  - test
+  - dev
 ---
 # Heading 1
 
