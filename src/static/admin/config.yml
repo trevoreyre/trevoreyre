@@ -25,6 +25,7 @@ collections:
           default: "",
           dateFormat: "YYYY-MM-DD",
           timeFormat: false,
+          required: false,
         }
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
