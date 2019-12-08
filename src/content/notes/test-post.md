@@ -1,6 +1,7 @@
 ---
 title: Test Post
-featuredImage: /images/trevoreyre-lowres-cropped.jpg
+publishDate: 2019-12-08T06:38:54.259Z
+updatedDate: ''
 tags:
   - test
   - dev
