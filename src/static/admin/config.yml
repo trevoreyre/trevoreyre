@@ -13,14 +13,14 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - {
           label: "Publish date",
-          name: "publishDate",
+          name: "datePublished",
           widget: "datetime",
           dateFormat: "YYYY-MM-DD",
           timeFormat: false,
         }
       - {
           label: "Last updated",
-          name: "updatedDate",
+          name: "dateUpdated",
           widget: "datetime",
           default: "",
           dateFormat: "YYYY-MM-DD",
