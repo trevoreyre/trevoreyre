@@ -1,11 +1,12 @@
 ---
 title: Test Post
-publishDate: 2019-12-08T06:38:54.259Z
-updatedDate: ''
+datePublished: 2019-12-08T06:38:54.259Z
+dateUpdated: ""
 tags:
   - test
   - dev
 ---
+
 # Heading 1
 
 ## Heading 2
