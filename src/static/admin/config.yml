@@ -11,17 +11,20 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish date", name: "publishDate", widget: "datetime" }
+      - {
+          label: "Publish date",
+          name: "publishDate",
+          widget: "datetime",
+          dateFormat: "YYYY-MM-DD",
+          timeFormat: false,
+        }
       - {
           label: "Last updated",
           name: "updatedDate",
           widget: "datetime",
           default: "",
+          dateFormat: "YYYY-MM-DD",
+          timeFormat: false,
         }
-      - {
-          label: "Tags",
-          name: "tags",
-          widget: "list",
-          field: { label: "Tag", name: "tag", widget: "string" },
-        }
+      - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
