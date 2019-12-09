@@ -163,4 +163,8 @@
   img {
     width: 100%;
   }
+
+  pre {
+    white-space: pre-wrap;
+  }
 </style>
