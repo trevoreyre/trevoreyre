@@ -10,11 +10,10 @@ const paths = {
 const notesRoutes = glob
   .sync('notes/*.md', { cwd: 'src/content' })
   .map(filepath => `/notes/${path.basename(filepath, '.md')}`)
-console.log('routes', notesRoutes)
 
 module.exports = {
   srcDir: paths.src,
-  // Headers of the page
+
   head: {
     title: 'Trevor Eyre',
     meta: [
@@ -56,11 +55,14 @@ module.exports = {
       src: 'https://identity.netlify.com/v1/netlify-identity-widget.js'
     }]
   },
+
   modules: [
     ['@nuxtjs/google-analytics', { ua: 'UA-72430951-1' }]
   ],
+
   // Customize the progress-bar color (color-secondary)
   loading: { color: '#e03616' },
+
   // Build configuration. Run eslint on save
   build: {
     extend (config, ctx) {
@@ -82,6 +84,16 @@ module.exports = {
       }
     }
   },
+
+  // Extend vue-router so URL params are available to components as props
+  router: {
+    extendRoutes (routes) {
+      routes.forEach(route => {
+        route.props = true
+      })
+    }
+  },
+
   generate: {
     routes: notesRoutes
   }

@@ -1,18 +1,12 @@
 <script>
+import { mapGetters } from 'vuex'
 import Container from '~/components/Container'
 import NavButton from '~/components/NavButton'
 import PageHeader from '~/components/PageHeader'
 
 export default {
   components: { Container, NavButton, PageHeader },
-  async asyncData () {
-    const req = await require.context('~/content/notes', true, /\.md$/)
-    const posts = await req.keys().map(filename => ({
-      ...req(filename),
-      _path: `/notes/${filename.replace('.md', '').replace('./', '')}`
-    }))
-    return { posts: posts.reverse() }
-  },
+  computed: mapGetters(['posts']),
 }
 </script>
 
@@ -21,10 +15,10 @@ export default {
     <nav-button href="/" open></nav-button>
     <page-header title="Notes" theme="primary" size="small"></page-header>
     <section>
-      <container size="large">
-        <div v-for="post in posts" :key="post.attributes.title">
-          <nuxt-link :to="post._path">
-            <h2>{{ post.attributes.title }}</h2>
+      <container size="small">
+        <div v-for="post in posts" :key="post.title">
+          <nuxt-link :to="post.url">
+            <h3>{{ post.title }}</h3>
           </nuxt-link>
         </div>
       </container>

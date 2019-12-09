@@ -14,6 +14,9 @@
             <nuxt-link to='/lab'>Lab</nuxt-link>
           </li>
           <li class='menu-item'>
+            <nuxt-link to='/notes'>Notes</nuxt-link>
+          </li>
+          <li class='menu-item'>
             <nuxt-link to='/about/resume'>Resume</nuxt-link>
           </li>
           <li class='menu-item'>
