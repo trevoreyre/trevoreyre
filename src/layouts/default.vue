@@ -12,21 +12,6 @@
     components: {
       SiteFooter
     },
-    created() {
-      if (process.client) {
-        console.log('process.client', process.client)
-        if (window && window.netlifyIdentity) {
-          console.log('netlifyIdentity.init')
-          window.netlifyIdentity.on("init", user => {
-            if (!user) {
-              window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
-            }
-          });
-        }
-      }
-    }
   }
 </script>
 
