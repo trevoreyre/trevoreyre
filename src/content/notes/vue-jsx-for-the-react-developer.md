@@ -40,3 +40,26 @@ export default {
 <!-- Result -->
 <button class="sm" id="submit">Submit</button>
 ```
+
+## Event handlers
+
+
+```js
+// AppButton.vue
+<script>
+export default {
+  name: 'AppButton',
+  render() {
+    return (
+      <button {...{ on: this.$listeners }}>
+        {this.$slots.default}
+      </button>
+    )
+  }
+}
+</script>
+```
+
+## Links
+
+[babel-plugin-transform-vue-jsx](https://github.com/vuejs/babel-plugin-transform-vue-jsx)
