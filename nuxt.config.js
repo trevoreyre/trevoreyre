@@ -50,9 +50,6 @@ module.exports = {
     }, {
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400'
-    }],
-    script: [{
-      src: 'https://identity.netlify.com/v1/netlify-identity-widget.js'
     }]
   },
 
