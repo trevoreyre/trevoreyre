@@ -47,7 +47,42 @@ export default {
 <button class="sm" id="submit">Submit</button>
 ```
 
-If you want to manually handle how extra attributes are passed to the DOM, you can add `inheritAttrs: false` to your component. You might do this if you want those attributes to pass to a nested element instead of the root, for example. The one exception is `class` and `style`, which are always automatically merged with your component's, regardless of `inheritAttrs`.
+If you want to manually handle how extra attributes are passed to the DOM, you can add `inheritAttrs: false` to your component. You might do this if you want those attributes to pass to a nested element instead of the root, for example. The one exception is `class` and `style`, which are always automatically merged with the root element, regardless of `inheritAttrs`.
+
+```js
+export default {
+  name: 'AppButton',
+  inheritAttrs: false,
+  props: {
+    size: String,
+  }
+  render() {
+    const { size } = this.$props
+
+    return (
+      <div class="root">
+        <button class={size} attrs={this.$attrs}>
+          {this.$slots.default}
+        </button>
+      </div>
+    )
+  }
+}
+</script>
+```
+
+```html
+<AppButton size="sm" id="submit" class="my-button">
+  Submit
+</AppButton>
+
+<!-- Result -->
+<div class="root my-button">
+  <button class="sm" id="submit">
+    Submit
+  </button>
+</div>
+```
 
 ## Event handlers
 
