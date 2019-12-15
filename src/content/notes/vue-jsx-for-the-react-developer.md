@@ -5,23 +5,19 @@ dateUpdated: ''
 tags:
   - vue
 ---
-I have a lot of experience writing React components, but much less writing Vue components. And this is my first time using JSX in Vue. So here's a quick cheatsheet on how to use JSX in Vue.
-
-JSX is less popular in Vue because it already has a very good, easy-to-learn HTML templating system. I found myself reaching for JSX more due to the increased flexibility it can give you. As an example, I'm a very big fan of adding an `as` prop to almost all of my components, to allow the user to easily change the HTML tag or component that gets rendered. For example:
+Here's a little cheat-sheet for how to use JSX in Vue. JSX is less popular in Vue than React, because Vue already has a very good, easy-to-learn HTML templating system. However, I found myself reaching for JSX more often due to the increased flexibility. For example, I'm a very big fan of adding an `as` prop to my components, to easily change the HTML tag or component that gets rendered.
 
 ```html
-<button-component as="a" href="#link">
+<AppButton as="a" href="#link">
   Button Link
-</button-component>
+</AppButton>
 ```
 
-I found myself turning to render functions for this sort of functionality. And once you're using render functions regularly, switching from the `createElement` function to JSX is a MUCH better experience.
+I found myself using a lot of render functions for this sort of functionality. And once you're using render functions, JSX is MUCH easier to use than stringing together a bunch of `createElement` functions.
 
 ## Props and attributes
 
-Defined props are available on `this.$props`. Any additional attributes passed to the component are available on `this.$attrs`. Additional attributes are automatically added to the root component. If you want to explicitly manage how these attributes are handled in the HTML, you can add `inheritAttrs: false` to your component. The one exception is `class` and `style`, which are always automatically merged with your component's, regardless of `inheritAttrs`.
-
-### Example
+Props can be accessed via `this.$props`. All additional attributes passed to the component are available via `this.$attrs`, and are automatically added to the root component.
 
 ```js
 // AppButton.vue
@@ -45,14 +41,15 @@ export default {
 ```
 
 ```html
-<app-button size="sm" id="submit">Submit</app-button>
+<AppButton size="sm" id="submit">Submit</AppButton>
 
 <!-- Result -->
 <button class="sm" id="submit">Submit</button>
 ```
 
-## Event handlers
+If you want to manually handle how extra attributes are passed to the DOM, you can add `inheritAttrs: false` to your component. You might do this if you want those attributes to pass to a nested element instead of the root, for example. The one exception is `class` and `style`, which are always automatically merged with your component's, regardless of `inheritAttrs`.
 
+## Event handlers
 
 ```js
 // AppButton.vue
