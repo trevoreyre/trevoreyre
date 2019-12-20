@@ -105,3 +105,5 @@ export default {
 ## Links
 
 [babel-plugin-transform-vue-jsx](https://github.com/vuejs/babel-plugin-transform-vue-jsx)
+
+[Spreading props, attributes, listeners](https://github.com/vuejs/babel-plugin-transform-vue-jsx/issues/86https://github.com/vuejs/babel-plugin-transform-vue-jsx/issues/86)
