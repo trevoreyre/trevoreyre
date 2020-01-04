@@ -16,3 +16,5 @@ When delivering code to the browser, does it still need to be in an IIFE or UMD 
 [Webpack 4.1 and ES Modules (ESM)](https://medium.com/@zwegrzyniak/webpack-4-1-and-es-modules-esm-dd0bd7dca4da)
 
 [How to write and build JS libraries in 2018](https://medium.com/@kelin2025/so-you-wanna-use-es6-modules-714f48b3a953)
+
+[You might not need to transpile your JavaScript](https://www.freecodecamp.org/news/you-might-not-need-to-transpile-your-javascript-4d5e0a438ca/https://www.freecodecamp.org/news/you-might-not-need-to-transpile-your-javascript-4d5e0a438ca/)
