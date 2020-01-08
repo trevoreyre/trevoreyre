@@ -1,0 +1,8 @@
+[build]
+  command = "yarn generate"
+  publish = "dist"
+
+[context.v1]
+  environment = { NODE_VERSION = "8" }
+  command = ""
+  publish = "dist"
