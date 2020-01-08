@@ -1,0 +1,14 @@
+[build]
+  environment = { NODE_VERSION = "13" }
+  command = "yarn generate"
+  publish = "dist"
+
+[context.v2]
+  environment = { NODE_VERSION = "8" }
+  command = "npm run build"
+  publish = "dist"
+
+[context.v1]
+  environment = { NODE_VERSION = "8" }
+  command = "npm run build"
+  publish = "dist"
