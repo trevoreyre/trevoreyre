@@ -1,0 +1,247 @@
+<!doctype html>
+<html class='no-js' lang=''>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='x-ua-compatible' content='ie=edge'>
+    <title>Trevor Eyre</title>
+    <meta name='description' content=''>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <link rel='apple-touch-icon' href='/apple-touch-icon.png'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' type='text/css'>
+    <link rel='stylesheet' href='/styles/main.min.css'>
+    <script src='/scripts/modernizr-2.8.3.min.js'></script>
+
+    <!-- Polymer components -->
+    <script src='/bower_components/webcomponentsjs/webcomponents-lite.min.js'></script>
+    <link rel='import' href='/bower_components/paper-header-panel/paper-header-panel.html'>
+    <link rel='import' href='/bower_components/paper-drawer-panel/paper-drawer-panel.html'>
+    <link rel='import' href='/bower_components/paper-toolbar/paper-toolbar.html'>
+    <link rel='import' href='/bower_components/paper-menu/paper-menu.html'>
+    <link rel='import' href='/bower_components/paper-menu/paper-submenu.html'>
+    <link rel='import' href='/bower_components/paper-item/paper-item.html'>
+    <link rel='import' href='/bower_components/paper-tabs/paper-tabs.html'>
+    <link rel='import' href='/bower_components/paper-card/paper-card.html'>
+    <link rel='import' href='/bower_components/paper-button/paper-button.html'>
+    <link rel='import' href='/bower_components/paper-icon-button/paper-icon-button.html'>
+    <link rel='import' href='/bower_components/paper-ripple/paper-ripple.html'>
+    <link rel='import' href='/bower_components/paper-input/paper-input.html'>
+    <link rel='import' href='/bower_components/paper-input/paper-textarea.html'>
+    <link rel='import' href='/bower_components/paper-tooltip/paper-tooltip.html'>
+    <link rel='import' href='/bower_components/paper-dialog/paper-dialog.html'>
+    <link rel='import' href='/bower_components/paper-toast/paper-toast.html'>
+    <link rel='import' href='/bower_components/iron-icons/iron-icons.html'>
+    <link rel='import' href='/bower_components/iron-icons/image-icons.html'>
+    <link rel='import' href='/bower_components/iron-icons/social-icons.html'>
+    <link rel='import' href='/bower_components/iron-image/iron-image.html'>
+    <link rel='import' href='/bower_components/iron-flex-layout/iron-flex-layout.html'>
+    <link rel='import' href='/bower_components/iron-flex-layout/classes/iron-flex-layout.html'>
+    <link rel='import' href='/bower_components/polymer/polymer.html'>
+    <link rel='import' href='/bower_components/font-roboto/roboto.html'>
+
+    <!-- Custom Polymer styles -->
+    <link rel='import' href='/styles/te-polymer-styles.html'>
+    <style is='custom-style' include='te-polymer-styles'></style>
+</head>
+<body class='te-body fullbleed vertical layout'>
+    <!--[if lt IE 8]>
+        <p class='browserupgrade'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <paper-header-panel>
+        <paper-toolbar>
+            <paper-icon-button id='te-drawer-toggle' icon='menu'></paper-icon-button>
+            <div class='paper-header'>Trevor Eyre</div>
+            <div class='flex'></div>
+            <a id='te-nav-link_github' href='https://github.com/TrevorEyre' target='_blank'>
+                <paper-icon-button src='/img/github-white.svg' alt='GitHub'></paper-icon-button>
+            </a>
+            <paper-tooltip for='te-nav-link_github'>GitHub</paper-tooltip>
+            <a id='te-nav-link_linkedin' href='https://www.linkedin.com/in/trevor-eyre-958976108' target='_blank'>
+                <paper-icon-button src='/img/linkedin-white.svg' alt='LinkedIn'></paper-icon-button>
+            </a>
+            <paper-tooltip for='te-nav-link_linkedin'>LinkedIn</paper-tooltip>
+        </paper-toolbar>
+        <paper-drawer-panel id='te-drawer-panel' class='flex'>
+            <div drawer>
+                <paper-menu id='te-menu'>
+                    <paper-item role='menuitem' class='te-ripple-container'>
+                        <iron-icon icon='account-circle' class='te-icon'></iron-icon>
+                        About Me
+                        <paper-ripple></paper-ripple>
+                    </paper-item>
+                    <paper-item role='menuitem' class='te-ripple-container'>
+                        <iron-icon icon='image:photo' class='te-icon'></iron-icon>
+                        Portfolio
+                        <paper-ripple></paper-ripple>
+                    </paper-item>
+                    <paper-item role='menuitem' class='te-ripple-container'>
+                        <iron-icon icon='work' class='te-icon'></iron-icon>
+                        Services
+                        <paper-ripple></paper-ripple>
+                    </paper-item>
+                    <paper-item role='menuitem' class='te-ripple-container'>
+                        <iron-icon icon='mail' class='te-icon'></iron-icon>
+                        Contact
+                        <paper-ripple></paper-ripple>
+                    </paper-item>
+                </paper-menu>
+            </div>
+            <div main id='te-main-content'>
+
+<section id='te-section_overview' class='te-section te-section--gradient-back'>
+    <div class='te-section_content te-overview mdl-grid mdl-grid--no-spacing'>
+        <div class='te-section_title mdl-cell mdl-cell--12-col'>
+            <h1 class='mdl-typography--font-light'>About Me</h1>
+        </div>
+        <div class='te-overview_img--mobile mdl-cell mdl-cell--hide-desktop mdl-cell--8-col'>
+            <img src='/img/teyre-mobile.png'>
+        </div>
+        <div class='te-overview_info mdl-cell mdl-cell--middle mdl-cell--6-col mdl-cell--8-col-tablet'>
+            <p>I'm a full stack web developer with an affinity for UI and UX design.</p>
+            <p>Currently a senior at Portland State University, I will graduate with a BS in Computer Science in March 2016. I am passionate about software development, and love diving into the tiny details to make applications that are simple and enjoyable to use.</p>
+            <p>When I’m not working or studying, you can usually find me at home relaxing, or running around the outdoors somewhere with my wife and dog.</p>
+            <paper-button id='te-overview-link_portfolio' class='te-button te-button--large te-button--call' raised>
+                <iron-icon icon='image:photo'></iron-icon>
+                View my Portfolio
+            </paper-button>
+        </div>
+        <div class='te-overview_img te-desktop-only mdl-cel mdl-cell--bottom mdl-cell--6-col mdl-cell--4-col-tablet'>
+            <img src='/img/teyre.png'>
+        </div>
+    </div>
+</section>
+
+<section class='te-section'>
+    <div class='te-section_content te-section_content--small mdl-grid mdl-grid--no-spacing'>
+        <div class='te-section_title mdl-cell mdl-cell--12-col'>
+            <h1 class='mdl-typography--font-light'>Skills</h1>
+        </div>
+        <div class='mdl-grid' style='width:100%;'>
+            <div class='mdl-cell mdl-cell--4-col'>
+                <ul>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+            </div>
+            <div class='mdl-cell mdl-cell--4-col'>
+                <ul>
+                    <li>PHP</li>
+                    <li>SQL</li>
+                    <li>Sass/SCSS</li>
+                    <li>Polymer</li>
+                </ul>
+            </div>
+            <div class='mdl-cell mdl-cell--4-col'>
+                <ul>
+                    <li>Java</li>
+                    <li>C++</li>
+                    <li>Git</li>
+                    <li>Gulp</li>
+                </ul>
+            </div>
+            <div class='mdl-cell mdl-cell--12-col'>
+                <ul>
+                    <li>Full stack web development</li>
+                    <li>Database design and management</li>
+                    <li>Photoshop, GIMP, Inkscape, Sony Movie Studio Platinum</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class='te-section_content te-section_content--small mdl-grid mdl-grid--no-spacing'>
+        <div class='te-section_title mdl-cell mdl-cell--12-col'>
+            <h1 class='mdl-typography--font-light'>Education</h1>
+        </div>
+        <div class='mdl-grid'>
+            <div class='mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--4-col-phone'>
+                <h5>Portland State University</h5>
+                <p>Jan 2012 - Present</p>
+            </div>
+            <div class='mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet'>
+                <h5>Bachelor of Science - Computer Science</h5>
+                <ul>
+                    <li>Expected graduation: March 2016</li>
+                    <li>3.71 GPA</li>
+                    <li>Dean’s List for 3 terms</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class='te-section_content te-section_content--small mdl-grid mdl-grid--no-spacing'>
+        <div class='te-section_title mdl-cell mdl-cell--12-col'>
+            <h1 class='mdl-typography--font-light'>Experience</h1>
+        </div>
+        <div class='mdl-grid'>
+            <div class='mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--4-col-phone'>
+                <h5>SIMOS Insourcing Solutions</h5>
+                <p>Jun 2013 - Present<br>
+                Mar 2011 - Jan 2012</p>
+            </div>
+            <div class='mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet'>
+                <h5>Onsite Rep / Recruiter</h5>
+                <ul>
+                    <li>Recruiting, payroll, and other administrative duties for a food processing facility</li>
+                    <li>Various programming and technical projects on the side with available free time</li>
+                    <li>Designed and implemented online employee turnover database from scratch   using MySQL, PHP, and front end in HTML, CSS, and jQuery</li>
+                    <li>Created multiple operations dashboards and reports using VBA for Excel, used daily at company facilities across the nation</li>
+                    <li>Produced, filmed, and edited new video training series using Sony Movie Studio</li>
+                    <li>Promoted from hourly to salaried employee in less than one year</li>
+                </ul>
+            </div>
+            <div class='mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--4-col-phone'>
+                <h5>Direct Placement</h5>
+                <p>Jul 2012 - Jun 2013</p>
+            </div>
+            <div class='mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet'>
+                <h5>Billing Assistant</h5>
+                <ul>
+                    <li>Processed all sales and payments for internet marketing company, specializing in Google AdWords and Bing Ads</li>
+                    <li>Created new marketing performance reports for customers</li>
+                    <li>Designed new customer invoices</li>
+                </ul>
+            </div>
+            <div class='mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet mdl-cell--4-col-phone'>
+                <h5>Farmers Insurance</h5>
+                <p>Oct 2009 - Dec 2010</p>
+            </div>
+            <div class='mdl-cell mdl-cell--8-col mdl-cell--6-col-tablet'>
+                <h5>Administrative Assistant</h5>
+                <ul>
+                    <li>Door-to-door marketing and lead generation</li>
+                    <li>Managed administrative duties for an agent with over 150 clients</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+            </div>
+        </paper-drawer-panel>
+    </paper-header-panel>
+    <div id='te-loading-site' class='te-loading'>
+        <div class='te-loading_inner'>
+            <h1>Trevor Eyre</h1>
+            <h4>Loading</h4>
+            <div class='loader'>Loading...</div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src='/scripts/main.min.js'></script>
+    <script>
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='https://www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-72430951-1','auto');ga('send','pageview');
+    </script>
+</body>
+</html>
