@@ -1,13 +1,13 @@
-version: '3'
+version: "3"
 
 services:
   app:
-    container_name: 'trevoreyre.com'
+    container_name: "trevoreyre.com"
     build: .
     volumes:
       - .:/home/node/app
       - /home/node/app/node_modules
     ports:
-      - '3000:3000'
+      - "3001:3001"
     stdin_open: true
     tty: true

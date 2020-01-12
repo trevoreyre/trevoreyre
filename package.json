@@ -8,9 +8,9 @@
     "url": "git+https://github.com/TrevorEyre/trevoreyre.git"
   },
   "scripts": {
-    "dev": "nuxt",
+    "start": "nuxt -p 3001",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "serve": "nuxt start -p 3001",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue .",
     "precommit": "npm run lint"
