@@ -19,7 +19,11 @@ I use [Visual Studio Code][vscode] on both Mac and Windows, and sync my settings
 
 I got used to reverse scrolling on my Mac, even when using a mouse. Windows doesn't have a setting for this, but you can still manage it with the registry editor (I know it's gross. But it works). [Here's the instructions][reverse-scroll-wheel]
 
-The other big one is keyboard shortcuts. This is tricky, and I'm still experimenting with it. 
+The other big one is keyboard shortcuts. This is tricky, and I'm still experimenting with it. I'm gonna give AutoHotkey a try, and try to use some scripts to remap everything to be closer to macOS. We'll see how it goes.
+
+I use [Notion] for note-taking, because it has great apps on iOS, macOS, Android, and everywhere ever.
+
+## Links
 
 ### Apps
 
@@ -28,6 +32,8 @@ The other big one is keyboard shortcuts. This is tricky, and I'm still experimen
 [Visual Studio Code][vscode]
 
 [Settings Sync extension][settings-sync]
+
+[Notion]
 
 ### Guides
 
@@ -50,4 +56,5 @@ The other big one is keyboard shortcuts. This is tricky, and I'm still experimen
 [wox]: http://www.wox.one/
 [dotfiles]: https://github.com/trevoreyre/dotfiles
 [reverse-scroll-wheel]: https://www.thewindowsclub.com/reverse-mouse-touchpad-scrolling-direction
+[notion]: https://www.notion.so
 
