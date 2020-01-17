@@ -1,12 +1,53 @@
 ---
-title: WSL
+title: Switching to Windows
 datePublished: 2020-01-16T22:25:19.787Z
 dateUpdated: ''
 tags:
-  - wsl
+  - WSL
+  - Windows
+  - macOS
 ---
-## Links
+Some tips for switching to a Windows machine, if you're coming from macOS.
+
+If you use Alfred as an app launcher, on Windows there is [ueli](). It has a very similar feel and functionality, and a lot of the same features. I don't think you can go quite as deep on custom workflows and stuff, but it's got all the basics. I also tried [Wox], which was not bad, but different enough that it didn't feel like a good replacement.
+
+I keep a [repository of dotfiles][dotfiles] that I can clone and use in all my environments. They are Unix-based, but work fine in Windows if you're using the Git Bash shell, or WSL.
+
+I use [Visual Studio Code][vscode] on both Mac and Windows, and sync my settings between the two using the [Settings Sync extension][settings-sync]. The extension automatically creates a GitHub Gist for you, and reads/writes all your settings from there. [Here's my gist][settings-sync-gist] with all my settings and extensions
+
+## Random tweaks
+
+I got used to reverse scrolling on my Mac, even when using a mouse. Windows doesn't have a setting for this, but you can still manage it with the registry editor (I know it's gross. But it works). [Here's the instructions][reverse-scroll-wheel]
+
+The other big one is keyboard shortcuts. This is tricky, and I'm still experimenting with it. 
+
+### Apps
+
+[ueli]
+
+[Visual Studio Code][vscode]
+
+[Settings Sync extension][settings-sync]
+
+### Guides
 
 [A guide for using WSL for development - Janel Brandon - Medium](https://medium.com/@janelgbrandon/a-guide-for-using-wsl-for-development-d135670313a6)
 
 [Setting Up Docker for Windows and WSL to Work Flawlessly — Nick Janetakis](https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly)
+
+[How to reverse Mouse and Touchpads scrolling direction in Windows 10](https://www.thewindowsclub.com/reverse-mouse-touchpad-scrolling-direction)
+
+### Random
+
+[My configuration files (dotfiles)][dotfiles]
+
+[My VS Code settings][settings-sync-gist]
+
+[ueli]: https://ueli.app/
+[vscode]: https://code.visualstudio.com
+[settings-sync]: https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
+[settings-sync-gist]: https://gist.github.com/trevoreyre/8d9e08eec4c53d8aa8740112fb659885
+[wox]: http://www.wox.one/
+[dotfiles]: https://github.com/trevoreyre/dotfiles
+[reverse-scroll-wheel]: https://www.thewindowsclub.com/reverse-mouse-touchpad-scrolling-direction
+
