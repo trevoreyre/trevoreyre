@@ -19,7 +19,7 @@ I use [Visual Studio Code][vscode] on both Mac and Windows, and sync my settings
 
 I got used to reverse scrolling on my Mac, even when using a mouse. Windows doesn't have a setting for this, but you can still manage it with the registry editor (I know it's gross. But it works). [Here's the instructions][reverse-scroll-wheel]
 
-The other big one is keyboard shortcuts. This is tricky, and I'm still experimenting with it. I'm gonna give AutoHotkey a try, and try to use some scripts to remap everything to be closer to macOS. We'll see how it goes.
+The other big one is keyboard shortcuts. This is tricky, and I'm still experimenting with it. I'm gonna give AutoHotkey a try, and try to use some scripts to remap everything to be closer to macOS. We'll see how it goes. So far, I've followed the directions from this post - [Mapping your macOS keybinds to Windows][macos-keyboard-shortcuts]. It gets you most of the way there, but there are still some tweaks I want to make to it. I'll publish a GitHub gist when I get that script to a good spot.
 
 I use [Notion] for note-taking, because it has great apps on iOS, macOS, Android, and everywhere ever.
 
@@ -43,6 +43,8 @@ I use [Notion] for note-taking, because it has great apps on iOS, macOS, Android
 
 [How to reverse Mouse and Touchpads scrolling direction in Windows 10](https://www.thewindowsclub.com/reverse-mouse-touchpad-scrolling-direction)
 
+[Mapping your macOS keybinds to Windows][macos-keyboard-shortcuts]
+
 ### Random
 
 [My configuration files (dotfiles)][dotfiles]
@@ -57,4 +59,5 @@ I use [Notion] for note-taking, because it has great apps on iOS, macOS, Android
 [dotfiles]: https://github.com/trevoreyre/dotfiles
 [reverse-scroll-wheel]: https://www.thewindowsclub.com/reverse-mouse-touchpad-scrolling-direction
 [notion]: https://www.notion.so
+[macos-keyboard-shortcuts]: https://medium.com/@chrisdhanaraj/mapping-your-macos-keybinds-to-windows-b6009c50065b
 
