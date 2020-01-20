@@ -1,13 +1,13 @@
 ---
-title: Switching to Windows
+title: Setting up Windows to feel like macOS
 datePublished: 2020-01-16T22:25:19.787Z
-dateUpdated: ''
+dateUpdated: 2020-01-20T07:00:00.000Z
 tags:
-  - WSL
-  - Windows
-  - macOS
+  - wsl
+  - windows
+  - macos
 ---
-Some tips for switching to a Windows machine, if you're coming from macOS.
+My personal machine is a MacBook Pro. My work machine is a Windows laptop. This is not about which OS is better. I'm just used to macOS, so I'd prefer both environments to behave as similarly as possible. If you're in the same situation, you might find this useful as well.
 
 If you use Alfred as an app launcher, on Windows there is [ueli](). It has a very similar feel and functionality, and a lot of the same features. I don't think you can go quite as deep on custom workflows and stuff, but it's got all the basics. I also tried [Wox], which was not bad, but different enough that it didn't feel like a good replacement.
 
