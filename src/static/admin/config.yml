@@ -28,4 +28,5 @@ collections:
           required: false,
         }
       - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Notes", name: "notes", widget: "text", required: false }
       - { label: "Body", name: "body", widget: "markdown" }

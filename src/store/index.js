@@ -1,5 +1,5 @@
 import path from 'path'
-import { format, parseISO } from 'date-fns'
+import { compareDesc, format, parseISO } from 'date-fns'
 
 export const state = () => ({
   posts: {},
@@ -14,7 +14,9 @@ export const mutations = {
 
 export const getters = {
   posts: state => {
-    return Object.values(state.posts)
+    return Object.values(state.posts).sort((post1, post2) => {
+      return compareDesc(post1.datePublished, post2.datePublished)
+    })
   },
 
   getPost: state => slug => {
@@ -29,15 +31,17 @@ export const actions = {
       const post = req(filename)
       const { title, datePublished, dateUpdated, tags } = post.attributes
       const slug = path.basename(filename, '.md')
-      const datePublishedDisplay = format(parseISO(datePublished), 'MMMM do, yyyy')
-      const dateUpdatedDisplay = dateUpdated ? format(parseISO(dateUpdated), 'MMMM do, yyyy') : ''
+      const datePublishedParsed = parseISO(datePublished)
+      const dateUpdatedParsed = parseISO(dateUpdated)
+      const datePublishedDisplay = format(datePublishedParsed, 'MMMM do, yyyy')
+      const dateUpdatedDisplay = dateUpdated ? format(dateUpdatedParsed, 'MMMM do, yyyy') : ''
 
       posts[slug] = {
         title,
         tags,
-        datePublished,
+        datePublished: datePublishedParsed,
         datePublishedDisplay,
-        dateUpdated,
+        dateUpdated: dateUpdatedParsed,
         dateUpdatedDisplay,
         html: post.html,
         url: `/notes/${slug}`

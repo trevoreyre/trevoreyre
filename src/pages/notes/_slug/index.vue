@@ -26,9 +26,7 @@ export default {
     <page-header :title="post.title" theme="primary" size="small">
       <p>{{ post.datePublishedDisplay }}</p>
       <p>
-        <span v-for="tag in post.tags" :key="tag">
-          {{ tag }}
-        </span>
+        {{ post.tags.join(', ') }}
       </p>
     </page-header>
     <section>
