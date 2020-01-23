@@ -6,6 +6,13 @@ tags:
   - wsl
   - windows
   - macos
+notes: |-
+  Search terms:
+  macos keyboard shortcuts
+  os x keyboard shortcuts
+  swap ctrl fn keys
+  remap fn key
+  autohotkey os x shortcuts
 ---
 My personal machine is a MacBook Pro. My work machine is a Windows laptop. This is not about which OS is better. I'm just used to macOS, so I'd prefer both environments to behave as similarly as possible. If you're in the same situation, you might find this useful as well.
 
@@ -51,6 +58,8 @@ I use [Notion] for note-taking, because it has great apps on iOS, macOS, Android
 
 [My VS Code settings][settings-sync-gist]
 
+[Mac keyboard shortcuts][apple-support-mac-keyboard-shortcuts]
+
 [ueli]: https://ueli.app/
 [vscode]: https://code.visualstudio.com
 [settings-sync]: https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync
@@ -60,4 +69,4 @@ I use [Notion] for note-taking, because it has great apps on iOS, macOS, Android
 [reverse-scroll-wheel]: https://www.thewindowsclub.com/reverse-mouse-touchpad-scrolling-direction
 [notion]: https://www.notion.so
 [macos-keyboard-shortcuts]: https://medium.com/@chrisdhanaraj/mapping-your-macos-keybinds-to-windows-b6009c50065b
-
+[apple-support-mac-keyboard-shortcuts]: https://support.apple.com/en-us/HT201236
