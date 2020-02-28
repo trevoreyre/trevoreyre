@@ -1,7 +1,7 @@
 ---
 title: Setting up Windows to feel like macOS
 datePublished: 2020-01-16T22:25:19.787Z
-dateUpdated: 2020-01-20T07:00:00.000Z
+dateUpdated: 2020-02-28T07:00:00.000Z
 tags:
   - wsl
   - windows
@@ -30,6 +30,8 @@ The other big one is keyboard shortcuts. This is tricky, and I'm still experimen
 
 I use [Notion] for note-taking, because it has great apps on iOS, macOS, Android, and everywhere ever.
 
+I'm using [AquaSnap] for window management, and remapping the keyboard shortcuts to match [Rectangle] on macOS.
+
 ## Links
 
 ### Apps
@@ -41,6 +43,8 @@ I use [Notion] for note-taking, because it has great apps on iOS, macOS, Android
 [Settings Sync extension][settings-sync]
 
 [Notion]
+
+[AquaSnap]
 
 ### Guides
 
@@ -70,3 +74,5 @@ I use [Notion] for note-taking, because it has great apps on iOS, macOS, Android
 [notion]: https://www.notion.so
 [macos-keyboard-shortcuts]: https://medium.com/@chrisdhanaraj/mapping-your-macos-keybinds-to-windows-b6009c50065b
 [apple-support-mac-keyboard-shortcuts]: https://support.apple.com/en-us/HT201236
+[aquasnap]: https://www.nurgo-software.com/products/aquasnap
+[rectangle]: https://rectangleapp.com/
