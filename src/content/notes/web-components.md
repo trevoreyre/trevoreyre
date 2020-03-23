@@ -1,7 +1,7 @@
 ---
 title: Web components
 datePublished: 2020-03-15T05:29:46.562Z
-dateUpdated: ''
+dateUpdated: 2020-03-23T06:00:00.000Z
 tags:
   - web components
 ---
