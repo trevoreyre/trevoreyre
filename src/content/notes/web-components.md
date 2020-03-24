@@ -19,15 +19,18 @@ Web components have a lot of potential. So far my big takeaway is that they are 
 
 - There's no built-in context like in React. If you want a channel for related components to communicate with each other, you have to use something like Redux or roll your own.
 
-- Extending native HTML elements is kind of excruciating. Say, you want to create a web component that just extends an HTML `<input>` with a little extra functionality or custom styling. You can't really expose the inner `<input>` component, so you basically have to re-implement all the attributes and functionality of that input manually.
+- Extending native HTML elements is kind of excruciating. Say, you want to create a web component that just extends an HTML `<input>` with a little extra functionality or custom styling. You can't really expose the inner `<input>` component, so you basically have to re-implement all the attributes and functionality of that input manually. For an example, see how complex it is to implement a [basic custom checkbox element](https://github.com/GoogleChromeLabs/howto-components/blob/master/elements/howto-checkbox/howto-checkbox.js).
 
 ## Links
 
-[Custom Elements Everywhere](https://custom-elements-everywhere.com/)
+[Custom elements everywhere](https://custom-elements-everywhere.com/)
 
 [HTML attributes reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)
 
 [HowTo: Components][howto-components]
 
+[Custom elements best practices][custom-elements-best-practices]
+
 [custom-elements-everywhere-react]: https://custom-elements-everywhere.com/#react
 [howto-components]: https://github.com/GoogleChromeLabs/howto-components
+[custom-elements-best-practices]: https://developers.google.com/web/fundamentals/web-components/best-practices
