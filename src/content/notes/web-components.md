@@ -9,7 +9,9 @@ Web components have a lot of potential. So far my big takeaway is that they are 
 
 ## Pros
 
-- Interoperable. Write a component and use it in any framework. Sorta. [React is kind of a pain still](https://custom-elements-everywhere.com/#react)...
+- Interoperable. Write a component and use it in any framework. Sorta. [React is kind of a pain still][custom-elements-everywhere-react]...
+
+- You can write more flexible, more customizable versions of native HTML elements with better defaults.
 
 ## Cons
 
@@ -18,3 +20,14 @@ Web components have a lot of potential. So far my big takeaway is that they are 
 - There's no built-in context like in React. If you want a channel for related components to communicate with each other, you have to use something like Redux or roll your own.
 
 - Extending native HTML elements is kind of excruciating. Say, you want to create a web component that just extends an HTML `<input>` with a little extra functionality or custom styling. You can't really expose the inner `<input>` component, so you basically have to re-implement all the attributes and functionality of that input manually.
+
+## Links
+
+[Custom Elements Everywhere](https://custom-elements-everywhere.com/)
+
+[HTML attributes reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)
+
+[HowTo: Components][howto-components]
+
+[custom-elements-everywhere-react]: https://custom-elements-everywhere.com/#react
+[howto-components]: https://github.com/GoogleChromeLabs/howto-components
