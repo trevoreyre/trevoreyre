@@ -14,24 +14,6 @@
         </div>
       </div>
     </header>
-    <section class='skills'>
-      <header>
-        <h3>Proficiencies and Skills</h3>
-      </header>
-      <div class='content'>
-        <ul class='skill-list'>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>Vue</li>
-          <li>Webpack</li>
-          <li>Node</li>
-          <li>Docker</li>
-          <li>C#</li>
-          <li>Python</li>
-          <li>Figma</li>
-        </ul>
-      </div>
-    </section>
     <section class='experience'>
       <header>
         <h3>Experience</h3>
@@ -40,21 +22,49 @@
         <div class='entry'>
           <div class='entry-header'>
             <div class='row'>
+              <h3>Full Stack Software Engineer</h3>
+              <p class='date-range'>Jan 2020 - Present</p>
+            </div>
+            <p class='location'>Ephesoft - Irvine, CA</p>
+          </div>
+          <div class='entry-body'>
+            <p class='entry-description'>
+              Full stack development on Semantik Invoice product, working remotely full time.
+            </p>
+            <ul class='entry-details'>
+              <li>
+                Utilize Amazon Web Services, machine learning, and OCR to extract structured data from invoices
+              </li>
+              <li>
+                Involved in architecture decisions in design, front-end, and back-end
+              </li>
+              <li>
+                Skills used: AWS, Angular, Node, TypeScript
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class='entry'>
+          <div class='entry-header'>
+            <div class='row'>
               <h3>Senior Front-end Engineer</h3>
-              <p class='date-range'>Mar 2019 - Present</p>
+              <p class='date-range'>Mar 2019 - Jan 2020</p>
             </div>
             <p class='location'>Vynyl, LLC - Boise, ID</p>
           </div>
           <div class='entry-body'>
             <p class='entry-description'>
-              Front-end software engineer for client product development. Skills used: React, JavaScript, HTML, CSS, Craft CMS, Node, C#.
+              Front-end software engineer for client product development.
             </p>
             <ul class='entry-details'>
               <li>
                 Built new UI component library in React for major client in the healthcare industry
               </li>
               <li>
-                Lead front-end development for multiple client projects simultaneously under tight deadlines
+                Lead development for multiple projects simultaneously under tight deadlines
+              </li>
+              <li>
+                Skills used: React, JavaScript, HTML, CSS, Craft CMS, Node, C#
               </li>
             </ul>
           </div>
@@ -69,17 +79,17 @@
           </div>
           <div class='entry-body'>
             <p class='entry-description'>
-              Full stack software development for client-facing content management system and administrative tools. Skills used: React, JavaScript, Node, C#, HTML, CSS.
+              Full stack software development for client-facing content management system and administrative tools.
             </p>
             <ul class='entry-details'>
               <li>
-                Built and open sourced React component library used in multiple client-facing and internal applications
+                Built and open sourced React component library used in multiple client-facing and internal applications (github.com/healthwise/healthwise-ui)
               </li>
               <li>
                 Helped standardize front-end development tools and guidelines as member of Front-end Core Team
               </li>
               <li>
-                Built new administration and analytics app for clients of existing products
+                Skills used: React, JavaScript, Node, C#, HTML, CSS
               </li>
             </ul>
           </div>
@@ -94,20 +104,20 @@
           </div>
           <div class='entry-body'>
             <p class='entry-description'>
-              Freelance services such as web development, design, and branding. Skills used: Vue, JavaScript, HTML, CSS, Docker, Figma, Node, PHP.
+              Freelance and open source web development, design, and branding.
             </p>
             <ul class='entry-details'>
               <li>
                 Designed and built website for Better Homes and Gardens Real Estate 43 Degrees North in Boise, ID (www.43re.com)
               </li>
               <li>
-                Designing and building website for Touché Photography, an underwater photographer in Portland, OR (touchephotography.com - Currently in development)
+                Designing and building website for Touché Photography, an underwater photographer in Portland, OR (dev.touchephotography.com - Currently in development)
               </li>
               <li>
                 Built open source autocomplete component for vanilla JavaScript and Vue (autocomplete.trevoreyre.com)
               </li>
               <li>
-                Built several other open source libraries and projects (github.com/trevoreyre)
+                Skills used: Vue, JavaScript, HTML, CSS, Docker, Figma, Node, PHP
               </li>
             </ul>
           </div>
@@ -159,7 +169,6 @@ export default {
 }
 
 .resume > header {
-  // background: $color-primary;
   margin: 0 0 $spacing-xxl 0;
 }
 
@@ -238,18 +247,11 @@ export default {
   max-width: $breakpoint-tablet;
   display: flex;
   flex-flow: column nowrap;
-  @include breakpoint-tablet() {
-    flex-flow: row nowrap;
-  }
 }
 
 .resume section header {
-  margin: 0 0 $spacing-xl;
+  margin: 0 0 $spacing-l;
   width: 100%;
-  @include breakpoint-tablet() {
-    margin: 0 $spacing-m 0 0;
-    width: 160px;
-  }
 }
 
 .resume section h3 {
@@ -298,7 +300,7 @@ export default {
 }
 
 .resume .entry {
-  margin: 0 0 $spacing-xl;
+  margin: 0 0 $spacing-l;
 }
 
 .resume .entry:last-child {
@@ -357,14 +359,8 @@ export default {
     margin-bottom: $spacing-m + $spacing-s;
   }
 
-  .resume section,
-  .resume section:last-of-type {
-    flex-flow: row nowrap;
-  }
-
   .resume section header {
-    margin: 0 $spacing-m 0 0;
-    width: 140px;
+    margin: 0 0 $spacing-m;
   }
 
   .resume .header-container {
