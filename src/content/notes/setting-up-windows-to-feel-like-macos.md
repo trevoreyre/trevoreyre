@@ -6,12 +6,23 @@ tags:
   - wsl
   - windows
   - macos
-notes: |-
+notes: >-
+  - Mention remapping modifier keg for screen reader software like VoiceOver and
+  NVDA
+
+  - You could use SharpKeys or Magic Keyboard Utilities to remap keys, but Magic Keyboard Utilities will ONLY be in effect when you’re using a magic keyboard, whereas SharpKeys will work with any keyboard
+
+
   Search terms:
+
   macos keyboard shortcuts
+
   os x keyboard shortcuts
+
   swap ctrl fn keys
+
   remap fn key
+
   autohotkey os x shortcuts
 ---
 My personal machine is a MacBook Pro. My work machine is a Windows laptop. This is not about which OS is better. I'm just used to macOS, so I'd prefer both environments to behave as similarly as possible. If you're in the same situation, you might find this useful as well.
