@@ -27,17 +27,29 @@ notes: >-
 ---
 My personal machine is a MacBook Pro. My work machine is a Windows laptop. This is not about which OS is better. I'm just used to macOS, so I'd prefer both environments to behave as similarly as possible. If you're in the same situation, you might find this useful as well.
 
+### App launcher
+
 If you use Alfred as an app launcher, on Windows there is [ueli]. It has a very similar feel and functionality, and a lot of the same features. I don't think you can go quite as deep on custom workflows and stuff, but it's got all the basics. I also tried [Wox], which was not bad, but different enough that it didn't feel like a good replacement.
 
-I keep a [repository of dotfiles][dotfiles] that I can clone and use in all my environments. They are Unix-based, but work fine in Windows if you're using the Git Bash shell, or WSL.
+### Development environment
 
-I use [Visual Studio Code][vscode] on both Mac and Windows, and sync my settings between the two using the [Settings Sync extension][settings-sync]. The extension automatically creates a GitHub Gist for you, and reads/writes all your settings from there. [Here's my gist][settings-sync-gist] with all my settings and extensions
+I do software development, so keeping a consistent development environment between systems is crucial. For that, I keep a [repository of dotfiles][dotfiles] that I can clone and use in all my environments. They are Unix-based, but work fine in Windows if you're using the Git Bash shell, or WSL.
 
-## Random tweaks
+I use [Visual Studio Code][vscode] on both Mac and Windows, and sync my settings between the two using the [Settings Sync extension][settings-sync] (although I believe Microsoft is building in first-class support for this soon). The extension automatically creates a GitHub Gist for you, and reads/writes all your settings from there. [Here's my gist][settings-sync-gist] with all my settings and extensions
 
-I got used to reverse scrolling on my Mac, even when using a mouse. Windows doesn't have a setting for this, but you can still manage it with the registry editor (I know it's gross. But it works). [Here's the instructions][reverse-scroll-wheel]
+### Mouse and keyboard settings
 
-The other big one is keyboard shortcuts. This is tricky, and I'm still experimenting with it. I'm gonna give AutoHotkey a try, and try to use some scripts to remap everything to be closer to macOS. We'll see how it goes. So far, I've followed the directions from this post - [Mapping your macOS keybinds to Windows][macos-keyboard-shortcuts]. It gets you most of the way there, but there are still some tweaks I want to make to it. I'll publish a GitHub gist when I get that script to a good spot.
+Getting my mouse and keyboard to feel like macOS on Windows was difficult. Very difficult. My setup isn't 100% there, but it's close.
+
+I use the Magic Mouse and Magic Keyboard. You can use these with Windows as well, but the default experience is... shit. Touch scrolling on the mouse doesn't work at all. And neither do the keyboard shortcuts for things like volume, screen brightness, and audio controls. I ended up purchasing a license for [Magic Utilities][magic-utilities], which provides support for all of the features of Apple's peripherals on Windows. It is a little bit finicky to use, and you occasionally have to do things like restarting or reinstalling drivers, but I've grown to really hate scroll wheels, and I haven't found a compact Bluetooth keyboard that I like as well as Apple's, so to me the trade off is worth it.
+
+If you use a normal mouse and keyboard, you can skip that step. The only other thing mouse-related is if you use reverse scrolling. Windows doesn't have a setting for this, but you can still manage it with the registry editor (I know it's gross. But it works). [Here's the instructions][reverse-scroll-wheel].
+
+Now, on to keyboard shortcuts. Buckle up, because you're in for a world of pain. I think I have a setup that's pretty damn close to macOS, but still not perfect. I use [Sharp Keys][sharp-keys] to remap the Alt key to Control, and the Windows key to Alt. I then use [AutoHotkey] to remap a bunch of shortcuts.
+
+I followed [this guide for the basic setup of Sharp Keys and AutoHotkey][macos-keyboard-shortcuts], and then spent a thousand years tweaking shortcuts. You can find [my AutoHotkey shortcuts here][autohotkey-shortcuts].
+
+### Other
 
 I use [Notion] for note-taking, because it has great apps on iOS, macOS, Android, and everywhere ever.
 
@@ -53,11 +65,23 @@ I'm using [AquaSnap] for window management, and remapping the keyboard shortcuts
 
 [Settings Sync extension][settings-sync]
 
+[Magic Utilities][magic-utilities]
+
+[Sharp Keys][sharp-keys]
+
+[AutoHotkey]
+
 [Notion]
 
 [AquaSnap]
 
 ### Guides
+
+[My configuration files (dotfiles)][dotfiles]
+
+[My VS Code settings][settings-sync-gist]
+
+[My AutoHotkey shortcuts][autohotkey-shortcuts]
 
 [A guide for using WSL for development - Janel Brandon - Medium](https://medium.com/@janelgbrandon/a-guide-for-using-wsl-for-development-d135670313a6)
 
@@ -66,12 +90,6 @@ I'm using [AquaSnap] for window management, and remapping the keyboard shortcuts
 [How to reverse Mouse and Touchpads scrolling direction in Windows 10](https://www.thewindowsclub.com/reverse-mouse-touchpad-scrolling-direction)
 
 [Mapping your macOS keybinds to Windows][macos-keyboard-shortcuts]
-
-### Random
-
-[My configuration files (dotfiles)][dotfiles]
-
-[My VS Code settings][settings-sync-gist]
 
 [Mac keyboard shortcuts][apple-support-mac-keyboard-shortcuts]
 
@@ -82,6 +100,10 @@ I'm using [AquaSnap] for window management, and remapping the keyboard shortcuts
 [wox]: http://www.wox.one/
 [dotfiles]: https://github.com/trevoreyre/dotfiles
 [reverse-scroll-wheel]: https://www.thewindowsclub.com/reverse-mouse-touchpad-scrolling-direction
+[magic-utilities]: https://magicutilities.net/
+[sharp-keys]: https://github.com/randyrants/sharpkeys
+[autohotkey]: https://www.autohotkey.com/
+[autohotkey-shortcuts]: https://gist.github.com/trevoreyre/8df3a186bb18df4b17d5417a5d1143ad
 [notion]: https://www.notion.so
 [macos-keyboard-shortcuts]: https://medium.com/@chrisdhanaraj/mapping-your-macos-keybinds-to-windows-b6009c50065b
 [apple-support-mac-keyboard-shortcuts]: https://support.apple.com/en-us/HT201236
