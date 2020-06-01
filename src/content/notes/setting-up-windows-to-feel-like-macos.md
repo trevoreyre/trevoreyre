@@ -27,7 +27,7 @@ notes: >-
 ---
 My personal machine is a MacBook Pro. My work machine is a Windows laptop. This is not about which OS is better. I'm just used to macOS, so I'd prefer both environments to behave as similarly as possible. If you're in the same situation, you might find this useful as well.
 
-If you use Alfred as an app launcher, on Windows there is [ueli](). It has a very similar feel and functionality, and a lot of the same features. I don't think you can go quite as deep on custom workflows and stuff, but it's got all the basics. I also tried [Wox], which was not bad, but different enough that it didn't feel like a good replacement.
+If you use Alfred as an app launcher, on Windows there is [ueli]. It has a very similar feel and functionality, and a lot of the same features. I don't think you can go quite as deep on custom workflows and stuff, but it's got all the basics. I also tried [Wox], which was not bad, but different enough that it didn't feel like a good replacement.
 
 I keep a [repository of dotfiles][dotfiles] that I can clone and use in all my environments. They are Unix-based, but work fine in Windows if you're using the Git Bash shell, or WSL.
 
