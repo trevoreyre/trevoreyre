@@ -1,42 +1,78 @@
 <template>
-  <article class='resume'>
-    <nav-button class='resume-nav-button' href='/' open></nav-button>
+  <article class="resume">
+    <nav-button class="resume-nav-button" href="/" open></nav-button>
     <header>
-      <div class='header-container'>
-        <div class='summary'>
+      <div class="header-container">
+        <div class="summary">
           <h1>Trevor Eyre</h1>
-          <h2>Front-end Engineer</h2>
+          <h2>Senior Front-end Software Engineer</h2>
         </div>
-        <div class='details'>
+        <div class="details">
+          <p>Remote (Idaho)</p>
           <p>208.631.6741</p>
-          <p class='website-link'>https://trevoreyre.com</p>
+          <p class="website-link">https://trevoreyre.com</p>
           <p>trevoreyre@gmail.com</p>
         </div>
       </div>
     </header>
-    <section class='experience'>
+    <section class="experience">
       <header>
         <h3>Experience</h3>
       </header>
-      <div class='content'>
-        <div class='entry'>
-          <div class='entry-header'>
-            <div class='row'>
-              <h3>Full Stack Software Engineer</h3>
-              <p class='date-range'>Jan 2020 - Present</p>
+      <div class="content">
+        <div class="entry">
+          <div class="entry-header">
+            <div class="row">
+              <h3>Senior Front-end Software Engineer</h3>
+              <p class="date-range">Mar 2022 - Nov 2023</p>
             </div>
-            <p class='location'>Ephesoft - Irvine, CA</p>
+            <p class="location">Sensei - Santa Monica, CA</p>
           </div>
-          <div class='entry-body'>
-            <p class='entry-description'>
-              Full stack development on Semantik Invoice product, working remotely full time.
+          <div class="entry-body">
+            <p class="entry-description">
+              Lead front-end engineer for multiple internal and customer-facing
+              applications, working remotely full time.
             </p>
-            <ul class='entry-details'>
+            <ul class="entry-details">
               <li>
-                Utilize Amazon Web Services, machine learning, and OCR to extract structured data from invoices
+                Architected front-end design system and component library, built
+                in React
               </li>
               <li>
-                Involved in architecture decisions in design, front-end, and back-end
+                Involved in architecture and design of REST and GraphQL APIs,
+                built in C# and Python
+              </li>
+              <li>
+                Built and released multiple features in customer-facing guest
+                portal for a luxury resort and wellness retreat center
+              </li>
+              <li>
+                Skills used: React, TypeScript, GraphQL, C#, Python
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-header">
+            <div class="row">
+              <h3>Full Stack Software Engineer</h3>
+              <p class="date-range">Jan 2020 - Mar 2022</p>
+            </div>
+            <p class="location">Ephesoft - Irvine, CA</p>
+          </div>
+          <div class="entry-body">
+            <p class="entry-description">
+              Full stack development on Semantik Invoice product, working
+              remotely full time.
+            </p>
+            <ul class="entry-details">
+              <li>
+                Utilized Amazon Web Services, machine learning, and OCR to
+                extract structured data from invoices
+              </li>
+              <li>
+                Involved in architecture decisions in design, front-end, and
+                back-end
               </li>
               <li>
                 Skills used: AWS, Angular, Node, TypeScript
@@ -44,24 +80,26 @@
             </ul>
           </div>
         </div>
-        <div class='entry'>
-          <div class='entry-header'>
-            <div class='row'>
-              <h3>Senior Front-end Engineer</h3>
-              <p class='date-range'>Mar 2019 - Jan 2020</p>
+        <div class="entry">
+          <div class="entry-header">
+            <div class="row">
+              <h3>Senior Front-end Software Engineer</h3>
+              <p class="date-range">Mar 2019 - Jan 2020</p>
             </div>
-            <p class='location'>Vynyl, LLC - Boise, ID</p>
+            <p class="location">Vynyl, LLC - Boise, ID</p>
           </div>
-          <div class='entry-body'>
-            <p class='entry-description'>
+          <div class="entry-body">
+            <p class="entry-description">
               Front-end software engineer for client product development.
             </p>
-            <ul class='entry-details'>
+            <ul class="entry-details">
               <li>
-                Built new UI component library in React for major client in the healthcare industry
+                Built new UI component library in React for major client in the
+                healthcare industry
               </li>
               <li>
-                Lead development for multiple projects simultaneously under tight deadlines
+                Lead development for multiple client projects simultaneously
+                under tight deadlines
               </li>
               <li>
                 Skills used: React, JavaScript, HTML, CSS, Craft CMS, Node, C#
@@ -69,24 +107,28 @@
             </ul>
           </div>
         </div>
-        <div class='entry'>
-          <div class='entry-header'>
-            <div class='row'>
+        <div class="entry">
+          <div class="entry-header">
+            <div class="row">
               <h3>Software Engineer</h3>
-              <p class='date-range'>Oct 2016 - Mar 2019</p>
+              <p class="date-range">Oct 2016 - Mar 2019</p>
             </div>
-            <p class='location'>Healthwise - Boise, ID</p>
+            <p class="location">Healthwise - Boise, ID</p>
           </div>
-          <div class='entry-body'>
-            <p class='entry-description'>
-              Full stack software development for client-facing content management system and administrative tools.
+          <div class="entry-body">
+            <p class="entry-description">
+              Full stack software development for client-facing content
+              management system and administrative tools.
             </p>
-            <ul class='entry-details'>
+            <ul class="entry-details">
               <li>
-                Built and open sourced React component library used in multiple client-facing and internal applications (github.com/healthwise/healthwise-ui)
+                Built and open sourced React component library used in multiple
+                client-facing and internal applications -
+                <strong>github.com/healthwise/healthwise-ui</strong>
               </li>
               <li>
-                Helped standardize front-end development tools and guidelines as member of Front-end Core Team
+                Helped standardize front-end development tools and guidelines as
+                member of Front-end Core Team
               </li>
               <li>
                 Skills used: React, JavaScript, Node, C#, HTML, CSS
@@ -94,51 +136,57 @@
             </ul>
           </div>
         </div>
-        <div class='entry'>
-          <div class='entry-header'>
-            <div class='row'>
+        <div class="entry">
+          <div class="entry-header">
+            <div class="row">
               <h3>Freelance and open source</h3>
-              <p class='date-range'>Jan 2015 - Present</p>
+              <p class="date-range">Jan 2015 - Present</p>
             </div>
-            <p class='location'>Self</p>
+            <p class="location">Self</p>
           </div>
-          <div class='entry-body'>
-            <p class='entry-description'>
-              Freelance and open source web development, design, and branding.
+          <div class="entry-body">
+            <p class="entry-description">
+              Freelance and open source web development and design.
             </p>
-            <ul class='entry-details'>
+            <ul class="entry-details">
               <li>
-                Designed and built website for Better Homes and Gardens Real Estate 43 Degrees North in Boise, ID (www.43re.com)
+                Built open source autocomplete component for JavaScript and Vue
+                - <strong>autocomplete.trevoreyre.com</strong>
               </li>
               <li>
-                Designing and building website for Touché Photography, an underwater photographer in Portland, OR (dev.touchephotography.com - Currently in development)
+                Designed and built website for Better Homes and Gardens Real
+                Estate 43 Degrees North in Boise, ID -
+                <strong>www.43re.com</strong>
               </li>
               <li>
-                Built open source autocomplete component for vanilla JavaScript and Vue (autocomplete.trevoreyre.com)
+                Designed and built website for Touché Photography, an underwater
+                photographer in Portland, OR -
+                <strong>touchephotography.com</strong>
               </li>
               <li>
-                Skills used: Vue, JavaScript, HTML, CSS, Docker, Figma, Node, PHP
+                Skills used: Vue, JavaScript, HTML, CSS, Docker, Figma, Node,
+                PHP
               </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-    <section class='education'>
+    <section class="education">
       <header>
         <h3>Education</h3>
       </header>
-      <div class='content'>
-        <div class='entry'>
-          <div class='entry-header'>
-            <div class='row'>
+      <div class="content">
+        <div class="entry">
+          <div class="entry-header">
+            <div class="row">
               <h3>BS in Computer Science</h3>
-              <p class='date-range'>Jan 2012 - Mar 2016</p>
+              <p class="date-range">Jan 2012 - Mar 2016</p>
             </div>
-            <p class='location'>Portland State University - Portland, OR</p>
+            <p class="location">Portland State University - Portland, OR</p>
           </div>
-          <div class='entry-body'>
-            <ul class='entry-details'>
+          <div class="entry-body">
+            <ul class="entry-details">
               <li>Graduated cum laude</li>
               <li>President's List for 2 terms, Dean's List for 4 terms</li>
             </ul>
@@ -150,42 +198,40 @@
 </template>
 
 <script>
-import NavButton from '~/components/NavButton'
+import NavButton from "~/components/NavButton";
 
 export default {
-  name: 'resume',
+  name: "resume",
   components: {
     NavButton
   }
-}
+};
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 @import "~common/variables";
 @import "~common/mixins";
 
 .resume {
-  margin: 0;
+  margin: 0 0 $spacing-l;
 }
 
 .resume > header {
-  margin: 0 0 $spacing-xxl 0;
+  margin: 0 0 $spacing-l 0;
 }
 
 .resume .header-container {
   width: 100%;
   margin: 0 auto;
-  padding: $spacing-xxl $spacing-l $spacing-l;
+  padding: $spacing-xxl $spacing-m $spacing-l;
   display: flex;
   flex-flow: column nowrap;
   border-bottom: 2px solid $color-primary;
   @include breakpoint-tablet() {
     max-width: $breakpoint-tablet;
+    padding: $spacing-l;
     flex-flow: row nowrap;
     align-items: flex-end;
-  }
-  @include breakpoint-desktop() {
-    padding: $spacing-l;
   }
 }
 
@@ -198,7 +244,11 @@ export default {
   color: $text-color-primary;
 }
 
-.resume .header-container > div {
+.resume .header-container > .summary {
+  flex: 2;
+}
+
+.resume .header-container > .details {
   flex: 1;
 }
 
@@ -242,8 +292,6 @@ export default {
 
 .resume section,
 .resume section:last-of-type {
-  margin: 0 auto $spacing-xxl auto;
-  padding: 0 $spacing-l;
   max-width: $breakpoint-tablet;
   display: flex;
   flex-flow: column nowrap;
@@ -365,7 +413,7 @@ export default {
 
   .resume .header-container {
     max-width: $breakpoint-tablet;
-    padding: $spacing-l;
+    padding: $spacing-l $spacing-m;
     flex-flow: row nowrap;
     align-items: flex-end;
   }
