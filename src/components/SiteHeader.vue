@@ -54,15 +54,6 @@
           </li>
           <li>
             <a
-              aria-label="CodePen"
-              href="https://codepen.io/TrevorEyre"
-              target="_blank"
-            >
-              <icon-codepen></icon-codepen>
-            </a>
-          </li>
-          <li>
-            <a
               aria-label="LinkedIn"
               href="https://www.linkedin.com/in/trevoreyre"
               target="_blank"
@@ -108,6 +99,7 @@ export default {
 @import "~common/mixins";
 
 .site-header {
+  margin-bottom: $spacing-xxl;
   height: 500px;
   display: flex;
   align-items: center;

@@ -23,7 +23,7 @@ export default {
 * {
   box-sizing: border-box;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 
 html {
@@ -127,7 +127,7 @@ article > section:last-of-type {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -149,10 +149,6 @@ header {
 
 .project {
   margin-top: 50px;
-}
-
-img {
-  width: 100%;
 }
 
 pre {
