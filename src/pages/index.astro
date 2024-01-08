@@ -1,0 +1,447 @@
+---
+import '@slate-ui/core/dist/collection/components/container/container.css'
+import '@slate-ui/core/dist/collection/components/heading/heading.css'
+import '@slate-ui/core/dist/collection/components/stack/stack.css'
+import '@slate-ui/core/dist/collection/components/tag/tag.css'
+import '@slate-ui/core/dist/collection/components/text/text.css'
+import App from '~/app.astro'
+import {
+  IconEmail,
+  IconFile,
+  IconLogoAutocomplete,
+  IconLogoGitHub,
+  IconLogoHealthwise,
+  IconLogoLinkedIn,
+  IconLogoSlateUi,
+  IconPhone,
+} from '~/components/icons.js'
+import {
+  ProjectSummary,
+  ProjectSummaryContent,
+  ProjectSummaryImages,
+} from '~/components/project-summary/index.js'
+---
+
+<script>
+  import '@slate-ui/core/dist/components/slate-link.js'
+  import '@slate-ui/core/dist/components/slate-container.js'
+  import '@slate-ui/core/dist/components/slate-heading.js'
+  import '@slate-ui/core/dist/components/slate-stack.js'
+  import '@slate-ui/core/dist/components/slate-tag.js'
+  import '@slate-ui/core/dist/components/slate-text.js'
+</script>
+
+<App padding="lg">
+  <slate-container size="lg">
+    <slate-stack gap="5xl">
+      <slate-container size="md" align="start">
+        <slate-stack gap="xl">
+          <slate-heading class="title" level="1" size="7xl" weight="bold">Trevor Eyre</slate-heading>
+          <slate-text class="subtitle" size="3xl" variant="secondary">
+            I am a <strong>senior front end engineer</strong>. I specialize in building design
+            systems and component libraries to deliver polished, consistent experiences across
+            applications.
+          </slate-text>
+        </slate-stack>
+      </slate-container>
+      <section class="hire-section">
+        <header>
+          <slate-heading level="2" size="2xl" weight="bold">I'm available for hire!</slate-heading>
+        </header>
+        <slate-stack gap="xl">
+          <slate-text size="lg">
+            I love everything front end! From authoring semantic HTML to architecting performant data stores in TypeScript, from crafting robust theming variables in CSS to collaborating on designs in Figma — I'm all about it.
+          </slate-text>
+          <slate-text size="lg">
+            I excel at product work, and learning about user needs to deliver the best experience possible. I'm passionate about accessibility and building applications that work for everyone.
+          </slate-text>
+          <slate-text size="lg">
+            Unfortunately, I was recently laid off along with my entire department. If you know of any opportunities, please reach out! I'm available immediately.
+          </slate-text>
+          <slate-stack gap="md">
+            <slate-stack direction="row" gap="xl" wrap>
+              <a
+                class="contact-link"
+                href="tel:+12086316741"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <IconPhone aria-hidden="true" />
+                208.631.6741
+              </a>
+              <a
+                class="contact-link"
+                href="mailto:trevoreyre@gmail.com"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <IconEmail aria-hidden="true" />
+                trevoreyre@gmail.com
+              </a>
+            </slate-stack>
+            <slate-stack direction="row" gap="xl" wrap>
+              <a
+                class="contact-link"
+                href="https://github.com/trevoreyre"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <IconLogoGitHub aria-hidden="true" />
+                GitHub
+              </a>
+              <a
+                class="contact-link"
+                href="https://www.contact-linkedin.com/in/trevoreyre"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <IconLogoLinkedIn aria-hidden="true" />
+                LinkedIn
+              </a>
+            </slate-stack>
+          </slate-stack>
+        </slate-stack>
+        <slate-stack gap="xl">
+          <slate-stack gap="md">
+            <slate-text size="lg" weight="bold">I'm an expert at...</slate-text>
+            <slate-stack direction="row" gap="3xs" wrap>
+              <slate-tag>React</slate-tag>
+              <slate-tag>JavaScript</slate-tag>
+              <slate-tag>TypeScript</slate-tag>
+              <slate-tag>Node.js</slate-tag>
+              <slate-tag>HTML</slate-tag>
+              <slate-tag>CSS</slate-tag>
+            </slate-stack>
+          </slate-stack>
+          <slate-stack gap="md">
+            <slate-text size="lg" weight="bold">I'm also very good at...</slate-text>
+            <slate-stack direction="row" gap="3xs" wrap>
+              <slate-tag>Vue</slate-tag>
+              <slate-tag>Angular</slate-tag>
+              <slate-tag>Web components</slate-tag>
+              <slate-tag>Accessibility</slate-tag>
+              <slate-tag>C#</slate-tag>
+              <slate-tag>.NET</slate-tag>
+              <slate-tag>GraphQL</slate-tag>
+              <slate-tag>AWS</slate-tag>
+              <slate-tag>Docker</slate-tag>
+              <slate-tag>Figma</slate-tag>
+            </slate-stack>
+          </slate-stack>
+        </slate-stack>
+      </section>
+      <section>
+        <slate-stack gap="6xl">
+          <slate-heading level="2" size="lg" weight="bold" transform="uppercase">Projects</slate-heading>
+          <ProjectSummary>
+            <ProjectSummaryContent>
+              <slate-stack gap="xs">
+                <slate-text variant="secondary" size="sm" transform="uppercase"
+                  >Work experience</slate-text
+                >
+                <slate-heading level="3" size="2xl" weight="bold">Sensei Guest Portal</slate-heading>
+              </slate-stack>
+              <slate-text>
+                While working at Sensei, I built and released features in the customer-facing guest
+                portal for their luxury resorts and wellness retreat centers.
+              </slate-text>
+              <slate-text>
+                I also led the engineering effort to re-architect the component library that powers
+                the guest portal and other internal applications.
+              </slate-text>
+              <slate-stack direction="row" gap="3xs" wrap>
+                <slate-tag>React</slate-tag>
+                <slate-tag>Next.js</slate-tag>
+                <slate-tag>TypeScript</slate-tag>
+                <slate-tag>C#</slate-tag>
+                <slate-tag>.NET</slate-tag>
+                <slate-tag>GraphQL</slate-tag>
+              </slate-stack>
+            </ProjectSummaryContent>
+            <ProjectSummaryImages>
+              <img
+                width="3200"
+                height="2400"
+                sizes="(min-width: 680px) 50vw, 100vw"
+                srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-sensei-guest-portal-1.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-sensei-guest-portal-1.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-sensei-guest-portal-1.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-sensei-guest-portal-1.png 1200w"
+              />
+            </ProjectSummaryImages>
+          </ProjectSummary>
+          <ProjectSummary>
+            <ProjectSummaryImages>
+              <img
+                width="3200"
+                height="2400"
+                sizes="(min-width: 680px) 50vw, 100vw"
+                srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-touche-photography-1.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-touche-photography-1.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-touche-photography-1.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-touche-photography-1.png 1200w"
+              />
+            </ProjectSummaryImages>
+            <ProjectSummaryContent>
+              <slate-stack gap="xs">
+                <slate-text variant="secondary" size="sm" transform="uppercase"
+                  >Client work</slate-text
+                >
+                <slate-heading level="3" size="2xl" weight="bold">Touché Photography</slate-heading>
+              </slate-stack>
+              <slate-text>
+                I designed and built a completely bespoke photography and e-commerce website for a
+                photographer in Portland, Oregon.
+              </slate-text>
+              <slate-text>
+                I used Sanity for a content management system to provide a simple editing experience
+                with just the data necessary for the website, and no more.
+              </slate-text>
+              <slate-stack direction="row" gap="3xs" wrap>
+                <slate-tag>Vue</slate-tag>
+                <slate-tag>JavaScript</slate-tag>
+                <slate-tag>Sanity</slate-tag>
+                <slate-tag>Stripe</slate-tag>
+                <slate-tag>E-commerce</slate-tag>
+              </slate-stack>
+            </ProjectSummaryContent>
+          </ProjectSummary>
+          <ProjectSummary>
+            <ProjectSummaryContent>
+              <slate-stack gap="xs">
+                <slate-text variant="secondary" size="sm" transform="uppercase"
+                  >Client work</slate-text
+                >
+                <slate-heading level="3" size="2xl" weight="bold">Freeform Warehouse Manager</slate-heading>
+              </slate-stack>
+              <slate-text>
+                I designed and built a warehouse inventory management application for Freeform, a
+                commercial furniture company in Idaho and Washington.
+              </slate-text>
+              <slate-text>
+                The application allows Freeform to track orders and pallets across multiple
+                warehouses, and coordinate arrival and departure dates.
+              </slate-text>
+              <slate-stack direction="row" gap="3xs" wrap>
+                <slate-tag>React</slate-tag>
+                <slate-tag>Node.js</slate-tag>
+                <slate-tag>JavaScript</slate-tag>
+                <slate-tag>AWS</slate-tag>
+                <slate-tag>MySQL</slate-tag>
+              </slate-stack>
+            </ProjectSummaryContent>
+            <ProjectSummaryImages>
+              <img
+                width="3200"
+                height="2400"
+                sizes="(min-width: 680px) 50vw, 100vw"
+                srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-freeform-warehouse-manager-1.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-freeform-warehouse-manager-1.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-freeform-warehouse-manager-1.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-freeform-warehouse-manager-1.png 1200w"
+              />
+            </ProjectSummaryImages>
+          </ProjectSummary>
+        </slate-stack>
+      </section>
+      <section>
+        <slate-stack gap="6xl">
+          <slate-heading level="2" size="lg" weight="bold" transform="uppercase">Open source</slate-heading>
+          <div class="open-source-projects">
+            <slate-stack class="project" gap="md">
+              <IconLogoAutocomplete aria-hidden="true" />
+              <slate-heading level="3" size="2xl" weight="bold">Autocomplete</slate-heading>
+              <slate-text>
+                Accessible autocomplete component for vanilla JavaScript and Vue.
+              </slate-text>
+              <slate-stack direction="row" gap="md" wrap>
+                <a
+                  class="project-link"
+                  href="https://github.com/trevoreyre/autocomplete"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <IconLogoGitHub aria-hidden="true" />
+                  GitHub
+                </a>
+                <a
+                  class="project-link"
+                  href="https://autocomplete.trevoreyre.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <IconFile aria-hidden="true" />
+                  Docs
+                </a>
+              </slate-stack>
+            </slate-stack>
+            <slate-stack class="project" gap="md">
+              <IconLogoHealthwise aria-hidden="true" />
+              <slate-heading level="3" size="2xl" weight="bold">Healthwise UI</slate-heading>
+              <slate-text>
+                While working at Healthwise, I helped architect and open source the design system for Healthwise applications.
+              </slate-text>
+              <slate-stack direction="row" gap="md" wrap>
+                <a
+                  class="project-link"
+                  href="https://github.com/healthwise/healthwise-ui"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <IconLogoGitHub aria-hidden="true" />
+                  GitHub
+                </a>
+                <a
+                  class="project-link"
+                  href="https://healthwise.github.io/healthwise-ui"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <IconFile aria-hidden="true" />
+                  Docs
+                </a>
+              </slate-stack>
+            </slate-stack>
+            <slate-stack class="project" gap="md">
+              <IconLogoSlateUi aria-hidden="true" />
+              <slate-heading level="3" size="2xl" weight="bold">Slate UI</slate-heading>
+              <slate-text>
+                Web component design system I use for my personal websites. Currently in development.
+              </slate-text>
+              <slate-stack direction="row" gap="md" wrap>
+                <a
+                  class="project-link"
+                  href="https://github.com/trevoreyre/slate-ui"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <IconLogoGitHub aria-hidden="true" />
+                  GitHub
+                </a>
+                <a
+                  class="project-link"
+                  href="https://slate-ui.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <IconFile aria-hidden="true" />
+                  Docs
+                </a>
+              </slate-stack>
+            </slate-stack>
+          </div>
+        </slate-stack>
+      </section>
+    </slate-stack>
+  </slate-container>
+
+  <style>
+    @media (--viewport-md-down) {
+      .title {
+        --text-font-size: var(--text-6xl-font-size);
+        --text-line-height: var(--text-6xl-line-height);
+        --text-margin-before: var(--text-6xl-margin-before);
+        --text-margin-after: var(--text-6xl-margin-after);
+      }
+
+      .subtitle {
+        --text-font-size: var(--text-2xl-font-size);
+        --text-line-height: var(--text-2xl-line-height);
+        --text-margin-before: var(--text-2xl-margin-before);
+        --text-margin-after: var(--text-2xl-margin-after);
+      }
+    }
+
+    section {
+      inline-size: 100%;
+      border-block-start: var(--border-size-md) solid hsl(var(--color-border));
+      padding-block-start: var(--spacing-md);
+    }
+
+    .hire-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: var(--spacing-xl);
+      border-block-start: none;
+      margin-inline: calc(-1 * var(--app-padding-inline));
+      padding-block: var(--spacing-xl);
+      padding-inline: var(--app-padding-inline);
+      inline-size: calc(100% + 2 * var(--app-padding-inline));
+      background: var(--color-background-gradient);
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (--viewport-md) {
+      .hire-section {
+        border-radius: var(--spacing-sm);
+        grid-template-columns: minmax(calc(60% - var(--spacing-3xl)), max-content) minmax(calc(40% - var(--spacing-3xl)), 1fr);
+        column-gap: var(--spacing-lg);
+      }
+
+      .hire-section header {
+        grid-column: span 2;
+      }
+    }
+
+    @media (--viewport-xl) {
+      .hire-section {
+        border-radius: var(--spacing-lg);
+        margin-inline: calc(-1 * var(--spacing-3xl));
+        padding: var(--spacing-3xl);
+        inline-size: calc(100% + 2 * var(--spacing-3xl));
+        column-gap: var(--spacing-3xl);
+      }
+    }
+
+    .open-source-projects {
+      inline-size: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      column-gap: var(--spacing-lg);
+      row-gap: var(--spacing-4xl);
+    }
+
+    .project :last-child {
+      margin-block-start: auto;
+    }
+
+    .project :is(te-icon-logo-autocomplete, te-icon-logo-healthwise, te-icon-logo-slateui) {
+      border-radius: var(--border-radius-md);
+      padding: var(--spacing-3xs);
+      inline-size: var(--size-xl);
+      block-size: var(--size-xl);
+      --color-icon-primary: var(--color-text-primary);
+    }
+
+    .project te-icon-logo-autocomplete {
+      background-color: #1c5b72;
+    }
+
+    .project te-icon-logo-healthwise {
+      background-color: #f0534a;
+    }
+
+    .project te-icon-logo-slateui {
+      background-color: hsl(var(--color-neutral-800));
+    }
+
+    :is(.contact-link, .project-link) {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--spacing-3xs);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--line-height-none);
+      color: var(--color-text-primary);
+      --color-icon-primary: var(--color-text-secondary);
+    }
+
+    :is(.contact-link, .project-link):not(:hover) {
+      text-decoration: none;
+    }
+
+    .contact-link {
+      font-size: var(--text-lg-font-size);
+    }
+
+    .contact-link :is(te-icon-phone, te-icon-email, te-icon-logo-github, te-icon-logo-linkedin) {
+      inline-size: 1.25rem;
+      block-size: 1.25rem;
+    }
+
+    .project-link {
+      font-size: var(--text-md-font-size);
+    }
+  </style>
+</App>

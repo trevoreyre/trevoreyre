@@ -1,0 +1,71 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { getEntry } from 'astro:content'
+
+type Props = HTMLAttributes<'a'>
+
+const { href, ...props } = Astro.props
+const { pathname } = Astro.url
+
+const regExpStartEndSlash = /^\/|\/$/g
+const _href = (href as string).replace(regExpStartEndSlash, '')
+const _pathname = pathname.replace(regExpStartEndSlash, '')
+const basePaths = ['portfolio', 'posts']
+
+let active = false
+if (pathname === '/' || basePaths.includes(_pathname)) {
+  active = href === pathname || _href === _pathname
+} else {
+  const post = await getEntry('notes', _pathname)
+  active = _href === 'posts' && post !== undefined
+}
+---
+
+<a href={href} data-active={active} {...props}>
+  <slot />
+</a>
+
+<style>
+  a {
+    box-sizing: border-box;
+    display: flex;
+    gap: var(--spacing-3xs);
+    align-items: center;
+    position: relative;
+    inline-size: 100%;
+    padding-block: var(--spacing-xs);
+    padding-inline: var(--app-padding-inline);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a[data-active]::after {
+    content: '';
+    display: block;
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: var(--border-size-lg);
+    block-size: 100%;
+    background: hsl(var(--color-text-primary));
+  }
+
+  @media (--viewport-sm) {
+    a {
+      inline-size: auto;
+      padding-block: var(--spacing-sm);
+      padding-inline: var(--spacing-xs);
+      margin-block: var(--spacing-none);
+      margin-inline: calc(-1 * var(--spacing-xs));
+    }
+
+    a[data-active]::after {
+      inset-block-start: auto;
+      inset-block-end: 0;
+      inset-inline-start: var(--spacing-xs);
+      inline-size: calc(100% - 2 * var(--spacing-xs));
+      block-size: var(--border-size-md);
+      translate: 0 var(--border-size-md);
+    }
+  }
+</style>
