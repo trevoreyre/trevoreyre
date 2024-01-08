@@ -9,6 +9,14 @@
     --font-family-heading: var(--font-family);
     --font-weight-bold: 700;
 
+    --color-background-primary: var(--color-neutral-900);
+    --color-background-secondary: var(--color-neutral-800);
+    --color-text-primary: var(--color-neutral-100);
+    --color-text-secondary: var(--color-neutral-400);
+    --color-icon-primary: var(--color-neutral-300);
+    --color-icon-secondary: var(--color-neutral-600);
+    --color-border: var(--color-neutral-700);
+
     --border-size-lg: 3px;
 
     --app-padding-inline: var(--spacing-xs);
