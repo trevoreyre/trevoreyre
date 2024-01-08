@@ -17,7 +17,7 @@
     "preview": "astro preview --host --port 9001"
   },
   "dependencies": {
-    "@slate-ui/core": "*",
+    "@slate-ui/core": "latest",
     "date-fns": "^2.8.1"
   },
   "devDependencies": {
