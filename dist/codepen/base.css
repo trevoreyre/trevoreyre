@@ -1,0 +1,63 @@
+/* General CodePen styling and typography */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Open Sans, Verdana, sans-serif;
+  color: rgba(0, 0, 0, .87);
+  font-weight: 400;
+  line-height: 1.45;
+  background: #fafafa;
+}
+
+header {
+  margin: 40px auto;
+  padding: 0 24px;
+  max-width: 848px;
+  min-height: 200px;
+  text-align: center;
+  color: rgba(0, 0, 0, .87);
+}
+
+@media (min-width:800px) {
+  header {
+    margin: 64px auto;
+  }
+}
+
+header > *:first-child {
+  margin-top: 0;
+}
+
+header > *:last-child {
+  margin-bottom: 0;
+}
+
+h1 {
+  margin-bottom: 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
+  color: #1c5b72;
+  font-size: 2.618em;
+}
+
+@media (min-width:800px) {
+  h1 {
+    font-size: 4.236em;
+    font-weight: 300;
+  }
+}
+
+p {
+  font-size: 1.3em;
+  margin-bottom: 1.3em;
+  line-height: 1.618;
+}
+
+a {
+  color: #e03616;
+  text-decoration: none;
+}

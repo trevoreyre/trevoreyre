@@ -1,0 +1,388 @@
+<!DOCTYPE html>  <html lang="en" data-astro-cid-gkeqc4gn> <head><style>
+      @layer slate-theme, theme, slate-components-1, slate-components-2, app, pages;
+    </style><title>Excel VBA date picker - Trevor Eyre</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Senior front end software engineer"><meta name="apple-mobile-web-app-title" content="Trevor Eyre - Senior front end software engineer"><meta name="application-name" content="Trevor Eyre"><meta name="theme-color" content="#1c5b72"><link rel="sitemap" href="/sitemap-index.xml"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/manifest.json"><link rel="mask-icon" href="/safari-pinned-tab.svg"><link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/_astro/index.pZIINNpT.css" />
+<style>te-project-summary-images[data-astro-cid-x3vgerfk] img[data-astro-cid-x3vgerfk]{border-radius:var(--border-radius-none);box-shadow:none}
+</style><script type="module" src="/_astro/hoisted.UqmGaI_o.js"></script>
+<script>/** @license Copyright 2020 Google LLC (BSD-3-Clause) */
+/** Bundled JS generated from "@astrojs/lit/client-shim.js" */
+var N = Object.defineProperty;
+var i = (t, n) => () => (t && (n = t((t = 0))), n);
+var b = (t, n) => {
+	for (var a in n) N(t, a, { get: n[a], enumerable: !0 });
+};
+function s() {
+	if (d === void 0) {
+		let t = document.createElement('div');
+		(t.innerHTML = '<div><template shadowroot="open" shadowrootmode="open"></template></div>'),
+			(d = !!t.firstElementChild.shadowRoot);
+	}
+	return d;
+}
+var d,
+	m = i(() => {});
+var p,
+	c,
+	f,
+	u = i(() => {
+		(p = (t) => t.parentElement === null),
+			(c = (t) => t.tagName === 'TEMPLATE'),
+			(f = (t) => t.nodeType === Node.ELEMENT_NODE);
+	});
+var h,
+	E = i(() => {
+		m();
+		u();
+		h = (t) => {
+			var n;
+			if (s()) return;
+			let a = [],
+				e = t.firstElementChild;
+			for (; e !== t && e !== null; )
+				if (c(e)) a.push(e), (e = e.content);
+				else if (e.firstElementChild !== null) e = e.firstElementChild;
+				else if (f(e) && e.nextElementSibling !== null) e = e.nextElementSibling;
+				else {
+					let o;
+					for (; e !== t && e !== null; )
+						if (p(e)) {
+							o = a.pop();
+							let r = o.parentElement,
+								l = o.getAttribute('shadowroot');
+							if (((e = o), l === 'open' || l === 'closed')) {
+								let y = o.hasAttribute('shadowrootdelegatesfocus');
+								try {
+									r.attachShadow({ mode: l, delegatesFocus: y }).append(o.content);
+								} catch {}
+							} else o = void 0;
+						} else {
+							let r = e.nextElementSibling;
+							if (r != null) {
+								(e = r), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							let l =
+								(n = e.parentElement) === null || n === void 0 ? void 0 : n.nextElementSibling;
+							if (l != null) {
+								(e = l), o !== void 0 && o.parentElement.removeChild(o);
+								break;
+							}
+							(e = e.parentElement), o !== void 0 && (o.parentElement.removeChild(o), (o = void 0));
+						}
+				}
+		};
+	});
+var w = i(() => {
+	E();
+});
+var v = {};
+b(v, { hasNativeDeclarativeShadowRoots: () => s, hydrateShadowRoots: () => h });
+var S = i(() => {
+	m();
+	w();
+});
+async function g() {
+	let { hydrateShadowRoots: t } = await Promise.resolve().then(() => (S(), v));
+	window.addEventListener('DOMContentLoaded', () => t(document.body), { once: true });
+}
+var x = new DOMParser()
+	.parseFromString(
+		'<p><template shadowroot="open" shadowrootmode="open"></template></p>',
+		'text/html',
+		{
+			includeShadowRoots: !0,
+		}
+	)
+	.querySelector('p');
+(!x || !x.shadowRoot) && g();
+</script></head> <body data-astro-cid-gkeqc4gn> <slate-app-bar data-astro-cid-gkeqc4gn> <slate-container size="lg" data-astro-cid-gkeqc4gn> <slate-app-nav aria-label="Main" justify="between" wrap="true" data-astro-cid-gkeqc4gn> <slate-app-nav-menu-button data-astro-cid-gkeqc4gn></slate-app-nav-menu-button> <slate-app-nav-content gap="md" data-astro-cid-gkeqc4gn> <a href="/" data-astro-cid-gkeqc4gn class="astro-sxzkq3h6" data-astro-cid-sxzkq3h6>  <slate-text transform="uppercase" data-astro-cid-gkeqc4gn>Home</slate-text>  </a>  <a href="/trevor-eyre-resume.pdf" target="_blank" data-astro-cid-gkeqc4gn class="astro-sxzkq3h6" data-astro-cid-sxzkq3h6>  <slate-text transform="uppercase" data-astro-cid-gkeqc4gn>Resume</slate-text>  </a>  </slate-app-nav-content> <slate-stack class="social-links" gap="sm" direction="row" data-astro-cid-gkeqc4gn> <a aria-label="Phone" href="tel:+12086316741" target="_blank" rel="noreferrer noopener" data-astro-cid-gkeqc4gn> <te-icon-phone aria-hidden="true" data-astro-cid-gkeqc4gn="true"><template shadowroot="open" shadowrootmode="open"><style>
+  :host {
+    display: block;
+    inline-size: var(--size-xs);
+    block-size: var(--size-xs);
+  }
+
+  svg {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  svg path[stroke] {
+    stroke: hsl(var(--color-icon-primary));
+  }
+
+  svg path[fill] {
+    fill: hsl(var(--color-icon-primary));
+  }
+</style><!--lit-part 7/bebjwtvMU=-->
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4741 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4018C21.1469 21.5901 20.9046 21.7335 20.6408 21.8227C20.3769 21.9119 20.0974 21.945 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77383 17.3146 6.72534 15.2661 5.19 12.85C3.49998 10.2412 2.44824 7.27097 2.12 4.17997C2.09501 3.90344 2.12788 3.62474 2.2165 3.3616C2.30513 3.09846 2.44757 2.85666 2.63477 2.6516C2.82196 2.44653 3.04981 2.28268 3.30379 2.1705C3.55778 2.05831 3.83234 2.00024 4.11 1.99997H7.11C7.59531 1.9952 8.06579 2.16705 8.43376 2.48351C8.80173 2.79996 9.04208 3.23942 9.11 3.71997C9.23662 4.68004 9.47145 5.6227 9.81 6.52997C9.94455 6.8879 9.97366 7.27689 9.89391 7.65086C9.81415 8.02482 9.62886 8.36809 9.36 8.63998L8.09 9.90997C9.51356 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9752 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0554 17.47 14.19C18.3773 14.5285 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z"
+          stroke="#718096"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    <!--/lit-part--></template></te-icon-phone> </a> <a aria-label="Email" href="mailto:trevoreyre@gmail.com" target="_blank" rel="noreferrer noopener" data-astro-cid-gkeqc4gn> <te-icon-email aria-hidden="true" data-astro-cid-gkeqc4gn="true"><template shadowroot="open" shadowrootmode="open"><style>
+  :host {
+    display: block;
+    inline-size: var(--size-xs);
+    block-size: var(--size-xs);
+  }
+
+  svg {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  svg path[stroke] {
+    stroke: hsl(var(--color-icon-primary));
+  }
+
+  svg path[fill] {
+    fill: hsl(var(--color-icon-primary));
+  }
+</style><!--lit-part 1EgyjmpPGF8=-->
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+          stroke="#718096"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M22 6L12 13L2 6"
+          stroke="#718096"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    <!--/lit-part--></template></te-icon-email> </a> <a aria-label="GitHub" href="https://github.com/trevoreyre" target="_blank" rel="noreferrer noopener" data-astro-cid-gkeqc4gn> <te-icon-logo-github aria-hidden="true" data-astro-cid-gkeqc4gn="true"><template shadowroot="open" shadowrootmode="open"><style>
+  :host {
+    display: block;
+    inline-size: var(--size-xs);
+    block-size: var(--size-xs);
+  }
+
+  svg {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  svg path[stroke] {
+    stroke: hsl(var(--color-icon-primary));
+  }
+
+  svg path[fill] {
+    fill: hsl(var(--color-icon-primary));
+  }
+</style><!--lit-part ZJhHNPJBpBU=-->
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9 19C4 20.5 4 16.5 2 16M16 22V18.13C16.0375 17.6532 15.9731 17.1738 15.811 16.7238C15.6489 16.2738 15.3929 15.8634 15.06 15.52C18.2 15.17 21.5 13.98 21.5 8.52C21.4997 7.12383 20.9627 5.7812 20 4.77C20.4559 3.54851 20.4236 2.19835 19.91 0.999999C19.91 0.999999 18.73 0.649999 16 2.48C13.708 1.85882 11.292 1.85882 9 2.48C6.27 0.649999 5.09 0.999999 5.09 0.999999C4.57638 2.19835 4.54414 3.54851 5 4.77C4.03013 5.7887 3.49252 7.14346 3.5 8.55C3.5 13.97 6.8 15.16 9.94 15.55C9.611 15.89 9.35726 16.2954 9.19531 16.7399C9.03335 17.1844 8.96681 17.6581 9 18.13V22"
+          stroke="#718096"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    <!--/lit-part--></template></te-icon-logo-github> </a> <a aria-label="LinkedIn" href="https://www.linkedin.com/in/trevoreyre" target="_blank" rel="noreferrer noopener" data-astro-cid-gkeqc4gn> <te-icon-logo-linkedin aria-hidden="true" data-astro-cid-gkeqc4gn="true"><template shadowroot="open" shadowrootmode="open"><style>
+  :host {
+    display: block;
+    inline-size: var(--size-xs);
+    block-size: var(--size-xs);
+  }
+
+  svg {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  svg path[stroke] {
+    stroke: hsl(var(--color-icon-primary));
+  }
+
+  svg path[fill] {
+    fill: hsl(var(--color-icon-primary));
+  }
+</style><!--lit-part FcdWoEXZL58=-->
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M4 1C2.34315 1 1 2.34315 1 4C1 5.65685 2.34315 7 4 7C5.65685 7 7 5.65685 7 4C7 2.34315 5.65685 1 4 1ZM3 4C3 3.44772 3.44772 3 4 3C4.55228 3 5 3.44772 5 4C5 4.55228 4.55228 5 4 5C3.44772 5 3 4.55228 3 4Z"
+          fill="#718096"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M11.0503 9.05025C12.363 7.7375 14.1435 7 16 7C17.8565 7 19.637 7.7375 20.9497 9.05025C22.2625 10.363 23 12.1435 23 14V21C23 21.5523 22.5523 22 22 22H18C17.4477 22 17 21.5523 17 21V14C17 13.7348 16.8946 13.4804 16.7071 13.2929C16.5196 13.1054 16.2652 13 16 13C15.7348 13 15.4804 13.1054 15.2929 13.2929C15.1054 13.4804 15 13.7348 15 14V21C15 21.5523 14.5523 22 14 22H10C9.44771 22 9 21.5523 9 21V14C9 12.1435 9.7375 10.363 11.0503 9.05025ZM16 9C14.6739 9 13.4021 9.52678 12.4645 10.4645C11.5268 11.4021 11 12.6739 11 14V20H13V14C13 13.2043 13.3161 12.4413 13.8787 11.8787C14.4413 11.3161 15.2043 11 16 11C16.7957 11 17.5587 11.3161 18.1213 11.8787C18.6839 12.4413 19 13.2043 19 14V20H21V14C21 12.6739 20.4732 11.4021 19.5355 10.4645C18.5979 9.52678 17.3261 9 16 9Z"
+          fill="#718096"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M1 9C1 8.44772 1.44772 8 2 8H6C6.55228 8 7 8.44772 7 9V21C7 21.5523 6.55228 22 6 22H2C1.44772 22 1 21.5523 1 21V9ZM3 10V20H5V10H3Z"
+          fill="#718096"
+        />
+      </svg>
+    <!--/lit-part--></template></te-icon-logo-linkedin> </a> </slate-stack> </slate-app-nav> </slate-container> </slate-app-bar> <main data-padding="lg" data-astro-cid-gkeqc4gn>  <slate-container size="lg" data-astro-cid-x3vgerfk> <slate-stack gap="5xl" data-astro-cid-x3vgerfk> <te-project-summary data-astro-cid-x3vgerfk="true"><template shadowroot="open" shadowrootmode="open"><style>
+  :host {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  :host([hidden]) {
+    display: none;
+  }
+
+      ::slotted(te-project-summary-content) {
+        flex: 1;
+      }
+
+      ::slotted(te-project-summary-images),
+      ::slotted(img) {
+        flex: 1.3;
+      }
+
+      ::slotted(img) {
+        display: block;
+        inline-size: auto;
+      }
+
+      @media (width < 680px) {
+        slate-stack {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: var(--spacing-xl);
+        }
+
+        ::slotted(te-project-summary-content) {
+          order: -1;
+        }
+      }
+    </style><!--lit-part 0SVVH2TYqC8=-->
+      <slate-stack part="stack" direction="row" align="center" gap="3xl" wrap>
+        <slot></slot>
+      </slate-stack>
+    <!--/lit-part--></template> <te-project-summary-content data-astro-cid-x3vgerfk="true"><template shadowroot="open" shadowrootmode="open"><style>
+  :host {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  :host([hidden]) {
+    display: none;
+  }
+</style><!--lit-part T9Smfq/2NSk=-->
+      <slate-stack gap="lg">
+        <slot></slot>
+      </slate-stack>
+    <!--/lit-part--></template> <slate-stack gap="xs" data-astro-cid-x3vgerfk> <slate-heading level="1" size="2xl" weight="bold" data-astro-cid-x3vgerfk>Excel VBA date picker</slate-heading> </slate-stack> <slate-text data-astro-cid-x3vgerfk>
+A fully customizable date picker widget with no dependencies, coded in Excel VBA. Currently with over 10,000 downloads.
+</slate-text> <slate-link href="https://f000.backblazeb2.com/file/trevoreyre/CalendarForm+v1.5.2.zip" target="_blank" data-astro-cid-x3vgerfk>Download</slate-link> </te-project-summary-content> <te-project-summary-images data-astro-cid-x3vgerfk="true"><template shadowroot="open" shadowrootmode="open"><style>
+  :host {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  :host([hidden]) {
+    display: none;
+  }
+
+      ::slotted(img) {
+        border-radius: var(--border-radius-md);
+        box-shadow: 0 0 0 1px hsl(var(--color-neutral-900)), 0 0 0 6px hsl(var(--color-neutral-700)),
+          0 0 0 7px hsl(var(--color-neutral-600)),
+          0 25px 50px 0 hsl(var(--color-neutral-1000) / 25%);
+      }
+    </style><!--lit-part hY474tBj1C0=-->
+      <slate-stack gap="sm">
+        <slot></slot>
+      </slate-stack>
+    <!--/lit-part--></template> <img width="854" height="532" src="/img/excel-datepicker.png" data-astro-cid-x3vgerfk> </te-project-summary-images> </te-project-summary> <section data-astro-cid-x3vgerfk> <slate-container size="md" data-astro-cid-x3vgerfk> <slate-stack gap="lg" data-astro-cid-x3vgerfk> <slate-heading level="2" size="xl" weight="bold" data-astro-cid-x3vgerfk>Overview</slate-heading> <slate-text data-astro-cid-x3vgerfk>
+The goal in creating this form was first and foremost to overcome the monstrosity that is
+              the Microsoft MonthView control. If you're reading this, you probably already know what
+              I'm talking about. Many others have been in my place and have come up with their own date
+              pickers to solve this problem. So why yet another custom date picker?
+</slate-text> <slate-text data-astro-cid-x3vgerfk>I was most interested in the following features:</slate-text> <slate-text data-astro-cid-x3vgerfk> <ul data-astro-cid-x3vgerfk> <li data-astro-cid-x3vgerfk>
+Ease of use. I wanted a completely self-contained form that could be imported into any
+                  VBA project and used without any additional coding.
+</li> <li data-astro-cid-x3vgerfk>
+Simple, attractive design. While a lot of custom date pickers on the internet look good
+                  and work well, none of them quite nailed it for me in terms of style and UI design.
+</li> <li data-astro-cid-x3vgerfk>
+Fully customizable functionality and look. I tried to include as many of the options
+                  from the MonthView control as I could, without getting too messy.
+</li> </ul> </slate-text> <slate-text data-astro-cid-x3vgerfk>
+Since none of the date pickers I have been able to find in all my searching have quite
+              completed my checklist, here we are! Now my hope is that some other tired soul may also
+              benefit from my labors.
+</slate-text> <slate-text data-astro-cid-x3vgerfk>
+If you encounter any bugs, or have any great ideas or feature requests that could improve
+              this bad boy, please send me a message.
+</slate-text> </slate-stack> </slate-container> </section> <section data-astro-cid-x3vgerfk> <slate-container size="md" data-astro-cid-x3vgerfk> <slate-stack gap="lg" data-astro-cid-x3vgerfk> <slate-heading level="2" size="xl" weight="bold" data-astro-cid-x3vgerfk>Importing the date picker</slate-heading> <slate-text data-astro-cid-x3vgerfk>
+To use the Excel VBA date picker, you must first import the userform into your project.
+              Start by clicking the link above to download <code data-astro-cid-x3vgerfk>CalendarForm v1.5.2.zip</code>. Extract
+              the files in the zip archive, and save the <code data-astro-cid-x3vgerfk>CalendarForm.frm</code> and
+<code data-astro-cid-x3vgerfk>CalendarForm.frx</code> files on your computer.
+</slate-text> <slate-text data-astro-cid-x3vgerfk>
+Open a new Excel workbook, and press <code data-astro-cid-x3vgerfk>alt-F11</code> to open the VBA project window.
+              Right-click on the left hand side of the project window, and select
+<code data-astro-cid-x3vgerfk>Import File...</code> from the menu. Find the <code data-astro-cid-x3vgerfk>CalendarForm.frm</code> file you
+              saved on your computer, and click <code data-astro-cid-x3vgerfk>Open</code>. This will import the date picker into
+              your workbook, so it is ready to use.
+</slate-text> </slate-stack> </slate-container> </section> <section data-astro-cid-x3vgerfk> <slate-container size="md" data-astro-cid-x3vgerfk> <slate-stack gap="lg" data-astro-cid-x3vgerfk> <slate-heading level="2" size="xl" weight="bold" data-astro-cid-x3vgerfk>Using the date picker</slate-heading> <slate-text data-astro-cid-x3vgerfk>
+Once the <code data-astro-cid-x3vgerfk>CalendarForm</code> date picker has been imported into your workbook, it
+              can be used by calling the <code data-astro-cid-x3vgerfk>CalendarForm.GetDate</code> function. The
+<code data-astro-cid-x3vgerfk>GetDate</code> function is the single point of entry into the date picker. It
+              controls everything. Every argument in the function is optional, meaning your function
+              call an be as simple as <code data-astro-cid-x3vgerfk>dateVariable = CalendarForm.GetDate</code>. That's all there
+              is to it. The date picker initializes and pops up, the user selects a date, and the
+              selection is returned to your variable.
+</slate-text> <pre data-astro-cid-x3vgerfk><code data-astro-cid-x3vgerfk>Dim dateVariable as Date
+dateVariable = CalendarForm.GetDate</code></pre> <slate-text data-astro-cid-x3vgerfk>
+From there, you can use as many or as few arguments as you want in order to get the
+              desired calendar that suits your needs. Below are some examples of different calendars you
+              can get from the various arguments in the <code data-astro-cid-x3vgerfk>GetDate</code> function.
+</slate-text> <slate-text data-astro-cid-x3vgerfk>
+All default values are also set in the GetDate function, so if you want to change default
+              colors or behavior without having to explicitly do so in every function call, you can set
+              those values in the argument list for the function. By setting the various arguments, you
+              can obtain vastly different calendars, all with the same function.
+</slate-text> </slate-stack> </slate-container> </section> </slate-stack> </slate-container>  </main> <footer data-astro-cid-gkeqc4gn> <slate-text size="sm" variant="secondary" data-astro-cid-gkeqc4gn>
+© 2024 Trevor Eyre. All rights reserved.
+</slate-text> </footer> </body></html> 
