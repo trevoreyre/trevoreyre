@@ -1,6 +1,5 @@
 [build]
   environment = { NODE_VERSION = "18" }
-  command = "npm run build"
   publish = "dist"
 
 [context.v3]
