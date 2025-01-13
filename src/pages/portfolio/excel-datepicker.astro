@@ -1,14 +1,11 @@
 ---
+// @ts-nocheck
 import '@slate-ui/core/src/container/container.css'
 import '@slate-ui/core/src/heading/heading.css'
 import '@slate-ui/core/src/stack/stack.css'
 import '@slate-ui/core/src/text/text.css'
 import App from '~/app.astro'
-import {
-  ProjectSummary,
-  ProjectSummaryContent,
-  ProjectSummaryImages,
-} from '~/components/project-summary/index.js'
+import '~/components/project-summary/project-summary.css'
 ---
 
 <script>
@@ -17,15 +14,18 @@ import {
   import '@slate-ui/core/src/link/link.js'
   import '@slate-ui/core/src/stack/stack.js'
   import '@slate-ui/core/src/text/text.js'
+  import '~/components/project-summary/project-summary.js'
+  import '~/components/project-summary/project-summary-content.js'
+  import '~/components/project-summary/project-summary-images.js'
 </script>
 
 <App title="Excel VBA date picker" padding="lg">
   <slate-container size="lg">
     <slate-stack gap="5xl">
-      <ProjectSummary>
-        <ProjectSummaryContent>
+      <te-project-summary>
+        <te-project-summary-content>
           <slate-stack gap="xs">
-            <slate-heading level="1" size="2xl" weight="bold">Excel VBA date picker</slate-heading>
+            <h1 slate-heading size="2xl" weight="bold">Excel VBA date picker</h1>
           </slate-stack>
           <slate-text>
             A fully customizable date picker widget with no dependencies, coded in Excel VBA.
@@ -35,15 +35,15 @@ import {
             href="https://f000.backblazeb2.com/file/trevoreyre/CalendarForm+v1.5.2.zip"
             target="_blank">Download</slate-link
           >
-        </ProjectSummaryContent>
-        <ProjectSummaryImages>
+        </te-project-summary-content>
+        <te-project-summary-images>
           <img width="854" height="532" src="/img/excel-datepicker.png" />
-        </ProjectSummaryImages>
-      </ProjectSummary>
+        </te-project-summary-images>
+      </te-project-summary>
       <section>
         <slate-container size="md">
           <slate-stack gap="lg">
-            <slate-heading level="2" size="xl" weight="bold">Overview</slate-heading>
+            <h2 slate-heading size="xl" weight="bold">Overview</h2>
             <slate-text>
               The goal in creating this form was first and foremost to overcome the monstrosity that
               is the Microsoft MonthView control. If you're reading this, you probably already know
@@ -83,14 +83,14 @@ import {
       <section>
         <slate-container size="md">
           <slate-stack gap="lg">
-            <slate-heading level="2" size="xl" weight="bold"
-              >Importing the date picker</slate-heading
-            >
+            <h2 slate-heading size="xl" weight="bold">Importing the date picker</h2>
             <slate-text>
               To use the Excel VBA date picker, you must first import the userform into your
-              project. Start by clicking the link above to download <code
-                >CalendarForm v1.5.2.zip</code
-              >. Extract the files in the zip archive, and save the <code>CalendarForm.frm</code> and
+              project. Start by clicking the link above to download <code>
+                CalendarForm v1.5.2.zip
+              </code>. Extract the files in the zip archive, and save the <code>
+                CalendarForm.frm
+              </code> and
               <code>CalendarForm.frx</code> files on your computer.
             </slate-text>
             <slate-text>
@@ -106,7 +106,7 @@ import {
       <section>
         <slate-container size="md">
           <slate-stack gap="lg">
-            <slate-heading level="2" size="xl" weight="bold">Using the date picker</slate-heading>
+            <h2 slate-heading size="xl" weight="bold">Using the date picker</h2>
             <slate-text>
               Once the <code>CalendarForm</code> date picker has been imported into your workbook, it
               can be used by calling the <code>CalendarForm.GetDate</code> function. The

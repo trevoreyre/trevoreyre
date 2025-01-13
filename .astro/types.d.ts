@@ -259,30 +259,9 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
-"project-proposal-future-solutions.md": {
-	id: "project-proposal-future-solutions.md";
-  slug: "project-proposal-future-solutions";
-  body: string;
-  collection: "posts";
-  data: InferEntrySchema<"posts">
-} & { render(): Render[".md"] };
 "project-proposal-song-and-soil.md": {
 	id: "project-proposal-song-and-soil.md";
   slug: "project-proposal-song-and-soil";
-  body: string;
-  collection: "posts";
-  data: InferEntrySchema<"posts">
-} & { render(): Render[".md"] };
-"project-proposal-the-freedom-life.md": {
-	id: "project-proposal-the-freedom-life.md";
-  slug: "project-proposal-the-freedom-life";
-  body: string;
-  collection: "posts";
-  data: InferEntrySchema<"posts">
-} & { render(): Render[".md"] };
-"project-proposal-trace-app.md": {
-	id: "project-proposal-trace-app.md";
-  slug: "project-proposal-trace-app";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
