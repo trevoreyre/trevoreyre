@@ -1,18 +1,9 @@
-import { css, html, LitElement } from 'lit'
-import { normalize } from '../../normalize.css.js'
+import { SlateElement } from '@slate-ui/core/src/slate-element.js'
 
-class ProjectSummaryContent extends LitElement {
-  render() {
-    return html`
-      <slate-stack gap="lg">
-        <slot></slot>
-      </slate-stack>
-    `
-  }
+class ProjectSummaryContent extends SlateElement {}
 
-  static styles = [normalize]
+if (!customElements.get('te-project-summary-content')) {
+  customElements.define('te-project-summary-content', ProjectSummaryContent)
 }
-
-customElements.define('te-project-summary-content', ProjectSummaryContent)
 
 export { ProjectSummaryContent }

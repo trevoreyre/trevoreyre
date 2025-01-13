@@ -1,32 +1,30 @@
 ---
-import '@slate-ui/core/dist/collection/components/app-bar/app-bar.css'
-import '@slate-ui/core/dist/collection/components/app-nav/app-nav.css'
-import '@slate-ui/core/dist/collection/components/container/container.css'
-import '@slate-ui/core/dist/collection/components/stack/stack.css'
-import '@slate-ui/core/dist/collection/components/text/text.css'
-import '@slate-ui/core/dist/collection/theme.css'
-import '@slate-ui/core/dist/collection/theme-typography.css'
-import '@slate-ui/core/dist/collection/styles.css'
-import '~/theme.css'
+import '@slate-ui/core/src/theme.css'
+import '@slate-ui/core/src/theme-typography.css'
+import '@slate-ui/core/src/styles.css'
+import '@slate-ui/core/src/app-bar/app-bar.css'
+import '@slate-ui/core/src/app-nav/app-nav.css'
+import '@slate-ui/core/src/container/container.css'
+import '@slate-ui/core/src/stack/stack.css'
+import '@slate-ui/core/src/text/text.css'
+import '~/app-theme.css'
 import { IconEmail, IconLogoGitHub, IconLogoLinkedIn, IconPhone } from '~/components/icons.js'
 import NavLink from '~/components/nav-link.astro'
 
 const { title, padding = 'md' } = Astro.props
 const pageTitle = title ? `${title} - Trevor Eyre` : 'Trevor Eyre'
-const year = new Date().getFullYear()
 ---
 
 <script>
-  import '@slate-ui/core/dist/components/slate-app-bar.js'
-  import '@slate-ui/core/dist/components/slate-app-nav-content.js'
-  import '@slate-ui/core/dist/components/slate-app-nav-menu-button.js'
-  import '@slate-ui/core/dist/components/slate-app-nav.js'
-  import '@slate-ui/core/dist/components/slate-container.js'
-  import '@slate-ui/core/dist/components/slate-stack.js'
-  import '@slate-ui/core/dist/components/slate-text.js'
+  import '@slate-ui/core/src/app-bar/app-bar.js'
+  import '@slate-ui/core/src/app-nav/app-nav-content.js'
+  import '@slate-ui/core/src/app-nav/app-nav-menu-button.js'
+  import '@slate-ui/core/src/app-nav/app-nav.js'
+  import '@slate-ui/core/src/container/container.js'
+  import '@slate-ui/core/src/stack/stack.js'
+  import '@slate-ui/core/src/text/text.js'
 </script>
 
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <style is:inline>
@@ -65,14 +63,6 @@ const year = new Date().getFullYear()
           </slate-app-nav-content>
           <slate-stack class="social-links" gap="sm" direction="row">
             <a
-              aria-label="Phone"
-              href="tel:+12086316741"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <IconPhone aria-hidden="true" />
-            </a>
-            <a
               aria-label="Email"
               href="mailto:trevoreyre@gmail.com"
               target="_blank"
@@ -89,7 +79,7 @@ const year = new Date().getFullYear()
               <IconLogoGitHub aria-hidden="true" />
             </a>
             <a
-            	aria-label="LinkedIn"
+              aria-label="LinkedIn"
               href="https://www.linkedin.com/in/trevoreyre"
               target="_blank"
               rel="noreferrer noopener"
@@ -103,75 +93,72 @@ const year = new Date().getFullYear()
     <main data-padding={padding}>
       <slot />
     </main>
-    <footer>
-      <slate-text size="sm" variant="secondary">
-        © {year} Trevor Eyre. All rights reserved.
-      </slate-text>
-    </footer>
   </body>
 </html>
 
 <style>
-  slate-app-bar {
-    padding-inline: var(--app-padding-inline);
-    border-block-end: none;
-    position: sticky;
-    inset-block-start: 0;
-    z-index: var(--z-index-sticky);
-  }
-
-  slate-app-nav {
-    border-block-end: var(--border-size-md) solid hsl(var(--color-border));
-    row-gap: var(--spacing-3xs);
-  }
-
-  .links {
-    row-gap: var(--spacing-none);
-  }
-
-  .social-links :is(te-icon-phone, te-icon-email, te-icon-logo-github, te-icon-logo-linkedin) {
-    inline-size: 1.25rem;
-    block-size: 1.25rem;
-  }
-
-  main {
-    display: block;
-    padding-inline: var(--app-padding-inline);
-    padding-block: var(--spacing-2xl);
-  }
-
-  main[data-padding='lg'] {
-    padding-block: var(--spacing-6xl);
-  }
-
-  footer {
-    padding-block: var(--spacing-md);
-    padding-inline: var(--app-padding-inline);
-    text-align: center;
-  }
-
-  @media (--viewport-sm-down) {
+  @layer app {
     slate-app-bar {
-      border-block-end: var(--border-size-md) solid hsl(var(--color-border));
-    }
-
-    slate-app-nav {
+      padding-inline: var(--app-padding-inline);
       border-block-end: none;
-      min-block-size: var(--size-xl);
-    }
-
-    slate-app-nav-menu-button {
-      position: absolute;
-      inset-inline-start: calc(-1 * var(--spacing-3xs));
+      position: sticky;
+      inset-block-start: 0;
       z-index: var(--z-index-sticky);
     }
 
-    slate-app-nav-content {
-      padding-block-start: calc(var(--size-lg) + var(--spacing-4xs) + var(--spacing-sm));
+    slate-app-nav {
+      border-block-end: var(--border-size-md) solid hsl(var(--color-border));
+      row-gap: var(--spacing-3xs);
     }
 
-    .social-links {
-      margin-inline-start: auto;
+    .links {
+      row-gap: var(--spacing-none);
+    }
+
+    .social-links :is(te-icon-phone, te-icon-email, te-icon-logo-github, te-icon-logo-linkedin) {
+      inline-size: 1.25rem;
+      block-size: 1.25rem;
+    }
+
+    main {
+      display: block;
+      padding-inline: var(--app-padding-inline);
+      padding-block: var(--spacing-2xl);
+    }
+
+    main[data-padding='lg'] {
+      padding-block: var(--spacing-6xl);
+    }
+
+    footer {
+      padding-block: var(--spacing-md);
+      padding-inline: var(--app-padding-inline);
+      text-align: center;
+    }
+
+    @media (--app-nav-breakpoint-down) {
+      slate-app-bar {
+        border-block-end: var(--border-size-md) solid hsl(var(--color-border));
+      }
+
+      slate-app-nav {
+        border-block-end: none;
+        min-block-size: var(--size-xl);
+      }
+
+      slate-app-nav-menu-button {
+        position: absolute;
+        inset-inline-start: calc(-1 * var(--spacing-3xs));
+        z-index: var(--z-index-sticky);
+      }
+
+      slate-app-nav-content {
+        padding-block-start: calc(var(--size-lg) + var(--spacing-4xs) + var(--spacing-sm));
+      }
+
+      .social-links {
+        margin-inline-start: auto;
+      }
     }
   }
 </style>

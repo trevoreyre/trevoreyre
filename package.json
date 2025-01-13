@@ -11,13 +11,16 @@
   "scripts": {
     "install:package-lock": "npm install --package-lock-only --workspaces false",
     "start": "astro dev --host --port 9001",
-    "build": "npm run build:app",
-    "prebuild:app": "rimraf dist",
+    "clean": "rimraf dist src/content/posts",
+    "clean:node_modules": "rimraf node_modules package-lock.json",
+    "prebuild": "npm run clean",
+    "build": "npm run build:content && npm run build:app",
     "build:app": "astro build",
+    "build:content": "node scripts/build-content.cjs",
     "preview": "astro preview --host --port 9001"
   },
   "dependencies": {
-    "@slate-ui/core": "latest",
+    "@slate-ui/core": "*",
     "date-fns": "^2.8.1"
   },
   "devDependencies": {
@@ -26,6 +29,7 @@
     "@astrojs/vue": "^4.0.8",
     "@csstools/postcss-global-data": "^2.1.0",
     "@trevoreyre/notion": "^0.0.1",
+    "@vitejs/plugin-vue": "^5.0.3",
     "@webcomponents/template-shadowroot": "^0.2.1",
     "astro": "^4.1.1",
     "cloudinary": "^1.40.0",
@@ -36,6 +40,8 @@
     "just-typeof": "^3.2.0",
     "lit": "^3.1.0",
     "postcss-custom-media": "^10.0.2",
+    "prettier": "^3.2.4",
+    "prettier-plugin-astro": "^0.13.0",
     "rehype-external-links": "^3.0.0",
     "rimraf": "^3.0.2",
     "sass": "^1.69.5",
@@ -43,5 +49,8 @@
     "vue": "^3.3.4",
     "xlsx": "^0.18.5",
     "yaml": "^2.3.1"
+  },
+  "volta": {
+    "extends": "../package.json"
   }
 }
