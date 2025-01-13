@@ -1,9 +1,10 @@
 ---
-import '@slate-ui/core/dist/collection/components/container/container.css'
-import '@slate-ui/core/dist/collection/components/heading/heading.css'
-import '@slate-ui/core/dist/collection/components/stack/stack.css'
-import '@slate-ui/core/dist/collection/components/tag/tag.css'
-import '@slate-ui/core/dist/collection/components/text/text.css'
+// @ts-nocheck
+import '@slate-ui/core/src/container/container.css'
+import '@slate-ui/core/src/heading/heading.css'
+import '@slate-ui/core/src/stack/stack.css'
+import '@slate-ui/core/src/tag/tag.css'
+import '@slate-ui/core/src/text/text.css'
 import App from '~/app.astro'
 import {
   IconEmail,
@@ -15,20 +16,19 @@ import {
   IconLogoSlateUi,
   IconPhone,
 } from '~/components/icons.js'
-import {
-  ProjectSummary,
-  ProjectSummaryContent,
-  ProjectSummaryImages,
-} from '~/components/project-summary/index.js'
+import '~/components/project-summary/project-summary.css'
 ---
 
 <script>
-  import '@slate-ui/core/dist/components/slate-link.js'
-  import '@slate-ui/core/dist/components/slate-container.js'
-  import '@slate-ui/core/dist/components/slate-heading.js'
-  import '@slate-ui/core/dist/components/slate-stack.js'
-  import '@slate-ui/core/dist/components/slate-tag.js'
-  import '@slate-ui/core/dist/components/slate-text.js'
+  import '@slate-ui/core/src/link/link.js'
+  import '@slate-ui/core/src/container/container.js'
+  import '@slate-ui/core/src/heading/heading.js'
+  import '@slate-ui/core/src/stack/stack.js'
+  import '@slate-ui/core/src/tag/tag.js'
+  import '@slate-ui/core/src/text/text.js'
+  import '~/components/project-summary/project-summary.js'
+  import '~/components/project-summary/project-summary-content.js'
+  import '~/components/project-summary/project-summary-images.js'
 </script>
 
 <App padding="lg">
@@ -36,7 +36,7 @@ import {
     <slate-stack gap="5xl">
       <slate-container size="md" align="start">
         <slate-stack gap="xl">
-          <slate-heading class="title" level="1" size="7xl" weight="bold">Trevor Eyre</slate-heading>
+          <h1 slate-heading class="title" size="7xl" weight="bold">Trevor Eyre</h1>
           <slate-text class="subtitle" size="3xl" variant="secondary">
             I am a <strong>senior front end engineer</strong>. I specialize in building design
             systems and component libraries to deliver polished, consistent experiences across
@@ -46,59 +46,51 @@ import {
       </slate-container>
       <section class="hire-section">
         <header>
-          <slate-heading level="2" size="2xl" weight="bold">I'm available for hire!</slate-heading>
+          <h2 slate-heading size="2xl" weight="bold">I'm available for hire!</h2>
         </header>
         <slate-stack gap="xl">
           <slate-text size="lg">
-            I love everything front end! From authoring semantic HTML to architecting performant data stores in TypeScript, from crafting robust theming variables in CSS to collaborating on designs in Figma — I'm all about it.
+            I love everything front end! From authoring semantic HTML to architecting performant
+            data stores in TypeScript, from crafting robust theming variables in CSS to
+            collaborating on designs in Figma — I'm all about it.
           </slate-text>
           <slate-text size="lg">
-            I excel at product work, and learning about user needs to deliver the best experience possible. I'm passionate about accessibility and building applications that work for everyone.
+            I excel at product work, and learning about user needs to deliver the best experience
+            possible. I'm passionate about accessibility and building applications that work for
+            everyone.
           </slate-text>
           <slate-text size="lg">
-            Unfortunately, I was recently laid off along with my entire department. If you know of any opportunities, please reach out! I'm available immediately.
+            Unfortunately, I was recently laid off along with my entire department. If you know of
+            any opportunities, please reach out! I'm available immediately.
           </slate-text>
-          <slate-stack gap="md">
-            <slate-stack direction="row" gap="md" wrap>
-              <a
-                class="contact-link"
-                href="tel:+12086316741"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <IconPhone aria-hidden="true" />
-                208.631.6741
-              </a>
-              <a
-                class="contact-link"
-                href="mailto:trevoreyre@gmail.com"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <IconEmail aria-hidden="true" />
-                trevoreyre@gmail.com
-              </a>
-            </slate-stack>
-            <slate-stack direction="row" gap="md" wrap>
-              <a
-                class="contact-link"
-                href="https://github.com/trevoreyre"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <IconLogoGitHub aria-hidden="true" />
-                GitHub
-              </a>
-              <a
-                class="contact-link"
-                href="https://www.linkedin.com/in/trevoreyre"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <IconLogoLinkedIn aria-hidden="true" />
-                LinkedIn
-              </a>
-            </slate-stack>
+          <slate-stack direction="row" gap="md" wrap>
+            <a
+              class="contact-link"
+              href="mailto:trevoreyre@gmail.com"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <IconEmail aria-hidden="true" />
+              trevoreyre@gmail.com
+            </a>
+            <a
+              class="contact-link"
+              href="https://github.com/trevoreyre"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <IconLogoGitHub aria-hidden="true" />
+              GitHub
+            </a>
+            <a
+              class="contact-link"
+              href="https://www.linkedin.com/in/trevoreyre"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <IconLogoLinkedIn aria-hidden="true" />
+              LinkedIn
+            </a>
           </slate-stack>
         </slate-stack>
         <slate-stack gap="xl">
@@ -132,14 +124,14 @@ import {
       </section>
       <section>
         <slate-stack gap="6xl">
-          <slate-heading level="2" size="lg" weight="bold" transform="uppercase">Projects</slate-heading>
-          <ProjectSummary>
-            <ProjectSummaryContent>
-              <slate-stack gap="xs">
+          <h2 slate-heading size="lg" weight="bold" transform="uppercase">Projects</h2>
+          <te-project-summary>
+            <te-project-summary-content>
+              <slate-stack gap="sm">
                 <slate-text variant="secondary" size="sm" transform="uppercase">
                   Work experience
                 </slate-text>
-                <slate-heading level="3" size="2xl" weight="bold">Sensei Guest Portal</slate-heading>
+                <h3 slate-heading size="2xl" weight="bold">Sensei Guest Portal</h3>
               </slate-stack>
               <slate-text>
                 While working at Sensei, I built and released features in the customer-facing guest
@@ -157,8 +149,8 @@ import {
                 <slate-tag>.NET</slate-tag>
                 <slate-tag>GraphQL</slate-tag>
               </slate-stack>
-            </ProjectSummaryContent>
-            <ProjectSummaryImages>
+            </te-project-summary-content>
+            <te-project-summary-images>
               <img
                 alt="Screenshot of the Sensei Guest Portal website. The portal features beautiful imagery of Sensei's luxury resorts in Hawaii and Southern California, and invites the guest to continue their wellness journey with Sensei."
                 width="3200"
@@ -166,49 +158,24 @@ import {
                 sizes="(min-width: 680px) 50vw, 100vw"
                 srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-sensei-guest-portal-1.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-sensei-guest-portal-1.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-sensei-guest-portal-1.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-sensei-guest-portal-1.png 1200w"
               />
-            </ProjectSummaryImages>
-          </ProjectSummary>
-          <ProjectSummary>
-            <ProjectSummaryImages>
+            </te-project-summary-images>
+          </te-project-summary>
+          <te-project-summary>
+            <te-project-summary-images>
               <img
-                alt="Screenshot of the Touché Photography website. The website features a grid of underwater and landscape photography, including photos of ocotopus, fish, sea turtles, and water falls in the Pacific Northwest."
+                alt="Screenshot of the Freeform warehouse manager website. The screenshot map-like grid of pallet locations in a warehouse, imitating the layout of the physical warehouse location. The locations are color coded according to whether they are available or occupied."
                 width="3200"
                 height="2400"
                 sizes="(min-width: 680px) 50vw, 100vw"
-                srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-touche-photography-1.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-touche-photography-1.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-touche-photography-1.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-touche-photography-1.png 1200w"
+                srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-freeform-warehouse-manager-1.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-freeform-warehouse-manager-1.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-freeform-warehouse-manager-1.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-freeform-warehouse-manager-1.png 1200w"
               />
-            </ProjectSummaryImages>
-            <ProjectSummaryContent>
-              <slate-stack gap="xs">
-                <slate-text variant="secondary" size="sm" transform="uppercase"
-                  >Client work</slate-text
-                >
-                <slate-heading level="3" size="2xl" weight="bold">Touché Photography</slate-heading>
-              </slate-stack>
-              <slate-text>
-                I designed and built a completely bespoke photography and e-commerce website for a
-                photographer in Portland, Oregon.
-              </slate-text>
-              <slate-text>
-                I used Sanity for a content management system to provide a simple editing experience
-                with just the data necessary for the website, and no more.
-              </slate-text>
-              <slate-stack direction="row" gap="3xs" wrap>
-                <slate-tag>Vue</slate-tag>
-                <slate-tag>JavaScript</slate-tag>
-                <slate-tag>Sanity</slate-tag>
-                <slate-tag>Stripe</slate-tag>
-                <slate-tag>E-commerce</slate-tag>
-              </slate-stack>
-            </ProjectSummaryContent>
-          </ProjectSummary>
-          <ProjectSummary>
-            <ProjectSummaryContent>
-              <slate-stack gap="xs">
-                <slate-text variant="secondary" size="sm" transform="uppercase"
-                  >Client work</slate-text
-                >
-                <slate-heading level="3" size="2xl" weight="bold">Freeform Warehouse Manager</slate-heading>
+            </te-project-summary-images>
+            <te-project-summary-content>
+              <slate-stack gap="sm">
+                <slate-text variant="secondary" size="sm" transform="uppercase">
+                  Client work
+                </slate-text>
+                <h3 slate-heading size="2xl" weight="bold">Freeform Warehouse Manager</h3>
               </slate-stack>
               <slate-text>
                 I designed and built a warehouse inventory management application for Freeform, a
@@ -225,26 +192,93 @@ import {
                 <slate-tag>AWS</slate-tag>
                 <slate-tag>MySQL</slate-tag>
               </slate-stack>
-            </ProjectSummaryContent>
-            <ProjectSummaryImages>
+            </te-project-summary-content>
+          </te-project-summary>
+          <te-project-summary>
+            <te-project-summary-content>
+              <slate-stack gap="sm">
+                <slate-text variant="secondary" size="sm" transform="uppercase">
+                  Client work
+                </slate-text>
+                <h3 slate-heading size="2xl" weight="bold">Birddogs</h3>
+              </slate-stack>
+              <slate-text>
+                I worked with Birddogs, a popular e-commerce brand, to enhance their Shopify website
+                and streamline their content management processes.
+              </slate-text>
+              <slate-text>
+                This included updating the site to align with the latest Shopify best practices,
+                ensuring it was optimized for speed and reliability. I also implemented a content
+                management system, making it easier for the team to update website and product
+                content efficiently.
+              </slate-text>
+              <slate-text>
+                To help maximize conversions and sales, I integrated advanced analytics to track
+                user behavior and support data-driven decision-making.
+              </slate-text>
+              <slate-stack direction="row" gap="3xs" wrap>
+                <slate-tag>React</slate-tag>
+                <slate-tag>Remix</slate-tag>
+                <slate-tag>Node.js</slate-tag>
+                <slate-tag>TypeScript</slate-tag>
+                <slate-tag>Sanity</slate-tag>
+                <slate-tag>Shopify</slate-tag>
+                <slate-tag>E-commerce</slate-tag>
+              </slate-stack>
+            </te-project-summary-content>
+            <te-project-summary-images>
               <img
-                alt="Screenshot of the Freeform warehouse manager website. The screenshot map-like grid of pallet locations in a warehouse, imitating the layout of the physical warehouse location. The locations are color coded according to whether they are available or occupied."
+                alt="A screenshot of the homepage of Birddogs, an e-commerce website. The page features a humorous image of four men outdoors on a green lawn near a wooden fence and a rustic barn. One man holds a remote-controlled airplane while others react excitedly, running and jumping. The tagline reads ʼThe comfort of built-in linersʼ in bold text, with two buttons below labeled ʼSee Topsʼ and ʼSee Bottoms.ʼ"
                 width="3200"
                 height="2400"
                 sizes="(min-width: 680px) 50vw, 100vw"
-                srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-freeform-warehouse-manager-1.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-freeform-warehouse-manager-1.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-freeform-warehouse-manager-1.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-freeform-warehouse-manager-1.png 1200w"
+                srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-birddogs-1.jpg 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-birddogs-1.jpg 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-birddogs-1.jpg 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-birddogs-1.jpg 1200w"
               />
-            </ProjectSummaryImages>
-          </ProjectSummary>
+            </te-project-summary-images>
+          </te-project-summary>
+          <te-project-summary>
+            <te-project-summary-images>
+              <img
+                alt="Screenshot of the Touché Photography website. The website features a grid of underwater and landscape photography, including photos of ocotopus, fish, sea turtles, and water falls in the Pacific Northwest."
+                width="3200"
+                height="2400"
+                sizes="(min-width: 680px) 50vw, 100vw"
+                srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-touche-photography-1.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-touche-photography-1.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-touche-photography-1.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-touche-photography-1.png 1200w"
+              />
+            </te-project-summary-images>
+            <te-project-summary-content>
+              <slate-stack gap="sm">
+                <slate-text variant="secondary" size="sm" transform="uppercase">
+                  Client work
+                </slate-text>
+                <h3 slate-heading size="2xl" weight="bold">Touché Photography</h3>
+              </slate-stack>
+              <slate-text>
+                I designed and built a completely bespoke photography and e-commerce website for a
+                photographer in Portland, Oregon.
+              </slate-text>
+              <slate-text>
+                I used Sanity for a content management system to provide a simple editing experience
+                with just the data necessary for the website, and no more.
+              </slate-text>
+              <slate-stack direction="row" gap="3xs" wrap>
+                <slate-tag>Vue</slate-tag>
+                <slate-tag>JavaScript</slate-tag>
+                <slate-tag>Sanity</slate-tag>
+                <slate-tag>Stripe</slate-tag>
+                <slate-tag>E-commerce</slate-tag>
+              </slate-stack>
+            </te-project-summary-content>
+          </te-project-summary>
         </slate-stack>
       </section>
       <section>
         <slate-stack gap="6xl">
-          <slate-heading level="2" size="lg" weight="bold" transform="uppercase">Open source</slate-heading>
+          <h2 slate-heading size="lg" weight="bold" transform="uppercase">Open source</h2>
           <div class="open-source-projects">
             <slate-stack class="project" gap="md">
               <IconLogoAutocomplete aria-hidden="true" />
-              <slate-heading level="3" size="2xl" weight="bold">Autocomplete</slate-heading>
+              <h3 slate-heading size="2xl" weight="bold">Autocomplete</h3>
               <slate-text>
                 Accessible autocomplete component for vanilla JavaScript and Vue.
               </slate-text>
@@ -271,9 +305,10 @@ import {
             </slate-stack>
             <slate-stack class="project" gap="md">
               <IconLogoHealthwise aria-hidden="true" />
-              <slate-heading level="3" size="2xl" weight="bold">Healthwise UI</slate-heading>
+              <h3 slate-heading size="2xl" weight="bold">Healthwise UI</h3>
               <slate-text>
-                While working at Healthwise, I helped architect and open source the design system for Healthwise applications.
+                While working at Healthwise, I helped architect and open source the design system
+                for Healthwise applications.
               </slate-text>
               <slate-stack direction="row" gap="md" wrap>
                 <a
@@ -298,9 +333,10 @@ import {
             </slate-stack>
             <slate-stack class="project" gap="md">
               <IconLogoSlateUi aria-hidden="true" />
-              <slate-heading level="3" size="2xl" weight="bold">Slate UI</slate-heading>
+              <h3 slate-heading size="2xl" weight="bold">Slate UI</h3>
               <slate-text>
-                Web component design system I use for my personal websites. Currently in development.
+                Web component design system I use for my personal websites. Currently in
+                development.
               </slate-text>
               <slate-stack direction="row" gap="md" wrap>
                 <a
@@ -356,19 +392,21 @@ import {
       display: grid;
       grid-template-columns: 1fr;
       row-gap: var(--spacing-xl);
-      border-block-start: none;
+      border: var(--border-size-md) solid transparent;
       margin-inline: calc(-1 * var(--app-padding-inline));
       padding-block: var(--spacing-xl);
       padding-inline: var(--app-padding-inline);
       inline-size: calc(100% + 2 * var(--app-padding-inline));
       background: var(--color-background-gradient);
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-lg);
     }
 
     @media (--viewport-md) {
       .hire-section {
         border-radius: var(--spacing-sm);
-        grid-template-columns: minmax(calc(60% - var(--spacing-3xl)), max-content) minmax(calc(40% - var(--spacing-3xl)), 1fr);
+        grid-template-columns:
+          minmax(calc(60% - var(--spacing-3xl)), max-content)
+          minmax(calc(40% - var(--spacing-3xl)), 1fr);
         column-gap: var(--spacing-lg);
       }
 

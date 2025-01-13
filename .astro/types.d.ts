@@ -174,76 +174,195 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"notes": {
+		"posts": {
+"accessibility-tricks.md": {
+	id: "accessibility-tricks.md";
+  slug: "accessibility-tricks";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
 "bundling-and-es-modules.md": {
 	id: "bundling-and-es-modules.md";
   slug: "bundling-and-es-modules";
   body: string;
-  collection: "notes";
-  data: any
+  collection: "posts";
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
-"keep-reinventing-the-wheel.md": {
-	id: "keep-reinventing-the-wheel.md";
-  slug: "keep-reinventing-the-wheel";
+"creating-the-perfect-typography-components.md": {
+	id: "creating-the-perfect-typography-components.md";
+  slug: "creating-the-perfect-typography-components";
   body: string;
-  collection: "notes";
-  data: any
+  collection: "posts";
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
-"maintain-company-coding-standards-with-a-custom-eslint-plugin.md": {
-	id: "maintain-company-coding-standards-with-a-custom-eslint-plugin.md";
-  slug: "maintain-company-coding-standards-with-a-custom-eslint-plugin";
+"designing-native-date-inputs-that-look-great-on-any-browser.md": {
+	id: "designing-native-date-inputs-that-look-great-on-any-browser.md";
+  slug: "designing-native-date-inputs-that-look-great-on-any-browser";
   body: string;
-  collection: "notes";
-  data: any
+  collection: "posts";
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
-"rxjs.md": {
-	id: "rxjs.md";
-  slug: "rxjs";
+"equal-width-columns.md": {
+	id: "equal-width-columns.md";
+  slug: "equal-width-columns";
   body: string;
-  collection: "notes";
-  data: any
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"fixing-imports-with-eslint.md": {
+	id: "fixing-imports-with-eslint.md";
+  slug: "fixing-imports-with-eslint";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"fluid-typography.md": {
+	id: "fluid-typography.md";
+  slug: "fluid-typography";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"how-to-fix-bluetooth-connectivity-issues-on-macos.md": {
+	id: "how-to-fix-bluetooth-connectivity-issues-on-macos.md";
+  slug: "how-to-fix-bluetooth-connectivity-issues-on-macos";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"how-to-get-a-job.md": {
+	id: "how-to-get-a-job.md";
+  slug: "how-to-get-a-job";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"how-to-write-accessible-forms.md": {
+	id: "how-to-write-accessible-forms.md";
+  slug: "how-to-write-accessible-forms";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"html-tables-accessibility.md": {
+	id: "html-tables-accessibility.md";
+  slug: "html-tables-accessibility";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"portable-dual-monitor-laptop-setup.md": {
+	id: "portable-dual-monitor-laptop-setup.md";
+  slug: "portable-dual-monitor-laptop-setup";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"project-proposal-future-solutions.md": {
+	id: "project-proposal-future-solutions.md";
+  slug: "project-proposal-future-solutions";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"project-proposal-song-and-soil.md": {
+	id: "project-proposal-song-and-soil.md";
+  slug: "project-proposal-song-and-soil";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"project-proposal-the-freedom-life.md": {
+	id: "project-proposal-the-freedom-life.md";
+  slug: "project-proposal-the-freedom-life";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"project-proposal-trace-app.md": {
+	id: "project-proposal-trace-app.md";
+  slug: "project-proposal-trace-app";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"responsive-images.md": {
+	id: "responsive-images.md";
+  slug: "responsive-images";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"rv-office.md": {
+	id: "rv-office.md";
+  slug: "rv-office";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "setting-up-windows-to-feel-like-macos.md": {
 	id: "setting-up-windows-to-feel-like-macos.md";
   slug: "setting-up-windows-to-feel-like-macos";
   body: string;
-  collection: "notes";
-  data: any
+  collection: "posts";
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
-"ui-deep-dive-button.md": {
-	id: "ui-deep-dive-button.md";
-  slug: "ui-deep-dive-button";
+"some-of-my-favorite-tools.md": {
+	id: "some-of-my-favorite-tools.md";
+  slug: "some-of-my-favorite-tools";
   body: string;
-  collection: "notes";
-  data: any
+  collection: "posts";
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
-"ui-deep-dive-theming.md": {
-	id: "ui-deep-dive-theming.md";
-  slug: "ui-deep-dive-theming";
+"test.md": {
+	id: "test.md";
+  slug: "test";
   body: string;
-  collection: "notes";
-  data: any
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"typing-react.forwardref-with-generics-and-dynamic-components.md": {
+	id: "typing-react.forwardref-with-generics-and-dynamic-components.md";
+  slug: "typing-reactforwardref-with-generics-and-dynamic-components";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"variable-naming-and-boolean-flags.md": {
+	id: "variable-naming-and-boolean-flags.md";
+  slug: "variable-naming-and-boolean-flags";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "vue-jsx-for-the-react-developer.md": {
 	id: "vue-jsx-for-the-react-developer.md";
   slug: "vue-jsx-for-the-react-developer";
   body: string;
-  collection: "notes";
-  data: any
+  collection: "posts";
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "web-components.md": {
 	id: "web-components.md";
   slug: "web-components";
   body: string;
-  collection: "notes";
-  data: any
+  collection: "posts";
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
-"writing-aws-lambda-functions-in-typescript.md": {
-	id: "writing-aws-lambda-functions-in-typescript.md";
-  slug: "writing-aws-lambda-functions-in-typescript";
+"what-is-the-web-missing.md": {
+	id: "what-is-the-web-missing.md";
+  slug: "what-is-the-web-missing";
   body: string;
-  collection: "notes";
-  data: any
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"write-good-javascript-code.md": {
+	id: "write-good-javascript-code.md";
+  slug: "write-good-javascript-code";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 };
 
@@ -255,5 +374,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = never;
+	export type ContentConfig = typeof import("../src/content/config.mjs");
 }
