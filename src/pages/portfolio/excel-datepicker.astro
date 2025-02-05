@@ -36,9 +36,9 @@ import '~/components/project-summary/project-summary.css'
             target="_blank">Download</slate-link
           >
         </te-project-summary-content>
-        <te-project-summary-images>
+        <div class="project-summary-image">
           <img width="854" height="532" src="/img/excel-datepicker.png" />
-        </te-project-summary-images>
+        </div>
       </te-project-summary>
       <section>
         <slate-container size="md">
@@ -137,8 +137,14 @@ dateVariable = CalendarForm.GetDate</code></pre>
 </App>
 
 <style>
-  te-project-summary-images img {
-    border-radius: var(--border-radius-none);
-    box-shadow: none;
+  @layer pages {
+    .project-summary-image {
+      flex: 1.5;
+    }
+
+    .project-summary-image img {
+      border-radius: var(--border-radius-none);
+      box-shadow: none;
+    }
   }
 </style>
