@@ -1,4 +1,5 @@
 ---
+// @ts-nocheck
 import '@slate-ui/core/src/theme.css'
 import '@slate-ui/core/src/theme-typography.css'
 import '@slate-ui/core/src/styles.css'
@@ -7,6 +8,7 @@ import '@slate-ui/core/src/app-nav/app-nav.css'
 import '@slate-ui/core/src/container/container.css'
 import '@slate-ui/core/src/stack/stack.css'
 import '@slate-ui/core/src/text/text.css'
+import '@slate-ui/core/src/tooltip/tooltip.css'
 import '~/app-theme.css'
 import { IconEmail, IconLogoGitHub, IconLogoLinkedIn, IconPhone } from '~/components/icons.js'
 import NavLink from '~/components/nav-link.astro'
@@ -16,6 +18,7 @@ const pageTitle = title ? `${title} - Trevor Eyre` : 'Trevor Eyre'
 ---
 
 <script>
+  // @ts-nocheck
   import '@slate-ui/core/src/app-bar/app-bar.js'
   import '@slate-ui/core/src/app-nav/app-nav-content.js'
   import '@slate-ui/core/src/app-nav/app-nav-menu-button.js'
@@ -23,12 +26,27 @@ const pageTitle = title ? `${title} - Trevor Eyre` : 'Trevor Eyre'
   import '@slate-ui/core/src/container/container.js'
   import '@slate-ui/core/src/stack/stack.js'
   import '@slate-ui/core/src/text/text.js'
+  import '@slate-ui/core/src/tooltip/tooltip.js'
+
+  const copyrightYearButton = document.querySelector('.copyright-year-button')
+  let timeout = 0
+
+  copyrightYearButton?.addEventListener('mouseenter', () => {
+    timeout = setTimeout(() => {
+      const tooltip = document.querySelector('#copyright-year-tooltip')
+      tooltip?.showPopover?.()
+    }, 500)
+  })
+
+  copyrightYearButton?.addEventListener('mouseleave', () => {
+    clearTimeout(timeout)
+  })
 </script>
 
 <html lang="en">
   <head>
     <style is:inline>
-      @layer slate-theme, theme, slate-components-1, slate-components-2, app, pages;
+      @layer slate-theme, theme, slate-components-1, slate-components-2, app, components-1, components-2, pages;
     </style>
     <title>{pageTitle}</title>
     <meta charset="utf-8" />
@@ -50,7 +68,7 @@ const pageTitle = title ? `${title} - Trevor Eyre` : 'Trevor Eyre'
   </head>
   <body>
     <slate-app-bar>
-      <slate-container size="lg">
+      <slate-container size="xl">
         <slate-app-nav aria-label="Main" justify="between" wrap>
           <slate-app-nav-menu-button></slate-app-nav-menu-button>
           <slate-app-nav-content gap="md">
@@ -93,6 +111,18 @@ const pageTitle = title ? `${title} - Trevor Eyre` : 'Trevor Eyre'
     <main data-padding={padding}>
       <slot />
     </main>
+    <footer>
+      <p slate-text variant="secondary" size="sm">
+        © <button class="copyright-year-button" popovertarget="copyright-year-tooltip">
+          new Date().getFullYear()
+        </button> Trevor Eyre. All rights reserved.
+      </p>
+      <slate-tooltip id="copyright-year-tooltip" popover="auto">
+        <p slate-text size="sm">
+          {new Date().getFullYear()}
+        </p>
+      </slate-tooltip>
+    </footer>
   </body>
 </html>
 
@@ -134,6 +164,16 @@ const pageTitle = title ? `${title} - Trevor Eyre` : 'Trevor Eyre'
       padding-block: var(--spacing-md);
       padding-inline: var(--app-padding-inline);
       text-align: center;
+    }
+
+    .copyright-year-button {
+      border-radius: var(--border-radius-md);
+      border: none;
+      margin-inline: var(--spacing-4xs);
+      padding: var(--spacing-3xs);
+      font-family: var(--font-family-monospace);
+      color: hsl(var(--color-text-secondary));
+      background-color: hsl(var(--color-neutral-1000));
     }
 
     @media (--app-nav-breakpoint-down) {

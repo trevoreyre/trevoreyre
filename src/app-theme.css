@@ -53,11 +53,23 @@
 }
 
 @layer app {
-  slate-link {
-    text-decoration: underline;
+  slate-tooltip {
+    padding: var(--spacing-xs);
   }
 
-  slate-link::part(host) {
-    color: inherit;
+  slate-content h2 {
+    font-weight: var(--font-weight-bold);
+    --content-font-size: var(--text-2xl-font-size);
+    --content-line-height: var(--text-2xl-line-height);
+    --content-margin-before: var(--text-2xl-margin-before);
+    --content-margin-after: var(--text-2xl-margin-after);
+  }
+
+  slate-content h3 {
+    font-weight: var(--font-weight-bold);
+    --content-font-size: var(--text-xl-font-size);
+    --content-line-height: var(--text-xl-line-height);
+    --content-margin-before: var(--text-xl-margin-before);
+    --content-margin-after: var(--text-xl-margin-after);
   }
 }

@@ -2,11 +2,13 @@
 // @ts-nocheck
 import '@slate-ui/core/src/container/container.css'
 import '@slate-ui/core/src/heading/heading.css'
+import '@slate-ui/core/src/link/link.css'
 import '@slate-ui/core/src/stack/stack.css'
 import '@slate-ui/core/src/tag/tag.css'
 import '@slate-ui/core/src/text/text.css'
 import App from '~/app.astro'
 import {
+  IconChevronRight,
   IconEmail,
   IconFile,
   IconLogoAutocomplete,
@@ -23,6 +25,7 @@ import '~/components/project-summary/project-summary.css'
   import '@slate-ui/core/src/link/link.js'
   import '@slate-ui/core/src/container/container.js'
   import '@slate-ui/core/src/heading/heading.js'
+  import '@slate-ui/core/src/link/link.js'
   import '@slate-ui/core/src/stack/stack.js'
   import '@slate-ui/core/src/tag/tag.js'
   import '@slate-ui/core/src/text/text.js'
@@ -32,16 +35,16 @@ import '~/components/project-summary/project-summary.css'
 </script>
 
 <App padding="lg">
-  <slate-container size="lg">
+  <slate-container size="xl">
     <slate-stack gap="5xl">
-      <slate-container size="md" align="start">
+      <slate-container size="lg" align="start">
         <slate-stack gap="xl">
           <h1 slate-heading class="title" size="7xl" weight="bold">Trevor Eyre</h1>
-          <slate-text class="subtitle" size="3xl" variant="secondary">
+          <p slate-text class="subtitle" size="3xl" variant="secondary">
             I am a <strong>senior front end engineer</strong>. I specialize in building design
             systems and component libraries to deliver polished, consistent experiences across
             applications.
-          </slate-text>
+          </p>
         </slate-stack>
       </slate-container>
       <section class="hire-section">
@@ -49,20 +52,20 @@ import '~/components/project-summary/project-summary.css'
           <h2 slate-heading size="2xl" weight="bold">I'm available for hire!</h2>
         </header>
         <slate-stack gap="xl">
-          <slate-text size="lg">
+          <p slate-text size="lg">
             I love everything front end! From authoring semantic HTML to architecting performant
             data stores in TypeScript, from crafting robust theming variables in CSS to
             collaborating on designs in Figma — I'm all about it.
-          </slate-text>
-          <slate-text size="lg">
+          </p>
+          <p slate-text size="lg">
             I excel at product work, and learning about user needs to deliver the best experience
             possible. I'm passionate about accessibility and building applications that work for
             everyone.
-          </slate-text>
-          <slate-text size="lg">
+          </p>
+          <p slate-text size="lg">
             Unfortunately, I was recently laid off along with my entire department. If you know of
             any opportunities, please reach out! I'm available immediately.
-          </slate-text>
+          </p>
           <slate-stack direction="row" gap="md" wrap>
             <a
               class="contact-link"
@@ -71,7 +74,7 @@ import '~/components/project-summary/project-summary.css'
               rel="noreferrer noopener"
             >
               <IconEmail aria-hidden="true" />
-              trevoreyre@gmail.com
+              Email
             </a>
             <a
               class="contact-link"
@@ -95,7 +98,7 @@ import '~/components/project-summary/project-summary.css'
         </slate-stack>
         <slate-stack gap="xl">
           <slate-stack gap="md">
-            <slate-text size="lg" weight="bold">I'm an expert at...</slate-text>
+            <p slate-text size="lg" weight="bold">I'm an expert at...</p>
             <slate-stack direction="row" gap="3xs" wrap>
               <slate-tag>React</slate-tag>
               <slate-tag>JavaScript</slate-tag>
@@ -106,7 +109,7 @@ import '~/components/project-summary/project-summary.css'
             </slate-stack>
           </slate-stack>
           <slate-stack gap="md">
-            <slate-text size="lg" weight="bold">I'm also very good at...</slate-text>
+            <p slate-text size="lg" weight="bold">I'm also very good at...</p>
             <slate-stack direction="row" gap="3xs" wrap>
               <slate-tag>Vue</slate-tag>
               <slate-tag>Angular</slate-tag>
@@ -118,6 +121,7 @@ import '~/components/project-summary/project-summary.css'
               <slate-tag>AWS</slate-tag>
               <slate-tag>Docker</slate-tag>
               <slate-tag>Figma</slate-tag>
+              <slate-tag>UI design</slate-tag>
             </slate-stack>
           </slate-stack>
         </slate-stack>
@@ -128,19 +132,105 @@ import '~/components/project-summary/project-summary.css'
           <te-project-summary>
             <te-project-summary-content>
               <slate-stack gap="sm">
-                <slate-text variant="secondary" size="sm" transform="uppercase">
+                <p slate-text variant="secondary" size="sm" transform="uppercase">
                   Work experience
-                </slate-text>
+                </p>
+                <a
+                  slate-heading
+                  href="/projects/ephesoft-semantik-invoice"
+                  size="2xl"
+                  weight="bold"
+                >
+                  Ephesoft Semantik Invoice
+                </a>
+              </slate-stack>
+              <p slate-text>
+                While working at Ephesoft, I played a pivotal role in architecting and designing the
+                front end of Semantik Invoice, a SaaS application designed to automate invoice
+                processing using OCR and machine learning.
+              </p>
+              <slate-stack direction="row" gap="3xs" wrap>
+                <slate-tag>Angular</slate-tag>
+                <slate-tag>Node.js</slate-tag>
+                <slate-tag>TypeScript</slate-tag>
+                <slate-tag>AWS</slate-tag>
+                <slate-tag>UI design</slate-tag>
+              </slate-stack>
+              <a slate-link href="/projects/ephesoft-semantik-invoice">
+                Project details
+                <IconChevronRight aria-hidden="true" />
+              </a>
+            </te-project-summary-content>
+            <te-project-summary-images>
+              <img
+                alt="Screenshot of the Semantik Invoice app, on the Review page. It displays a scanned invoice from Kord Industries in the main panel, with extracted data and confidence scores in the right sidebar. The left sidebar lists other invoices. Some fields, like the order date and due date, have warnings for low confidence. The interface includes navigation buttons and options to complete or remove the review."
+                width="3200"
+                height="2400"
+                sizes="(min-width: 680px) 50vw, 100vw"
+                srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-ephesoft-semantik-invoice-2.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-ephesoft-semantik-invoice-2.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-ephesoft-semantik-invoice-2.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-ephesoft-semantik-invoice-2.png 1200w"
+              />
+            </te-project-summary-images>
+          </te-project-summary>
+          <te-project-summary>
+            <te-project-summary-images>
+              <img
+                alt="Screenshot of the Freeform warehouse manager website. The website features a map-like grid of pallet locations in a warehouse, imitating the layout of the physical warehouse location. The locations are color coded according to whether they are available or occupied."
+                width="3200"
+                height="2400"
+                sizes="(min-width: 680px) 50vw, 100vw"
+                srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-freeform-warehouse-manager-1.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-freeform-warehouse-manager-1.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-freeform-warehouse-manager-1.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-freeform-warehouse-manager-1.png 1200w"
+              />
+            </te-project-summary-images>
+            <te-project-summary-content>
+              <slate-stack gap="sm">
+                <p slate-text variant="secondary" size="sm" transform="uppercase">Freelance work</p>
+                <a
+                  slate-heading
+                  href="/projects/freeform-warehouse-manager"
+                  size="2xl"
+                  weight="bold"
+                >
+                  Freeform warehouse manager
+                </a>
+              </slate-stack>
+              <p slate-text>
+                I designed and built a warehouse inventory management application for Freeform, a
+                commercial furniture company in Idaho and Washington.
+              </p>
+              <p slate-text>
+                The application allows Freeform to track orders and pallets across multiple
+                warehouses, and coordinate arrival and departure dates.
+              </p>
+              <slate-stack direction="row" gap="3xs" wrap>
+                <slate-tag>React</slate-tag>
+                <slate-tag>Node.js</slate-tag>
+                <slate-tag>JavaScript</slate-tag>
+                <slate-tag>AWS</slate-tag>
+                <slate-tag>MySQL</slate-tag>
+                <slate-tag>UI design</slate-tag>
+              </slate-stack>
+              <a slate-link href="/projects/freeform-warehouse-manager">
+                Project details
+                <IconChevronRight aria-hidden="true" />
+              </a>
+            </te-project-summary-content>
+          </te-project-summary>
+          <te-project-summary>
+            <te-project-summary-content>
+              <slate-stack gap="sm">
+                <p slate-text variant="secondary" size="sm" transform="uppercase">
+                  Work experience
+                </p>
                 <h3 slate-heading size="2xl" weight="bold">Sensei Guest Portal</h3>
               </slate-stack>
-              <slate-text>
+              <p slate-text>
                 While working at Sensei, I built and released features in the customer-facing guest
                 portal for their luxury resorts and wellness retreat centers.
-              </slate-text>
-              <slate-text>
+              </p>
+              <p slate-text>
                 I also led the engineering effort to re-architect the component library that powers
                 the guest portal and other internal applications.
-              </slate-text>
+              </p>
               <slate-stack direction="row" gap="3xs" wrap>
                 <slate-tag>React</slate-tag>
                 <slate-tag>Next.js</slate-tag>
@@ -163,59 +253,32 @@ import '~/components/project-summary/project-summary.css'
           <te-project-summary>
             <te-project-summary-images>
               <img
-                alt="Screenshot of the Freeform warehouse manager website. The screenshot map-like grid of pallet locations in a warehouse, imitating the layout of the physical warehouse location. The locations are color coded according to whether they are available or occupied."
+                alt="A screenshot of the homepage of Birddogs, an e-commerce website. The page features a humorous image of four men outdoors on a green lawn near a wooden fence and a rustic barn. One man holds a remote-controlled airplane while others react excitedly, running and jumping. The tagline reads ʼThe comfort of built-in linersʼ in bold text, with two buttons below labeled ʼSee Topsʼ and ʼSee Bottoms.ʼ"
                 width="3200"
                 height="2400"
                 sizes="(min-width: 680px) 50vw, 100vw"
-                srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-freeform-warehouse-manager-1.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-freeform-warehouse-manager-1.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-freeform-warehouse-manager-1.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-freeform-warehouse-manager-1.png 1200w"
+                srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-birddogs-1.jpg 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-birddogs-1.jpg 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-birddogs-1.jpg 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-birddogs-1.jpg 1200w"
               />
             </te-project-summary-images>
             <te-project-summary-content>
               <slate-stack gap="sm">
-                <slate-text variant="secondary" size="sm" transform="uppercase">
-                  Client work
-                </slate-text>
-                <h3 slate-heading size="2xl" weight="bold">Freeform Warehouse Manager</h3>
-              </slate-stack>
-              <slate-text>
-                I designed and built a warehouse inventory management application for Freeform, a
-                commercial furniture company in Idaho and Washington.
-              </slate-text>
-              <slate-text>
-                The application allows Freeform to track orders and pallets across multiple
-                warehouses, and coordinate arrival and departure dates.
-              </slate-text>
-              <slate-stack direction="row" gap="3xs" wrap>
-                <slate-tag>React</slate-tag>
-                <slate-tag>Node.js</slate-tag>
-                <slate-tag>JavaScript</slate-tag>
-                <slate-tag>AWS</slate-tag>
-                <slate-tag>MySQL</slate-tag>
-              </slate-stack>
-            </te-project-summary-content>
-          </te-project-summary>
-          <te-project-summary>
-            <te-project-summary-content>
-              <slate-stack gap="sm">
-                <slate-text variant="secondary" size="sm" transform="uppercase">
-                  Client work
-                </slate-text>
+                <p slate-text variant="secondary" size="sm" transform="uppercase">Freelance work</p>
                 <h3 slate-heading size="2xl" weight="bold">Birddogs</h3>
               </slate-stack>
-              <slate-text>
+              <p slate-text>
                 I worked with Birddogs, a popular e-commerce brand, to enhance their Shopify website
                 and streamline their content management processes.
-              </slate-text>
-              <slate-text>
+              </p>
+              <p slate-text>
                 This included updating the site to align with the latest Shopify best practices,
                 ensuring it was optimized for speed and reliability. I also implemented a content
                 management system, making it easier for the team to update website and product
                 content efficiently.
-              </slate-text>
-              <slate-text>
+              </p>
+              <p slate-text>
                 To help maximize conversions and sales, I integrated advanced analytics to track
                 user behavior and support data-driven decision-making.
-              </slate-text>
+              </p>
               <slate-stack direction="row" gap="3xs" wrap>
                 <slate-tag>React</slate-tag>
                 <slate-tag>Remix</slate-tag>
@@ -226,17 +289,30 @@ import '~/components/project-summary/project-summary.css'
                 <slate-tag>E-commerce</slate-tag>
               </slate-stack>
             </te-project-summary-content>
-            <te-project-summary-images>
-              <img
-                alt="A screenshot of the homepage of Birddogs, an e-commerce website. The page features a humorous image of four men outdoors on a green lawn near a wooden fence and a rustic barn. One man holds a remote-controlled airplane while others react excitedly, running and jumping. The tagline reads ʼThe comfort of built-in linersʼ in bold text, with two buttons below labeled ʼSee Topsʼ and ʼSee Bottoms.ʼ"
-                width="3200"
-                height="2400"
-                sizes="(min-width: 680px) 50vw, 100vw"
-                srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-birddogs-1.jpg 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-birddogs-1.jpg 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-birddogs-1.jpg 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-birddogs-1.jpg 1200w"
-              />
-            </te-project-summary-images>
           </te-project-summary>
           <te-project-summary>
+            <te-project-summary-content>
+              <slate-stack gap="sm">
+                <p slate-text variant="secondary" size="sm" transform="uppercase">Freelance work</p>
+                <h3 slate-heading size="2xl" weight="bold">Touché Photography</h3>
+              </slate-stack>
+              <p slate-text>
+                I designed and built a completely bespoke photography and e-commerce website for a
+                photographer in Portland, Oregon.
+              </p>
+              <p slate-text>
+                I used Sanity for a content management system to provide a simple editing experience
+                with just the data necessary for the website, and no more.
+              </p>
+              <slate-stack direction="row" gap="3xs" wrap>
+                <slate-tag>Vue</slate-tag>
+                <slate-tag>JavaScript</slate-tag>
+                <slate-tag>Sanity</slate-tag>
+                <slate-tag>Stripe</slate-tag>
+                <slate-tag>E-commerce</slate-tag>
+                <slate-tag>UI design</slate-tag>
+              </slate-stack>
+            </te-project-summary-content>
             <te-project-summary-images>
               <img
                 alt="Screenshot of the Touché Photography website. The website features a grid of underwater and landscape photography, including photos of ocotopus, fish, sea turtles, and water falls in the Pacific Northwest."
@@ -246,29 +322,6 @@ import '~/components/project-summary/project-summary.css'
                 srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-touche-photography-1.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-touche-photography-1.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-touche-photography-1.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-touche-photography-1.png 1200w"
               />
             </te-project-summary-images>
-            <te-project-summary-content>
-              <slate-stack gap="sm">
-                <slate-text variant="secondary" size="sm" transform="uppercase">
-                  Client work
-                </slate-text>
-                <h3 slate-heading size="2xl" weight="bold">Touché Photography</h3>
-              </slate-stack>
-              <slate-text>
-                I designed and built a completely bespoke photography and e-commerce website for a
-                photographer in Portland, Oregon.
-              </slate-text>
-              <slate-text>
-                I used Sanity for a content management system to provide a simple editing experience
-                with just the data necessary for the website, and no more.
-              </slate-text>
-              <slate-stack direction="row" gap="3xs" wrap>
-                <slate-tag>Vue</slate-tag>
-                <slate-tag>JavaScript</slate-tag>
-                <slate-tag>Sanity</slate-tag>
-                <slate-tag>Stripe</slate-tag>
-                <slate-tag>E-commerce</slate-tag>
-              </slate-stack>
-            </te-project-summary-content>
           </te-project-summary>
         </slate-stack>
       </section>
@@ -279,9 +332,7 @@ import '~/components/project-summary/project-summary.css'
             <slate-stack class="project" gap="md">
               <IconLogoAutocomplete aria-hidden="true" />
               <h3 slate-heading size="2xl" weight="bold">Autocomplete</h3>
-              <slate-text>
-                Accessible autocomplete component for vanilla JavaScript and Vue.
-              </slate-text>
+              <p slate-text>Accessible autocomplete component for vanilla JavaScript and Vue.</p>
               <slate-stack direction="row" gap="md" wrap>
                 <a
                   class="project-link"
@@ -306,10 +357,10 @@ import '~/components/project-summary/project-summary.css'
             <slate-stack class="project" gap="md">
               <IconLogoHealthwise aria-hidden="true" />
               <h3 slate-heading size="2xl" weight="bold">Healthwise UI</h3>
-              <slate-text>
+              <p slate-text>
                 While working at Healthwise, I helped architect and open source the design system
                 for Healthwise applications.
-              </slate-text>
+              </p>
               <slate-stack direction="row" gap="md" wrap>
                 <a
                   class="project-link"
@@ -334,10 +385,10 @@ import '~/components/project-summary/project-summary.css'
             <slate-stack class="project" gap="md">
               <IconLogoSlateUi aria-hidden="true" />
               <h3 slate-heading size="2xl" weight="bold">Slate UI</h3>
-              <slate-text>
-                Web component design system I use for my personal websites. Currently in
-                development.
-              </slate-text>
+              <p slate-text>
+                Experimental web component design system I use for my personal websites. Currently
+                in early development.
+              </p>
               <slate-stack direction="row" gap="md" wrap>
                 <a
                   class="project-link"
@@ -366,123 +417,125 @@ import '~/components/project-summary/project-summary.css'
   </slate-container>
 
   <style>
-    @media (--viewport-md-down) {
-      .title {
-        --text-font-size: var(--text-6xl-font-size);
-        --text-line-height: var(--text-6xl-line-height);
-        --text-margin-before: var(--text-6xl-margin-before);
-        --text-margin-after: var(--text-6xl-margin-after);
+    @layer pages {
+      @media (--viewport-md-down) {
+        .title {
+          --text-font-size: var(--text-6xl-font-size);
+          --text-line-height: var(--text-6xl-line-height);
+          --text-margin-before: var(--text-6xl-margin-before);
+          --text-margin-after: var(--text-6xl-margin-after);
+        }
+
+        .subtitle {
+          --text-font-size: var(--text-2xl-font-size);
+          --text-line-height: var(--text-2xl-line-height);
+          --text-margin-before: var(--text-2xl-margin-before);
+          --text-margin-after: var(--text-2xl-margin-after);
+        }
       }
 
-      .subtitle {
-        --text-font-size: var(--text-2xl-font-size);
-        --text-line-height: var(--text-2xl-line-height);
-        --text-margin-before: var(--text-2xl-margin-before);
-        --text-margin-after: var(--text-2xl-margin-after);
+      section {
+        inline-size: 100%;
+        border-block-start: var(--border-size-md) solid hsl(var(--color-border));
+        padding-block-start: var(--spacing-md);
       }
-    }
 
-    section {
-      inline-size: 100%;
-      border-block-start: var(--border-size-md) solid hsl(var(--color-border));
-      padding-block-start: var(--spacing-md);
-    }
-
-    .hire-section {
-      display: grid;
-      grid-template-columns: 1fr;
-      row-gap: var(--spacing-xl);
-      border: var(--border-size-md) solid transparent;
-      margin-inline: calc(-1 * var(--app-padding-inline));
-      padding-block: var(--spacing-xl);
-      padding-inline: var(--app-padding-inline);
-      inline-size: calc(100% + 2 * var(--app-padding-inline));
-      background: var(--color-background-gradient);
-      box-shadow: var(--shadow-lg);
-    }
-
-    @media (--viewport-md) {
       .hire-section {
-        border-radius: var(--spacing-sm);
-        grid-template-columns:
-          minmax(calc(60% - var(--spacing-3xl)), max-content)
-          minmax(calc(40% - var(--spacing-3xl)), 1fr);
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: var(--spacing-xl);
+        border: var(--border-size-md) solid transparent;
+        margin-inline: calc(-1 * var(--app-padding-inline));
+        padding-block: var(--spacing-xl);
+        padding-inline: var(--app-padding-inline);
+        inline-size: calc(100% + 2 * var(--app-padding-inline));
+        background: var(--color-background-gradient);
+        box-shadow: var(--shadow-lg);
+      }
+
+      @media (--viewport-md) {
+        .hire-section {
+          border-radius: var(--spacing-sm);
+          grid-template-columns:
+            minmax(calc(60% - var(--spacing-3xl)), max-content)
+            minmax(calc(40% - var(--spacing-3xl)), 1fr);
+          column-gap: var(--spacing-lg);
+        }
+
+        .hire-section header {
+          grid-column: span 2;
+        }
+      }
+
+      @media (--viewport-xl) {
+        .hire-section {
+          border-radius: var(--spacing-lg);
+          margin-inline: calc(-1 * var(--spacing-3xl));
+          padding: var(--spacing-3xl);
+          inline-size: calc(100% + 2 * var(--spacing-3xl));
+          column-gap: var(--spacing-3xl);
+        }
+      }
+
+      .open-source-projects {
+        inline-size: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         column-gap: var(--spacing-lg);
+        row-gap: var(--spacing-4xl);
       }
 
-      .hire-section header {
-        grid-column: span 2;
+      .project :last-child {
+        margin-block-start: auto;
       }
-    }
 
-    @media (--viewport-xl) {
-      .hire-section {
-        border-radius: var(--spacing-lg);
-        margin-inline: calc(-1 * var(--spacing-3xl));
-        padding: var(--spacing-3xl);
-        inline-size: calc(100% + 2 * var(--spacing-3xl));
-        column-gap: var(--spacing-3xl);
+      .project :is(te-icon-logo-autocomplete, te-icon-logo-healthwise, te-icon-logo-slateui) {
+        border-radius: var(--border-radius-md);
+        padding: var(--spacing-3xs);
+        inline-size: var(--size-xl);
+        block-size: var(--size-xl);
+        --color-icon-primary: var(--color-text-primary);
       }
-    }
 
-    .open-source-projects {
-      inline-size: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      column-gap: var(--spacing-lg);
-      row-gap: var(--spacing-4xl);
-    }
+      .project te-icon-logo-autocomplete {
+        background-color: #1c5b72;
+      }
 
-    .project :last-child {
-      margin-block-start: auto;
-    }
+      .project te-icon-logo-healthwise {
+        background-color: #f0534a;
+      }
 
-    .project :is(te-icon-logo-autocomplete, te-icon-logo-healthwise, te-icon-logo-slateui) {
-      border-radius: var(--border-radius-md);
-      padding: var(--spacing-3xs);
-      inline-size: var(--size-xl);
-      block-size: var(--size-xl);
-      --color-icon-primary: var(--color-text-primary);
-    }
+      .project te-icon-logo-slateui {
+        background-color: hsl(var(--color-neutral-800));
+      }
 
-    .project te-icon-logo-autocomplete {
-      background-color: #1c5b72;
-    }
+      :is(.contact-link, .project-link) {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-3xs);
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-none);
+        color: var(--color-text-primary);
+        --color-icon-primary: var(--color-text-secondary);
+      }
 
-    .project te-icon-logo-healthwise {
-      background-color: #f0534a;
-    }
+      :is(.contact-link, .project-link):not(:hover) {
+        text-decoration: none;
+      }
 
-    .project te-icon-logo-slateui {
-      background-color: hsl(var(--color-neutral-800));
-    }
+      .contact-link {
+        font-size: var(--text-lg-font-size);
+      }
 
-    :is(.contact-link, .project-link) {
-      display: inline-flex;
-      flex-direction: row;
-      align-items: center;
-      gap: var(--spacing-3xs);
-      font-weight: var(--font-weight-bold);
-      line-height: var(--line-height-none);
-      color: var(--color-text-primary);
-      --color-icon-primary: var(--color-text-secondary);
-    }
+      .contact-link :is(te-icon-phone, te-icon-email, te-icon-logo-github, te-icon-logo-linkedin) {
+        inline-size: 1.25rem;
+        block-size: 1.25rem;
+      }
 
-    :is(.contact-link, .project-link):not(:hover) {
-      text-decoration: none;
-    }
-
-    .contact-link {
-      font-size: var(--text-lg-font-size);
-    }
-
-    .contact-link :is(te-icon-phone, te-icon-email, te-icon-logo-github, te-icon-logo-linkedin) {
-      inline-size: 1.25rem;
-      block-size: 1.25rem;
-    }
-
-    .project-link {
-      font-size: var(--text-md-font-size);
+      .project-link {
+        font-size: var(--text-md-font-size);
+      }
     }
   </style>
 </App>

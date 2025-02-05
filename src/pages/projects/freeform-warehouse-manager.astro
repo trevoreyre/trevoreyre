@@ -1,0 +1,148 @@
+---
+// @ts-nocheck
+import '@slate-ui/core/src/container/container.css'
+import '@slate-ui/core/src/content/content.css'
+import '@slate-ui/core/src/heading/heading.css'
+import '@slate-ui/core/src/stack/stack.css'
+import '@slate-ui/core/src/tag/tag.css'
+import '@slate-ui/core/src/text/text.css'
+import App from '~/app.astro'
+import '~/components/project-summary/project-summary.css'
+---
+
+<script>
+  import '@slate-ui/core/src/container/container.js'
+  import '@slate-ui/core/src/content/content.js'
+  import '@slate-ui/core/src/heading/heading.js'
+  import '@slate-ui/core/src/stack/stack.js'
+  import '@slate-ui/core/src/tag/tag.js'
+  import '@slate-ui/core/src/text/text.js'
+  import '~/components/project-summary/project-summary.js'
+  import '~/components/project-summary/project-summary-content.js'
+  import '~/components/project-summary/project-summary-images.js'
+</script>
+
+<App title="Freeform warehouse manager" padding="lg">
+  <slate-container size="lg">
+    <slate-stack align="center" gap="5xl">
+      <slate-container size="md" align="start">
+        <slate-stack gap="xl">
+          <p slate-text variant="secondary" size="md" transform="uppercase">Freelance work</p>
+          <h1 slate-heading size="4xl" weight="bold">Freeform warehouse manager</h1>
+          <p slate-text size="lg">
+            I designed and built a warehouse inventory management application for Freeform, a
+            commercial furniture company in Idaho and Washington.
+          </p>
+          <p slate-text size="lg">
+            The application allows Freeform to track orders and pallets across multiple warehouses,
+            and coordinate arrival and departure dates.
+          </p>
+          <slate-stack direction="row" gap="3xs" wrap>
+            <slate-tag>React</slate-tag>
+            <slate-tag>Node.js</slate-tag>
+            <slate-tag>JavaScript</slate-tag>
+            <slate-tag>AWS</slate-tag>
+            <slate-tag>MySQL</slate-tag>
+            <slate-tag>UI design</slate-tag>
+          </slate-stack>
+        </slate-stack>
+      </slate-container>
+      <te-project-summary-images>
+        <img
+          alt="Screenshot of the Freeform warehouse manager website. The website features a map-like grid of pallet locations in a warehouse, imitating the layout of the physical warehouse location. The locations are color coded according to whether they are available or occupied."
+          width="3200"
+          height="2400"
+          sizes="100vw"
+          srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-freeform-warehouse-manager-1.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-freeform-warehouse-manager-1.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-freeform-warehouse-manager-1.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-freeform-warehouse-manager-1.png 1200w"
+        />
+      </te-project-summary-images>
+      <slate-container size="md">
+        <slate-content>
+          <h2>Overview</h2>
+          <p>
+            Freeform needed a better way to manage inventory across multiple warehouses. Their
+            existing system was limited to a single warehouse, only worked on desktop, and lacked
+            the UI/UX refinements necessary for efficient day-to-day operations.
+          </p>
+          <p>
+            I was brought in to redesign and expand the warehouse manager application, transforming
+            it into a robust inventory management tool. The result was an intuitive, fully
+            responsive system that enabled Freeform to track orders and pallets, coordinate arrival
+            and departure dates, and streamline warehouse operations across multiple locations.
+          </p>
+          <h2>What I did</h2>
+          <ul>
+            <li>Redesigned the application from the ground up, significantly improving UI/UX</li>
+            <li>Expanded functionality to support multiple warehouses</li>
+            <li>Built interactive warehouse layouts to visualize pallet locations</li>
+            <li>Enhanced order and pallet tracking, including overdue shipment detection</li>
+            <li>Added billing capabilities based on warehouse storage duration</li>
+            <li>Made the application fully responsive for phones, tablets, and desktops</li>
+            <li>Ensured full keyboard accessibility for improved usability</li>
+          </ul>
+        </slate-content>
+      </slate-container>
+      <slate-stack align="center" gap="lg">
+        <h3>Before redesign</h3>
+        <te-project-summary-images>
+          <img
+            alt="Screenshot of the Freeform warehouse manager website. The website features a map-like grid of pallet locations in a warehouse, imitating the layout of the physical warehouse location. The locations are color coded according to whether they are available or occupied."
+            width="3200"
+            height="2400"
+            sizes="100vw"
+            srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-freeform-warehouse-manager-before.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-freeform-warehouse-manager-before.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-freeform-warehouse-manager-before.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-freeform-warehouse-manager-before.png 1200w"
+          />
+        </te-project-summary-images>
+        <h3>After redesign</h3>
+        <te-project-summary-images>
+          <img
+            alt="Screenshot of the Freeform warehouse manager website. The website features a map-like grid of pallet locations in a warehouse, imitating the layout of the physical warehouse location. The locations are color coded according to whether they are available or occupied."
+            width="3200"
+            height="2400"
+            sizes="100vw"
+            srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-freeform-warehouse-manager-after.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-freeform-warehouse-manager-after.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-freeform-warehouse-manager-after.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-freeform-warehouse-manager-after.png 1200w"
+          />
+        </te-project-summary-images>
+        <te-project-summary-images>
+          <img
+            alt="Screenshot of the Freeform warehouse manager website. The website features a map-like grid of pallet locations in a warehouse, imitating the layout of the physical warehouse location. The locations are color coded according to whether they are available or occupied."
+            width="3200"
+            height="2400"
+            sizes="100vw"
+            srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-freeform-warehouse-manager-2.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-freeform-warehouse-manager-2.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-freeform-warehouse-manager-2.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-freeform-warehouse-manager-2.png 1200w"
+          />
+        </te-project-summary-images>
+        <te-project-summary-images>
+          <img
+            alt="Screenshot of the Freeform warehouse manager website. The website features a map-like grid of pallet locations in a warehouse, imitating the layout of the physical warehouse location. The locations are color coded according to whether they are available or occupied."
+            width="3200"
+            height="2400"
+            sizes="100vw"
+            srcset="https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_400/trevor-eyre/project-freeform-warehouse-manager-3.png 400w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_600/trevor-eyre/project-freeform-warehouse-manager-3.png 600w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_800/trevor-eyre/project-freeform-warehouse-manager-3.png 800w, https://res.cloudinary.com/trevoreyre/image/upload/q_auto,f_auto,w_1200/trevor-eyre/project-freeform-warehouse-manager-3.png 1200w"
+          />
+        </te-project-summary-images>
+      </slate-stack>
+      <slate-container size="md">
+        <slate-content>
+          <h2>Impact</h2>
+          <p>
+            The redesigned warehouse manager significantly improved Freeform’s inventory tracking
+            and warehouse operations. With a more intuitive UI, enhanced tracking features, and
+            support for multiple warehouses, the system became a critical tool in Freeform’s
+            logistics workflow.
+          </p>
+        </slate-content>
+      </slate-container>
+    </slate-stack>
+  </slate-container>
+</App>
+
+<style>
+  te-project-summary-images {
+    inline-size: 100%;
+  }
+
+  te-project-summary-images img {
+    margin-inline: 0;
+  }
+</style>
