@@ -2,6 +2,7 @@
 // @ts-nocheck
 import '@slate-ui/core/src/container/container.css'
 import '@slate-ui/core/src/heading/heading.css'
+import '@slate-ui/core/src/link/link.css'
 import '@slate-ui/core/src/stack/stack.css'
 import '@slate-ui/core/src/text/text.css'
 import App from '~/app.astro'
@@ -31,10 +32,14 @@ import '~/components/project-summary/project-summary.css'
             A fully customizable date picker widget with no dependencies, coded in Excel VBA.
             Currently with over 10,000 downloads.
           </slate-text>
-          <slate-link
+          <a
+            slate-link
             href="https://f000.backblazeb2.com/file/trevoreyre/CalendarForm+v1.5.2.zip"
-            target="_blank">Download</slate-link
+            target="_blank"
+            rel="noopener noreferrer"
           >
+            Download
+          </a>
         </te-project-summary-content>
         <div class="project-summary-image">
           <img width="854" height="532" src="/img/excel-datepicker.png" />
